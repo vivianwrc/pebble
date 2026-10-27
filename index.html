@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610270155";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610270158";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1394,6 +1394,30 @@ body.landscape-phone .quests{grid-template-columns:1fr 1fr;gap:8px}
 body.landscape-phone .quest{padding:9px 12px;border-radius:16px;gap:4px 10px}
 body.landscape-phone section[data-view="aufgaben"]{padding-bottom:70px}
 body.landscape-phone .quests>:not(.quest){grid-column:1/-1}
+/* ===== v46: Handy – mehr Platz fürs Haus, Abstand zur Kamera, Baumenü übersichtlich ===== */
+body.landscape-phone{--sl:max(38px,calc(env(safe-area-inset-left,0px) + 6px))!important;--sr:max(38px,calc(env(safe-area-inset-right,0px) + 6px))!important}
+body.landscape-phone .top{padding-block:0!important;min-height:0!important}
+body.landscape-phone .top-in{min-height:30px!important;height:30px}
+body.landscape-phone .top .appicon{--s:24px}
+body.landscape-phone .top .wallet,body.landscape-phone .top .seasonbtn{transform:scale(.68)!important}
+body.landscape-phone .top .seasonbtn{margin-right:-28px!important}
+body.landscape-phone .top .brandbtn{transform:scale(.75)!important}
+body.landscape-phone .nav{width:min(340px,calc(100% - 140px))!important;padding:2px!important;bottom:calc(4px + env(safe-area-inset-bottom,0px))!important}
+body.landscape-phone .tab{padding:2px!important;font-size:9px!important}
+body.landscape-phone .tab svg{width:15px!important;height:15px!important}
+body.landscape-phone .iosw,body.landscape-phone.immersive #roomTabs,body.landscape-phone.immersive .home-tools{top:4px!important}
+body.landscape-phone .sside button,body.landscape-phone .rotctl button,body.landscape-phone .zoomctl button{width:26px!important;height:26px!important}
+body.landscape-phone .stage .rotctl,body.landscape-phone .zoomctl{bottom:4px!important}
+/* Wände ein/aus: am Handy als kleine Leiste unten rechts, im Baumodus weg */
+body.landscape-phone .sside.right{top:auto!important;bottom:40px!important;right:var(--sr)!important;transform:none!important;flex-direction:row!important}
+/* Baumodus am Handy: Navigation ausblenden, Bauleiste über die ganze Höhe */
+body.landscape-phone.bp-open:not(.bp-min) .nav{display:none!important}
+body.landscape-phone.immersive .buildpanel{top:calc(var(--toph) + 4px)!important;bottom:6px!important;width:min(360px,46vw)!important}
+body.landscape-phone.immersive.bp-open:not(.bp-min) #stage{right:calc(min(360px,46vw) + var(--sr))!important}
+body.landscape-phone.bp-open:not(.bp-min) .hgrid3{display:none!important}
+body.landscape-phone.immersive.bp-open #roomTabs{left:calc(var(--sl) + 150px)!important;transform:none!important;max-width:calc(100% - min(360px,46vw) - 230px)!important}
+body.landscape-phone .buildpanel .bp-items,body.landscape-phone .buildpanel .mob-grid{-webkit-overflow-scrolling:touch;touch-action:pan-y}
+body.landscape-phone .buildpanel .bp-hint{font-size:10.5px!important;padding:4px 10px 6px!important;line-height:1.25}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -6865,7 +6889,7 @@ function openSettings(){
 /* --- Handy: bitte quer halten --- */
 (()=>{document.body.insertAdjacentHTML('beforeend',`<div class="rotatehint" id="rotateHint"><div class="rh-card"><div class="rh-phone"><span></span></div><h3>Dreh dein Handy</h3><p>Pebble spielst du im Querformat. Dreh dein Handy einfach zur Seite.</p></div></div>`);
 try{sessionStorage.removeItem('pebble-rh')}catch(_){}
-  const upd=()=>{const land=innerWidth>innerHeight;document.body.classList.toggle('landscape-phone',land&&innerHeight<560&&matchMedia('(pointer:coarse)').matches)};
+  const upd=()=>{const land=innerWidth>innerHeight,touch=matchMedia('(pointer:coarse)').matches||matchMedia('(any-pointer:coarse)').matches||navigator.maxTouchPoints>0||'ontouchstart' in window,small=innerHeight<560||Math.min(screen.width||9999,screen.height||9999)<=600;document.body.classList.toggle('landscape-phone',land&&touch&&small)};
   addEventListener('resize',()=>{upd();if(tab==='home')renderHome()});upd();
 })();
 
