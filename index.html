@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271632";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271638";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1556,6 +1556,23 @@ body:not(.landscape-phone) #pop>.idbig .cf-pick:not([hidden])+.id-top{margin-top
 .inv-card .cdots{padding:4px 0 0}
 
 .intro.prep{opacity:1!important;background:linear-gradient(#9fb6cf,#e8e3e0)!important}.intro.prep canvas{opacity:0}.intro canvas{transition:opacity .5s ease}
+
+.pd-note{font-weight:800;font-size:12px;line-height:1.3}.pd-acts{display:flex;gap:6px}.pd-acts .btn{flex:1}.pd-acts .btn.off{opacity:.45}
+
+/* v65: Hausplan im Querformat am Handy */
+body.landscape-phone #pop:has(.plan){padding:6px var(--sr) 6px var(--sl)!important;place-items:center!important}
+body.landscape-phone #pop .card.plan{zoom:1!important;width:min(900px,100%)!important;max-height:calc(100dvh - 12px);overflow:hidden;display:grid!important;grid-template-columns:auto minmax(220px,1fr);grid-template-rows:auto auto auto 1fr;gap:6px 14px!important;padding:10px 14px!important;align-items:start}
+body.landscape-phone #pop .card.plan>.plansvg{grid-column:1;grid-row:1/span 4;height:calc(100dvh - 34px);width:auto;max-width:56vw}
+body.landscape-phone #pop .card.plan>h3{grid-column:2;margin:0;font-size:16px}
+body.landscape-phone #pop .card.plan>.mail{grid-column:2;margin:0;font-size:11px;line-height:1.3}
+body.landscape-phone #pop .card.plan>.chips{grid-column:2;margin:0}
+body.landscape-phone #pop .card.plan>.chips .chip{padding:5px 10px;font-size:12px}
+body.landscape-phone #pop .card.plan>.planctl{grid-column:2;gap:8px;align-items:start;flex-wrap:nowrap}
+body.landscape-phone #pop .card.plan .pad button{width:34px;height:34px}
+body.landscape-phone #pop .card.plan .planinfo{gap:4px}
+body.landscape-phone #pop .card.plan .planinfo .btn{padding:7px 10px;font-size:12px}
+body.landscape-phone #pop .card.plan .pd-acts{flex-direction:column}
+body.landscape-phone #pop .card.plan>.close{top:6px;right:6px}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -8767,6 +8784,49 @@ document.addEventListener('click',e=>{const t=e.target.closest&&e.target.closest
 /* v64: Antippen eines Möbels zeigt nur noch die runden Knöpfe am Möbel, kein großes Menü */
 const _renderSheet64=renderSheet;
 renderSheet=function(){if(sel&&!placing&&tab==='home'){const it=S.items.find(i=>i.uid===sel);if(it&&it.room){sel=null;$('#sheet').hidden=true;pickUp(it);return}}return _renderSheet64()};
+/* ================= v65: Hausplan – Räume frei nach oben schieben, grün = passt, rot = passt nicht ================= */
+let PD=null;
+function planErr(nl){const s2={...S,layout:{...S.layout,[planSel]:nl}};let err=layoutOK(s2,planSel,nl);
+  if(!err)for(const o of placed())if(o!==planSel&&s2.layout[o].f===1&&layoutOK(s2,o,s2.layout[o])){err='Dann hätte ein Raum im 1. Stock nichts mehr unter sich.';break}return err||''}
+function planCommit(nl){S.layout[planSel]=nl;planFloor=nl.f;PD=null;save();renderPlan();sfx('pop')}
+function planSet(nl){const L=S.layout[planSel];if(nl.x===L.x&&nl.y===L.y&&nl.f===L.f){PD=null;renderPlan();return}
+  const R=roomRect(planSel);nl.x=clamp(nl.x,0,PLAN_W-R.w);nl.y=clamp(nl.y,0,PLAN_H-R.h);
+  if(!planErr(nl)){planCommit(nl);return}PD=nl;planFloor=nl.f;renderPlan()}
+function planSpot(f){const L=S.layout[planSel],R=roomRect(planSel);let best=null,bd=1e9;
+  for(let y=0;y<=PLAN_H-R.h;y++)for(let x=0;x<=PLAN_W-R.w;x++){const nl={x,y,f};if(planErr(nl))continue;const d=Math.hypot(x-L.x,y-L.y);if(d<bd){bd=d;best=nl}}return best}
+{const _rp=renderPlan;renderPlan=function(){_rp();const P2=PD;const svg=$('#pop .plansvg'),info=$('#pop .planinfo');if(!svg)return;
+  if(P2&&P2.f===planFloor){const R=roomRect(planSel),T=20,ok=!planErr(P2);
+    svg.querySelector(`[data-plan-room="${planSel}"]`)?.setAttribute('opacity','.35');
+    svg.insertAdjacentHTML('beforeend',`<g pointer-events="none"><rect x="${P2.x*T+2}" y="${P2.y*T+2}" width="${R.w*T-4}" height="${R.h*T-4}" rx="7" fill="${ok?'rgba(63,174,106,.35)':'rgba(224,90,110,.32)'}" stroke="${ok?'#3fae6a':'#e05a6e'}" stroke-width="3" stroke-dasharray="7 4"/><text x="${(P2.x+R.w/2)*T}" y="${(P2.y+R.h/2)*T+5}" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-weight="900" font-size="13" fill="${ok?'#2f7a4b':'#b8394c'}">${RD(planSel).name}</text></g>`)}
+  if(P2&&info){const ok=!planErr(P2);info.querySelector('[data-plan-move="upf"],[data-plan-move="down"]')?.remove();info.querySelector('[data-plan="close"]')?.remove();
+    info.insertAdjacentHTML('beforeend',`<small class="pd-note" style="color:${ok?'#2f7a4b':'#b8394c'}">${ok?'Passt! Tipp auf „Hier platzieren“.':'Rot: Hier liegt nicht alles über einem Raum. Schieb ihn weiter.'}</small><div class="pd-acts"><button class="btn soft" data-plan="pdno">Abbrechen</button><button class="btn${ok?'':' off'}" data-plan="pdok" ${ok?'':'disabled'}>Hier platzieren</button></div>`)}}}
+const cellAt=(svg,e)=>{const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(svg.getScreenCTM().inverse());return p};
+let PDRAG=null;
+document.addEventListener('pointerdown',e=>{const svg=e.target.closest&&e.target.closest('#pop .plansvg');if(!svg)return;const rm=e.target.closest('[data-plan-room]');
+  const base=PD||S.layout[planSel];const p=cellAt(svg,e);
+  if(rm&&rm.dataset.planRoom!==planSel&&!PD){planSel=rm.dataset.planRoom}
+  const cur=PD||S.layout[planSel],R=roomRect(planSel),cx=p.x/20,cy=p.y/20;
+  if(cur.f!==planFloor)return;
+  if(cx>=cur.x&&cx<cur.x+R.w&&cy>=cur.y&&cy<cur.y+R.h){PDRAG={id:e.pointerId,px:p.x,py:p.y,x0:cur.x,y0:cur.y,f:cur.f,moved:false};e.stopImmediatePropagation();e.preventDefault();try{svg.setPointerCapture(e.pointerId)}catch(_){}}},true);
+document.addEventListener('pointermove',e=>{if(!PDRAG||e.pointerId!==PDRAG.id)return;const svg=$('#pop .plansvg');if(!svg)return;e.stopImmediatePropagation();e.preventDefault();
+  const p=cellAt(svg,e),dx=Math.round((p.x-PDRAG.px)/20),dy=Math.round((p.y-PDRAG.py)/20);if(Math.abs(p.x-PDRAG.px)+Math.abs(p.y-PDRAG.py)>6)PDRAG.moved=true;
+  const R=roomRect(planSel),nl={x:clamp(PDRAG.x0+dx,0,PLAN_W-R.w),y:clamp(PDRAG.y0+dy,0,PLAN_H-R.h),f:PDRAG.f},c=PD||S.layout[planSel];
+  if(nl.x!==c.x||nl.y!==c.y){const L=S.layout[planSel];PD=(nl.x===L.x&&nl.y===L.y&&nl.f===L.f)?null:nl;renderPlan()}},true);
+['pointerup','pointercancel'].forEach(ev=>document.addEventListener(ev,e=>{if(!PDRAG||e.pointerId!==PDRAG.id)return;e.stopImmediatePropagation();const mv=PDRAG.moved;PDRAG=null;
+  if(mv){plDragged=Date.now();if(PD&&!planErr(PD))planCommit(PD);else if(PD)toast(planErr(PD))}},true));
+document.addEventListener('click',e=>{if(!$('#pop .plan'))return;const t=e.target;
+  if(t.closest('[data-plan="pdok"]')){e.stopImmediatePropagation();if(PD&&!planErr(PD))planCommit(PD);return}
+  if(t.closest('[data-plan="pdno"]')){e.stopImmediatePropagation();PD=null;planFloor=S.layout[planSel].f;renderPlan();return}
+  if(t.closest('[data-plan="close"]')||t===$('#pop')){PD=null;return}
+  const mv=t.closest('[data-plan-move]')?.dataset.planMove;
+  if(mv){e.stopImmediatePropagation();const c=PD||S.layout[planSel];
+    if(mv==='upf'){const nf=planSpot(1);if(nf){planCommit(nf);toast(RD(planSel).name+' ist jetzt im 1. Stock');return}PD={x:c.x,y:c.y,f:1};planFloor=1;renderPlan();toast('Schieb den Raum so, dass er ganz über Räumen im Erdgeschoss liegt.');return}
+    if(mv==='down'){const nf=planErr({...c,f:0})?planSpot(0):{...c,f:0};if(nf){planCommit(nf);return}toast('Im Erdgeschoss ist gerade kein Platz.');return}
+    const m={u:[0,-1],d:[0,1],l:[-1,0],r:[1,0]}[mv];planSet({x:c.x+m[0],y:c.y+m[1],f:c.f});return}
+  const grid=t.closest('[data-plan-grid]');if(grid&&!t.closest('[data-plan-room]')&&Date.now()-plDragged>400){e.stopImmediatePropagation();const p=cellAt(grid,e),c=PD||S.layout[planSel];if(c.f!==planFloor)return;
+    planSet({x:Math.floor(p.x/20),y:Math.floor(p.y/20),f:c.f})}},true);
+{const _op=openPlan;openPlan=function(){PD=null;return _op()}}
+
 /* ================= Navigation & Meldungen ================= */
 function show(t){
   tab=t;
