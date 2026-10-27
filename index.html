@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271751";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271758";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1581,6 +1581,7 @@ body.landscape-phone #pop .card.plan>.close{top:6px;right:6px}
 body.landscape-phone .sellsign{padding:5px 10px;margin:0 0 6px;font-size:11px}
 body.street-on,#street{-webkit-user-select:none;user-select:none}#street{touch-action:none;cursor:grab}#street.panning{cursor:grabbing}#street.panning .st-shop{pointer-events:none}
 #toast{pointer-events:none}#toast button{pointer-events:auto}
+.inv-sell{background:#f3d98a!important;color:#6b4a12!important;font:900 13px Nunito,system-ui,sans-serif}.inv-sell.arm{width:auto!important;padding:0 8px;border-radius:14px!important;background:#e9b949!important;color:#fff!important}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -3262,8 +3263,8 @@ function movePlayerFree(R){const p=nearestFree(R.id,R.c,R.r);if(p)S.pos={room:R.
 function drawGhost(){
   const svg=$('#stage svg.room'),g=svg&&svg.querySelector('#ghost');if(!g||!placing)return;
   useCam(camHome);
-  const R=RD(viewRoom),r=roomRect(viewRoom),zb=r.f*FH,it=S.items.find(i=>i.uid===placing.uid),[w,h]=dims(it);
-  const [x,y]=snapPos(R,it,placing.cx,placing.cy),ok=fits(R,it,x,y),X=r.x+x,Y=r.y+y;
+  const R=RD(viewRoom),r=roomRect(viewRoom),it=S.items.find(i=>i.uid===placing.uid),[w,h]=dims(it);let zb=r.f*FH;
+  const [x,y]=snapPos(R,it,placing.cx,placing.cy),ok=fits(R,it,x,y),X=r.x+x,Y=r.y+y;zb=zb+(CAT[it.id].top?topZ(R,it,x,y):0);
   g.innerHTML=poly([P(X,Y,zb),P(X+w,Y,zb),P(X+w,Y+h,zb),P(X,Y+h,zb)],ok?'rgba(120,200,150,.35)':'rgba(230,90,110,.35)',`stroke="${ok?'#5cb87e':'#e05a6e'}" stroke-width="2"`)+`<g class="gitem" opacity=".8">${resolve(drawItem(it.id,ctx(X,Y,it.rot,zb+(CAT[it.id].wall?(it.wz|0):0),DDI(it))))}</g>`;
   const bb=g.querySelector('.gitem').getBBox(),vb=svg.viewBox.baseVal,k=vb.width/(svg.clientWidth||vb.width),rr=17*k*1.2,cx=bb.x+bb.width/2,ty=Math.min(bb.y,P(X+w/2,Y+h/2,zb)[1]-40*k)-rr-6*k;
   const sc=rr*1.15/24,btn=(dx,act,fill,d,dis)=>`<g data-pact="${act}" pointer-events="all" style="cursor:pointer"${dis?' opacity=".5"':''}><circle cx="${f1(cx+dx)}" cy="${f1(ty+2*k)}" r="${f1(rr)}" fill="rgba(0,0,0,.15)"/><circle cx="${f1(cx+dx)}" cy="${f1(ty)}" r="${f1(rr)}" fill="${fill}" stroke="#fff" stroke-width="${f1(2.5*k)}"/><path transform="translate(${f1(cx+dx-12*sc)} ${f1(ty-12*sc)}) scale(${sc.toFixed(3)})" d="${d}" stroke="#fff" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>`;
@@ -7237,7 +7238,7 @@ let mobCard=([id,d])=>{const own=stored().filter(i=>i.id===id).length;
   return `<button type="button" class="bp-card mob-card" data-mobbuy="${id}">${d.lim?'<span class="mob-tag">Limitiert</span>':''}<span class="bp-pic">${thumb(id)}</span><b>${d.n}</b>${own?`<small class="own">${own}× im Inventar</small>`:priceTag(d)}</button>`};
 function invGrid(){
   const st=stored().filter(i=>CAT[i.id]),pl=S.items.filter(i=>i.room&&CAT[i.id]);
-  const card=(i,placedIn)=>`<div class="inv-card">${placedIn?`<button type="button" class="inv-x" data-invstore="${i.uid}" aria-label="Ins Inventar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v12H4z"/><path d="M2 4h20v4H2zM10 12h4"/></svg></button>`:''}<button type="button" class="inv-main" ${placedIn?`data-mobmove="${i.uid}"`:`data-invplace="${i.uid}"`}><span class="bp-pic">${thumb(i.id)}</span><b>${CAT[i.id].n}</b><small>${placedIn?RD(i.room).name:'Aufstellen'}</small></button></div>`;
+  const card=(i,placedIn)=>`<div class="inv-card">${placedIn?`<button type="button" class="inv-x" data-invstore="${i.uid}" aria-label="Ins Inventar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v12H4z"/><path d="M2 4h20v4H2zM10 12h4"/></svg></button>`:(typeof sellPrice==='function'&&sellPrice(i.id)?`<button type="button" class="inv-x inv-sell" data-sellinv="${i.uid}" title="Verkaufen für ${sellPrice(i.id)}" aria-label="Verkaufen für ${sellPrice(i.id)}"><b>$</b></button>`:'')}<button type="button" class="inv-main" ${placedIn?`data-mobmove="${i.uid}"`:`data-invplace="${i.uid}"`}><span class="bp-pic">${thumb(i.id)}</span><b>${CAT[i.id].n}</b><small>${placedIn?RD(i.room).name:'Aufstellen'}</small></button></div>`;
   return `<h5 class="inv-h">Im Inventar · ${st.length}</h5>${st.length?st.map(i=>card(i,false)).join(''):'<p class="inv-empty">Hier ist gerade nichts. Neue Möbel findest du links in den Räumen.</p>'}
     <h5 class="inv-h">Aufgestellt · ${pl.length}${pl.length?`<button type="button" class="inv-all" data-invall>${INVCONF&&Date.now()-INVCONF<3000?'Wirklich alles einlagern?':'Alle ins Inventar'}</button>`:''}</h5>${pl.length?pl.map(i=>card(i,true)).join(''):'<p class="inv-empty">Noch nichts aufgestellt.</p>'}`;
 }
@@ -9128,6 +9129,51 @@ function inCat(id,d,cat){if(d.hide)return false;if(d.s===cat)return true;if(cat=
   [a,b].forEach(p=>s+=ln(P(p[0],p[1],zb+20),P(p[0],p[1],zb+WH-6),'rgba(91,58,36,.25)',.8));
   g.insertAdjacentHTML('afterbegin',`<g class="wallgrid" pointer-events="none">${s}</g>`)}}
 
+/* ================= v83: Kleine Deko rastet auf freien Ablageflächen ein ================= */
+function topZ(R,it,x,y){const [w,h]=dims(it),cx=x+w/2,cy=y+h/2;let z=0;inRoom(R.id).forEach(o=>{if(o.uid===it.uid||!SURF[o.id])return;const q=rectOf(o);if(cx>q.x&&cx<q.x+q.w&&cy>q.y&&cy<q.y+q.h)z=Math.max(z,SURF[o.id]+(CAT[o.id].wall?(o.wz|0):0))});return z}
+{const S0=snapPos;snapPos=function(R,it,fx,fy){const r=S0(R,it,fx,fy);if(!CAT[it.id].top||!R||!R.id)return r;const [w,h]=dims(it);let best=null,bd=1e9;
+  inRoom(R.id).forEach(o=>{if(o.uid===it.uid||!SURF[o.id])return;const z=SURF[o.id]+(CAT[o.id].wall?(o.wz|0):0),t=z*ZK/(KS*KP),sx=fx+t*SN,sy=fy+t*CS,q=rectOf(o);
+    const dx=Math.max(q.x-sx,0,sx-q.x-q.w),dy=Math.max(q.y-sy,0,sy-q.y-q.h),d=Math.hypot(dx,dy);if(d>.35||d>=bd)return;
+    const st=.25,sn=v=>Math.round(v/st)*st,nx=Math.max(q.x,Math.min(q.x+q.w-w,sn(sx-w/2))),ny=Math.max(q.y,Math.min(q.y+q.h-h,sn(sy-h/2)));
+    if(w>q.w+.001||h>q.h+.001)return;if(!fits(R,it,nx,ny))return;bd=d;best=[Math.round(nx*100)/100,Math.round(ny*100)/100]});
+  return best||r}}
+/* ================= v84: Sofas und Schminksessel wirklich umfärbbar ================= */
+const SOFACOLS=[['Salbei','#a9c4a6'],['Rosé','#e5b3bb'],['Sand','#d9c3a8'],['Himmelblau','#9fb6cf'],['Flieder','#c4b0ee']];
+const sofaC=(def)=>{const col=CURCOLV||def;return [col,shade(col,.55)]};
+DRAW.ecksofa_l=c=>lSofa(c,false,...sofaC('#a9c4a6'));DRAW.ecksofa_r=c=>lSofa(c,true,...sofaC('#e5b3bb'));
+DRAW.liegesofa=c=>lSofa(c,false,...sofaC('#d9c3a8'),true);DRAW.liegesofa_r=c=>lSofa(c,true,...sofaC('#9fb6cf'),true);
+const rot5=(arr,first)=>{const i=arr.findIndex(o=>o[1]===first);return [...arr.slice(i),...arr.slice(0,i)]};
+RECOL.ecksofa_l={param:1,opts:rot5(SOFACOLS,'#a9c4a6')};RECOL.ecksofa_r={param:1,opts:rot5(SOFACOLS,'#e5b3bb')};
+RECOL.liegesofa={param:1,opts:rot5(SOFACOLS,'#d9c3a8')};RECOL.liegesofa_r={param:1,opts:rot5(SOFACOLS,'#9fb6cf')};
+{const P0=puff;puff=function(c,cx,cy,rx,ry,z,hh,col){return P0(c,cx,cy,rx,ry,z,hh,MC(col))}}
+/* Farbtausch auch für Teile, die direkt als SVG gezeichnet werden */
+const POSTMAP=new Set(['schminksessel']);
+function mapOut(r,cfg,T){const f=s=>s.replace(/#[0-9a-fA-F]{6}\b/g,x=>mapCol(x.toLowerCase(),cfg,T));if(Array.isArray(r))return r.map(x=>mapOut(x,cfg,T));if(r instanceof String){const o=new String(f(String(r)));o.bx=r.bx;return o}return typeof r==='string'?f(r):r}
+{const C0=COLHOOK;COLHOOK=function(id,c){if(!POSTMAP.has(id))return C0(id,c);const cfg=RECOL[id];let idx=DRAWCOL!==undefined?DRAWCOL:(CURIT&&CURIT.id===id?(CURIT.col|0):0);const o=cfg.opts[idx]||cfg.opts[0];
+  if(!o[1])return DRAW[id](c);const pc=ACTIVECFG,pt=ACTIVET;ACTIVECFG=cfg;ACTIVET=o[1];try{return mapOut(DRAW[id](c),cfg,o[1])}finally{ACTIVECFG=pc;ACTIVET=pt}}}
+/* ================= v85: Fernseher, Stehlampe in Farben, Pflanzen und Vorhänge nur unter Deko ================= */
+DRAW.stehlampe=c=>{const col=CURCOLV||'#fde3ee',[x,y]=c.p(.5,.5,72);return [part(ell(x,y,30,26,'#fff3c4','opacity=".5"'),[.2,.8,.2,.8,60,80]),c.cyl(.5,.5,.18,0,3,'#4a5a75'),c.cyl(.5,.5,.025,3,60,'#4a5a75'),c.cyl(.5,.5,.24,62,18,col)]};
+RECOL.stehlampe={param:1,opts:[['Rosa','#fde3ee'],['Creme','#f6ecd8'],['Salbei','#dce9d6'],['Himmelblau','#dbe7f5'],['Senfgelb','#f3d58c']]};
+Object.assign(CAT,{tv:{n:'Fernseher',c:'s',p:60,w:1,h:.5,s:'wohnzimmer',top:1},tv_wand:{n:'Wandfernseher',c:'s',p:70,w:1,h:.12,s:'wohnzimmer',wall:1}});
+const tvScreen=(c,y,z0,z1)=>{const q=[c.p(.08,y,z0),c.p(.92,y,z0),c.p(.92,y,z1),c.p(.08,y,z1)];const g=[c.p(.12,y,z1-2),c.p(.4,y,z1-2),c.p(.24,y,z0+2),c.p(.12,y,z0+2)];return poly(q,'#30394d')+poly(g,'rgba(255,255,255,.08)')};
+Object.assign(DRAW,{
+  tv:c=>[c.b(.3,.12,0,.4,.26,1.6,'#3a3a40'),c.b(.46,.22,1.6,.08,.06,4,'#3a3a40'),c.b(.04,.2,5,.92,.07,30,'#26272c'),fface(c,.27,()=>tvScreen(c,.271,7,33))],
+  tv_wand:c=>wallHit(c,()=>String(resolve([c.b(.04,.0,54,.92,.06,34,'#26272c')]))+tvScreen(c,.061,56,86)),
+});
+const ONLYDEKO=id=>PLANTS.includes(id)||/vorhang|^vh_/.test(id);
+Object.keys(ALSO).forEach(k=>{if(ONLYDEKO(k))delete ALSO[k]});
+{const I0=inCat;inCat=function(id,d,cat){if(d.hide)return false;if(ONLYDEKO(id))return cat==='deko';return I0(id,d,cat)}}
+/* ================= v86: Sitzsack in Farben, im Inventar direkt verkaufen ================= */
+let SWAP=null;{const G0=gfill;gfill=function(c,k){return G0(SWAP&&SWAP[c]||c,k)}}
+function swapRun(map,f){const p=SWAP;SWAP=map;try{let r=f();const sw=s=>s.replace(/#[0-9a-fA-F]{6}\b/g,x=>map[x.toLowerCase()]||x);if(r instanceof String){const o=new String(sw(String(r)));o.bx=r.bx;return o}return typeof r==='string'?sw(r):Array.isArray(r)?r.map(x=>x instanceof String?(()=>{const o=new String(sw(String(x)));o.bx=x.bx;return o})():typeof x==='string'?sw(x):x):r}finally{SWAP=p}}
+{const D0=DRAW.sitzsack;DRAW.sitzsack=c=>{const col=CURCOLV;if(!col||col==='#ffb3cb')return D0(c);return swapRun({'#ffb3cb':col,'#f08fb0':shade(col,-.16),'#f59cbb':shade(col,-.07),'#e57fa3':shade(col,-.24)},()=>D0(c))}}
+RECOL.sitzsack={param:1,opts:[['Rosa','#ffb3cb'],['Salbei','#a9c4a6'],['Beige','#d9c3a8'],['Himmelblau','#9fb6cf'],['Flieder','#c4b0ee'],['Creme','#efe4d2']]};
+CAT.tv.n='Flachbildfernseher';
+document.addEventListener('click',e=>{const t=e.target.closest&&e.target.closest('[data-sellinv]');if(!t)return;e.stopImmediatePropagation();e.preventDefault();
+  const it=S.items.find(i=>i.uid===+t.dataset.sellinv);if(!it||it.room)return;const d=CAT[it.id],v=sellPrice(it.id);if(!v)return;
+  if(t.dataset.arm!=='1'){document.querySelectorAll('[data-sellinv][data-arm="1"]').forEach(b=>{b.dataset.arm='';b.innerHTML='<b>$</b>'});t.dataset.arm='1';t.classList.add('arm');t.innerHTML=`<b>+${v}</b>`;setTimeout(()=>{if(t.isConnected){t.dataset.arm='';t.classList.remove('arm');t.innerHTML='<b>$</b>'}},2600);return}
+  S.items=S.items.filter(i=>i!==it);if(d.c==='p')S.pin+=v;else S.snow+=v;sfx('buy');save();renderWallet();bump(d.c==='p'?'pin':'snow');try{renderBuildPanel()}catch(_){}try{renderBadges()}catch(_){}toast(`${d.n} verkauft · +${v} ${d.c==='p'?'Pingis':'Frosties'}`)},true);
+{const _eg86=enterGame;enterGame=function(){_eg86.apply(this,arguments);try{const a=acc();if(String(a.name||'').toLowerCase()==='vivian'&&S&&!S.gift2000){S.gift2000=1;S.snow=(S.snow||0)+2000;save();renderWallet();setTimeout(()=>toast('+2000 Frosties für dich'),3800)}}catch(_){}}}
 /* ================= Navigation & Meldungen ================= */
 function show(t){
   tab=t;
