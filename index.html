@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble Town"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610272325";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script>if("serviceWorker" in navigator)addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble Town"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610272346";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script>if("serviceWorker" in navigator)addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2719,7 +2719,7 @@ function openDaily(after){
   const y=new Date();y.setDate(y.getDate()-1);
   const next=S.daily.last===dayKey(y)?(S.daily.streak%7)+1:1;
   $('#pop').innerHTML=`<div class="card daily" role="dialog" aria-modal="true" aria-label="Tägliche Belohnung">
-    <div class="dl-head"><span class="dl-peng">${svg100(miaArt())}</span><div><h3>Schön, dass du da bist!</h3><p class="mail">Komm jeden Tag vorbei. Am 7. Tag gibt es Pingis.</p></div></div>
+    <div class="dl-head"><span class="dl-peng">${svg100(miaArt())}</span><div><h3>Schön, dass du da bist!</h3><p class="mail">Komm jeden Tag vorbei. Jeden Tag gibt es Pingis, am 7. Tag besonders viele.</p></div></div>
     <div class="dl-days">${DAILY.map((r,i)=>`<div class="dl-day${i+1<next?' done':''}${i+1===next?' today':''}"><small>Tag ${i+1}</small><span class="dl-ic">${curIcon(r.p?'p':'s')}</span><b>${r.p?'+'+r.p:'+'+r.s}</b>${r.p?`<small>+${r.s} ${curIcon('s')}</small>`:''}</div>`).join('')}</div>
     <button class="btn big" data-daily="${next}">Belohnung abholen</button></div>`;
   $('#pop').hidden=false;$('#pop').dataset.after='1';window.__dailyAfter=after;
@@ -2844,7 +2844,7 @@ const QUESTS=[
 ];
 QUESTS.forEach(q=>{if(!q.rel)return;const raw=q.val;q.val=()=>{const r=raw();S.qbase=S.qbase||{};if(S.qbase[q.id]===undefined){S.qbase[q.id]=r;save()}return Math.max(0,r-S.qbase[q.id])}});
 function fresh(){
-  return {char:null,outfit:{},clothes:[],pin:200,snow:200,xp:0,bought:0,flakes:0,grown:0,next:4,claimed:{},
+  return {char:null,outfit:{},clothes:[],pin:220,snow:700,xp:0,bought:0,flakes:0,grown:0,next:4,claimed:{},
     unlocked:{schlafzimmer:1,bad:1},grow:{},visited:{},pos:{room:'schlafzimmer',x:3,y:3},wmap:'platz',wpos:{x:16,y:22},wv:3,
     grid:'fein',layout:{schlafzimmer:{x:4,y:4,f:0},bad:{x:9,y:4,f:0}},deco:{},decoOwned:[],profile:{bf1:'',bf2:'',love:'',about:''},social:freshSocial(),daily:{last:'',streak:0,total:0},stats:{},buffs:{},cozyClaimed:{},seasonPref:'auto',tut:0,dayc:{},
     items:[{uid:1,id:'bett',room:'schlafzimmer',x:0,y:0,rot:0},{uid:2,id:'badewanne',room:'bad',x:0,y:0,rot:0},{uid:3,id:'toilette',room:'bad',x:3,y:3,rot:0}]};
@@ -2909,7 +2909,7 @@ async function sbLogin(q,a,pw){const sb=window.PEBBLE_SB;let email=q.includes('@
   const {data:row}=await sb.from('pebble_saves').select('name,data').eq('user_id',SBU.id).maybeSingle();
   const accs=getAccs();let key=Object.keys(accs).find(k=>accs[k].mail===email);
   const salt=Math.random().toString(36).slice(2,10),h=await hash(salt+pw);
-  if(!key){const nm=(row&&row.name)||SBU.user_metadata?.name||email.split('@')[0];key=nm.toLowerCase();accs[key]={name:nm,mail:email,salt,hash:h,save:(row&&row.data)||{...fresh(),upd:Date.now()}}}
+  if(!key){const nm=(row&&row.name)||SBU.user_metadata?.name||email.split('@')[0];key=nm.toLowerCase();accs[key]={name:nm,mail:email,salt,hash:h,save:(row&&row.data)||{...fresh(),gift200:1,gift500:1,econ2:1,upd:Date.now()}}}
   else{accs[key].salt=salt;accs[key].hash=h;if(row&&row.data&&syncTake(accs[key].save,row.data)){row.data.syncBase=row.data.upd;accs[key].save=row.data}}SYNCREADY=true;
   setAccs(accs);sbLoginRow(accs[key].name,email,pw);setTimeout(()=>sbPush(true),row?3000:500);return key}
 async function loginHash(n,pw){return hash('pebble:'+String(n).toLowerCase()+':'+pw)}
@@ -4135,7 +4135,7 @@ function spawnFlake(){
 }
 function collectFlake(f){
   W.flakes=W.flakes.filter(o=>o!==f);$(`[data-k="f${f.id}"]`)?.remove();W.sortKey='';
-  const amt=W.race?1:buffOn('kakao')?4:2;S.snow+=amt;S.flakes++;W.today+=amt/2;if(W.race)W.race.n++;save();sfx('coin');
+  let amt=W.race?1:buffOn('kakao')?4:2;if(!W.race){const dk=dayKey();if(!S.flakeDay||S.flakeDay.d!==dk)S.flakeDay={d:dk,n:0};if(S.flakeDay.n>=300)amt=Math.max(1,amt/2);S.flakeDay.n+=amt}S.snow+=amt;S.flakes++;W.today+=amt/2;if(W.race)W.race.n++;save();sfx('coin');
   const [sx,sy]=P(f.x,f.y);$('#wsvg').insertAdjacentHTML('beforeend',`<text class="floater" x="${f1(sx)}" y="${f1(sy-50)}" text-anchor="middle">+${amt}</text>`);
   const t=$('#wsvg').lastElementChild;setTimeout(()=>t.remove(),900);
   hud();renderWallet();bump('snow');renderQuests();renderBadges();
@@ -4542,7 +4542,7 @@ $('#pop').addEventListener('click',e=>{
   if(a==='reset'){
     const b=$('#resetBtn');
     if(!resetArmed){resetArmed=true;b.textContent='Wirklich alles zurücksetzen? Nochmal tippen';setTimeout(()=>{resetArmed=false;if(b.isConnected)b.textContent='Spielstand zurücksetzen'},3500);return}
-    resetArmed=false;const ch=S.char;S={...fresh(),gift200:1,gift500:1};S.char=ch;W.flakes=[];W.today=0;W.sortKey='';sel=null;placing=null;overview=false;viewRoom='schlafzimmer';save();$('#pop').hidden=true;renderAll();show('home');toast('Neuer Spielstand gestartet');
+    resetArmed=false;const ch=S.char;S={...fresh(),gift200:1,gift500:1,econ2:1};S.char=ch;W.flakes=[];W.today=0;W.sortKey='';sel=null;placing=null;overview=false;viewRoom='schlafzimmer';save();$('#pop').hidden=true;renderAll();show('home');toast('Neuer Spielstand gestartet');
   }
 });
 $('#profileBtn').onclick=openProfile;
@@ -9776,6 +9776,18 @@ document.addEventListener('submit',async e=>{if(e.target.id!=='wcForm')return;e.
 /* alte Vorschau-Chats (mit automatischen Antworten) entfernen – nie Klartext im Spielstand speichern */
 {const EG2=enterGame;enterGame=function(){const r=EG2.apply(this,arguments);try{if(S&&S.social&&!S.e2eClean){S.e2eClean=1;S.social.chats={};S.social.unread={};save()}}catch(_){}
   setTimeout(async()=>{if(SBU&&!E2E.priv){if(await e2eLoadLocal())e2eStart();else E2E.need=true}},1500);return r}}
+/* ================= v105: Neues Geld-System (Startgeld, Tagesbonus, Aufgaben, Level, Schneeflocken) ================= */
+DAILY.forEach(r=>{r.p=(r.p||0)+2});
+QUESTS.forEach((q,i)=>{q.s=Math.round(q.s*1.5/5)*5;if(i%4===3)q.p=Math.max(q.p||0,q.lvl<=2?3:q.lvl<=4?4:q.lvl<=6?5:6)});
+{const AX=addXP;addXP=function(n){const b=levelInfo(S.xp).l;const r=AX.apply(this,arguments);const a=levelInfo(S.xp).l;
+  if(a>b){S.pin+=5*(a-b);save();renderWallet();setTimeout(()=>toast(`Level-Belohnung: +${5*(a-b)} Pingis`),2400)}return r}}
+/* bestehende Spielstände bekommen das neue Startgeld obendrauf */
+{const EG3=enterGame;enterGame=function(){const r=EG3.apply(this,arguments);try{if(S&&!S.econ2){S.econ2=1;S.snow=(S.snow||0)+700;S.pin=(S.pin||0)+220;save();renderWallet();
+  whenFree(()=>{$('#pop').innerHTML=`<div class="card" role="dialog" aria-modal="true" aria-label="Neues Geld-System"><button class="close" data-pop="close" aria-label="Schließen">${CLOSE}</button>
+    <h3>Das Geld-System ist neu!</h3><p class="mail">Pebble Town ist jetzt mehr ein Bauspiel. Deshalb bekommst du einmalig <b>+700 Frosties</b> und <b>+220 Pingis</b> geschenkt.</p>
+    <p class="mail">Außerdem neu: Jeden Tag gibt es Pingis im Tagesbonus, für jeden Level-Aufstieg 5 Pingis, mehr Frosties bei den Aufgaben und Pingis bei jeder vierten Aufgabe. Schneeflocken im Stadtpark geben ab 300 Frosties am Tag nur noch die Hälfte.</p>
+    <button class="btn big" data-pop="close">Super!</button></div>`;$('#pop').hidden=false})}}catch(e){console.warn(e)}return r}}
+function whenFree(fn){const t=()=>{if($('#pop').hidden&&!document.querySelector('.intro')&&!$('#game').hidden)fn();else setTimeout(t,1500)};setTimeout(t,2600)}
 /* ================= Navigation & Meldungen ================= */
 let SCY=0;addEventListener('scroll',()=>{SCY=window.scrollY||document.documentElement.scrollTop||0},{passive:true});
 function show(t){
@@ -10014,7 +10026,7 @@ $('#authForm').addEventListener('submit',async e=>{
       if(r.error&&!sbRate(r.error)&&!/fetch|network/i.test(r.error.message||'')){err.textContent=/password/i.test(r.error.message||'')?'Bitte nimm ein längeres oder sichereres Passwort.':'Das Konto konnte gerade nicht angelegt werden. Versuch es gleich noch mal.';return}
       needConfirm=!!r.confirm||sbRate(r.error)}
     const salt=Math.random().toString(36).slice(2,10);
-    accs[key]={name,mail,salt,hash:await hash(salt+pw),save:{...fresh(),gift200:1,gift500:1,upd:Date.now()}};setAccs(accs);
+    accs[key]={name,mail,salt,hash:await hash(salt+pw),save:{...fresh(),gift200:1,gift500:1,econ2:1,upd:Date.now()}};setAccs(accs);
     user=key;setSes(key);S=accs[key].save;openPick('new');
     if(needConfirm)setTimeout(()=>toast('Fast geschafft: Bestätige noch deine E-Mail (Link in der Mail, auch im Spam nachsehen). Dann kannst du dich auf jedem Gerät anmelden.'),2500);
   }else{
