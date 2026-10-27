@@ -2,7 +2,7 @@
 
 Gemütliches Bau- und Wohnspiel mit Pinguin.
 
-**Spielen:** https://vivianwrc.github.io/pebble/
+**Spielen:** https://pebbletown.de/
 
 - `index.html` – das Spiel (wird automatisch aus der Claude-Version erzeugt)
 - `config.js` – Verbindung zu Supabase (Frankfurt, EU) für Spielstände auf allen Geräten

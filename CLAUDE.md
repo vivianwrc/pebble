@@ -1,7 +1,7 @@
 # Pebble – Webseite
 
 Dieses Repository ist die öffentliche Webseite von Pebble (GitHub Pages, Branch `main`, Ordner `/`).
-Live: https://vivianwrc.github.io/pebble/
+Live: https://pebbletown.de/ (Custom Domain über `CNAME`, alte Adresse vivianwrc.github.io/pebble leitet weiter)
 
 ## Woher das Spiel kommt
 Die Quelle ist das Claude-Artifact „Pebble“: https://claude.ai/artifact/8HQVqanDsStDH6YT7uzCmE
