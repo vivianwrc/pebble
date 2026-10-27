@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271618";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271624";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1542,6 +1542,16 @@ body:not(.landscape-phone) #pop>.idbig .cf-pick:not([hidden])+.id-top{margin-top
 @media (max-width:760px){body:not(.landscape-phone) #pop>.idbig{grid-template-columns:1fr!important;grid-template-rows:none!important;height:auto!important;max-height:90vh!important;overflow:auto!important}body:not(.landscape-phone) #pop>.idbig .id-top,body:not(.landscape-phone) #pop>.idbig .id-sec{grid-column:1!important;grid-row:auto!important}}
 
 .intro.prep{opacity:0!important;pointer-events:none}.intro{background:#e8ebef!important}
+
+/* v62: Farbpunkte */
+.mob-wrap{position:relative;display:flex;flex-direction:column}
+.mob-wrap>.bp-card{flex:1}
+.cdots{display:flex;gap:5px;justify-content:center;padding:4px 0 2px}
+.cdot{width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.9);box-shadow:0 0 0 1px rgba(59,42,30,.25);cursor:pointer;padding:0}
+.cdot.on{box-shadow:0 0 0 2px #5b3a24}
+.bp-colrow,.bp-wcol{display:flex;align-items:center;gap:8px;padding:6px 12px;font:900 12px Nunito,system-ui,sans-serif;color:#3b2a1e}
+.bp-wcol{grid-column:1/-1;padding:2px 4px 6px}
+.bp-colrow .cdots{padding:0}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -2400,7 +2410,7 @@ const DRAW={
   treppe:c=>{const a=[],n=8;for(let i=0;i<n;i++){const y=1.78-(i+1)*.22,h=(i+1)*WH/n;a.push(c.b(.12,y+.22-.22,0,.76,.22,h,i%2?'#e8c39e':'#f0d2b0'));a.push(c.b(.06,y+.08,h,.05,.05,26,'#d9ad7e'));a.push(c.b(.89,y+.08,h,.05,.05,26,'#d9ad7e'))}return a},
   wendeltreppe:c=>{const a=[c.cyl(.5,.5,.06,0,WH+18,'#c9ccd8')],n=11;for(let i=0;i<n;i++){const t=i/n*Math.PI*2*1.15-Math.PI/2,cx=.5+.3*Math.cos(t),cy=.5+.3*Math.sin(t),z=(i+1)*WH/n;a.push(c.b(cx-.13,cy-.13,z-5,.26,.26,5,i%2?'#f7a8c6':'#fde3ee'));a.push(c.ball(.5+.42*Math.cos(t),.5+.42*Math.sin(t),z+16,2.6,'#ffffff'))}return a},
 };
-const drawItem=(id,c)=>{const o=PARTC;PARTC=c;let r;try{r=DRAW[id](c)}finally{PARTC=o}return resolve(r)};
+const drawItem=(id,c)=>{const o=PARTC;PARTC=c;let r;try{r=(typeof COLHOOK==='function'?COLHOOK(id,c):DRAW[id](c))}finally{PARTC=o}return resolve(r)};
 
 
 /* ================= Spieldaten ================= */
@@ -2677,7 +2687,7 @@ Object.assign(DRAW,{
   liegestuhl:c=>[c.b(.15,.2,0,.06,1.6,10,WOODD),c.b(.79,.2,0,.06,1.6,10,WOODD),c.b(.15,.6,10,.7,1.2,3,'#9fd3c7'),c.b(.18,.22,10,.64,.3,30,'#ff9fbd'),c.b(.18,.62,13,.64,.2,3,'#ffffff'),c.b(.18,1.1,13,.64,.2,3,'#ffffff')],
 });
 
-const MAXGROW=2, GROWCOST=50, PLAN_W=18, PLAN_H=16, FLOORNAMES=['Erdgeschoss','1. Stock'];
+const MAXGROW=2, GROWCOST=50, PLAN_W=20, PLAN_H=18, FLOORNAMES=['Erdgeschoss','1. Stock'];
 const RD=id=>{const R=ROOMS.find(r=>r.id===id),g=S?.grow?.[id]||{c:0,r:0};return {...R,c:R.c+g.c,r:R.r+g.r,gc:g.c,gr:g.r}};
 const QUESTS=[
   {id:'L1a',lvl:1,t:'Sammle 10 Frosties in der Welt',xp:9,s:15,p:0,goal:10,rel:1,val:()=>S.flakes*2},
@@ -3046,10 +3056,10 @@ function roomG(r,mode,faded){
   const its=inRoom(r.id),holes=holesIn(r.id);
   if(focus&&placing&&S.grid!=='frei'){const st=S.grid==='ganz'?1:.25;for(let t=st;t<R.c-.001;t+=st)s+=ln(P(r.x+t,r.y,zb+.6),P(r.x+t,r.y+R.r,zb+.6),'#ffffff',Math.abs(t-Math.round(t))<.01?1.6:.7);
     for(let t=st;t<R.r-.001;t+=st)s+=ln(P(r.x,r.y+t,zb+.6),P(r.x+R.c,r.y+t,zb+.6),'#ffffff',Math.abs(t-Math.round(t))<.01?1.6:.7)}
-  its.filter(i=>CAT[i.id].wall).forEach(i=>s+=itemG(i,r.x,r.y,zb,focus));
+  its.filter(i=>CAT[i.id].wall).forEach(i=>{s+=itemG(i,r.x,r.y,zb,focus);if(SURF[i.id]){const q=rectOf(i);its.filter(t=>CAT[t.id].top&&t!==i&&(()=>{const [w,h]=dims(t),cx=t.x+w/2,cy=t.y+h/2;return cx>q.x&&cx<q.x+q.w&&cy>q.y&&cy<q.y+q.h})()).forEach(t=>s+=itemG(t,r.x,r.y,zb,focus))}});
   its.filter(i=>CAT[i.id].rug).forEach(i=>s+=itemG(i,r.x,r.y,zb,focus));
   if(focus&&sel){const it=S.items.find(i=>i.uid===sel);if(it&&it.room===r.id){const q=rectOf(it),x=r.x+q.x,y=r.y+q.y;s+=poly([P(x,y,zb),P(x+q.w,y,zb),P(x+q.w,y+q.h,zb),P(x,y+q.h,zb)],'rgba(34,48,74,.12)','stroke="#22304a" stroke-width="2" stroke-dasharray="6 4"')}}
-  const onTop=its.filter(i=>CAT[i.id].top&&surfZ(i)>0),sitIt=homeSit&&its.find(i=>i.uid===homeSit);
+  const onWall=t=>its.some(o=>CAT[o.id].wall&&SURF[o.id]&&(()=>{const q=rectOf(o),[w,h]=dims(t),cx=t.x+w/2,cy=t.y+h/2;return cx>q.x&&cx<q.x+q.w&&cy>q.y&&cy<q.y+q.h})()),onTop=its.filter(i=>CAT[i.id].top&&(surfZ(i)>0||onWall(i))),sitIt=homeSit&&its.find(i=>i.uid===homeSit);
   const baseOf=t=>{const [w,h]=dims(t),cx=t.x+w/2,cy=t.y+h/2;return its.find(o=>SURF[o.id]&&(()=>{const q=rectOf(o);return cx>q.x&&cx<q.x+q.w&&cy>q.y&&cy<q.y+q.h})())};
   const ents=its.filter(i=>!CAT[i.id].rug&&!CAT[i.id].wall&&!onTop.includes(i)).map(i=>({...rectOf(i),html:()=>itemG(i,r.x,r.y,zb,focus)+onTop.filter(t=>baseOf(t)===i).sort((a,b)=>(a.x+a.y)-(b.x+b.y)).map(t=>itemG(t,r.x,r.y,zb,focus)).join('')+(sitIt===i&&!mode.mini?sitPlayerG(i,r.x,r.y,zb):'')}));
   holes.forEach(hl=>ents.push({x:hl.x,y:hl.y,w:hl.w,h:hl.h,html:()=>holeG(r,hl,zb,focus||!mode.overview&&!mode.mini)}));
@@ -6356,7 +6366,7 @@ function scenery(){
   const L=seasonLand(),b=houseBox(),cx=(b.x0+b.x1)/2,cy=(b.y0+b.y1)/2,R=26;
   let ground=wpoly([[cx-R,cy-R],[cx+R,cy-R],[cx+R,cy+R],[cx-R,cy+R]],-.6,L.grass);
   for(let k=-R;k<R;k+=2)ground+=wpoly([[cx+k,cy-R],[cx+k+1,cy-R],[cx+k+1,cy+R],[cx+k,cy+R]],-.55,'#ffffff','opacity=".05"');
-  const g={x0:b.x0-3,y0:b.y0-3,x1:b.x1+3,y1:b.y1+3};
+  const g={x0:b.x0-4,y0:b.y0-4,x1:b.x1+4,y1:b.y1+4};
   ground+=wpoly([[g.x0,g.y0],[g.x1,g.y0],[g.x1,g.y1],[g.x0,g.y1]],-.4,L.grass2);
   /* Straße vor dem Grundstück */
   ground+=wpoly([[cx-R,g.y1+1],[cx+R,g.y1+1],[cx+R,g.y1+3.4],[cx-R,g.y1+3.4]],-.3,'#d9d4cc')+wpoly([[cx-R,g.y1+.6],[cx+R,g.y1+.6],[cx+R,g.y1+1],[cx-R,g.y1+1]],-.25,'#efe9df');
@@ -6833,7 +6843,7 @@ extHouseSVG=function(){PICKS='';WINCLIP=[];
 /* Natur rund ums Haus im Stil der Welt */
 let SCN={key:'',back:'',front:''};
 scenery=function(){
-  const L=seasonLand(),b=houseBox(),cx=(b.x0+b.x1)/2,cy=(b.y0+b.y1)/2,R=160,g={x0:b.x0-3,y0:b.y0-3,x1:b.x1+3,y1:b.y1+3};
+  const L=seasonLand(),b=houseBox(),cx=(b.x0+b.x1)/2,cy=(b.y0+b.y1)/2,R=160,g={x0:b.x0-4,y0:b.y0-4,x1:b.x1+4,y1:b.y1+4};
   const key=[CUR.yaw.toFixed(1),CUR.pitch.toFixed(1),b.x0,b.y0,b.x1,b.y1,season(),LITE,S.fence||'',JSON.stringify(S.door)].join('|');if(SCN.key===key)return SCN;
   let ground=wpoly([[cx-R,cy-R],[cx+R,cy-R],[cx+R,cy+R],[cx-R,cy+R]],-.7,L.grass);
   ground+=wpoly([[g.x0,g.y0],[g.x1,g.y0],[g.x1,g.y1],[g.x0,g.y1]],-.4,L.grass2);
@@ -7155,7 +7165,7 @@ const _confirmPlace30=confirmPlace;confirmPlace=function(){const r=_confirmPlace
 const _rs30=renderSheet;renderSheet=function(){const b=BP;if(placing)BP=null;try{_rs30()}finally{BP=b}};
 
 /* --- Kaufen und gleich aufstellen --- */
-const THUMB=new Map(),thumb=id=>{let t=THUMB.get(id);if(!t){t=itemSVG(id);THUMB.set(id,t)}return t};
+const THUMB=new Map(),thumb=id=>{const k=id+':'+(S&&S.mobcol&&S.mobcol[id]|0)+':'+(S&&S.wincol|0);let t=THUMB.get(k);if(!t){t=itemSVG(id);THUMB.set(k,t)}return t};
 function buyPlace(id){
   const d=CAT[id];if(!d)return;if(S.homeView==='out')S.homeView='in';
   const own=stored().find(i=>i.id===id);if(own){startPlace(own.uid);return}
@@ -7179,7 +7189,7 @@ $('#stage').addEventListener('click',e=>{
 let MOB=null;
 const MOBCATS=()=>[['inv','Inventar'],['woche','Neu'],...ROOMS.map(R=>[R.id,R.name]),['deko','Deko'],['saison','Saison']];
 const shopList=cat=>Object.entries(CAT).filter(([id,d])=>cat==='woche'?WEEK.furn.includes(id):cat==='saison'?d.season===season():d.s===cat&&!d.hide).sort(shopSort);
-const mobCard=([id,d])=>{const own=stored().filter(i=>i.id===id).length;
+let mobCard=([id,d])=>{const own=stored().filter(i=>i.id===id).length;
   return `<button type="button" class="bp-card mob-card" data-mobbuy="${id}">${d.lim?'<span class="mob-tag">Limitiert</span>':''}<span class="bp-pic">${thumb(id)}</span><b>${d.n}</b>${own?`<small class="own">${own}× im Inventar</small>`:priceTag(d)}</button>`};
 function invGrid(){
   const st=stored().filter(i=>CAT[i.id]),pl=S.items.filter(i=>i.room&&CAT[i.id]);
@@ -8607,6 +8617,119 @@ Object.assign(SEATZ,{ecksofa_l:18,ecksofa_r:18,liegesofa:18,liegesofa_r:18});
 
 /* --- nochmal 1000 Frosties für Vivian --- */
 {const _eg61=enterGame;enterGame=function(){_eg61.apply(this,arguments);try{const a=acc();if(String(a.name||'').toLowerCase()==='vivian'&&S&&!S.gift1000b){S.gift1000b=1;S.snow=(S.snow||0)+1000;save();renderWallet();setTimeout(()=>toast('+1000 Frosties zum Ausprobieren'),3400)}}catch(_){}}}
+
+/* ================= v62: Farben wählen (Basic), Vorhänge, neue Türen & Fenster, 3D-Wandregal ================= */
+/* --- Farbwechsel-System --- */
+const hex2hsl=h=>{const n=parseInt(h.slice(1),16);let r=(n>>16)/255,g=(n>>8&255)/255,b=(n&255)/255;const mx=Math.max(r,g,b),mn=Math.min(r,g,b);let H=0,S2=0;const L=(mx+mn)/2;
+  if(mx!==mn){const d=mx-mn;S2=L>.5?d/(2-mx-mn):d/(mx+mn);H=mx===r?(g-b)/d+(g<b?6:0):mx===g?(b-r)/d+2:(r-g)/d+4;H*=60}return [H,S2,L]};
+const hsl2hex=(h,s,l)=>{h=((h%360)+360)%360;s=Math.max(0,Math.min(1,s));l=Math.max(0,Math.min(1,l));const k=n=>(n+h/30)%12,a=s*Math.min(l,1-l),f=n=>l-a*Math.max(-1,Math.min(k(n)-3,Math.min(9-k(n),1)));
+  return '#'+[f(0),f(8),f(4)].map(x=>Math.round(x*255).toString(16).padStart(2,'0')).join('')};
+const SALBEI='#a9c7a4',HIMMEL='#a7c4e6',TERRA='#e3a585',PFIRSICH='#f6c3a4',MINT='#a9dccb',LAV='#c9b6ee',SAND='#e3cfae';
+const RECOL={};
+const rc=(ids,base,opts,win=28)=>ids.forEach(id=>RECOL[id]={base,opts,win});
+rc(['bett','wolkendoppel','kommode','kissen','sitzsack','rosawolke','schminksessel','puppenhaus','nachttisch','kleiderschrank','schminktisch'],'#f7a8c6',[['Rosa',null],['Salbei',SALBEI],['Himmelblau',HIMMEL]],30);
+rc(['sofa'],'#c4b0ee',[['Flieder',null],['Salbei',SALBEI],['Terrakotta',TERRA]]);
+rc(['sessel'],'#f4b6c8',[['Rosé',null],['Salbei',SALBEI],['Himmelblau',HIMMEL]]);
+rc(['ecksofa_l','liegesofa'],'#a9c4a6',[['Salbei',null],['Rosé','#e5b3bb'],['Sand',SAND]]);
+rc(['badematte'],'#ddd0f6',[['Flieder',null],['Mint',MINT],['Pfirsich',PFIRSICH]]);
+RECOL.kuechenzeile={only:['#ffe3cf'],base:'#ffe3cf',opts:[['Pfirsich',null],['Salbei','#cfe0c8'],['Himmelblau','#d3e2f3']]};
+RECOL.teppich_eckig={base:'#f2c4d2',opts:[['Rosa',null],['Salbei',SALBEI],['Sand',SAND]],win:40};
+const CURTCOLS=[['Weiß','#f6f2ec'],['Rosa','#f4c6d3'],['Salbei','#c3d6bb'],['Blau','#c3d4ea']];
+['vh_lang','vh_lang_bund','vh_kurz','vh_kurz_bund'].forEach(id=>RECOL[id]={param:1,opts:CURTCOLS});
+let DRAWCOL,CURCOLV=null;const COLC=new Map();
+function mapCol(hex,cfg,T){if(typeof hex!=='string'||hex[0]!=='#'||hex.length!==7)return hex;const key=hex+T+(cfg.base||'');let r=COLC.get(key);if(r)return r;r=hex;
+  const x=hex2hsl(hex.toLowerCase());
+  if(cfg.only){if(cfg.only.includes(hex.toLowerCase())){const t=hex2hsl(T),b=hex2hsl(cfg.base);r=hsl2hex(t[0]+(x[0]-b[0]),x[1]*(t[1]/(b[1]||1)),x[2]+(t[2]-b[2]))}}
+  else{const b=hex2hsl(cfg.base),d=Math.abs(((x[0]-b[0])+540)%360-180);if(x[1]>.18&&x[2]<.97&&d<=(cfg.win||28)){const t=hex2hsl(T);r=hsl2hex(t[0]+(x[0]-b[0]),Math.min(1,x[1]*(t[1]/(b[1]||1))),x[2]+(t[2]-b[2])*.9)}}
+  COLC.set(key,r);return r}
+let ACTIVECFG=null,ACTIVET=null;const MC=c=>ACTIVECFG?mapCol(c,ACTIVECFG,ACTIVET):c;
+{const B0=box;box=function(x,y,z,w,d,h,c){return B0(x,y,z,w,d,h,MC(c))}}
+{const B0=obox;obox=function(cx,cy,z,la,lb,h,ang,c){return B0(cx,cy,z,la,lb,h,ang,MC(c))}}
+{const B0=cyl;cyl=function(x,y,r,z,h,c){return B0(x,y,r,z,h,MC(c))}}
+{const B0=disc;disc=function(x,y,r,z,c,ex){return B0(x,y,r,z,MC(c),ex)}}
+{const B0=ball;ball=function(x,y,z,rp,c){return B0(x,y,z,rp,MC(c))}}
+{const B0=cone;cone=function(x,y,z,r,h,c){return B0(x,y,z,r,h,MC(c))}}
+{const B0=poly;poly=function(pts,fill,ex){return B0(pts,MC(fill),ex)}}
+{const B0=ell;ell=function(cx,cy,rx,ry,fill,ex){return B0(cx,cy,rx,ry,MC(fill),ex)}}
+{const B0=heart;heart=function(p,s,fill){return B0(p,s,MC(fill))}}
+const itemColIdx=id=>{const v=S&&S.mobcol&&S.mobcol[id];return v|0};
+function COLHOOK(id,c){
+  const cfg=RECOL[id];if(!cfg)return DRAW[id](c);
+  let idx=DRAWCOL!==undefined?DRAWCOL:(CURIT&&CURIT.id===id?(CURIT.col|0):0);
+  const o=cfg.opts[idx]||cfg.opts[0];
+  if(cfg.param){const pv=CURCOLV;CURCOLV=o[1];try{return DRAW[id](c)}finally{CURCOLV=pv}}
+  if(!o[1])return DRAW[id](c);
+  const pc=ACTIVECFG,pt=ACTIVET;ACTIVECFG=cfg;ACTIVET=o[1];try{return DRAW[id](c)}finally{ACTIVECFG=pc;ACTIVET=pt}}
+{const _is=itemSVG;itemSVG=function(id,rot){const pd=DRAWCOL;if(RECOL[id]&&DRAWCOL===undefined)DRAWCOL=itemColIdx(id);try{return _is(id,rot)}finally{DRAWCOL=pd}}}
+/* Kaufen/aufstellen mit gewählter Farbe */
+{const _sp=startPlace;startPlace=function(uid,backup){const it=S.items.find(i=>i.uid===uid);if(it&&RECOL[it.id]&&it.col===undefined)it.col=itemColIdx(it.id);return _sp.apply(this,arguments)}}
+{const _dg=drawGhost;drawGhost=function(){const it=placing&&S.items.find(i=>i.uid===placing.uid);const pc=CURIT;if(it)CURIT=it;try{return _dg()}finally{CURIT=pc}}}
+const dotRow=(attr,cfg,cur)=>`<span class="cdots">${cfg.opts.map((o,i)=>{const c=o[1]||(cfg.param?o[1]:cfg.base);return `<button type="button" class="cdot${i===cur?' on':''}" ${attr}="${i}" title="${o[0]}" aria-label="${o[0]}" style="background:${c||cfg.base}"></button>`}).join('')}</span>`;
+{const _mc=mobCard;mobCard=function(e){let h=_mc(e);const [id]=e,cfg=RECOL[id];if(!cfg)return h;
+  return `<div class="mob-wrap">${h.replace('<span class="bp-pic">',`<span class="bp-pic">`)}${dotRow(`data-mcol="${id}" data-i`,cfg,itemColIdx(id))}</div>`}}
+document.addEventListener('click',e=>{const t=e.target.closest&&e.target.closest('[data-mcol]');if(!t)return;e.stopPropagation();e.preventDefault();
+  S.mobcol=S.mobcol||{};S.mobcol[t.dataset.mcol]=+t.dataset.i;save();renderBuildPanel();sfx('pop')},true);
+/* Farbe beim Aufstellen ändern */
+{const _rb=renderBuildPanel;renderBuildPanel=function(){_rb();const pn=$('#buildpanel');if(!pn)return;pn.querySelector('.bp-colrow')?.remove();
+  const it=placing&&S.items.find(i=>i.uid===placing.uid),cfg=it&&RECOL[it.id];
+  if(cfg){const h=pn.querySelector('.bp-hint');const row=`<div class="bp-colrow"><b>Farbe</b>${dotRow('data-pcol',cfg,it.col|0)}</div>`;if(h)h.insertAdjacentHTML('beforebegin',row);else pn.insertAdjacentHTML('beforeend',row)}
+  if((BP==='fenster')&&!placing){const it2=pn.querySelector('.bp-items');if(it2&&!it2.querySelector('.bp-wcol'))it2.insertAdjacentHTML('afterbegin',`<div class="bp-wcol"><b>Rahmenfarbe</b>${WINCOLS.map(([n,c],i)=>`<button type="button" class="cdot${(S.wincol|0)===i?' on':''}" data-wcol="${i}" title="${n}" aria-label="${n}" style="background:${c}"></button>`).join('')}</div>`)}}}
+document.addEventListener('click',e=>{const t=e.target.closest&&e.target.closest('[data-pcol]');if(!t)return;e.stopPropagation();e.preventDefault();
+  const it=placing&&S.items.find(i=>i.uid===placing.uid);if(!it)return;it.col=+t.dataset.pcol;S.mobcol=S.mobcol||{};S.mobcol[it.id]=it.col;save();drawGhost();renderBuildPanel();sfx('pop')},true);
+
+/* --- Fensterrahmen in Farbe --- */
+const WINCOLS=[['Weiß','#ffffff'],['Holz','#b07c56'],['Anthrazit','#55585f'],['Salbei','#93ad8f']];
+const splitSt=st=>{const s=String(st||'');const i=s.indexOf('@');return i<0?[s,null]:[s.slice(0,i),s.slice(i+1)]};
+{const W0=winPts;winPts=function(si,tc,zb,st,o){return W0(si,tc,zb,splitSt(st)[0],o)}}
+{const W0=winDraw;winDraw=function(si,tc,zb,st,o,inside){const [b,cI]=splitSt(st),s=WINS[b]||WINS.klassisch;let g=W0(si,tc,zb,b,o,inside);
+  if(s.grid6){[.33,.66].forEach(k=>g+=ln(si.pt(tc-s.hw,zb+s.z0+(s.z1-s.z0)*k,o),si.pt(tc+s.hw,zb+s.z0+(s.z1-s.z0)*k,o),'#fff',2))}
+  const col=cI!=null&&WINCOLS[+cI]?WINCOLS[+cI][1]:null;if(col&&col!=='#ffffff')g=g.replace(/stroke="#ffffff"/g,`stroke="${col}"`).replace(/stroke="#fff"/g,`stroke="${col}"`).replace(/(<polygon[^>]*fill=")#ffffff(" stroke="#e3d9cc")/g,`$1${col}$2`);
+  return g}}
+Object.assign(WINS,{hoch:{n:'Hohes Sprossenfenster',p:14,z0:30,z1:104,hw:.24,grid6:1},quer:{n:'Breites Querfenster',p:12,z0:58,z1:94,hw:.42}});
+{const P0=pickWall;pickWall=function(id,side,i){const n0=S.openings.length,isW=BT&&BT.kind==='win'&&!BT.moving;const r=P0.apply(this,arguments);
+  if(isW&&S.openings.length>n0&&(S.wincol|0)>0){const o=S.openings[S.openings.length-1];if(o.kind==='win'&&!String(o.style).includes('@')){o.style+='@'+(S.wincol|0);save();renderHome()}}return r}}
+document.addEventListener('click',e=>{const t=e.target.closest&&e.target.closest('[data-wcol]');if(!t)return;e.stopPropagation();e.preventDefault();S.wincol=+t.dataset.wcol;save();try{Object.keys(TILEC).forEach(k=>delete TILEC[k])}catch(_){}renderBuildPanel();sfx('pop')},true);
+{const T0=tileWin;tileWin=function(kind,k){if(kind!=='win'||!(S.wincol|0))return T0(kind,k);return T0(kind,k+'@'+(S.wincol|0))}}
+
+/* --- Neue Türen, Doppeltür --- */
+Object.assign(DOORS2,{salbei:{n:'Landhaustür Salbei',p:22,c:'#9cb79a',c2:'#b9cfb6'},blau:{n:'Blaue Glastür',p:22,c:'#7f9fc0',c2:'#d3e6f5',glass:1},doppel:{n:'Doppeltür',p:30,c:'#f4ede4',c2:'#d3e6f5',glass:1,dbl:1}});
+{const D0=doorDraw;doorDraw=function(si,tc,zb,st,o,outside){const s=DOORS2[splitSt(st)[0]]||DOORS2.holz;if(!s.dbl)return D0(si,tc,zb,st,o,outside);
+  const q=(t0,t1,z0,z1,f,ex='')=>poly([si.pt(t0,zb+z0,o),si.pt(t1,zb+z0,o),si.pt(t1,zb+z1,o),si.pt(t0,zb+z1,o)],f,ex),a=tc-.4,b=tc+.4;
+  let g=q(a-.06,b+.06,0,86,'#ffffff');[[a,tc-.01],[tc+.01,b]].forEach(([u,v],k)=>{g+=q(u,v,0,82,s.c,'stroke="#d8cdbd" stroke-width=".8"')+q(u+.06,v-.06,30,76,s.c2,'opacity=".9"')+q(u+.06,v-.06,6,24,'#e9e2d8')+ell(...si.pt(k?u+.06:v-.06,zb+40,o),1.8,1.8,'#d4a93c')});
+  const g0=D0(si,tc,zb,'holz',o,outside);const m=g0.indexOf('<polygon',g0.lastIndexOf('stroke-width'));
+  if(outside)g+=poly([si.pt(a-.16,zb+96,o),si.pt(b+.16,zb+96,o),si.pt(b+.16,zb+90,o+.45),si.pt(a-.16,zb+90,o+.45)],roofCol());
+  return g}}
+/* breitere Doppeltür: Platz und Wandlücke */
+{const S0=snapOp;snapOp=function(id,side,t,i0,i1){const r=S0(id,side,t,i0,i1);if(BT&&BT.kind==='door'&&DOORS2[BT.style]&&DOORS2[BT.style].dbl&&r){const c=clamp(Math.round(t*2)/2,i0+.5,i1-.5);r.tc=c;r.i=c-.5;r.ok=r.ok!==false&&opFree(id,side,c,.46)}return r}}
+
+/* --- Vorhänge: lang/kurz, gerade/gebunden, Farbe wählbar --- */
+function curt62(c,long,tied){return wallHit(c,()=>{const col=CURCOLV||'#f6f2ec',dk=shade(col,-.12),bot=long?3:44,rodC='#b08a66';
+  const rod=[c.p(.0,.04,106),c.p(1,.04,106)];tr(rod[0][0]-6,rod[0][1]-6);tr(rod[1][0]+6,c.p(1,.04,bot)[1]+4);
+  const panel=(u0,u1,side)=>{const tl=c.p(u0,.05,104),tr2=c.p(u1,.05,104),bl=c.p(u0,.05,bot),br=c.p(u1,.05,bot);let s;
+    if(tied){const tz=long?42:62,tie=c.p(side?u1-.06:u0+.06,.05,tz),inB=side?br:bl,ouB=side?bl:br,ti=[tie[0]+(side?-3:3),tie[1]];
+      const fl=c.p(side?u1-.02:u0+.02,.05,bot),fo=c.p(side?u0+.04:u1-.04,.05,bot);
+      s=`<path d="M${f1(tl[0])} ${f1(tl[1])}L${f1(tr2[0])} ${f1(tr2[1])}Q${f1(ti[0])} ${f1(ti[1]-10)} ${f1(ti[0])} ${f1(ti[1])}Q${f1(ti[0]+(side?2:-2))} ${f1(ti[1]+10)} ${f1(fo[0])} ${f1(fo[1])}L${f1(fl[0])} ${f1(fl[1])}Z" fill="${col}" stroke="${dk}" stroke-width=".8"/>`;
+      for(let k=1;k<4;k++){const u=u0+(u1-u0)*k/4,a=c.p(u,.05,102),b2=c.p(side?u1-.03:u0+.03,.05,tz);s+=`<path d="M${f1(a[0])} ${f1(a[1])}Q${f1((a[0]+b2[0])/2)} ${f1((a[1]+b2[1])/2)} ${f1(b2[0])} ${f1(b2[1])}" stroke="${dk}" stroke-width=".9" fill="none" opacity=".6"/>`}
+      s+=`<ellipse cx="${f1(ti[0])}" cy="${f1(ti[1])}" rx="4.5" ry="2.4" fill="${shade(col,-.25)}"/>`}
+    else{s=poly([tl,tr2,br,bl],col,`stroke="${dk}" stroke-width=".8"`);for(let k=1;k<5;k++){const u=u0+(u1-u0)*k/5,a=c.p(u,.05,103),b2=c.p(u+(k%2?.012:-.012),.05,bot+1);s+=`<path d="M${f1(a[0])} ${f1(a[1])}L${f1(b2[0])} ${f1(b2[1])}" stroke="${k%2?dk:shade(col,.12)}" stroke-width="${k%2?1.1:1.6}" opacity=".75"/>`}
+      s+=`<path d="M${f1(bl[0])} ${f1(bl[1])}L${f1(br[0])} ${f1(br[1])}" stroke="${dk}" stroke-width="1.2"/>`}
+    return s};
+  return panel(.02,.3,0)+panel(.7,.98,1)+`<path d="M${f1(rod[0][0])} ${f1(rod[0][1])}L${f1(rod[1][0])} ${f1(rod[1][1])}" stroke="${rodC}" stroke-width="2.6" stroke-linecap="round"/>`+ell(rod[0][0],rod[0][1],3,3,rodC)+ell(rod[1][0],rod[1][1],3,3,rodC)})}
+Object.assign(DRAW,{vh_lang:c=>curt62(c,1,0),vh_lang_bund:c=>curt62(c,1,1),vh_kurz:c=>curt62(c,0,0),vh_kurz_bund:c=>curt62(c,0,1),
+  teppich_eckig:c=>{const a=[c.b(.1,.1,0,1.8,1.8,1.2,'#f2c4d2'),c.b(.22,.22,1.2,1.56,1.56,.3,'#fbe6ec')],q=(x0,y0,x1,y1,col)=>poly([c.p(x0,y0,1.6),c.p(x1,y0,1.6),c.p(x1,y1,1.6),c.p(x0,y1,1.6)],col);
+    a.push(part(q(.4,.4,1.6,1.6,'#f2c4d2')+q(.55,.55,1.45,1.45,'#fbe6ec')+heart(c.p(1,1,1.8),6,'#e98fae'),[.1,1.9,.1,1.9,0,2]));return a}});
+Object.assign(CAT,{
+  vh_lang:{n:'Lange Vorhänge',c:'s',p:28,w:1,h:.12,s:'deko',wall:1},vh_lang_bund:{n:'Lange Vorhänge, gebunden',c:'s',p:30,w:1,h:.12,s:'deko',wall:1},
+  vh_kurz:{n:'Kurze Vorhänge',c:'s',p:22,w:1,h:.12,s:'deko',wall:1},vh_kurz_bund:{n:'Kurze Vorhänge, gebunden',c:'s',p:24,w:1,h:.12,s:'deko',wall:1},
+  teppich_eckig:{n:'Eckiger Teppich',c:'s',p:35,w:2,h:2,s:'wohnzimmer',rug:1}});
+/* Basic-Set statt Wolken-Set: Farbe wählbar; die anderen sind feste Packs */
+Object.assign(BEDSETS,{wolke:'Basic-Set · Farbe wählbar',stern:'Sternen-Pack',himmel:'Himmel-Pack'});
+
+/* --- 3D-Wandregal, auf das man Deko stellen kann --- */
+CAT.wandregal.h=.5;SURF.wandregal=62;
+DRAW.wandregal=c=>{const a=[];[.12,.82].forEach(x=>a.push(part(poly([c.p(x,.02,60),c.p(x+.05,.02,60),c.p(x+.05,.02,44),c.p(x,.02,44)],'#8f6646')+poly([c.p(x,.02,60),c.p(x,.36,60),c.p(x,.02,46)],'#a77a56'),[x,x+.05,.02,.36,44,60])));
+  a.push(c.b(.04,.02,60,.92,.46,4,WOOD));[['#9fd3c7',.06,13],['#f7a8c6',.11,15],['#ffd27a',.16,12]].forEach(([col,x,h])=>a.push(c.b(x,.06,64,.045,.3,h,col)));return a};
+try{THUMB.clear()}catch(_){}
 
 /* ================= Navigation & Meldungen ================= */
 function show(t){
