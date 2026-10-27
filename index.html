@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610272249";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610272312";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1610,6 +1610,10 @@ body.visiting .home-tools,body.visiting #storage,body.visiting #sheet,body.visit
 .visitbar{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:6;display:flex;align-items:center;gap:12px;background:var(--paper,#fffaf2);border-radius:999px;padding:6px 6px 6px 16px;box-shadow:0 6px 18px rgba(90,59,40,.22);font-size:14px;white-space:nowrap}
 .visitbar .btn{padding:8px 14px}
 body.landscape-phone .visitbar{bottom:auto;top:56px}
+
+.e2e-unlock input{flex:1}
+
+#friendsView .chat{padding-bottom:calc(86px + env(safe-area-inset-bottom))}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -7865,7 +7869,7 @@ renderFriends=function(){
 };
 renderFriendBadge=function(){const b=$('#friendBadge');if(!b||!S)return;const n=(S.social.incoming||[]).length;b.hidden=!n;b.textContent=n};
 function openPlayer41(id){const p=PL(id);if(!p)return;const r=relOf41(id),pf=S.profile,isB=pf.bf1===id||pf.bf2===id,isL=pf.love===id;let acts='';
-  if(r==='friend')acts=`<button class="btn" data-fr2="visit" data-id="${id}">Haus besuchen</button><div class="two"><button class="btn soft tgl" data-fr="best" data-id="${id}" aria-pressed="${isB}">${STAR}Beste:r Freund:in</button><button class="btn soft tgl love" data-fr="love" data-id="${id}" aria-pressed="${isL}">${HEART}Liebling</button></div><button class="btn soft" data-fr2="remove" data-id="${id}">Freund:in entfernen</button>`;
+  if(r==='friend')acts=`<div class="two"><button class="btn" data-fr2="visit" data-id="${id}">Haus besuchen</button><button class="btn" data-fr="chat" data-id="${id}">Nachricht</button></div><div class="two"><button class="btn soft tgl" data-fr="best" data-id="${id}" aria-pressed="${isB}">${STAR}Beste:r Freund:in</button><button class="btn soft tgl love" data-fr="love" data-id="${id}" aria-pressed="${isL}">${HEART}Liebling</button></div><button class="btn soft" data-fr2="remove" data-id="${id}">Freund:in entfernen</button>`;
   else if(r==='sent')acts=`<button class="btn soft" data-fr2="cancel" data-id="${id}">Anfrage zurückziehen</button>`;
   else if(r==='incoming')acts=`<div class="two"><button class="btn" data-fr2="accept" data-id="${id}">Annehmen</button><button class="btn soft" data-fr2="decline" data-id="${id}">Ablehnen</button></div>`;
   else acts=`<button class="btn" data-fr2="add" data-id="${id}">Freundschaftsanfrage senden</button>`;
@@ -9685,6 +9689,93 @@ document.addEventListener('click',e=>{if(!VISIT)return;const t=e.target;
   const ch=t.closest('#roomTabs [data-room-tab]');if(ch){e.stopImmediatePropagation();e.preventDefault();const id=ch.dataset.roomTab;if(VISIT.sv.unlocked&&VISIT.sv.unlocked[id]&&VISIT.sv.layout[id]){VISIT.room=id;VISIT.overview=false;renderHome()}return}
   if(t.closest('[data-tab]')){if(t.closest('[data-tab]').dataset.tab!=='home')leaveVisit();return}
   if(t.closest('#stage')&&!t.closest('[data-rot],[data-zoomh],.rotctl,.zoomctl,[data-ov],.floorsw,[data-floor]')){e.stopImmediatePropagation();e.preventDefault()}},true);
+/* v103: Kontostand für Vivian (vivianweirauch30) einmalig auf 1000 Frosties und 1000 Pingis setzen */
+{const EG=enterGame;enterGame=function(){const r=EG.apply(this,arguments);try{const a=acc()||{},m=String(a.mail||(window.SBU&&SBU.email)||'').toLowerCase();
+  if(m==='vivianweirauch30@gmail.com'&&S&&!S.set1000){S.set1000=1;S.snow=1000;S.pin=1000;save();renderWallet();setTimeout(()=>toast('Dein Kontostand: 1000 Frosties und 1000 Pingis'),1500)}}catch(e){}return r}}
+/* ================= v104: Echter Freundes-Chat, Ende-zu-Ende-verschlüsselt =================
+   Jede:r hat ein Schlüsselpaar (ECDH P-256). Der öffentliche Schlüssel liegt in pebble_pubkeys,
+   der private nur mit dem eigenen Passwort verschlüsselt in pebble_privkeys (nur selbst lesbar).
+   Nachrichten liegen nur verschlüsselt in pebble_msgs – der Server sieht keinen Klartext. */
+const E2E={priv:null,uid:null,keys:{},msgs:{},loaded:{},unread:{},ch:null,poll:0,need:false,busy:false};
+const isRealId=id=>/^[0-9a-f]{8}-[0-9a-f]{4}-/i.test(String(id||''));
+const b64=buf=>{const u=new Uint8Array(buf);let s='';for(let i=0;i<u.length;i++)s+=String.fromCharCode(u[i]);return btoa(s)};
+const unb64=s=>{const b=atob(s),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u};
+const TE=new TextEncoder(),TD=new TextDecoder();
+async function e2ePwKey(pw,salt){const base=await crypto.subtle.importKey('raw',TE.encode(pw),'PBKDF2',false,['deriveKey']);
+  return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:210000,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])}
+const e2eLocalKey=uid=>'pebble_e2e_'+uid;
+async function e2eLoadLocal(){if(!SBU)return false;try{const j=localStorage.getItem(e2eLocalKey(SBU.id));if(!j)return false;
+  E2E.priv=await crypto.subtle.importKey('jwk',JSON.parse(j),{name:'ECDH',namedCurve:'P-256'},false,['deriveKey']);E2E.uid=SBU.id;E2E.need=false;return true}catch(e){return false}}
+/* nach dem Anmelden mit Passwort: Schlüssel holen oder einmalig anlegen */
+async function e2eSetup(pw){const sb=window.PEBBLE_SB;if(!sb||!SBU||!pw||!window.crypto||!crypto.subtle)return false;
+  try{const {data:row}=await sb.from('pebble_privkeys').select('wrapped,salt,iv').eq('user_id',SBU.id).maybeSingle();let jwk;
+    if(row&&row.wrapped){const k=await e2ePwKey(pw,unb64(row.salt));try{jwk=JSON.parse(TD.decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:unb64(row.iv)},k,unb64(row.wrapped))))}catch(_){return false}}
+    else{const kp=await crypto.subtle.generateKey({name:'ECDH',namedCurve:'P-256'},true,['deriveKey']);jwk=await crypto.subtle.exportKey('jwk',kp.privateKey);
+      const pub=await crypto.subtle.exportKey('jwk',kp.publicKey),salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12)),k=await e2ePwKey(pw,salt);
+      const wrapped=await crypto.subtle.encrypt({name:'AES-GCM',iv},k,TE.encode(JSON.stringify(jwk)));
+      const r1=await sb.from('pebble_privkeys').upsert({user_id:SBU.id,wrapped:b64(wrapped),salt:b64(salt),iv:b64(iv)});if(r1.error)throw r1.error;
+      const r2=await sb.from('pebble_pubkeys').upsert({user_id:SBU.id,pub:{kty:pub.kty,crv:pub.crv,x:pub.x,y:pub.y}});if(r2.error)throw r2.error}
+    try{localStorage.setItem(e2eLocalKey(SBU.id),JSON.stringify(jwk))}catch(_){}
+    E2E.priv=await crypto.subtle.importKey('jwk',jwk,{name:'ECDH',namedCurve:'P-256'},false,['deriveKey']);E2E.uid=SBU.id;E2E.need=false;E2E.keys={};e2eStart();return true}
+  catch(e){console.warn('Chat-Schlüssel',e);return false}}
+{const LR=sbLoginRow;sbLoginRow=function(name,email,pw){const r=LR.apply(this,arguments);setTimeout(()=>e2eSetup(pw),200);return r}}
+async function e2ePeerKey(id){if(E2E.keys[id])return E2E.keys[id];const {data}=await window.PEBBLE_SB.from('pebble_pubkeys').select('pub').eq('user_id',id).maybeSingle();
+  if(!data||!data.pub)return null;const pub=await crypto.subtle.importKey('jwk',{...data.pub,ext:true},{name:'ECDH',namedCurve:'P-256'},false,[]);
+  return E2E.keys[id]=await crypto.subtle.deriveKey({name:'ECDH',public:pub},E2E.priv,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])}
+async function e2eDecrypt(m){const peer=m.sender===E2E.uid?m.receiver:m.sender;const k=await e2ePeerKey(peer);if(!k)return null;
+  try{const o=JSON.parse(TD.decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:unb64(m.iv)},k,unb64(m.ct))));return {peer,f:m.sender!==E2E.uid?1:0,t:String(o.t||''),ts:Date.parse(m.created_at)||Date.now(),id:m.id}}catch(_){return {peer,f:m.sender!==E2E.uid?1:0,t:'(Nachricht kann auf diesem Gerät nicht entschlüsselt werden)',ts:Date.parse(m.created_at)||0,id:m.id}}}
+function e2eAdd(d){if(!d)return;const a=E2E.msgs[d.peer]=E2E.msgs[d.peer]||[];if(d.id&&a.some(x=>x.id===d.id))return false;a.push(d);a.sort((x,y)=>x.ts-y.ts);return true}
+const lastSeen=id=>{try{return +(localStorage.getItem('pebble_seen_'+E2E.uid+'_'+id)||0)}catch(_){return 0}};
+const setSeen=id=>{try{localStorage.setItem('pebble_seen_'+E2E.uid+'_'+id,String(Date.now()))}catch(_){}};
+async function e2eLoad(peer){if(!E2E.priv)return;const sb=window.PEBBLE_SB,me=E2E.uid;
+  const {data}=await sb.from('pebble_msgs').select('id,sender,receiver,iv,ct,created_at').or(`and(sender.eq.${me},receiver.eq.${peer}),and(sender.eq.${peer},receiver.eq.${me})`).order('created_at',{ascending:false}).limit(150);
+  for(const m of (data||[]).reverse())e2eAdd(await e2eDecrypt(m));E2E.loaded[peer]=1}
+async function e2eInbox(){if(!E2E.priv)return;const {data}=await window.PEBBLE_SB.from('pebble_msgs').select('id,sender,receiver,iv,ct,created_at').eq('receiver',E2E.uid).order('created_at',{ascending:false}).limit(100);
+  E2E.unread={};for(const m of (data||[]).reverse()){const d=await e2eDecrypt(m);if(e2eAdd(d)!==undefined&&d.f&&d.ts>lastSeen(d.peer)&&!(chatWith===d.peer&&tab==='freunde')&&!(WC.open&&WC.tab===d.peer))E2E.unread[d.peer]=(E2E.unread[d.peer]||0)+1}
+  renderFriendBadge();if(WC.open)renderChatPanel()}
+function e2eStart(){const sb=window.PEBBLE_SB;if(!sb||!E2E.priv)return;e2eInbox();
+  try{if(E2E.ch)sb.removeChannel(E2E.ch);E2E.ch=sb.channel('pebble-msgs-'+E2E.uid).on('postgres_changes',{event:'INSERT',schema:'public',table:'pebble_msgs',filter:'receiver=eq.'+E2E.uid},async p=>{const d=await e2eDecrypt(p.new);if(e2eAdd(d))e2eArrived(d)}).subscribe()}catch(e){console.warn(e)}
+  clearInterval(E2E.poll);E2E.poll=setInterval(()=>{if(document.hidden)return;const peer=chatWith&&tab==='freunde'?chatWith:(WC.open&&WC.tab!=='all'?WC.tab:null);if(peer)e2eLoad(peer).then(()=>{if(peer===chatWith&&tab==='freunde')renderChat();else if(WC.open)renderChatPanel()});else e2eInbox()},8000)}
+function e2eArrived(d){if(chatWith===d.peer&&tab==='freunde'){setSeen(d.peer);renderChat()}else if(WC.open&&WC.tab===d.peer){setSeen(d.peer);renderChatPanel()}
+  else{E2E.unread[d.peer]=(E2E.unread[d.peer]||0)+1;renderFriendBadge();const p=PL(d.peer);toast(`Neue Nachricht von ${p?p.n:'einem Freund'}`);if(WC.open)renderChatPanel()}}
+async function e2eSend(peer,t){if(!isRealId(peer)){toast('Mit Spielfiguren kann man nicht chatten.');return false}
+  if(!E2E.priv&&!(await e2eLoadLocal())){E2E.need=true;return false}
+  const k=await e2ePeerKey(peer);if(!k){toast('Dein Freund muss sich einmal neu anmelden, dann kann er verschlüsselte Nachrichten empfangen.');return false}
+  const iv=crypto.getRandomValues(new Uint8Array(12)),ct=await crypto.subtle.encrypt({name:'AES-GCM',iv},k,TE.encode(JSON.stringify({t})));
+  const {data,error}=await window.PEBBLE_SB.from('pebble_msgs').insert({sender:E2E.uid,receiver:peer,iv:b64(iv),ct:b64(ct)}).select('id,created_at').maybeSingle();
+  if(error){console.warn(error);toast('Die Nachricht konnte nicht gesendet werden.');return false}
+  e2eAdd({peer,f:0,t,ts:Date.parse(data&&data.created_at)||Date.now(),id:data&&data.id});return true}
+/* Chat-Ansicht bei den Freunden */
+const LOCKED_CHAT=()=>`<form class="chat-in e2e-unlock" id="e2eUnlock"><input id="e2ePw" type="password" placeholder="Passwort, um den Chat zu entsperren" autocomplete="current-password" aria-label="Passwort"><button class="btn" type="submit">Entsperren</button></form>`;
+renderChat=function(){const p=PL(chatWith);if(!p){chatWith=null;renderFriends();return}const real=isRealId(p.id);
+  if(real&&E2E.priv&&!E2E.loaded[p.id]&&!E2E.ld){E2E.ld=1;e2eLoad(p.id).finally(()=>{E2E.ld=0;if(chatWith===p.id&&tab==='freunde')renderChat()})}
+  if(real){E2E.unread[p.id]=0;setSeen(p.id);renderFriendBadge()}
+  const msgs=real?(E2E.msgs[p.id]||[]):[];const locked=real&&!E2E.priv;
+  $('#friendsView').innerHTML=`<div class="chat">
+    <div class="chat-head"><button class="back" data-fr="back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5 8 12l7 7"/></svg>Freunde</button>
+      <button class="chat-who" data-fr="card" data-id="${p.id}">${plAva(p,'sm')}<span><b>${esc(p.n)}</b><small>${p.on?'online':'offline'}</small></span></button></div>
+    <div class="msgs" id="msgs">${!real?`<p class="empty">${esc(p.n)} ist eine Spielfigur. Chatten kannst du mit echten Freund:innen.</p>`:msgs.length?msgs.map(m=>`<div class="msg${m.f?'':' me'}">${esc(m.t)}</div>`).join(''):`<p class="empty">${locked?'Gib einmal dein Passwort ein, um deine verschlüsselten Nachrichten auf diesem Gerät zu lesen.':'Sag '+esc(p.n)+' hallo!'}</p>`}</div>
+    ${!real?'':locked?LOCKED_CHAT():`<form class="chat-in" id="chatForm"><input id="chatText" maxlength="500" placeholder="Nachricht schreiben …" autocomplete="off" aria-label="Nachricht"><button class="btn" type="submit">Senden</button></form>`}
+    <p class="fine">${real?'🔒 Ende-zu-Ende-verschlüsselt: Nur ihr beide könnt diese Nachrichten lesen.':''}</p></div>`;
+  const ms=$('#msgs');ms.scrollTop=ms.scrollHeight};
+sendChat=async function(t){const id=chatWith;const inp=$('#chatText');if(inp)inp.value='';const ok=await e2eSend(id,t);if(chatWith===id&&tab==='freunde'){renderChat();setTimeout(()=>$('#chatText')?.focus(),30)}};
+document.addEventListener('submit',async e=>{if(e.target.id!=='e2eUnlock')return;e.preventDefault();const pw=$('#e2ePw').value;if(!pw)return;
+  const ok=await e2eSetup(pw);if(!ok){toast('Das Passwort passt nicht.');return}toast('Chat entsperrt');if(tab==='freunde'&&chatWith)renderChat();if(WC.open)renderChatPanel()},true);
+/* Chat-Fenster in der Welt: Freunde echt, keine automatischen Antworten mehr */
+{const RP=renderChatPanel;renderChatPanel=function(){const so=S&&S.social;if(!so)return RP.apply(this,arguments);const real=so.chats,un=so.unread;
+  const view={};Object.keys(real||{}).forEach(k=>{if(!isRealId(k))view[k]=real[k]});Object.keys(E2E.msgs).forEach(k=>view[k]=E2E.msgs[k].map(m=>({f:m.f,t:m.t})));
+  so.chats=view;so.unread={...E2E.unread};try{RP.apply(this,arguments)}finally{so.chats=real;so.unread=un}
+  if(WC.open&&WC.tab!=='all'&&isRealId(WC.tab)){E2E.unread[WC.tab]=0;setSeen(WC.tab);if(E2E.priv&&!E2E.loaded[WC.tab]&&!E2E.ld){E2E.ld=1;const id=WC.tab;e2eLoad(id).finally(()=>{E2E.ld=0;if(WC.open&&WC.tab===id)renderChatPanel()})}
+    if(!E2E.priv){const f=$('#wcForm');if(f)f.outerHTML=LOCKED_CHAT().replace('chat-in e2e-unlock','wc-in e2e-unlock')}}}}
+document.addEventListener('submit',async e=>{if(e.target.id!=='wcForm')return;e.preventDefault();e.stopImmediatePropagation();const inp=$('#wcText'),t=inp.value.trim();if(!t)return;inp.value='';
+  if(WC.tab==='all'){WC.msgs.push({who:'me',t});renderChatPanel();return}
+  await e2eSend(WC.tab,t);renderChatPanel();setTimeout(()=>$('#wcText')?.focus(),30)},true);
+/* Abzeichen: Anfragen plus ungelesene Nachrichten */
+{const RB=renderFriendBadge;renderFriendBadge=function(){RB.apply(this,arguments);const b=$('#friendBadge');if(!b||!S)return;const n=(S.social.incoming||[]).length+Object.values(E2E.unread).reduce((a,c)=>a+(c||0),0);b.hidden=!n;b.textContent=n}}
+{const RF=renderFriends;renderFriends=function(){if(chatWith&&tab==='freunde'){renderChat();return}return RF.apply(this,arguments)}}
+/* alte Vorschau-Chats (mit automatischen Antworten) entfernen – nie Klartext im Spielstand speichern */
+{const EG2=enterGame;enterGame=function(){const r=EG2.apply(this,arguments);try{if(S&&S.social&&!S.e2eClean){S.e2eClean=1;S.social.chats={};S.social.unread={};save()}}catch(_){}
+  setTimeout(async()=>{if(SBU&&!E2E.priv){if(await e2eLoadLocal())e2eStart();else E2E.need=true}},1500);return r}}
 /* ================= Navigation & Meldungen ================= */
 let SCY=0;addEventListener('scroll',()=>{SCY=window.scrollY||document.documentElement.scrollTop||0},{passive:true});
 function show(t){
