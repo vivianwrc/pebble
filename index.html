@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610270330";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271447";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1463,6 +1463,35 @@ body.immersive .toast{top:calc(var(--toph) + 62px)!important;z-index:400!importa
 body.landscape-phone .toast{top:calc(var(--toph) + 48px)!important;padding:7px 14px!important;font-size:12.5px!important}
 body.landscape-phone .sside.left button{width:34px!important;height:34px!important}
 body.landscape-phone .sside.left{z-index:6!important}
+/* ===== v51: Welt-Ebenen ===== */
+#wdyn{position:absolute;left:0;top:0;will-change:transform;transform-origin:0 0;pointer-events:none;overflow:visible;contain:layout}
+#wdyn [data-npc]{pointer-events:auto;cursor:pointer}
+#wdyn .wclone{pointer-events:none}
+/* Die Kulisse bleibt ruhig: keine Dauer-Animationen in der großen Welt-Ebene */
+#wsvg *{animation:none!important}
+.wfx .fx{will-change:transform}
+/* ===== Spielerkarte am Handy: passt ohne Scrollen, Rahmen bleibt ganz ===== */
+body.landscape-phone #pop>.idbig{overflow:hidden!important;grid-template-columns:24% 1fr 1fr!important;grid-template-rows:auto 1fr!important;height:calc(100dvh - 12px)!important;padding:16px 18px!important;gap:8px 10px!important}
+body.landscape-phone #pop>.idbig.card-blumen,body.landscape-phone #pop>.idbig.card-herzen,body.landscape-phone #pop>.idbig.card-sterne,body.landscape-phone #pop>.idbig.card-wolken,body.landscape-phone #pop>.idbig.card-punkte{padding:24px 28px!important}
+body.landscape-phone #pop>.idbig .id-top{grid-column:1!important;grid-row:1/span 2!important;margin-top:34px!important;min-height:0;overflow:hidden}
+body.landscape-phone #pop>.idbig .id-ava{max-height:none;padding:6px}
+body.landscape-phone #pop>.idbig .id-ava svg{max-height:90px}
+body.landscape-phone #pop>.idbig .id-info .kicker{font-size:9.5px}
+body.landscape-phone #pop>.idbig .id-info h3{font-size:16px!important}
+body.landscape-phone #pop>.idbig .id-sec{min-height:0;overflow:auto;padding:7px 10px!important;gap:5px!important;scrollbar-width:none}
+body.landscape-phone #pop>.idbig .id-sec:nth-of-type(1){grid-column:2;grid-row:1}
+body.landscape-phone #pop>.idbig .id-sec:nth-of-type(2){grid-column:2;grid-row:2}
+body.landscape-phone #pop>.idbig .id-sec:nth-of-type(3){grid-column:3;grid-row:1}
+body.landscape-phone #pop>.idbig .id-sec:nth-of-type(4){grid-column:3!important;grid-row:2}
+body.landscape-phone #pop>.idbig .id-sec h4{font-size:10.5px!important}
+body.landscape-phone #pop>.idbig .friends{gap:5px!important}
+body.landscape-phone #pop>.idbig .friends>*{padding:5px 7px!important;min-height:0!important}
+body.landscape-phone #pop>.idbig .friends *{font-size:10.5px!important}
+body.landscape-phone #pop>.idbig textarea{font-size:12px!important;min-height:0;height:calc(100% - 34px);resize:none}
+body.landscape-phone #pop>.idbig .id-sec .empty{font-size:11px!important;margin:0}
+body.landscape-phone #pop>.idbig .id-house.open{height:100%;min-height:0}
+body.landscape-phone #pop>.idbig .id-house.open svg{max-height:none;height:100%;object-fit:cover}
+body.landscape-phone #pop>.idbig .id-house.open span{padding:4px 10px;font-size:11px;right:6px;bottom:6px}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -8033,6 +8062,49 @@ bpHint=(f=>function(){if(opActive())return BT.moving?'Zieh es mit dem Finger an 
 
 /* v48: Name oben antippen öffnet die Spielerkarte */
 document.addEventListener('click',e=>{if(e.target.closest&&e.target.closest('#who')){e.stopPropagation();e.preventDefault();openProfile()}},true);
+/* ================= v51: Welt flüssiger – bewegte Dinge in eigener Ebene, ruhige Kulisse ================= */
+function wdynEl(){const s=$('#wsvg');if(!s)return null;let d=$('#wdyn');
+  if(!d){s.insertAdjacentHTML('afterend','<svg id="wdyn" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g id="wDynObjs"></g></svg>');d=$('#wdyn');
+    d.addEventListener('click',e=>{const np=e.target.closest('[data-npc]');if(np&&!W.busy){e.stopPropagation();openPlayer(np.dataset.npc)}});
+    new MutationObserver(()=>wdynSync()).observe(s,{attributes:true,attributeFilter:['style','viewBox']});
+    new MutationObserver(ms=>{let mv=false;ms.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType===1&&(n.id==='wPlayer'||n.classList.contains('flake')||n.classList.contains('floater')||n.hasAttribute('data-npc')||n.classList.contains('npc')))mv=true}));if(mv)wdynMove()}).observe(s,{childList:true,subtree:true})}
+  return d}
+function wdynSync(){const s=$('#wsvg'),d=$('#wdyn');if(!s||!d)return;const vb=s.getAttribute('viewBox');if(vb&&d.getAttribute('viewBox')!==vb)d.setAttribute('viewBox',vb);
+  if(d.style.width!==s.style.width)d.style.width=s.style.width;if(d.style.height!==s.style.height)d.style.height=s.style.height;if(d.style.transform!==s.style.transform)d.style.transform=s.style.transform}
+function wdynMove(){const d=wdynEl();if(!d)return;const g=d.querySelector('#wDynObjs'),s=$('#wsvg');
+  const pl=$('#wPlayer');if(pl&&pl.parentNode!==g)g.appendChild(pl);
+  (W.npcs||[]).forEach(n=>{if(n.el&&n.el.parentNode!==g)g.appendChild(n.el)});
+  s.querySelectorAll('.flake,.floater').forEach(f=>g.appendChild(f));
+  const ok=new Set(W.flakes.map(f=>'f'+f.id)),seen=new Set();g.querySelectorAll('.flake').forEach(el=>{const k=el.getAttribute('data-k');if(!ok.has(k)||seen.has(k))el.remove();else seen.add(k)});
+  W.sortKey='';wdynSync()}
+/* Neue Schneeflocken direkt in die bewegte Ebene */
+addFlakeEl=function(f){const d=wdynEl();if(!d)return;const [sx,sy]=P(f.x,f.y);
+  d.querySelector('#wDynObjs').insertAdjacentHTML('beforeend',`<g class="flake" data-k="f${f.id}" transform="translate(${f1(sx)} ${f1(sy)})"><ellipse rx="10" ry="4" fill="rgba(111,184,234,.25)"/><g class="bob"><g transform="translate(-14 -40) scale(.28)">${SNOWART()}</g></g></g>`);W.sortKey=''};
+/* Reihenfolge: nur die bewegten Figuren sortieren; Dinge davor werden als Kopie darübergelegt */
+function objBox(o){if(o.bb)return o.bb;if(o._bb)return o._bb;if(!o.el||!o.el.isConnected)return null;try{const b=o.el.getBBox();o._bb=[b.x,b.y,b.x+b.width,b.y+b.height]}catch(_){o._bb=null}return o._bb}
+let WSTATIC='';
+function staticSort(){const m=M(),ob=$('#wObjs');if(!m||!ob)return;const key=W.map+'|'+CUR.yaw+'|'+CUR.pitch+'|'+ob.childElementCount;if(WSTATIC===key)return;WSTATIC=key;
+  const ents=m.objs.filter(o=>o.el&&o.el.isConnected).map(o=>({x:o.x,y:o.y,w:o.w,h:o.h,o}));depthSort(ents).forEach(e=>ob.appendChild(e.o.el));m.objs.forEach(o=>o._bb=null)}
+resort=function(){
+  const m=M(),p=W.sit?{x:W.sit.x+Math.cos(W.sit.a)*.25,y:W.sit.y+Math.sin(W.sit.a)*.25}:S.wpos;
+  const key=Math.floor(p.x*5)+','+Math.floor(p.y*5)+','+W.flakes.map(f=>f.id).join('.')+(W.npcs||[]).map(n=>{const q=n.sit?{x:n.sit.x+Math.cos(n.sit.a)*.25,y:n.sit.y+Math.sin(n.sit.a)*.25}:n;return '|'+Math.floor(q.x*4)+':'+Math.floor(q.y*4)}).join('');
+  if(key===W.sortKey)return;W.sortKey=key;
+  const d=wdynEl();if(!d)return;const g=d.querySelector('#wDynObjs');staticSort();
+  const ents=[],add=(x,y,el,kind)=>{if(el)ents.push({x,y,el,kind})};
+  add(p.x,p.y,$('#wPlayer'),'pl');
+  (W.npcs||[]).forEach(n=>{const q=n.sit?{x:n.sit.x+Math.cos(n.sit.a)*.25,y:n.sit.y+Math.sin(n.sit.a)*.25}:n;add(q.x,q.y,n.el,'n')});
+  W.flakes.forEach(f=>add(f.x,f.y,g.querySelector(`[data-k="f${f.id}"]`),'f'));
+  ents.sort((a,b)=>(a.x*SN+a.y*CS)-(b.x*SN+b.y*CS));
+  g.querySelectorAll('.wclone').forEach(c=>c.remove());
+  ents.forEach(e=>{g.appendChild(e.el);
+    const [sx,sy]=P(e.x,e.y),eb=e.kind==='f'?[sx-16,sy-48,sx+16,sy+6]:[sx-36,sy-104,sx+36,sy+10],box={x:e.x-.2,y:e.y-.2,w:.4,h:.4};
+    m.objs.forEach(o=>{if(!o.el||!o.el.isConnected)return;const b=objBox(o);if(!b||b[0]>eb[2]||b[2]<eb[0]||b[1]>eb[3]||b[3]<eb[1])return;if(!isFront(o,box))return;
+      const c=o.el.cloneNode(true);c.classList.add('wclone');c.removeAttribute('data-k');c.dataset.src=o.id;g.appendChild(c)})});
+  W.order=key};
+{const _pp51=placePlayer;placePlayer=function(){_pp51();const g=$('#wDynObjs');if(!g)return;const cl=g.querySelectorAll('.wclone');if(!cl.length)return;const m=M(),by={};m.objs.forEach(o=>by[o.id]=o);
+  cl.forEach(c=>{const o=by[c.dataset.src];if(o&&o.el)c.classList.toggle('ghosted',o.el.classList.contains('ghosted'))})}}
+{const _wi51=worldInit;worldInit=function(){const r=_wi51.apply(this,arguments);try{WSTATIC='';const m=M();m&&m.objs&&m.objs.forEach(o=>o._bb=null);wdynMove();const g=$('#wDynObjs');W.flakes.forEach(f=>{const el=g&&g.querySelector(`[data-k="f${f.id}"]`);if(el){const [sx,sy]=P(f.x,f.y);el.setAttribute('transform',`translate(${f1(sx)} ${f1(sy)})`)}});resort()}catch(e){console.warn(e)}return r}}
+
 /* ================= Navigation & Meldungen ================= */
 function show(t){
   tab=t;
