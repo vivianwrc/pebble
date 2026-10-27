@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271528";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271538";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1510,6 +1510,13 @@ body.landscape-phone .top .cur svg,body.landscape-phone .top .cur img{width:24px
 .fsbtn{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:12px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;margin-left:6px;flex:none}
 .fsbtn svg{width:20px;height:20px}.fsbtn:hover{background:#f6ebdc}
 body.fs-ok:not(.landscape-phone) .fsbtn{display:inline-flex}
+
+/* ===== v54 ===== */
+.kl-wait *{animation-play-state:paused!important}.kl-wait .kl-peb{opacity:0!important}
+.tapstart{margin-top:8px;border:0;border-radius:999px;padding:12px 26px;background:var(--ink);color:#fff;font:900 16px Nunito,system-ui,sans-serif;cursor:pointer;box-shadow:0 8px 22px rgba(90,59,40,.25);animation:tappulse 1.6s ease-in-out infinite}
+@keyframes tappulse{50%{transform:scale(1.06)}}
+.splash{cursor:pointer}
+.intro-title b{color:#4a3022!important;text-shadow:0 3px 0 #fff4e6,0 10px 30px rgba(90,59,40,.25)!important}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -8180,6 +8187,130 @@ startMusic=function(){const c=audCtx();if(!c||AUD.music)return;
   AUD.music={bus,cr,wow,iv:setInterval(sched,250)};sched()};
 stopMusic=function(){const m=AUD.music;if(!m)return;AUD.music=null;clearInterval(m.iv);try{const t=AUD.ctx.currentTime;m.bus.gain.cancelScheduledValues(t);m.bus.gain.setValueAtTime(m.bus.gain.value,t);m.bus.gain.linearRampToValueAtTime(0,t+.5);setTimeout(()=>{try{m.cr.stop();m.wow.stop();m.bus.disconnect()}catch(_){}},700)}catch(_){}};
 
+/* ================= v54: Start mit Ton, Kiesel-Sounds, neues gemütliches 3D-Intro ================= */
+/* --- kleine Klang-Bausteine --- */
+const ISFX={
+  out(){const c=audCtx();if(!c)return null;if(!ISFX.bus||ISFX.bus.context!==c){ISFX.bus=c.createGain();ISFX.bus.gain.value=.9;ISFX.bus.connect(AUD.out)}return c},
+  noise(t,dur,f0,f1,type,v,q=1){const c=ISFX.out();if(!c)return;const s=c.createBufferSource(),f=c.createBiquadFilter(),g=c.createGain();s.buffer=noiseBuf(c);f.type=type;f.Q.value=q;f.frequency.setValueAtTime(f0,t);f.frequency.exponentialRampToValueAtTime(f1,t+dur);
+    g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+Math.min(.08,dur*.3));g.gain.exponentialRampToValueAtTime(.0001,t+dur);s.connect(f);f.connect(g);g.connect(ISFX.bus);s.start(t,Math.random());s.stop(t+dur+.05)},
+  blip(t,f0,f1,dur,v,type='sine'){const c=ISFX.out();if(!c)return;const o=c.createOscillator(),g=c.createGain();o.type=type;o.frequency.setValueAtTime(f0,t);o.frequency.exponentialRampToValueAtTime(f1,t+dur*.6);
+    g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g);g.connect(ISFX.bus);o.start(t);o.stop(t+dur+.05)},
+  /* Kiesel hüpft über die Buchstaben */
+  logo(){const c=ISFX.out();if(!c||!AUD.prefs.sfx)return;const t=c.currentTime+.05;
+    ISFX.noise(t+.25,.28,600,2400,'bandpass',.12,1.5);
+    [.72,1.08,1.44,1.8,2.16,2.52].forEach((d,i)=>{const f=[1047,1175,1319,1568,1760,2093][i];ISFX.blip(t+d,f*1.5,f,.16,.11);ISFX.blip(t+d,f*.5,f*.5,.08,.05,'triangle')});
+    [1568,2093,2637].forEach((f,i)=>ISFX.blip(t+2.85+i*.07,f,f,.9,.05))},
+  /* Rutschen übers Eis */
+  slide(dur){const c=ISFX.out();if(!c||!AUD.prefs.sfx)return;const t=c.currentTime;ISFX.noise(t,dur,900,2600,'bandpass',.2,.7);ISFX.noise(t+.05,dur*.9,4000,6500,'highpass',.04,.5)},
+  land(){const c=ISFX.out();if(!c||!AUD.prefs.sfx)return;const t=c.currentTime;ISFX.blip(t,220,90,.22,.22);ISFX.noise(t,.25,1800,500,'lowpass',.1,.6)},
+  /* „Wuh-uh“ – ein kleiner, süßer Pinguin-Ruf */
+  wuhuh(){const c=ISFX.out();if(!c||!AUD.prefs.sfx)return;const t=c.currentTime;
+    const call=(t0,p)=>{const o=c.createOscillator(),o2=c.createOscillator(),g=c.createGain(),f1=c.createBiquadFilter(),f2=c.createBiquadFilter(),vib=c.createOscillator(),vg=c.createGain(),mix=c.createGain();
+      o.type='sawtooth';o2.type='sine';vib.frequency.value=11;vg.gain.value=14;vib.connect(vg);vg.connect(o.frequency);vg.connect(o2.frequency);
+      p.forEach(([dt,f],i)=>{const fn=i?'exponentialRampToValueAtTime':'setValueAtTime';o.frequency[fn](f,t0+dt);o2.frequency[fn](f,t0+dt)});
+      f1.type='bandpass';f1.frequency.value=1100;f1.Q.value=4;f2.type='bandpass';f2.frequency.value=2600;f2.Q.value=6;mix.gain.value=.5;
+      o.connect(f1);o.connect(f2);f1.connect(g);f2.connect(mix);mix.connect(g);o2.connect(g);
+      const end=p[p.length-1][0];g.gain.setValueAtTime(.0001,t0);g.gain.exponentialRampToValueAtTime(.2,t0+.04);g.gain.setValueAtTime(.2,t0+end-.06);g.gain.exponentialRampToValueAtTime(.0001,t0+end+.05);
+      g.connect(ISFX.bus);[o,o2,vib].forEach(x=>{x.start(t0);x.stop(t0+end+.1)})};
+    call(t,[[0,520],[.12,880],[.2,820]]);call(t+.27,[[0,760],[.1,640],[.26,470]])},
+  chime(){const c=ISFX.out();if(!c||!AUD.prefs.sfx)return;const t=c.currentTime;[784,988,1175,1568].forEach((f,i)=>ISFX.blip(t+i*.09,f,f,1.1,.05))}};
+
+/* --- Start: einmal tippen, damit der Ton spielen darf --- */
+function startGate(){
+  const sp=$('#splash'),lg=$('#splashLogo');let ctxOk=false;try{const c=AUD.ctx;ctxOk=!!c&&c.state==='running'}catch(_){}
+  if(!(AUD.prefs.sfx||AUD.prefs.music)||ctxOk||!sp){if(AUD.prefs.sfx)setTimeout(()=>ISFX.logo(),60);return bootGame()}
+  lg&&lg.classList.add('kl-wait');
+  sp.querySelector('.in').insertAdjacentHTML('beforeend','<button type="button" class="tapstart">Tippen zum Starten</button>');
+  sp.querySelector('.dots')?.setAttribute('hidden','');
+  let go=false;const start=()=>{if(go)return;go=true;const c=audCtx();try{const b=c.createBuffer(1,1,22050),s=c.createBufferSource();s.buffer=b;s.connect(c.destination);s.start(0);c.resume()}catch(_){}
+    sp.querySelector('.tapstart')?.remove();sp.querySelector('.dots')?.removeAttribute('hidden');
+    if(lg){lg.classList.remove('kl-wait');kieselLogo(lg)}ISFX.logo();if(AUD.prefs.music)setTimeout(()=>{if(!AUD.music)startMusic()},3200);bootGame()};
+  sp.addEventListener('click',start);sp.addEventListener('touchend',start,{passive:true});document.addEventListener('keydown',start,{once:true});
+}
+
+/* --- Neues Intro: brauner, gemütlicher Pinguin im Abendlicht --- */
+playIntro=async function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const ov=document.createElement('div');ov.className='intro';ov.innerHTML='<div class="intro-title"><b>pebble</b><small>Willkommen zuhause</small></div><button type="button" class="intro-skip">Überspringen</button>';
+  document.body.appendChild(ov);
+  const ok=await loadThree();if(!ok){ov.classList.add('out');setTimeout(()=>ov.remove(),500);return}
+  const T=window.THREE,W0=innerWidth,H0=innerHeight;
+  const R=new T.WebGLRenderer({antialias:true});R.setPixelRatio(Math.min(2,devicePixelRatio||1));R.setSize(W0,H0);R.shadowMap.enabled=true;R.shadowMap.type=T.PCFSoftShadowMap;
+  ov.insertBefore(R.domElement,ov.firstChild);
+  const sc=new T.Scene();
+  /* Himmel: weicher Verlauf von Abendrosa zu Hellblau */
+  const cv=document.createElement('canvas');cv.width=8;cv.height=256;const cx=cv.getContext('2d'),gr=cx.createLinearGradient(0,0,0,256);
+  gr.addColorStop(0,'#8fb3d9');gr.addColorStop(.45,'#d9c7d8');gr.addColorStop(.72,'#f6d2b0');gr.addColorStop(1,'#fbe6cf');cx.fillStyle=gr;cx.fillRect(0,0,8,256);
+  const skyT=new T.CanvasTexture(cv);sc.background=skyT;sc.fog=new T.Fog('#f1dccb',14,42);
+  const cam=new T.PerspectiveCamera(W0>H0?36:50,W0/H0,.1,120);cam.position.set(0,2.2,8.6);
+  sc.add(new T.HemisphereLight('#fff1e2','#c9b8b0',.75));
+  const sun=new T.DirectionalLight('#ffd2a1',1.25);sun.position.set(-6,6,4);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-10,right:10,top:10,bottom:-10});sun.shadow.bias=-.0005;sc.add(sun);
+  const fill=new T.DirectionalLight('#b9d0ff',.35);fill.position.set(6,4,-4);sc.add(fill);
+  const M=(c,r=.6,ex={})=>new T.MeshStandardMaterial(Object.assign({color:c,roughness:r,metalness:0},ex));
+  /* Schneeboden mit sanften Wellen */
+  const gg=new T.PlaneGeometry(90,90,120,120),gp=gg.attributes.position;for(let i=0;i<gp.count;i++){const x=gp.getX(i),y=gp.getY(i),d=Math.hypot(x,y+.4);const h=(Math.sin(x*.35)+Math.cos(y*.42))*.12+Math.sin(x*.9+y*.7)*.04;gp.setZ(i,d<7?h*(d/7)*.4:h+(d>14?(d-14)*.05:0))}gg.computeVertexNormals();
+  const ground=new T.Mesh(gg,M('#fbf6f1',.9));ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;sc.add(ground);
+  const ice=new T.Mesh(new T.CircleGeometry(5.5,64),M('#cfe3f2',.08,{metalness:.15,transparent:true,opacity:.92}));ice.rotation.x=-Math.PI/2;ice.position.set(0,.02,.4);ice.scale.set(2.3,1,.55);ice.receiveShadow=true;sc.add(ice);
+  const ball=(r,c,x,y,z,sx=1,sy=1,sz=1,par,rough=.6)=>{const m=new T.Mesh(new T.SphereGeometry(r,32,24),M(c,rough));m.position.set(x,y,z);m.scale.set(sx,sy,sz);m.castShadow=true;(par||sc).add(m);return m};
+  /* Berge in der Ferne, Schnee auf den Gipfeln */
+  [[-16,-30,11,'#9fa9c4'],[-5,-36,15,'#aab2cb'],[9,-32,12,'#a3abc6'],[22,-28,9,'#b0b7cd']].forEach(([x,z,h,c])=>{const m=new T.Mesh(new T.ConeGeometry(h*.95,h,9),M(c,.95,{flatShading:true}));m.position.set(x,h/2-.5,z);sc.add(m);
+    const cap=new T.Mesh(new T.ConeGeometry(h*.38,h*.4,9),M('#ffffff',.8,{flatShading:true}));cap.position.set(x,h-.5-h*.2,z);sc.add(cap)});
+  /* Tannen mit Schnee */
+  const pine=(x,z,s)=>{const g=new T.Group();g.position.set(x,0,z);g.scale.setScalar(s);const tr=new T.Mesh(new T.CylinderGeometry(.09,.12,.5,8),M('#6b4632',.9));tr.position.y=.25;tr.castShadow=true;g.add(tr);
+    [[0,1,.8],[.55,.85,.62],[1.05,.7,.45],[1.45,.55,.28]].forEach(([y,h,r])=>{const c=new T.Mesh(new T.ConeGeometry(r,h,10),M('#2f5e4a',.85));c.position.y=.5+y;c.castShadow=true;g.add(c);const sn=new T.Mesh(new T.ConeGeometry(r*.72,h*.32,10),M('#ffffff',.7));sn.position.y=.5+y+h*.3;g.add(sn)});sc.add(g)};
+  [[-6.5,-4.5,1.1],[-5,-6.5,1.4],[5.8,-5,1.25],[7.4,-3.5,.95],[-8.2,-2.5,1],[3.6,-7.5,1.5],[-10,-7,1.6],[10,-8,1.7],[-2.5,-9,1.3],[12,-4.5,1.2],[-12,-3.5,1.1]].forEach(([x,z,s])=>pine(x,z,s));
+  /* gemütliche Holzhütte mit warmem Licht und Rauch */
+  const hut=new T.Group();hut.position.set(-3.6,0,-6.2);hut.rotation.y=.35;sc.add(hut);
+  const hb=new T.Mesh(new T.BoxGeometry(2.4,1.4,1.8),M('#8a5a3c',.85));hb.position.y=.7;hb.castShadow=true;hut.add(hb);
+  for(let k=0;k<6;k++){const l=new T.Mesh(new T.CylinderGeometry(.06,.06,2.42,6),M('#6f4730',.9));l.rotation.z=Math.PI/2;l.position.set(0,.18+k*.22,.92);hut.add(l)}
+  const rf=new T.Mesh(new T.ConeGeometry(1.95,1.1,4),M('#5a3a28',.8));rf.rotation.y=Math.PI/4;rf.position.y=1.95;rf.scale.set(1,1,.82);rf.castShadow=true;hut.add(rf);
+  const rs=new T.Mesh(new T.ConeGeometry(1.9,.5,4),M('#ffffff',.7));rs.rotation.y=Math.PI/4;rs.position.y=2.25;rs.scale.set(1,1,.82);hut.add(rs);
+  const win=new T.Mesh(new T.PlaneGeometry(.5,.45),M('#ffcf7a',.4,{emissive:'#ffa040',emissiveIntensity:.75}));win.position.set(.5,.85,.93);hut.add(win);
+  const dr=new T.Mesh(new T.PlaneGeometry(.45,.8),M('#4a2f20',.8));dr.position.set(-.55,.4,.93);hut.add(dr);
+  const lamp=new T.PointLight('#ffb35c',1.3,6);lamp.position.set(.5,.9,1.4);hut.add(lamp);
+  const chim=new T.Mesh(new T.BoxGeometry(.25,.6,.25),M('#7d6a5f',.9));chim.position.set(.6,2.2,-.2);hut.add(chim);
+  const smoke=[];for(let k=0;k<10;k++){const m=new T.Mesh(new T.SphereGeometry(.16,10,8),M('#f3ece6',1,{transparent:true,opacity:.0}));m.userData.ph=k/10;sc.add(m);smoke.push(m)}
+  const chimW=new T.Vector3();
+  [[-3.5,-3,1.6],[4,-2.6,1.3],[0,-5,2]].forEach(([x,z,s])=>ball(s,'#fdfaf6',x,-s*.62,z,1.6,1,1.2,null,.95));
+  /* Pebble: brauner, gemütlicher Pinguin mit Mütze und Schal */
+  const pos=new T.Group(),tilt=new T.Group();pos.add(tilt);sc.add(pos);
+  const brown='#6e4b36',cream='#f4e6d2',dark='#2b1d16';
+  ball(.62,brown,0,.78,0,1,1.18,.92,tilt,.75);ball(.5,cream,0,.68,.2,.98,1.05,.78,tilt,.8);
+  ball(.08,dark,-.2,1.2,.48,1,1.15,1,tilt,.3);ball(.08,dark,.2,1.2,.48,1,1.15,1,tilt,.3);ball(.026,'#ffffff',-.18,1.25,.55,1,1,1,tilt,.2);ball(.026,'#ffffff',.22,1.25,.55,1,1,1,tilt,.2);
+  ball(.085,'#f2a3a0',-.34,1.04,.42,1,.6,.5,tilt,.9);ball(.085,'#f2a3a0',.34,1.04,.42,1,.6,.5,tilt,.9);
+  const beak=new T.Mesh(new T.ConeGeometry(.09,.22,14),M('#e9a24a',.5));beak.rotation.x=Math.PI/2;beak.position.set(0,1.06,.62);tilt.add(beak);
+  /* Strickmütze mit Bommel */
+  const hat=new T.Mesh(new T.SphereGeometry(.5,28,18,0,Math.PI*2,0,Math.PI/2),M('#c8553d',.95));hat.position.set(0,1.38,0);hat.scale.set(1.05,.85,1);hat.castShadow=true;tilt.add(hat);
+  const brim=new T.Mesh(new T.TorusGeometry(.48,.08,10,32),M('#efe2cf',.95));brim.rotation.x=Math.PI/2;brim.position.set(0,1.4,0);brim.scale.set(1.06,1,1);tilt.add(brim);
+  ball(.13,'#efe2cf',0,1.86,0,1,1,1,tilt,1);
+  /* Schal */
+  const sc1=new T.Mesh(new T.TorusGeometry(.44,.09,10,32),M('#d9a441',.95));sc1.rotation.x=Math.PI/2;sc1.position.set(0,.98,.02);sc1.scale.set(1.05,1,.95);tilt.add(sc1);
+  const tail=new T.Mesh(new T.BoxGeometry(.18,.34,.07),M('#d9a441',.95));tail.position.set(.32,.8,.42);tail.rotation.set(-.35,.5,-.25);tilt.add(tail);
+  const fl=new T.Group(),fr=new T.Group();fl.position.set(-.55,.95,0);fr.position.set(.55,.95,0);tilt.add(fl,fr);
+  ball(.13,brown,-.08,-.25,0,.55,1.9,.8,fl,.75);ball(.13,brown,.08,-.25,0,.55,1.9,.8,fr,.75);fl.rotation.z=-.25;fr.rotation.z=.25;
+  ball(.14,'#e9a24a',-.2,.05,.25,1.1,.4,1.5,tilt,.6);ball(.14,'#e9a24a',.2,.05,.25,1.1,.4,1.5,tilt,.6);
+  /* Schneeflocken */
+  const N=420,pg=new T.BufferGeometry(),pp=new Float32Array(N*3);for(let i=0;i<N;i++){pp[i*3]=(Math.random()-.5)*28;pp[i*3+1]=Math.random()*10;pp[i*3+2]=(Math.random()-.5)*18}
+  pg.setAttribute('position',new T.BufferAttribute(pp,3));const snow=new T.Points(pg,new T.PointsMaterial({color:'#ffffff',size:.06,transparent:true,opacity:.85,depthWrite:false}));sc.add(snow);
+  const puffs=[];const puffM=M('#ffffff',.9,{transparent:true});
+  const spray=(x,z)=>{for(let k=0;k<2;k++){const m=new T.Mesh(new T.SphereGeometry(.06+Math.random()*.06,8,6),puffM.clone());m.position.set(x-.3+Math.random()*.2,.1,z+(Math.random()-.5)*.5);m.userData={v:[-.8-Math.random(),1+Math.random()*1.4,(Math.random()-.5)],t:0};sc.add(m);puffs.push(m)}};
+  let t0=performance.now(),last=t0,done=false,raf=0,s1=false,s2=false,s3=false,s4=false;const ease=x=>1-Math.pow(1-x,3),lerp=(a,b,k)=>a+(b-a)*k;
+  const finish=()=>{if(done)return;done=true;ov.classList.add('out');setTimeout(()=>{cancelAnimationFrame(raf);R.dispose();ov.remove()},650)};
+  ov.querySelector('.intro-skip').onclick=finish;ov.addEventListener('pointerdown',e=>{if(!e.target.closest('.intro-skip'))finish()});
+  const loop=now=>{const t=(now-t0)/1000,dt=Math.min(.05,(now-last)/1000);last=now;
+    if(t<1.7){if(!s1){s1=true;ISFX.slide(1.7)}const k=ease(t/1.7);pos.position.set(lerp(-12,0,k),0,.4);pos.rotation.y=Math.PI/2;tilt.rotation.x=Math.PI/2*.92;tilt.position.y=.55;fl.rotation.z=-1.2;fr.rotation.z=1.2;if(Math.random()<.9)spray(pos.position.x,pos.position.z)}
+    else if(t<2.3){if(!s2){s2=true;ISFX.land()}const k=ease((t-1.7)/.6);pos.position.set(0,Math.sin(k*Math.PI)*.45,.4);pos.rotation.y=lerp(Math.PI/2,0,k);tilt.rotation.x=lerp(Math.PI/2*.92,0,k);tilt.position.y=lerp(.55,0,k);fl.rotation.z=lerp(-1.2,-.25,k);fr.rotation.z=lerp(1.2,.25,k)}
+    else{const w=t-2.3;if(!s3){s3=true;ISFX.wuhuh()}pos.position.y=Math.max(0,Math.sin(w*7))*.12*(w<1.2?1:0);fr.rotation.z=.25+(w<1.6?Math.abs(Math.sin(w*9))*1.5:0);tilt.rotation.z=Math.sin(w*4)*.05;
+      if(w>.15){ov.classList.add('title');if(!s4){s4=true;setTimeout(()=>ISFX.chime(),250)}}}
+    cam.position.x=lerp(cam.position.x,pos.position.x*.35,.08);cam.lookAt(pos.position.x*.5,.95,0);
+    chim.getWorldPosition(chimW);smoke.forEach(m=>{const ph=(m.userData.ph+t*.12)%1;m.position.set(chimW.x+Math.sin(ph*6+t)*.15+ph*.6,chimW.y+.3+ph*2.2,chimW.z);m.scale.setScalar(.6+ph*1.8);m.material.opacity=.55*(1-ph)*Math.min(1,ph*6)});
+    const a=pg.attributes.position.array;for(let i=0;i<N;i++){a[i*3+1]-=dt*(.4+(i%5)*.1);a[i*3]+=Math.sin(t+i)*dt*.15;if(a[i*3+1]<0)a[i*3+1]=10}pg.attributes.position.needsUpdate=true;
+    for(let i=puffs.length-1;i>=0;i--){const m=puffs[i],u=m.userData;u.t+=dt;u.v[1]-=dt*3.5;m.position.x+=u.v[0]*dt;m.position.y=Math.max(.05,m.position.y+u.v[1]*dt);m.position.z+=u.v[2]*dt;m.material.opacity=Math.max(0,1-u.t/.8);if(u.t>.8){sc.remove(m);puffs.splice(i,1)}}
+    R.render(sc,cam);if(t>4.8)finish();if(!done||ov.isConnected)raf=requestAnimationFrame(loop)};
+  raf=requestAnimationFrame(loop);
+  addEventListener('resize',()=>{if(done)return;R.setSize(innerWidth,innerHeight);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()},{once:true});
+};
+
 /* ================= Navigation & Meldungen ================= */
 function show(t){
   tab=t;
@@ -8464,11 +8595,12 @@ function enterGame(){viewRoom=S.unlocked[S.pos.room]?S.pos.room:'schlafzimmer';s
 kieselLogo($('#splashLogo'));kieselLogo($('#authLogo'));
 $('#topIcon').insertAdjacentHTML('afterbegin',LOGO());
 $('#world').insertAdjacentHTML('beforeend',rotCtl('world')+emoHTML()+chatHTML());chatTick();
-Promise.all([withTimeout(cloudReady,3500),new Promise(r=>setTimeout(r,3000))]).then(()=>{
+function bootGame(){Promise.all([withTimeout(cloudReady,3500),new Promise(r=>setTimeout(r,3000))]).then(()=>{
   const key=getSes(),a=key&&getAccs()[key];
   if(a){user=key;S=migrate(Object.assign(fresh(),a.save));S.char?enterGame():openPick('new')}
   else screen('auth');
-});
+});}
+startGate();
 </script>
 
 
