@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271538";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271546";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -8153,23 +8153,24 @@ const mf=m=>440*Math.pow(2,(m-69)/12);
 let NOISE=null;function noiseBuf(c){if(NOISE&&NOISE.sampleRate===c.sampleRate)return NOISE;const n=c.sampleRate*2,b=c.createBuffer(1,n,c.sampleRate),d=b.getChannelData(0);for(let i=0;i<n;i++)d[i]=Math.random()*2-1;return NOISE=b}
 function crackleBuf(c){const n=c.sampleRate*4,b=c.createBuffer(1,n,c.sampleRate),d=b.getChannelData(0);for(let i=0;i<n;i++){d[i]=0;if(Math.random()<.00012){const a=(Math.random()*.25+.08)*(Math.random()<.5?-1:1);for(let k=0;k<25&&i+k<n;k++)d[i+k]+=a*Math.exp(-k/5)}}return b}
 /* Akkorde: Dm9 – G13 – Cmaj9 – Am9 (gemütlich, jazzig) */
-const LOFI={chords:[[50,57,60,64,65],[43,53,57,59,64],[48,55,59,62,64],[45,55,60,64,67]],bass:[38,43,36,45],scale:[62,64,65,67,69,72,74,76]};
+const LOFI={chords:[[48,55,59,64,67],[43,50,55,59,64],[45,52,55,60,64],[41,48,53,57,64]],bass:[48,43,45,41],scale:[72,74,76,79,81,84,86,88]};
 startMusic=function(){const c=audCtx();if(!c||AUD.music)return;
   const bus=c.createGain();bus.gain.value=0;bus.gain.linearRampToValueAtTime(.28,c.currentTime+3);
-  const lp=c.createBiquadFilter();lp.type='lowpass';lp.frequency.value=1700;lp.Q.value=.3;bus.connect(lp);lp.connect(AUD.out);
+  const lp=c.createBiquadFilter();lp.type='lowpass';lp.frequency.value=3400;lp.Q.value=.3;bus.connect(lp);lp.connect(AUD.out);
   /* leichtes Band-Leiern */
   const wow=c.createOscillator(),wowG=c.createGain();wow.frequency.value=.35;wowG.gain.value=7;wow.connect(wowG);wow.start();
   /* Echo für die Tasten */
   const dl=c.createDelay(1),fb=c.createGain(),dlG=c.createGain();dl.delayTime.value=.39;fb.gain.value=.28;dlG.gain.value=.18;dl.connect(fb);fb.connect(dl);dl.connect(dlG);dlG.connect(bus);
   /* Knistern wie eine Schallplatte */
   const cr=c.createBufferSource();cr.buffer=crackleBuf(c);cr.loop=true;const crG=c.createGain();crG.gain.value=.25;const crHp=c.createBiquadFilter();crHp.type='bandpass';crHp.frequency.value=1200;cr.connect(crHp);crHp.connect(crG);crG.connect(bus);cr.start();
-  const BPM=66,beat=60/BPM,bar=beat*4,sw=.6;
+  const BPM=84,beat=60/BPM,bar=beat*4,sw=.6;
   const keys=(m,t,dur,v)=>{[['sine',0,1],['sine',1200+4,.12]].forEach(([ty,det,amp])=>{const o=c.createOscillator(),g=c.createGain();o.type=ty;o.frequency.value=mf(m);o.detune.value=det;wowG.connect(o.detune);
       g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v*amp,t+.015);g.gain.exponentialRampToValueAtTime(v*amp*.35,t+.5);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
       o.connect(g);g.connect(bus);g.connect(dl);o.start(t);o.stop(t+dur+.05)})};
-  const bass=(m,t,dur)=>{const o=c.createOscillator(),g=c.createGain(),f=c.createBiquadFilter();o.type='triangle';o.frequency.value=mf(m);f.type='lowpass';f.frequency.value=420;
-    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.32,t+.02);g.gain.exponentialRampToValueAtTime(.12,t+.35);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(f);f.connect(g);g.connect(bus);o.start(t);o.stop(t+dur+.05)};
-  const kick=t=>{const o=c.createOscillator(),g=c.createGain();o.frequency.setValueAtTime(90,t);o.frequency.exponentialRampToValueAtTime(45,t+.14);g.gain.setValueAtTime(.3,t);g.gain.exponentialRampToValueAtTime(.0001,t+.28);o.connect(g);g.connect(bus);o.start(t);o.stop(t+.35)};
+  const bass=(m,t,dur)=>{const o=c.createOscillator(),g=c.createGain(),f=c.createBiquadFilter();o.type='triangle';o.frequency.value=mf(m);f.type='lowpass';f.frequency.value=700;
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.2,t+.02);g.gain.exponentialRampToValueAtTime(.08,t+.3);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(f);f.connect(g);g.connect(bus);o.start(t);o.stop(t+dur+.05)};
+  const bell=(m,t,v)=>{const o=c.createOscillator(),o2=c.createOscillator(),g=c.createGain();o.type='sine';o2.type='sine';o.frequency.value=mf(m);o2.frequency.value=mf(m)*3;const g2=c.createGain();g2.gain.value=.18;o2.connect(g2);g2.connect(g);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.006);g.gain.exponentialRampToValueAtTime(.0001,t+.9);o.connect(g);g.connect(bus);g.connect(dl);o.start(t);o2.start(t);o.stop(t+1);o2.stop(t+1)};
+  const kick=t=>{const o=c.createOscillator(),g=c.createGain();o.frequency.setValueAtTime(90,t);o.frequency.exponentialRampToValueAtTime(45,t+.14);g.gain.setValueAtTime(.18,t);g.gain.exponentialRampToValueAtTime(.0001,t+.22);o.connect(g);g.connect(bus);o.start(t);o.stop(t+.35)};
   const noise=(t,dur,type,fq,v,q=1)=>{const s=c.createBufferSource(),f=c.createBiquadFilter(),g=c.createGain();s.buffer=noiseBuf(c);f.type=type;f.frequency.value=fq;f.Q.value=q;g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.0001,t+dur);s.connect(f);f.connect(g);g.connect(bus);s.start(t,Math.random()*1.5);s.stop(t+dur+.02)};
   const snare=t=>{noise(t,.12,'bandpass',1400,.035,1.2);const o=c.createOscillator(),g=c.createGain();o.frequency.value=196;g.gain.setValueAtTime(.05,t);g.gain.exponentialRampToValueAtTime(.0001,t+.1);o.connect(g);g.connect(bus);o.start(t);o.stop(t+.12)};
   const hat=(t,v)=>noise(t,.03,'bandpass',5200,v*.35,2);
@@ -8177,7 +8178,8 @@ startMusic=function(){const c=audCtx();if(!c||AUD.music)return;
   const sched=()=>{if(!AUD.music)return;while(next<c.currentTime+1.2){const t=next,ci=Math.floor(n/1)%4,ch=LOFI.chords[ci];
       ch.forEach((m,i)=>keys(m+12,t+i*.022,bar*.95,.055));
       if(n%2===1)ch.slice(2).forEach((m,i)=>keys(m+12,t+beat*2.5+i*.02,beat*1.2,.035));
-      bass(LOFI.bass[ci],t,beat*1.6);bass(LOFI.bass[ci]+(n%2?7:12),t+beat*2,beat*1.4);
+      bass(LOFI.bass[ci],t,beat*1.4);bass(LOFI.bass[ci]+7,t+beat*2,beat*1.2);
+      {const arp=[0,2,4,3,1,4,2,3];for(let k=0;k<8;k++){const m=ch[arp[k]%ch.length]+24;bell(m,t+k*beat/2+(k%2?beat*.08:0),.035)}}
       [0,beat*1.5+beat*.1,beat*2.5].forEach((o,i)=>{if(i<2||n%2)kick(t+o)});
       snare(t+beat);snare(t+beat*3);
       for(let k=0;k<8;k++){const o=Math.floor(k/2)*beat+(k%2?beat*sw:0);hat(t+o,k%2?.035:.055)}
@@ -8198,8 +8200,10 @@ const ISFX={
   /* Kiesel hüpft über die Buchstaben */
   logo(){const c=ISFX.out();if(!c||!AUD.prefs.sfx)return;const t=c.currentTime+.05;
     ISFX.noise(t+.25,.28,600,2400,'bandpass',.12,1.5);
-    [.72,1.08,1.44,1.8,2.16,2.52].forEach((d,i)=>{const f=[1047,1175,1319,1568,1760,2093][i];ISFX.blip(t+d,f*1.5,f,.16,.11);ISFX.blip(t+d,f*.5,f*.5,.08,.05,'triangle')});
-    [1568,2093,2637].forEach((f,i)=>ISFX.blip(t+2.85+i*.07,f,f,.9,.05))},
+    [.72,1.08,1.44,1.8,2.16,2.52].forEach((d,i)=>{const f=[523,587,659,784,880,1047][i];ISFX.pop(t+d,f);ISFX.blip(t+d+.01,f*2,f*2,.35,.03)});
+    [1047,1319,1568,2093].forEach((f,i)=>ISFX.blip(t+2.82+i*.06,f,f,1.1,.045))},
+  pop(t,f){const c=ISFX.out();if(!c)return;const o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.setValueAtTime(f*.45,t);o.frequency.exponentialRampToValueAtTime(f*1.05,t+.045);o.frequency.exponentialRampToValueAtTime(f,t+.09);
+    g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.16,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+.2);o.connect(g);g.connect(ISFX.bus);o.start(t);o.stop(t+.25)},
   /* Rutschen übers Eis */
   slide(dur){const c=ISFX.out();if(!c||!AUD.prefs.sfx)return;const t=c.currentTime;ISFX.noise(t,dur,900,2600,'bandpass',.2,.7);ISFX.noise(t+.05,dur*.9,4000,6500,'highpass',.04,.5)},
   land(){const c=ISFX.out();if(!c||!AUD.prefs.sfx)return;const t=c.currentTime;ISFX.blip(t,220,90,.22,.22);ISFX.noise(t,.25,1800,500,'lowpass',.1,.6)},
@@ -8241,7 +8245,7 @@ playIntro=async function(){
   /* Himmel: weicher Verlauf von Abendrosa zu Hellblau */
   const cv=document.createElement('canvas');cv.width=8;cv.height=256;const cx=cv.getContext('2d'),gr=cx.createLinearGradient(0,0,0,256);
   gr.addColorStop(0,'#8fb3d9');gr.addColorStop(.45,'#d9c7d8');gr.addColorStop(.72,'#f6d2b0');gr.addColorStop(1,'#fbe6cf');cx.fillStyle=gr;cx.fillRect(0,0,8,256);
-  const skyT=new T.CanvasTexture(cv);sc.background=skyT;sc.fog=new T.Fog('#f1dccb',14,42);
+  const skyT=new T.CanvasTexture(cv);sc.background=skyT;sc.fog=new T.Fog('#efdcd0',22,70);
   const cam=new T.PerspectiveCamera(W0>H0?36:50,W0/H0,.1,120);cam.position.set(0,2.2,8.6);
   sc.add(new T.HemisphereLight('#fff1e2','#c9b8b0',.75));
   const sun=new T.DirectionalLight('#ffd2a1',1.25);sun.position.set(-6,6,4);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-10,right:10,top:10,bottom:-10});sun.shadow.bias=-.0005;sc.add(sun);
@@ -8272,23 +8276,36 @@ playIntro=async function(){
   const smoke=[];for(let k=0;k<10;k++){const m=new T.Mesh(new T.SphereGeometry(.16,10,8),M('#f3ece6',1,{transparent:true,opacity:.0}));m.userData.ph=k/10;sc.add(m);smoke.push(m)}
   const chimW=new T.Vector3();
   [[-3.5,-3,1.6],[4,-2.6,1.3],[0,-5,2]].forEach(([x,z,s])=>ball(s,'#fdfaf6',x,-s*.62,z,1.6,1,1.2,null,.95));
-  /* Pebble: brauner, gemütlicher Pinguin mit Mütze und Schal */
+  /* Pebble: brauner, flauschiger Pinguin mit Federn */
+  const furTex=(base,dark,light,grad)=>{const c=document.createElement('canvas');c.width=c.height=512;const x=c.getContext('2d');
+    if(grad){const g=x.createLinearGradient(0,0,0,512);g.addColorStop(0,dark);g.addColorStop(.55,base);g.addColorStop(1,light);x.fillStyle=g}else x.fillStyle=base;x.fillRect(0,0,512,512);
+    for(let i=0;i<9000;i++){const px=Math.random()*512,py=Math.random()*512,l=3+Math.random()*7,a=Math.PI/2+(Math.random()-.5)*.7;x.strokeStyle=Math.random()<.5?dark:light;x.globalAlpha=.08+Math.random()*.16;x.lineWidth=.8+Math.random()*1.2;x.beginPath();x.moveTo(px,py);x.lineTo(px+Math.cos(a)*l,py+Math.sin(a)*l);x.stroke()}
+    const t=new T.CanvasTexture(c);t.wrapS=t.wrapT=T.RepeatWrapping;return t};
+  const bumpTex=(()=>{const c=document.createElement('canvas');c.width=c.height=256;const x=c.getContext('2d');x.fillStyle='#808080';x.fillRect(0,0,256,256);
+    for(let i=0;i<5000;i++){const px=Math.random()*256,py=Math.random()*256,l=2+Math.random()*5;x.strokeStyle=Math.random()<.5?'#000':'#fff';x.globalAlpha=.25;x.lineWidth=1;x.beginPath();x.moveTo(px,py);x.lineTo(px+(Math.random()-.5)*2,py+l);x.stroke()}
+    const t=new T.CanvasTexture(c);t.wrapS=t.wrapT=T.RepeatWrapping;t.repeat.set(3,3);return t})();
+  const furM=(base,dark,light,grad,rough=.92)=>new T.MeshStandardMaterial({map:furTex(base,dark,light,grad),bumpMap:bumpTex,bumpScale:.012,roughness:rough,metalness:0});
+  const brownM=furM('#7a5240','#4a2f22','#9a6c52',true),creamM=furM('#f4e6d3','#e3cdb2','#fffaf2',false),wingM=furM('#5e3d2d','#3b261b','#80594a',true);
+  const fb=(r,mat,x,y,z,sx=1,sy=1,sz=1,par)=>{const m=new T.Mesh(new T.SphereGeometry(r,40,30),mat);m.position.set(x,y,z);m.scale.set(sx,sy,sz);m.castShadow=true;m.receiveShadow=true;(par||sc).add(m);return m};
   const pos=new T.Group(),tilt=new T.Group();pos.add(tilt);sc.add(pos);
-  const brown='#6e4b36',cream='#f4e6d2',dark='#2b1d16';
-  ball(.62,brown,0,.78,0,1,1.18,.92,tilt,.75);ball(.5,cream,0,.68,.2,.98,1.05,.78,tilt,.8);
-  ball(.08,dark,-.2,1.2,.48,1,1.15,1,tilt,.3);ball(.08,dark,.2,1.2,.48,1,1.15,1,tilt,.3);ball(.026,'#ffffff',-.18,1.25,.55,1,1,1,tilt,.2);ball(.026,'#ffffff',.22,1.25,.55,1,1,1,tilt,.2);
-  ball(.085,'#f2a3a0',-.34,1.04,.42,1,.6,.5,tilt,.9);ball(.085,'#f2a3a0',.34,1.04,.42,1,.6,.5,tilt,.9);
-  const beak=new T.Mesh(new T.ConeGeometry(.09,.22,14),M('#e9a24a',.5));beak.rotation.x=Math.PI/2;beak.position.set(0,1.06,.62);tilt.add(beak);
-  /* Strickmütze mit Bommel */
-  const hat=new T.Mesh(new T.SphereGeometry(.5,28,18,0,Math.PI*2,0,Math.PI/2),M('#c8553d',.95));hat.position.set(0,1.38,0);hat.scale.set(1.05,.85,1);hat.castShadow=true;tilt.add(hat);
-  const brim=new T.Mesh(new T.TorusGeometry(.48,.08,10,32),M('#efe2cf',.95));brim.rotation.x=Math.PI/2;brim.position.set(0,1.4,0);brim.scale.set(1.06,1,1);tilt.add(brim);
-  ball(.13,'#efe2cf',0,1.86,0,1,1,1,tilt,1);
-  /* Schal */
-  const sc1=new T.Mesh(new T.TorusGeometry(.44,.09,10,32),M('#d9a441',.95));sc1.rotation.x=Math.PI/2;sc1.position.set(0,.98,.02);sc1.scale.set(1.05,1,.95);tilt.add(sc1);
-  const tail=new T.Mesh(new T.BoxGeometry(.18,.34,.07),M('#d9a441',.95));tail.position.set(.32,.8,.42);tail.rotation.set(-.35,.5,-.25);tilt.add(tail);
-  const fl=new T.Group(),fr=new T.Group();fl.position.set(-.55,.95,0);fr.position.set(.55,.95,0);tilt.add(fl,fr);
-  ball(.13,brown,-.08,-.25,0,.55,1.9,.8,fl,.75);ball(.13,brown,.08,-.25,0,.55,1.9,.8,fr,.75);fl.rotation.z=-.25;fr.rotation.z=.25;
-  ball(.14,'#e9a24a',-.2,.05,.25,1.1,.4,1.5,tilt,.6);ball(.14,'#e9a24a',.2,.05,.25,1.1,.4,1.5,tilt,.6);
+  fb(.62,brownM,0,.78,0,1,1.18,.92,tilt);
+  fb(.5,creamM,0,.66,.2,.98,1.05,.8,tilt);
+  /* helles Gesicht mit großen Augen */
+  fb(.36,creamM,0,1.12,.3,1.12,.86,.62,tilt);
+  const eyeM=new T.MeshStandardMaterial({color:'#1c120d',roughness:.12,metalness:.1}),hiM=new T.MeshStandardMaterial({color:'#ffffff',roughness:.2,emissive:'#ffffff',emissiveIntensity:.4});
+  [-1,1].forEach(sg=>{fb(.095,eyeM,.17*sg,1.17,.54,1,1.15,.8,tilt).castShadow=false;fb(.032,hiM,.17*sg+.03,1.22,.61,1,1,1,tilt);fb(.015,hiM,.17*sg-.025,1.13,.615,1,1,1,tilt);
+    fb(.075,new T.MeshStandardMaterial({color:'#f2a9a2',roughness:.9,transparent:true,opacity:.75}),.31*sg,1.03,.47,1,.55,.45,tilt)});
+  const beakM=new T.MeshStandardMaterial({color:'#e8a05a',roughness:.45});const beak=new T.Mesh(new T.ConeGeometry(.075,.17,18),beakM);beak.rotation.x=Math.PI/2;beak.position.set(0,1.05,.6);beak.scale.set(1.2,1,.8);tilt.add(beak);
+  /* kleine Federbüschel auf dem Kopf */
+  [[-.05,-.35],[0,0],[.05,.35]].forEach(([x,a])=>{const f=fb(.06,wingM,x,1.68,-.02,.7,1.6,.7,tilt);f.rotation.z=a;f.rotation.x=-.35});
+  /* Flügel mit Federspitzen */
+  const fl=new T.Group(),fr=new T.Group();fl.position.set(-.56,.98,0);fr.position.set(.56,.98,0);tilt.add(fl,fr);
+  [[fl,-1],[fr,1]].forEach(([g,sg])=>{fb(.14,wingM,.06*sg,-.26,0,.55,1.9,.85,g);[-.02,.03,.08].forEach((dz,k)=>fb(.05,wingM,.07*sg,-.5-k*.03,dz,.6,1.4,.7,g))});
+  fl.rotation.z=-.25;fr.rotation.z=.25;
+  /* Füße mit Zehen */
+  const footM=new T.MeshStandardMaterial({color:'#e59a52',roughness:.55});
+  [-1,1].forEach(sg=>{fb(.15,footM,.2*sg,.04,.24,1.05,.38,1.45,tilt);[-.07,0,.07].forEach((dx,k)=>fb(.055,footM,.2*sg+dx,.04,.42+(k===1?.03:0),.8,.5,1.1,tilt))});
+  /* weicher Bauch-Flaum */
   /* Schneeflocken */
   const N=420,pg=new T.BufferGeometry(),pp=new Float32Array(N*3);for(let i=0;i<N;i++){pp[i*3]=(Math.random()-.5)*28;pp[i*3+1]=Math.random()*10;pp[i*3+2]=(Math.random()-.5)*18}
   pg.setAttribute('position',new T.BufferAttribute(pp,3));const snow=new T.Points(pg,new T.PointsMaterial({color:'#ffffff',size:.06,transparent:true,opacity:.85,depthWrite:false}));sc.add(snow);
@@ -8297,7 +8314,7 @@ playIntro=async function(){
   let t0=performance.now(),last=t0,done=false,raf=0,s1=false,s2=false,s3=false,s4=false;const ease=x=>1-Math.pow(1-x,3),lerp=(a,b,k)=>a+(b-a)*k;
   const finish=()=>{if(done)return;done=true;ov.classList.add('out');setTimeout(()=>{cancelAnimationFrame(raf);R.dispose();ov.remove()},650)};
   ov.querySelector('.intro-skip').onclick=finish;ov.addEventListener('pointerdown',e=>{if(!e.target.closest('.intro-skip'))finish()});
-  const loop=now=>{const t=(now-t0)/1000,dt=Math.min(.05,(now-last)/1000);last=now;
+  let TT=0;const loop=now=>{const dt=Math.min(.05,(now-last)/1000);last=now;TT+=dt;const t=TT;
     if(t<1.7){if(!s1){s1=true;ISFX.slide(1.7)}const k=ease(t/1.7);pos.position.set(lerp(-12,0,k),0,.4);pos.rotation.y=Math.PI/2;tilt.rotation.x=Math.PI/2*.92;tilt.position.y=.55;fl.rotation.z=-1.2;fr.rotation.z=1.2;if(Math.random()<.9)spray(pos.position.x,pos.position.z)}
     else if(t<2.3){if(!s2){s2=true;ISFX.land()}const k=ease((t-1.7)/.6);pos.position.set(0,Math.sin(k*Math.PI)*.45,.4);pos.rotation.y=lerp(Math.PI/2,0,k);tilt.rotation.x=lerp(Math.PI/2*.92,0,k);tilt.position.y=lerp(.55,0,k);fl.rotation.z=lerp(-1.2,-.25,k);fr.rotation.z=lerp(1.2,.25,k)}
     else{const w=t-2.3;if(!s3){s3=true;ISFX.wuhuh()}pos.position.y=Math.max(0,Math.sin(w*7))*.12*(w<1.2?1:0);fr.rotation.z=.25+(w<1.6?Math.abs(Math.sin(w*9))*1.5:0);tilt.rotation.z=Math.sin(w*4)*.05;
