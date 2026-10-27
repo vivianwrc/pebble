@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610272243";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610272249";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1604,6 +1604,12 @@ svg.room.rmfade{animation:rmfade .28s ease}@keyframes rmfade{from{opacity:.35}}@
 
 /* Performance: beim Drehen stehen Figuren-Animationen kurz still */
 #world.orbiting #wdyn *,#stage.orbiting svg.room *,#stage.pinching svg.room *{animation-play-state:paused!important}
+
+/* Besuch bei Freund:innen */
+body.visiting .home-tools,body.visiting #storage,body.visiting #sheet,body.visiting .iosw,body.visiting .extbar,body.visiting .btbar,body.visiting .emobar,body.visiting .idcard{display:none!important}
+.visitbar{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:6;display:flex;align-items:center;gap:12px;background:var(--paper,#fffaf2);border-radius:999px;padding:6px 6px 6px 16px;box-shadow:0 6px 18px rgba(90,59,40,.22);font-size:14px;white-space:nowrap}
+.visitbar .btn{padding:8px 14px}
+body.landscape-phone .visitbar{bottom:auto;top:56px}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -9025,7 +9031,7 @@ function porchSVG(si,tc,zb,o,full,dbl){
 function porchIn(back){if(S.homeView==='out'||!S.door||!S.layout[S.door.room])return '';
   const r=roomRect(S.door.room);if(r.f!==0)return '';const si=SIDE(S.door.side,r.x,r.y,r.w,r.h);if(!!sideBack(si.n)!==back)return '';
   const op=(S.openings||[]).find(q=>q.kind==='door'&&q.room===S.door.room&&q.side===S.door.side&&q.i===S.door.i);const dbl=op&&(DOORS2[splitSt(op.style||'')[0]]||{}).dbl;
-  const dr=back?'':`<g class="indoor" opacity=".92">${doorDraw(si,S.door.i+.5,0,(op&&op.style)||'holz',.012,false)}</g>`;
+  const dr=(back||(S.wallMode||'cut')!=='up')?'':`<g class="indoor" opacity=".92">${doorDraw(si,S.door.i+.5,0,(op&&op.style)||'holz',.012,false)}</g>`;
   return dr+porchSVG(si,S.door.i+.5,0,.012,false,!!dbl)}
 /* Briefkasten-Designs */
 var MAILBOX={klassik:{n:'Klassisch'},haus:{n:'Häuschen'},modern:{n:'Modern'}};
@@ -9651,6 +9657,34 @@ setTimeout(function wp(){worldPrep();setTimeout(wp,3000)},1200);
 {const PS=playScene;playScene=function(){const r=PS.apply(this,arguments);try{const cam=$('#scene .scene-cam'),sv=cam&&cam.querySelector('svg');const w=sv&&sv.lastElementChild;
   if(w&&w.querySelector('.stepbob,.walker2,.wad2')){const o=document.createElementNS('http://www.w3.org/2000/svg','svg');o.setAttribute('viewBox',sv.getAttribute('viewBox'));o.setAttribute('aria-hidden','true');if(sv.getAttribute('class'))o.setAttribute('class',sv.getAttribute('class'));
     o.style.cssText='position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none';o.appendChild(w);cam.appendChild(o);sv.style.willChange='transform';o.style.willChange='transform'}}catch(e){}return r}}
+/* ================= v102: Freunde besuchen – direkt im Haus der Person ================= */
+let VISIT=null;
+function visitRoom(sv){const ids=Object.keys(sv.layout||{}).filter(r=>sv.unlocked&&sv.unlocked[r]);return (sv.pos&&ids.includes(sv.pos.room))?sv.pos.room:(ids[0]||'schlafzimmer')}
+visitReal=async function(id){const p=PL(id);if(!p)return;toast('Haus wird geladen …');
+  const {data,error}=await window.PEBBLE_SB.from('pebble_saves').select('data').eq('user_id',id).maybeSingle();
+  if(error||!data||!data.data){toast('Das Haus kann gerade nicht geladen werden.');return}
+  const sv=migrate(Object.assign(fresh(),data.data));
+  /* eigene Figur steht im Haus der Person */
+  sv.char=S.char;sv.outfit=JSON.parse(JSON.stringify(S.outfit||{}));
+  const room=visitRoom(sv);const R=sv.layout[room];if(!sv.pos||sv.pos.room!==room)sv.pos={room,x:1,y:1};
+  VISIT={id,n:p.n,lv:p.lv,sv,room,overview:false,own:{viewRoom,overview}};
+  sel=null;placing=null;$('#pop').hidden=true;document.body.classList.add('visiting');
+  if(typeof closeBuildPanel==='function'&&BP)closeBuildPanel();
+  show('home');renderHome();sfx('door');stat('visits')};
+function leaveVisit(){if(!VISIT)return;const o=VISIT.own;VISIT=null;document.body.classList.remove('visiting');viewRoom=o.viewRoom;overview=o.overview;SCN.key='';renderHome();renderSheet()}
+{const RV=renderHome;renderHome=function(){
+  if(!VISIT||tab!=='home')return RV.apply(this,arguments);
+  const old=S,ovr=viewRoom,oov=overview,sv0=save;let r;
+  S=VISIT.sv;viewRoom=VISIT.room;overview=VISIT.overview;save=function(){};SCN.key='';
+  try{r=RV.apply(this,arguments)}finally{S=old;VISIT.room=viewRoom;viewRoom=ovr;overview=oov;save=sv0;SCN.key=''}
+  const st=$('#stage');if(st&&!st.querySelector('.visitbar'))st.insertAdjacentHTML('beforeend',`<div class="visitbar"><span>Bei <b>${esc(VISIT.n)}</b> zu Hause</span><button type="button" class="btn" data-visitback>Nach Hause</button></div>`);
+  return r}}
+/* beim Besuch: nur ansehen, drehen, zoomen und Räume wechseln */
+document.addEventListener('click',e=>{if(!VISIT)return;const t=e.target;
+  if(t.closest('[data-visitback]')){e.stopImmediatePropagation();e.preventDefault();leaveVisit();sfx('door');return}
+  const ch=t.closest('#roomTabs [data-room-tab]');if(ch){e.stopImmediatePropagation();e.preventDefault();const id=ch.dataset.roomTab;if(VISIT.sv.unlocked&&VISIT.sv.unlocked[id]&&VISIT.sv.layout[id]){VISIT.room=id;VISIT.overview=false;renderHome()}return}
+  if(t.closest('[data-tab]')){if(t.closest('[data-tab]').dataset.tab!=='home')leaveVisit();return}
+  if(t.closest('#stage')&&!t.closest('[data-rot],[data-zoomh],.rotctl,.zoomctl,[data-ov],.floorsw,[data-floor]')){e.stopImmediatePropagation();e.preventDefault()}},true);
 /* ================= Navigation & Meldungen ================= */
 let SCY=0;addEventListener('scroll',()=>{SCY=window.scrollY||document.documentElement.scrollTop||0},{passive:true});
 function show(t){
