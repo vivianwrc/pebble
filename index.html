@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271613";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271618";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -6364,7 +6364,7 @@ function scenery(){
   /* Weg von der Haustür zur Straße */
   const d=S.door&&S.layout[S.door.room]?(()=>{const r=roomRect(S.door.room),si=SIDE(S.door.side,r.x,r.y,r.w,r.h);return {out:si.out(S.door.i),inn:si.inn(S.door.i)}})():null;
   if(d){let [x,y]=d.out;const nx=d.out[0]-d.inn[0],ny=d.out[1]-d.inn[1];
-    for(let k=0;k<12;k++){const px=x+.5+nx*k*.8,py=y+.5+ny*k*.8;if(px<g.x0||px>g.x1||py<g.y0||py>g.y1+1)break;ground+=wpoly([[px-.3,py-.3],[px+.3,py-.3],[px+.3,py+.3],[px-.3,py+.3]],-.2,'#efe6d8','stroke="#d9cbb6" stroke-width="1"')}}
+    for(let k=1;k<13;k++){const px=x+.5+nx*k*.8,py=y+.5+ny*k*.8;if(px<g.x0||px>g.x1||py<g.y0||py>g.y1+1)break;ground+=wpoly([[px-.3,py-.3],[px+.3,py-.3],[px+.3,py+.3],[px-.3,py+.3]],-.2,'#efe6d8','stroke="#d9cbb6" stroke-width="1"')}}
   const objs=[];
   /* Zaun */
   const fence=(ax,ay,bx,by)=>{const n=Math.round(Math.hypot(bx-ax,by-ay)*2);let s='';for(let i=0;i<=n;i++){const t=i/n,x=ax+(bx-ax)*t,y=ay+(by-ay)*t;s+=ln(P(x,y,0),P(x,y,16),'#ffffff',2.6)}s+=ln(P(ax,ay,12),P(bx,by,12),'#ffffff',2)+ln(P(ax,ay,6),P(bx,by,6),'#ffffff',2);return part(s,[Math.min(ax,bx),Math.max(ax,bx)+.01,Math.min(ay,by),Math.max(ay,by)+.01,0,16])};
@@ -6840,7 +6840,7 @@ scenery=function(){
   ground+=wpoly([[cx-R,g.y1+1],[cx+R,g.y1+1],[cx+R,g.y1+3.4],[cx-R,g.y1+3.4]],-.3,'#d9d4cc')+wpoly([[cx-R,g.y1+.6],[cx+R,g.y1+.6],[cx+R,g.y1+1],[cx-R,g.y1+1]],-.25,'#efe9df');
   for(let k=-40;k<40;k+=1.6)ground+=wpoly([[cx+k,g.y1+2.15],[cx+k+.8,g.y1+2.15],[cx+k+.8,g.y1+2.25],[cx+k,g.y1+2.25]],-.2,'#ffffff');
   const d=S.door&&S.layout[S.door.room]?(()=>{const r=roomRect(S.door.room),si=SIDE(S.door.side,r.x,r.y,r.w,r.h);return {out:si.out(S.door.i),inn:si.inn(S.door.i)}})():null;
-  if(d){const [x,y]=d.out,nx=d.out[0]-d.inn[0],ny=d.out[1]-d.inn[1];for(let k=0;k<12;k++){const px=x+.5+nx*k*.8,py=y+.5+ny*k*.8;if(px<g.x0||px>g.x1||py<g.y0||py>g.y1+1)break;ground+=wpoly([[px-.3,py-.3],[px+.3,py-.3],[px+.3,py+.3],[px-.3,py+.3]],-.2,'#efe6d8','stroke="#d9cbb6" stroke-width="1"')}}
+  if(d){const [x,y]=d.out,nx=d.out[0]-d.inn[0],ny=d.out[1]-d.inn[1];for(let k=1;k<13;k++){const px=x+.5+nx*k*.8,py=y+.5+ny*k*.8;if(px<g.x0||px>g.x1||py<g.y0||py>g.y1+1)break;ground+=wpoly([[px-.3,py-.3],[px+.3,py-.3],[px+.3,py+.3],[px-.3,py+.3]],-.2,'#efe6d8','stroke="#d9cbb6" stroke-width="1"')}}
   const objs=[];
   {
     const rnd=seeded(77),inHouse=(x,y,m)=>x>b.x0-m&&x<b.x1+m&&y>b.y0-m&&y<b.y1+m,onRoad=y=>y>g.y1+.4&&y<g.y1+3.6;
@@ -8527,6 +8527,87 @@ playIntro=async function(){
 
 /* v59: Startguthaben zum Ausprobieren für Vivian */
 {const _eg59=enterGame;enterGame=function(){_eg59.apply(this,arguments);try{const a=acc();if(String(a.name||'').toLowerCase()==='vivian'&&S&&!S.gift1000){S.gift1000=1;S.snow=(S.snow||0)+1000;S.pin=(S.pin||0)+1000;save();renderWallet();setTimeout(()=>toast('Zum Ausprobieren: +1000 Frosties und +1000 Pingis'),2600)}}catch(_){}}}
+/* ================= v61: Fliesen, lebendigere Tapeten, Eingangsstufen mit Säulen, Ecksofas ================= */
+/* --- Fliesen-Tapeten --- */
+Object.assign(WALLS,{
+  w_fl_weiss:{n:'Weiße Fliesen',c:'s',p:45,pat:'tiles',a:'#f7f5f1',b:'#dcd6cc'},
+  w_fl_mint:{n:'Mintfliesen',c:'s',p:45,pat:'tiles',a:'#d6efe4',b:'#b4d9c8'},
+  w_fl_rosa:{n:'Rosa Fliesen',c:'s',p:45,pat:'tiles',a:'#fbe0e6',b:'#e9bfc9'},
+  w_fl_blau:{n:'Blaue Fliesen',c:'s',p:45,pat:'tiles',a:'#d8e6f3',b:'#b3c9df'},
+  w_hfl_weiss:{n:'Halbfliesen Weiß',c:'s',p:50,pat:'halftiles',a:'#f4ece0',b:'#f7f5f1',t:'#dcd6cc'},
+  w_hfl_mint:{n:'Halbfliesen Mint',c:'s',p:50,pat:'halftiles',a:'#f4efe6',b:'#d6efe4',t:'#b4d9c8'},
+  w_hfl_salbei:{n:'Halbfliesen Salbei',c:'s',p:50,pat:'halftiles',a:'#eef1e8',b:'#c9d8bf',t:'#a9bf9b'},
+  w_hfl_terra:{n:'Halbfliesen Terrakotta',c:'s',p:55,pat:'halftiles',a:'#f6ebe0',b:'#e7b79c',t:'#c98f72'},
+});
+Object.assign(DECO,WALLS);
+const hrnd=(a,b)=>{const v=Math.sin(a*91.7+b*47.3)*43758.5;return v-Math.floor(v)};
+const _wallFace61=wallFace;
+wallFace=function(si,t0,t1,zb,z0,z1,st){
+  const P2=['stripes','dots','hearts','stars','flowers','tiles','halftiles'];if(!P2.includes(st.pat))return _wallFace61(si,t0,t1,zb,z0,z1,st);
+  const n=si.n,base=wallTint(st.a,n[0],n[1]),B=st.b,q=(a,b,za,zz,f,ex='')=>poly([si.pt(a,zb+za),si.pt(b,zb+za),si.pt(b,zb+zz),si.pt(a,zb+zz)],f,ex);
+  let s=q(t0,t1,z0,z1,base);const lo=Math.max(z0,9);
+  const tile=(a,b,za,zz,col,sz)=>{let g=q(a,b,za,zz,wallTint(col,n[0],n[1]));const gr=shade(col,-.14);
+    for(let z=za+sz;z<zz-.5;z+=sz)g+=ln(si.pt(a,zb+z),si.pt(b,zb+z),gr,.8);
+    for(let t=Math.ceil(t0/(.25))*.25;t<b;t+=.25)if(t>a+.01)g+=ln(si.pt(t,zb+za),si.pt(t,zb+zz),gr,.8);
+    for(let z=za;z<zz-sz*.5;z+=sz)for(let t=Math.floor(a/.25)*.25;t<b;t+=.25){if(t<a-.01)continue;if(hrnd(t*4,z)<.5)g+=poly([si.pt(t+.03,zb+z+sz*.7),si.pt(t+.09,zb+z+sz*.7),si.pt(t+.05,zb+z+sz*.9),si.pt(t+.02,zb+z+sz*.9)],'#ffffff','opacity=".45"')}
+    return g};
+  if(z1>lo)switch(st.pat){
+    case 'tiles':s+=tile(t0,t1,lo,z1,st.a,11);break;
+    case 'halftiles':{const top=Math.min(z1,52);if(top>lo){s+=tile(t0,t1,lo,top,st.b,9);s+=q(t0,t1,top-1,top+2.5,shade(st.t,.05))+ln(si.pt(t0,zb+top+2.5),si.pt(t1,zb+top+2.5),shade(st.t,-.15),1)}break}
+    case 'stripes':for(let k=Math.floor(t0*3)/3;k<t1;k+=1/3){const a=Math.max(t0,k+.04),b=Math.min(t1,k+.18);if(b>a+.01)s+=q(a,b,lo,z1,B,'opacity=".5"');const c=k+.24;if(c>t0&&c<t1)s+=ln(si.pt(c,zb+lo),si.pt(c,zb+z1),shade(B,-.08),.8)}break;
+    case 'dots':case 'hearts':case 'stars':case 'flowers':{let row=0;for(let z=lo+10;z<z1-4;z+=17,row++)for(let t=Math.floor(t0)+(row%2?.33:.08);t<t1-.06;t+=.5){if(t<t0+.06)continue;
+      const r1=hrnd(t*7,row),r2=hrnd(row,t*3),tt=t+(r1-.5)*.16,zz=z+(r2-.5)*7;if(tt<t0+.05||tt>t1-.05)continue;const p=si.pt(tt,zb+zz),sc=.75+r1*.55,rot=(r2-.5)*50;
+      if(st.pat==='dots')s+=ell(p[0],p[1],2.4*sc,2.4*sc,B,`opacity="${.65+r2*.35}"`);
+      else if(st.pat==='hearts')s+=`<g transform="rotate(${rot.toFixed(0)} ${f1(p[0])} ${f1(p[1])})" opacity="${.7+r2*.3}">${heart(p,3.6*sc,r1<.3?'#ffffff':B)}</g>`;
+      else if(st.pat==='stars'){const R=4.2*sc,r=R*.45;let d='';for(let k=0;k<10;k++){const a=k*Math.PI/5+rot*Math.PI/180,rr=k%2?r:R;d+=(k?'L':'M')+f1(p[0]+Math.sin(a)*rr)+' '+f1(p[1]-Math.cos(a)*rr)}s+=`<path d="${d}Z" fill="${r1<.35?'#ffffff':B}" opacity="${.75+r2*.25}"/>`}
+      else{const pc=r1<.4?'#c9b6f2':r1<.7?B:'#ffd0de';s+=[0,72,144,216,288].map(a=>{const r=(a+rot)*Math.PI/180;return ell(p[0]+Math.cos(r)*2.5*sc,p[1]+Math.sin(r)*2.5*sc,1.8*sc,1.8*sc,pc)}).join('')+ell(p[0],p[1],1.3*sc,1.3*sc,'#ffd45e');
+        if(r2>.55)s+=`<path d="M${f1(p[0]+3*sc)} ${f1(p[1]+2*sc)}q4 1 6 5" stroke="#9cc79a" stroke-width="1.1" fill="none"/>`}}}break;
+  }
+  if(z0<9)s+=q(t0,t1,z0,Math.min(9,z1),'#ffffff');
+  return s};
+try{Object.keys(TILEC).forEach(k=>delete TILEC[k])}catch(_){}
+
+/* --- Eingang: kleines Podest mit Stufen und Vordach mit Säulen --- */
+const _doorDraw61=doorDraw;
+doorDraw=function(si,tc,zb,st,o,outside){let g=_doorDraw61(si,tc,zb,st,o,outside);if(!outside||zb>0)return g;
+  const a=tc-.26,b=tc+.26,W1=a-.32,W2=b+.32,stone='#e6ded2',stoneS='#cfc5b7';
+  const slab=(t0,t1,d0,d1,z0,z1,c)=>{const top=[si.pt(t0,zb+z1,d0),si.pt(t1,zb+z1,d0),si.pt(t1,zb+z1,d1),si.pt(t0,zb+z1,d1)],front=[si.pt(t0,zb+z0,d1),si.pt(t1,zb+z0,d1),si.pt(t1,zb+z1,d1),si.pt(t0,zb+z1,d1)];
+    let r=poly(front,shade(c,-.1),`stroke="${stoneS}" stroke-width=".8"`);[[t0,-1],[t1,1]].forEach(([t,sg])=>{const nx=si.n[0],ny=si.n[1],tx=-ny,ty=nx;if(faceVis(tx*sg*(si.n?1:1),ty*sg))r+=poly([si.pt(t,zb+z0,d0),si.pt(t,zb+z0,d1),si.pt(t,zb+z1,d1),si.pt(t,zb+z1,d0)],shade(c,-.16),`stroke="${stoneS}" stroke-width=".6"`)});
+    return r+poly(top,c,`stroke="${stoneS}" stroke-width=".8"`)};
+  g+=slab(W1,W2,o,o+.55,-14,0,stone)+slab(W1+.08,W2-.08,o+.55,o+.85,-14,-5,shade(stone,-.03))+slab(W1+.16,W2-.16,o+.85,o+1.12,-14,-10,shade(stone,-.06));
+  /* zwei Säulen unter dem Vordach */
+  [a-.18,b+.18].forEach(t=>{const p0=si.pt(t,zb,o+.42),p1=si.pt(t,zb+90,o+.42);g+=`<path d="M${f1(p0[0]-2.6)} ${f1(p0[1])}V${f1(p1[1])}h5.2V${f1(p0[1])}Z" fill="#fffaf2" stroke="#d8cdbd" stroke-width=".8"/>`+poly([si.pt(t-.05,zb,o+.37),si.pt(t+.05,zb,o+.37),si.pt(t+.05,zb+3,o+.37),si.pt(t-.05,zb+3,o+.37)],'#e8dfd2')+poly([si.pt(t-.05,zb+87,o+.4),si.pt(t+.05,zb+87,o+.4),si.pt(t+.05,zb+90,o+.4),si.pt(t-.05,zb+90,o+.4)],'#e8dfd2')});
+  g+=poly([si.pt(a-.22,zb+94,o),si.pt(b+.22,zb+94,o),si.pt(b+.22,zb+88,o+.5),si.pt(a-.22,zb+88,o+.5)],roofCol())+poly([si.pt(a-.22,zb+88,o+.5),si.pt(b+.22,zb+88,o+.5),si.pt(b+.22,zb+85,o+.5),si.pt(a-.22,zb+85,o+.5)],shade(roofCol(),-.25));
+  return g};
+
+/* --- Ecksofas und Sofa mit Liegeteil --- */
+function lSofa(c,mir,col,cush,chaise){const X=(x,w)=>mir?3-x-w:x,B=(x,y,z,w,d,h,cl)=>c.b(X(x,w),y,z,w,d,h,cl),dk=shade(col,-.08);
+  const a=[B(.05,.06,0,2.9,.3,38,dk)];
+  if(!chaise)a.push(B(.05,.36,0,.3,1.6,38,dk));else a.push(B(.05,.36,0,.24,.56,28,dk));
+  a.push(B(2.71,.36,0,.24,.56,28,dk));
+  if(!chaise){a.push(B(.35,.36,0,2.36,.56,16,col),B(.35,.92,0,.6,.79,16,col),B(.35,1.71,0,.6,.24,28,dk));
+    [[.38,.4,.62],[1.04,.4,.8],[1.88,.4,.8]].forEach(([x,y,w])=>a.push(B(x,y,16,w,.48,7,cush)));a.push(B(.38,.95,16,.54,.72,7,cush))}
+  else{a.push(B(.29,.36,0,2.42,.56,16,col),B(2.05,.92,0,.9,1.0,16,col),B(2.71,.92,0,.24,1.0,10,dk));
+    [[.32,.4,.8],[1.16,.4,.8]].forEach(([x,y,w])=>a.push(B(x,y,16,w,.48,7,cush)));a.push(B(2.0,.4,16,.68,1.48,7,cush))}
+  const [hx,hy]=[X(1.4,0),.6];a.push(heart(c.p(hx,hy,24),4.5,'#ffffff'));
+  return a}
+Object.assign(DRAW,{
+  ecksofa_l:c=>lSofa(c,false,'#a9c4a6','#dfeadb'),
+  ecksofa_r:c=>lSofa(c,true,'#e5b3bb','#f8e2e6'),
+  liegesofa:c=>lSofa(c,false,'#d9c3a8','#f4e9da',true),
+  liegesofa_r:c=>lSofa(c,true,'#9fb6cf','#e2ebf4',true),
+});
+Object.assign(CAT,{
+  ecksofa_l:{n:'Ecksofa links (Salbei)',c:'s',p:140,w:3,h:2,s:'wohnzimmer'},
+  ecksofa_r:{n:'Ecksofa rechts (Rosé)',c:'s',p:140,w:3,h:2,s:'wohnzimmer'},
+  liegesofa:{n:'Sofa mit Liegeteil (Sand)',c:'s',p:120,w:3,h:2,s:'wohnzimmer'},
+  liegesofa_r:{n:'Sofa mit Liegeteil (Blau)',c:'s',p:120,w:3,h:2,s:'wohnzimmer'},
+});
+Object.assign(SEATZ,{ecksofa_l:18,ecksofa_r:18,liegesofa:18,liegesofa_r:18});
+
+/* --- nochmal 1000 Frosties für Vivian --- */
+{const _eg61=enterGame;enterGame=function(){_eg61.apply(this,arguments);try{const a=acc();if(String(a.name||'').toLowerCase()==='vivian'&&S&&!S.gift1000b){S.gift1000b=1;S.snow=(S.snow||0)+1000;save();renderWallet();setTimeout(()=>toast('+1000 Frosties zum Ausprobieren'),3400)}}catch(_){}}}
+
 /* ================= Navigation & Meldungen ================= */
 function show(t){
   tab=t;
