@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271651";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271658";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1573,6 +1573,8 @@ body.landscape-phone #pop .card.plan .planinfo{gap:4px}
 body.landscape-phone #pop .card.plan .planinfo .btn{padding:7px 10px;font-size:12px}
 body.landscape-phone #pop .card.plan .pd-acts{flex-direction:column}
 body.landscape-phone #pop .card.plan>.close{top:6px;right:6px}
+.hgrid3 [data-h3]{position:relative}
+.hgrid3 .htb-n{top:-6px;right:-6px;min-width:18px;height:18px;padding:0 5px;box-sizing:border-box;line-height:18px;text-align:center;box-shadow:0 0 0 2px #fff8ee;z-index:2;pointer-events:none}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -2390,16 +2392,17 @@ function depthSort(ents){
   const key=i=>{const e=ents[i];return (e.x+e.w/2)*SN+(e.y+e.h/2)*CS};
   return topo(ents.length,(i,j)=>isFront(ents[i],ents[j]),key).map(i=>ents[i]);
 }
-function ctx(X,Y,rot,zb=0){
-  const m=(lx,ly)=>rot?[X+ly,Y+lx]:[X+lx,Y+ly];
+function ctx(X,Y,rot,zb=0,dd){
+  rot=(rot|0)&3;const W=dd?dd.w:1,H=dd?dd.h:1;
+  const m=(lx,ly)=>rot===0?[X+lx,Y+ly]:rot===1?[X+ly,Y+W-lx]:rot===2?[X+W-lx,Y+H-ly]:[X+H-ly,Y+lx];
   return {
-    b:(lx,ly,z,lw,ld,h,c)=>{const [x,y]=m(lx,ly);return rot?box(x,y,zb+z,ld,lw,h,c):box(x,y,zb+z,lw,ld,h,c)},
+    b:(lx,ly,z,lw,ld,h,c)=>rot===0?box(X+lx,Y+ly,zb+z,lw,ld,h,c):rot===1?box(X+ly,Y+W-lx-lw,zb+z,ld,lw,h,c):rot===2?box(X+W-lx-lw,Y+H-ly-ld,zb+z,lw,ld,h,c):box(X+H-ly-ld,Y+lx,zb+z,ld,lw,h,c),
     cyl:(lx,ly,r,z,h,c)=>{const [x,y]=m(lx,ly);return cyl(x,y,r,zb+z,h,c)},
     disc:(lx,ly,r,z,c,ex)=>{const [x,y]=m(lx,ly);return disc(x,y,r,zb+z,c,ex)},
     ball:(lx,ly,z,rp,c)=>{const [x,y]=m(lx,ly);return ball(x,y,zb+z,rp,c)},
     p:(lx,ly,z=0)=>{const [x,y]=m(lx,ly);return P(x,y,zb+z)},
-    vis:(nx,ny)=>faceVis(rot?ny:nx,rot?nx:ny),
-    m,zb,
+    vis:(nx,ny)=>rot===0?faceVis(nx,ny):rot===1?faceVis(ny,-nx):rot===2?faceVis(-nx,-ny):faceVis(-ny,nx),
+    m,zb,rot,
   };
 }
 const WOOD='#e8c39e',WOODD='#c99a74',SHAD='rgba(34,48,74,.15)';
@@ -2443,7 +2446,7 @@ const CAT={
   badewanne:{n:'Schaumbad-Wanne',c:'s',p:60,w:2,h:1,s:'bad'}, toilette:{n:'Toilette',c:'s',p:40,w:1,h:1,s:'bad'},
   waschbecken:{n:'Waschbecken',c:'s',p:30,w:1,h:1,s:'bad'}, entchen:{n:'Quietscheentchen',c:'s',p:10,w:1,h:1,s:'bad'},
   badematte:{n:'Badematte',c:'s',p:15,w:1,h:1,s:'bad',rug:1},
-  herd:{n:'Herd',c:'s',p:50,w:1,h:1,s:'kueche'}, kuehlschrank:{n:'Minzkühlschrank',c:'s',p:50,w:1,h:1,s:'kueche'},
+  herd:{n:'Herd',c:'s',p:50,w:1,h:1,s:'kueche'}, kuehlschrank:{n:'Kühlschrank',c:'s',p:50,w:1,h:1,s:'kueche'},
   hocker:{n:'Hocker',c:'s',p:12,w:1,h:1,s:'kueche'}, torte:{n:'Erdbeertorte',c:'p',p:15,w:1,h:1,s:'kueche',lim:1},
   sofa:{n:'Fliedersofa',c:'s',p:70,w:2,h:1,s:'wohnzimmer'}, sessel:{n:'Rosensessel',c:'s',p:45,w:1,h:1,s:'wohnzimmer'},
   fernseher:{n:'Fernseher',c:'s',p:80,w:2,h:1,s:'wohnzimmer'}, tisch:{n:'Kakaotisch',c:'s',p:25,w:1,h:1,s:'wohnzimmer'},
@@ -2860,7 +2863,7 @@ function migrate(s){
 const $=s=>document.querySelector(s);
 const inRoom=id=>S.items.filter(i=>i.room===id);
 const stored=()=>S.items.filter(i=>!i.room);
-const dims=it=>{const d=CAT[it.id];return it.rot?[d.h,d.w]:[d.w,d.h]};
+const dims=it=>{const d=CAT[it.id];return (it.rot&1)?[d.h,d.w]:[d.w,d.h]};
 const curIcon=c=>c==='p'?PIN():SNOW();
 const priceHTML=(c,p)=>`<span class="price${c==='p'?' gold':''}">${curIcon(c)}${p}</span>`;
 const has=(c,p)=>(c==='p'?S.pin:S.snow)>=p;
@@ -3056,7 +3059,7 @@ function shell(o){
 }
 
 /* ================= Zuhause als Puppenhaus ================= */
-const itemG=(it,gx,gy,zb,live)=>{const [w,h]=dims(it),ez=surfZ(it),d=CAT[it.id],sh=d.rug||d.wall?'':softShadow(gx+it.x+w/2,gy+it.y+h/2,w/2*.95,h/2*.95,zb+ez+.3,.9);CURIT=it;const s=sh+drawItem(it.id,ctx(gx+it.x,gy+it.y,it.rot,zb+ez));CURIT=null;return live?`<g class="item${sel===it.uid?' sel':''}" data-uid="${it.uid}">${s}</g>`:s};
+const itemG=(it,gx,gy,zb,live)=>{const [w,h]=dims(it),ez=surfZ(it),d=CAT[it.id],sh=d.rug||d.wall?'':softShadow(gx+it.x+w/2,gy+it.y+h/2,w/2*.95,h/2*.95,zb+ez+.3,.9);CURIT=it;const s=sh+drawItem(it.id,ctx(gx+it.x,gy+it.y,it.rot,zb+ez,CAT[it.id]));CURIT=null;return live?`<g class="item${sel===it.uid?' sel':''}" data-uid="${it.uid}">${s}</g>`:s};
 const charG=()=>`<ellipse cx="0" cy="0" rx="20" ry="8" fill="${SHAD}"/><g class="wad"><g transform="translate(-36 -70) scale(.72)">${avatarArt(S.char,S.outfit)}</g></g>`;
 function playerG(gx,gy,zb){const [sx,sy]=P(gx+S.pos.x+.5,gy+S.pos.y+.5,zb);return `<g id="player" class="pl sp-${S.char||'pinguin'}${flip?' flip':''}" style="transform:translate(${f1(sx)}px,${f1(sy)}px)" pointer-events="none">${charG()}</g>`}
 function holeG(r,hl,zb,live){
@@ -3148,8 +3151,8 @@ function renderHome(){
 function itemSVG(id,rot=0){
   return withCam(DEFCAM,()=>{
     BB=[1e9,1e9,-1e9,-1e9];
-    const d=CAT[id],[w,h]=rot?[d.h,d.w]:[d.w,d.h];
-    const s=poly([P(0,0),P(w,0),P(w,h),P(0,h)],'rgba(34,48,74,.06)')+drawItem(id,ctx(0,0,rot));
+    const d=CAT[id],[w,h]=(rot&1)?[d.h,d.w]:[d.w,d.h];
+    const s=poly([P(0,0),P(w,0),P(w,h),P(0,h)],'rgba(34,48,74,.06)')+drawItem(id,ctx(0,0,rot,0,d));
     const b=BB;BB=null;const pad=4;
     return `<svg viewBox="${f1(b[0]-pad)} ${f1(b[1]-pad)} ${f1(b[2]-b[0]+pad*2)} ${f1(b[3]-b[1]+pad*2)}" aria-hidden="true">${s}</svg>`;
   });
@@ -3173,7 +3176,7 @@ function renderSheet(){
     const it=S.items.find(i=>i.uid===placing.uid),ok=placeOK();
     sh.innerHTML=`<div class="title">${itemSVG(it.id,it.rot)}<span>${CAT[it.id].n}<small class="ptip">Zieh es mit dem Finger an seinen Platz und bestätige mit dem Häkchen.</small></span></div>
       <div class="gridsel"><small>Raster</small>${[['ganz','Felder'],['fein','Fein'],['frei','Aus']].map(([k,l])=>`<button type="button" data-grid="${k}" aria-pressed="${S.grid===k}">${l}</button>`).join('')}</div>
-      <div class="acts pacts"><button class="btn soft" data-act="cancel" aria-label="Abbrechen">${CLOSE}<span>Abbrechen</span></button>${CAT[it.id].w!==CAT[it.id].h?`<button class="btn soft" data-act="rotp">${ROTI}<span>Drehen</span></button>`:''}<button class="btn ok" data-act="okp" ${ok?'':'aria-disabled="true"'}>${CHECK}<span>Hier aufstellen</span></button></div>`;
+      <div class="acts pacts"><button class="btn soft" data-act="cancel" aria-label="Abbrechen">${CLOSE}<span>Abbrechen</span></button>${!CAT[it.id].wall?`<button class="btn soft" data-act="rotp">${ROTI}<span>Drehen</span></button>`:''}<button class="btn ok" data-act="okp" ${ok?'':'aria-disabled="true"'}>${CHECK}<span>Hier aufstellen</span></button></div>`;
     sh.hidden=false;return;
   }
   if(sel){
@@ -3247,7 +3250,7 @@ function drawGhost(){
   useCam(camHome);
   const R=RD(viewRoom),r=roomRect(viewRoom),zb=r.f*FH,it=S.items.find(i=>i.uid===placing.uid),[w,h]=dims(it);
   const [x,y]=snapPos(R,it,placing.cx,placing.cy),ok=fits(R,it,x,y),X=r.x+x,Y=r.y+y;
-  g.innerHTML=poly([P(X,Y,zb),P(X+w,Y,zb),P(X+w,Y+h,zb),P(X,Y+h,zb)],ok?'rgba(120,200,150,.35)':'rgba(230,90,110,.35)',`stroke="${ok?'#5cb87e':'#e05a6e'}" stroke-width="2"`)+`<g class="gitem" opacity=".8">${resolve(drawItem(it.id,ctx(X,Y,it.rot,zb)))}</g>`;
+  g.innerHTML=poly([P(X,Y,zb),P(X+w,Y,zb),P(X+w,Y+h,zb),P(X,Y+h,zb)],ok?'rgba(120,200,150,.35)':'rgba(230,90,110,.35)',`stroke="${ok?'#5cb87e':'#e05a6e'}" stroke-width="2"`)+`<g class="gitem" opacity=".8">${resolve(drawItem(it.id,ctx(X,Y,it.rot,zb,CAT[it.id])))}</g>`;
   const bb=g.querySelector('.gitem').getBBox(),vb=svg.viewBox.baseVal,k=vb.width/(svg.clientWidth||vb.width),rr=17*k*1.2,cx=bb.x+bb.width/2,ty=Math.min(bb.y,P(X+w/2,Y+h/2,zb)[1]-40*k)-rr-6*k;
   const sc=rr*1.15/24,btn=(dx,act,fill,d,dis)=>`<g data-pact="${act}" pointer-events="all" style="cursor:pointer"${dis?' opacity=".5"':''}><circle cx="${f1(cx+dx)}" cy="${f1(ty+2*k)}" r="${f1(rr)}" fill="rgba(0,0,0,.15)"/><circle cx="${f1(cx+dx)}" cy="${f1(ty)}" r="${f1(rr)}" fill="${fill}" stroke="#fff" stroke-width="${f1(2.5*k)}"/><path transform="translate(${f1(cx+dx-12*sc)} ${f1(ty-12*sc)}) scale(${sc.toFixed(3)})" d="${d}" stroke="#fff" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>`;
   const canRot=!CAT[it.id].wall,B=[['no','#e0737f','M7 7l10 10M17 7 7 17'],['inv','#c49a4a','M4.5 10h15v9h-15zM3 6h18v4H3zM10 13.5h4']];if(canRot)B.push(['rot','#8a6347','M19 8a8 8 0 1 0 1.5 6M19 3v5h-5']);if(placing.backup){const d=CAT[it.id];if(SEATZ[it.id])B.push(['sit','#7a9cc6','M6 11V6h12v5M4 11h16v4H4zM6 15v4M18 15v4']);if(d.stair)B.push(['up','#7a9cc6','M5 19h4v-4h4v-4h4V7h3']);if(d.ward)B.push(['ward','#c98aa4','M9 4l3 3 3-3 5 3-2 4h-2v9H8v-9H6L4 7z']);if(d.photo)B.push(['pickphoto','#c98aa4','M4 7h4l2-2h4l2 2h4v12H4zM12 10a3 3 0 1 0 .01 0'])}B.push(['ok',ok?'#4fae74':'#9aa7a0','M5 12.5 10 17.5 19 7',!ok]);
@@ -6181,13 +6184,13 @@ holeG=function(r,hl,zb,live){
   const clip=corner.map(([a,b])=>P(a,b,zb));
   let s=`<clipPath id="${id}"><polygon points="${clip.map(p=>f1(p[0])+','+f1(p[1])).join(' ')}"/></clipPath><g clip-path="url(#${id})">`;
   s+=wpoly(corner,lz+.2,floorStyle(st.room).a)+wpoly(corner,lz+.3,'#3a2a3a','opacity=".18"');
-  s+=resolve(drawItem(st.it.id,ctx(st.x,st.y,st.it.rot,lz)))+`<polygon points="${clip.map(p=>f1(p[0])+','+f1(p[1])).join(' ')}" fill="url(#gHoleShade)"/></g>`;
+  s+=resolve(drawItem(st.it.id,ctx(st.x,st.y,st.it.rot,lz,CAT[st.it.id])))+`<polygon points="${clip.map(p=>f1(p[0])+','+f1(p[1])).join(' ')}" fill="url(#gHoleShade)"/></g>`;
   /* Kanten der Deckenöffnung */
   [[[x,y],[x+w,y],[0,1]],[[x+w,y],[x+w,y+h],[-1,0]],[[x,y+h],[x+w,y+h],[0,-1]],[[x,y],[x,y+h],[1,0]]].forEach(([p,q,n])=>{if(!faceVis(n[0],n[1]))return;
     s+=poly([P(p[0],p[1],zb),P(q[0],q[1],zb),P(q[0],q[1],zb-10),P(p[0],p[1],zb-10)],shade(floorStyle(r.id).s||'#d9c2a4',-.12))});
   /* Geländer: an drei Seiten, offen an der Treppen-Oberkante */
   const rot=st.it.rot,R0=roomRect(r.id),onWall={y0:Math.abs(y-R0.y)<.01,x1:Math.abs(x+w-R0.x-R0.w)<.01,y1:Math.abs(y+h-R0.y-R0.h)<.01,x0:Math.abs(x-R0.x)<.01};
-  let open=CAT[st.it.id].h===1&&CAT[st.it.id].w===1?null:rot?'x0':'y0';
+  let open=CAT[st.it.id].h===1&&CAT[st.it.id].w===1?null:['y0','x0','y1','x1'][rot&3];
   if(!open){const cx=R0.x+R0.w/2,cy=R0.y+R0.h/2,mid={y0:[x+w/2,y-.5],x1:[x+w+.5,y+h/2],y1:[x+w/2,y+h+.5],x0:[x-.5,y+h/2]};open=Object.keys(mid).filter(k=>!onWall[k]).sort((a,b)=>Math.hypot(mid[a][0]-cx,mid[a][1]-cy)-Math.hypot(mid[b][0]-cx,mid[b][1]-cy))[0]||'y1'}
   const sides={y0:[[x,y],[x+w,y]],x1:[[x+w,y],[x+w,y+h]],y1:[[x,y+h],[x+w,y+h]],x0:[[x,y],[x,y+h]]};
   const ordered=Object.entries(sides).filter(([k])=>k!==open&&!onWall[k]).sort((a,b)=>{const c=e=>((e[1][0][0]+e[1][1][0])/2)*SN+((e[1][0][1]+e[1][1][1])/2)*CS;return c(a)-c(b)});
@@ -8389,7 +8392,7 @@ playIntro=async function(){
 };
 
 /* v56: Möbel beim Aufstellen drehen (alle außer Wandsachen), Tastatur R / Enter / Esc */
-function rotPlacing(){if(!placing)return;const it=S.items.find(i=>i.uid===placing.uid);if(!it||CAT[it.id].wall)return;it.rot=it.rot?0:1;sfx('pop');try{renderSheet()}catch(_){}drawGhost()}
+function rotPlacing(){if(!placing)return;const it=S.items.find(i=>i.uid===placing.uid);if(!it||CAT[it.id].wall)return;it.rot=((it.rot|0)+1)&3;sfx('pop');try{renderSheet()}catch(_){}drawGhost()}
 document.addEventListener('keydown',e=>{if(!placing||e.target.closest&&e.target.closest('input,textarea'))return;const k=e.key.toLowerCase();
   if(k==='r'){e.preventDefault();rotPlacing()}else if(k==='enter'){e.preventDefault();confirmPlace()}else if(k==='escape'){e.preventDefault();cancelPlace();toast(CANCELMSG)}});
 bpHint=(f=>function(){if(placing)return 'Zieh das Möbelstück an seinen Platz. Mit dem runden Pfeil drehst du es, mit dem Pfeil nach unten packst du es ins Inventar, mit dem Häkchen stellst du es auf. Am PC geht Drehen auch mit R.';return f()})(bpHint);
@@ -8678,11 +8681,22 @@ rc(['sessel'],'#f4b6c8',[['Rosé',null],['Salbei',SALBEI],['Himmelblau',HIMMEL]]
 rc(['ecksofa_l','liegesofa'],'#a9c4a6',[['Salbei',null],['Rosé','#e5b3bb'],['Sand',SAND]]);
 rc(['badematte'],'#ddd0f6',[['Flieder',null],['Mint',MINT],['Pfirsich',PFIRSICH]]);
 RECOL.kuechenzeile={only:['#ffe3cf'],base:'#ffe3cf',opts:[['Pfirsich',null],['Salbei','#cfe0c8'],['Himmelblau','#d3e2f3']]};
+RECOL.spueltheke=RECOL.wandschrank=RECOL.kuechenzeile;
+RECOL.schubtheke={only:['#e8c39e'],base:'#e8c39e',opts:[['Holz',null],['Pfirsich','#ffe3cf'],['Salbei','#cfe0c8'],['Himmelblau','#d3e2f3']]};
+RECOL.herd={base:'#ffffff',opts:[['Weiß',null],['Rosa','#f9d3df'],['Salbei','#d6e6cf'],['Himmelblau','#d6e3f3']],map:{
+  '#f9d3df':{'#ffffff':'#f9d3df','#ffe9f1':'#fff3f7'},
+  '#d6e6cf':{'#ffffff':'#d6e6cf','#ffe9f1':'#eef5ea','#f7a8c6':'#93b98c'},
+  '#d6e3f3':{'#ffffff':'#d6e3f3','#ffe9f1':'#eef3fb','#f7a8c6':'#8eaedb'}}};
+RECOL.kuehlschrank={base:'#bfe8da',opts:[['Mint',null],['Weiß','#f7f4ef'],['Rosa','#f9cfdc'],['Himmelblau','#cfdff3']],map:{
+  '#f7f4ef':{'#bfe8da':'#f7f4ef','#8fcdb9':'#ddd5ca'},
+  '#f9cfdc':{'#bfe8da':'#f9cfdc','#8fcdb9':'#e9a5bc'},
+  '#cfdff3':{'#bfe8da':'#cfdff3','#8fcdb9':'#9db8dc'}}};
 RECOL.teppich_eckig={base:'#f2c4d2',opts:[['Rosa',null],['Salbei',SALBEI],['Sand',SAND]],win:40};
 const CURTCOLS=[['Weiß','#f6f2ec'],['Rosa','#f4c6d3'],['Salbei','#c3d6bb'],['Blau','#c3d4ea']];
 ['vh_lang','vh_lang_bund','vh_kurz','vh_kurz_bund'].forEach(id=>RECOL[id]={param:1,opts:CURTCOLS});
 let DRAWCOL,CURCOLV=null;const COLC=new Map();
 function mapCol(hex,cfg,T){if(typeof hex!=='string'||hex[0]!=='#'||hex.length!==7)return hex;const key=hex+T+(cfg.base||'');let r=COLC.get(key);if(r)return r;r=hex;
+  if(cfg.map){const m=cfg.map[T];r=(m&&m[hex.toLowerCase()])||hex;COLC.set(key,r);return r}
   const x=hex2hsl(hex.toLowerCase());
   if(cfg.only){if(cfg.only.includes(hex.toLowerCase())){const t=hex2hsl(T),b=hex2hsl(cfg.base);r=hsl2hex(t[0]+(x[0]-b[0]),x[1]*(t[1]/(b[1]||1)),x[2]+(t[2]-b[2]))}}
   else{const b=hex2hsl(cfg.base),d=Math.abs(((x[0]-b[0])+540)%360-180);if(x[1]>.18&&x[2]<.97&&d<=(cfg.win||28)){const t=hex2hsl(T);r=hsl2hex(t[0]+(x[0]-b[0]),Math.min(1,x[1]*(t[1]/(b[1]||1))),x[2]+(t[2]-b[2])*.9)}}
@@ -8976,7 +8990,7 @@ $('#sheet').addEventListener('click',e=>{
   if(a==='decoclose'){decoOpen=false;renderSheet();return}
   if(a==='toshop'){decoOpen=false;shopView='moebel';shopCat='tapeten';show('shop');renderShop();return}
   if(a==='cancel'){cancelPlace();toast(CANCELMSG);return}
-  if(a==='rotp'){const it=S.items.find(i=>i.uid===placing.uid);it.rot=it.rot?0:1;renderSheet();drawGhost();return}
+  if(a==='rotp'){const it=S.items.find(i=>i.uid===placing.uid);it.rot=((it.rot|0)+1)&3;renderSheet();drawGhost();return}
   if(a==='okp'){confirmPlace();return}
   const it=S.items.find(i=>i.uid===sel);if(!it)return;
   if(a==='up'){goUp(it);return}
@@ -8986,7 +9000,7 @@ $('#sheet').addEventListener('click',e=>{
   if((a==='move'||a==='store')&&homeSit===it.uid)homeSit=null;
   if(a==='close')sel=null;
   if(a==='rot'){
-    const R=RD(it.room),old=it.rot;it.rot=old?0:1;
+    const R=RD(it.room),old=it.rot;it.rot=((old|0)+1)&3;
     if(!fits(R,it,it.x,it.y)){it.rot=old;toast('Zum Drehen ist hier zu wenig Platz');return}
     if(S.pos.room===R.id&&blocked(R.id,S.pos.x,S.pos.y))movePlayerFree(R);
     save();
