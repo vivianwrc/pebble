@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610272114";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610272137";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1601,6 +1601,9 @@ svg.room.rmfade{animation:rmfade .28s ease}@keyframes rmfade{from{opacity:.35}}@
 .f2light{animation:f2light 7s ease-in-out infinite}@keyframes f2light{50%{transform:translate(14px,6px)}}.f2fishw{animation:f2wig .5s ease-in-out infinite alternate;transform-origin:4px 0}@keyframes f2wig{to{transform:skewY(5deg)}}
 /* Performance: Grasbüschel nicht animieren (zwang das ganze Haus jedes Bild neu zu zeichnen) */
 .gt{animation:none!important}
+
+/* Performance: beim Drehen stehen Figuren-Animationen kurz still */
+#world.orbiting #wdyn *,#stage.orbiting svg.room *,#stage.pinching svg.room *{animation-play-state:paused!important}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -6856,12 +6859,13 @@ function renderBuildPanel(){
 function openBuildPanel(cat){BP=cat||BP||'fenster';sel=null;decoOpen=false;growOpen=false;
   if(BP==='fassade'||BP==='dach')S.homeView='out';
   renderHome();renderSheet();renderBuildPanel();$('#buildpanel')?.scrollIntoView({behavior:'smooth',block:'nearest'})}
+let HSOON=0;function homeSoon(){if(HSOON)return;HSOON=requestAnimationFrame(()=>{setTimeout(()=>{HSOON=0;if(tab==='home')renderHome()},0)})}
 function closeBuildPanel(){BP=null;BT=null;growOpen=false;renderHome();renderBuildPanel()}
 openBuildMenu=function(){openBuildPanel(BP||'fenster')};
 openBuildCat=function(tab){openBuildPanel(tab==='tueren'?'tueren':tab==='raum'?'raum':'fenster')};
 document.addEventListener('click',e=>{
   const t=e.target;
-  const c=t.closest('[data-bpcat]');if(c){BP=c.dataset.bpcat;BT=null;growOpen=false;if(BP==='raum'){BT={kind:'grow',style:''};growOpen=true;if(S.homeView==='out')S.homeView='in'}if(BP==='fassade'||BP==='dach')S.homeView='out';renderHome();renderBuildPanel();return}
+  const c=t.closest('[data-bpcat]');if(c){BP=c.dataset.bpcat;BT=null;growOpen=false;if(BP==='raum'){BT={kind:'grow',style:''};growOpen=true;if(S.homeView==='out')S.homeView='in'}if(BP==='fassade'||BP==='dach')S.homeView='out';renderBuildPanel();e._bpr=1;homeSoon();return}
   if(t.closest('[data-bpdone]')){closeBuildPanel();return}
   const tl=t.closest('[data-bptool]');if(tl){const [kind,style]=tl.dataset.bptool.split('|');
     if(BT&&BT.kind===kind&&BT.style===style){BT=null}else{BT={kind,style};opsInit()}growOpen=BT?.kind==='grow';
@@ -7351,13 +7355,13 @@ renderBuildPanel=function(){
   _rbp30();const p2=$('#buildpanel');if(!p2)return;
   p2.querySelector('.bp-items')?.classList.toggle('has-mob',BP==='moebel');p2.classList.toggle('bp-wide',BP==='moebel');
   const g=p2.querySelector('.mob-grid');if(g)g.scrollTop=MOBTOP?0:gs;MOBTOP=false;const sd=p2.querySelector('.mob-side');if(sd)sd.scrollTop=ss;
-  const tb=p2.querySelector('.bp-tabs');if(tb){if(ts!=null)tb.scrollLeft=ts;const on=tb.querySelector('[aria-selected="true"]');if(on&&(on.offsetLeft<tb.scrollLeft||on.offsetLeft+on.offsetWidth>tb.scrollLeft+tb.clientWidth))tb.scrollLeft=on.offsetLeft-20}
+  const tb=p2.querySelector('.bp-tabs');if(tb){if(ts!=null)tb.scrollLeft=ts;requestAnimationFrame(()=>{const on=tb.isConnected&&tb.querySelector('[aria-selected="true"]');if(on&&(on.offsetLeft<tb.scrollLeft||on.offsetLeft+on.offsetWidth>tb.scrollLeft+tb.clientWidth))tb.scrollLeft=on.offsetLeft-20})}
 };
 const _obp30=openBuildPanel;
 openBuildPanel=function(c){_obp30(c);if((BP==='moebel'||BP==='treppen')&&S.homeView==='out'){S.homeView='in';renderHome()}if(BP==='zaun'&&S.homeView!=='out'){S.homeView='out';renderHome()}renderBuildPanel()};
 document.addEventListener('click',e=>{
   const t=e.target;
-  const c=t.closest('[data-bpcat]');if(c){const k=c.dataset.bpcat;if((k==='moebel'||k==='treppen')&&S.homeView==='out'){S.homeView='in';renderHome()}if(k==='zaun'&&S.homeView!=='out'){S.homeView='out';renderHome()}renderBuildPanel();return}
+  const c=t.closest('[data-bpcat]');if(c){const k=c.dataset.bpcat;if((k==='moebel'||k==='treppen')&&S.homeView==='out'){S.homeView='in';renderHome()}if(k==='zaun'&&S.homeView!=='out'){S.homeView='out';renderHome()}if(!e._bpr)renderBuildPanel();return}
   const mc=t.closest('[data-mobcat]');if(mc){MOB=mc.dataset.mobcat;MOBTOP=true;renderBuildPanel();return}
   const mb=t.closest('[data-mobbuy]');if(mb){buyPlace(mb.dataset.mobbuy);return}
   const mm=t.closest('[data-mobmove]');if(mm){const it=S.items.find(i=>i.uid===+mm.dataset.mobmove);if(it&&it.room){if(S.homeView==='out')S.homeView='in';pickUp(it)}return}
@@ -9615,11 +9619,12 @@ const inCull=(x,y,mx,up)=>{if(typeof HPV!=='undefined'&&HPV.mid&&mx>80)return fa
 /* v97: Die Welt im Leerlauf vorbereiten, damit der Wechsel dorthin schneller geht */
 /* Vorbereitung in kleinen Häppchen, jeweils nur wenn gerade nichts los ist */
 const PREPQ=[];
-function worldPrep(){if(PREPQ.length||!user||!S)return;[0,1].forEach(f=>[[1,1],[1,-1],[-1,1],[-1,-1]].forEach(([a,b])=>PREPQ.push(()=>roofGeom(f,a,b))));
-  PREPQ.push(()=>{if(!W.running){const id=MAPS[S.wmap]?S.wmap:'platz';withCam(camWorld,()=>ensureMap(id))}});prepRun()}
+let LASTIN=0;['pointerdown','keydown','wheel','touchstart'].forEach(t=>addEventListener(t,()=>{LASTIN=performance.now()},{capture:true,passive:true}));
+function worldPrep(){if(PREPQ.length||!user||!S)return;PREPQ.push(()=>{if(!W.running){const id=MAPS[S.wmap]?S.wmap:'platz';withCam(camWorld,()=>ensureMap(id))}});
+  [0,1].forEach(f=>[[1,1],[1,-1],[-1,1],[-1,-1]].forEach(([a,b])=>PREPQ.push(()=>roofGeom(f,a,b))));prepRun()}
 function prepRun(){if(!PREPQ.length)return;const ric=window.requestIdleCallback||(f=>setTimeout(()=>f({timeRemaining:()=>50}),200));
-  ric(dl=>{if(busyNow()||document.hidden||(dl.timeRemaining&&dl.timeRemaining()<8)){setTimeout(prepRun,400);return}const job=PREPQ.shift();try{job()}catch(e){}setTimeout(prepRun,120)},{timeout:4000})}
-setTimeout(function wp(){worldPrep();setTimeout(wp,20000)},4000);
+  ric(dl=>{if(busyNow()||document.hidden||document.querySelector('.intro')||tab!=='home'||W.busy||performance.now()-LASTIN<2500||!$('#pop').hidden||(dl.timeRemaining&&dl.timeRemaining()<8)){setTimeout(prepRun,400);return}const job=PREPQ.shift();try{job()}catch(e){}setTimeout(prepRun,120)},{timeout:4000})}
+setTimeout(function wp(){worldPrep();setTimeout(wp,3000)},1200);
 /* ================= v98: Drehen ohne Wartezeit – Vorschau über die Grafikkarte, echtes Bild in Abständen ================= */
 const camSnap=c=>({yaw:c.yaw,pitch:c.pitch,zoom:c.zoom||1,px:c.px||0,py:c.py||0,ax:c.ax??.5,ay:c.ay??.5});
 const gAff=c=>withCam(c,()=>{const o=P(0,0),a=P(1,0),b=P(0,1);return [a[0]-o[0],a[1]-o[1],b[0]-o[0],b[1]-o[1],o[0],o[1]]});
@@ -9644,8 +9649,8 @@ function hpvApply(){const B=HPV.base,c=camSnap(camHome);
   const st=$('#stage'),sv=st&&st.querySelector('svg.room:not(.locked-room)'),lite=liteNow();
   if(sv&&lite&&tab==='home'&&!placing&&S.unlocked[viewRoom]&&!$('#game').hidden){
     const B=HPV.base;
-    if(B&&B.sv===sv&&sv.isConnected&&yawD(camHome.yaw,B.cam.yaw)<(TURNING?50:40)&&Math.abs(camHome.pitch-B.cam.pitch)<(TURNING?40:16)){
-      try{hpvApply();clearTimeout(HPV.timer);HPV.timer=setTimeout(()=>{if(liteNow()&&tab==='home'){HPV.prev=false;hpvMid(RP);hpvBase()}},140);return}catch(e){}}
+    if(B&&B.sv===sv&&sv.isConnected&&yawD(camHome.yaw,B.cam.yaw)<(TURNING?50:95)&&Math.abs(camHome.pitch-B.cam.pitch)<(TURNING?40:25)){
+      try{hpvApply();clearTimeout(HPV.timer);HPV.timer=setTimeout(()=>{if(liteNow()&&tab==='home'){HPV.prev=false;hpvMid(RP);hpvBase()}},260);return}catch(e){}}
     HPV.prev=false;const r=hpvMid(RP);hpvBase();return r}
   clearTimeout(HPV.timer);HPV.prev=false;const r=RP.apply(this,arguments);try{hpvBase()}catch(e){HPV.base=null}return r}}
 /* v98: Welt drehen/zoomen – Vorschau über die Grafikkarte, echtes Bild in Abständen */
@@ -9664,8 +9669,8 @@ function wpvApply(){const wl=$('#world'),wc=$('#wcam');if(!wc||!W.vb)throw 0;
   WPV.prev=true;wc.style.transform=`matrix(${M.map(v=>+v.toFixed(5)).join(',')})`}
 {const WI=worldInit;worldInit=function(){
   const wl=$('#world'),sv=$('#wsvg');
-  if(W.running&&wl&&sv&&wl.classList.contains('orbiting')&&WPV.cam&&$('#wcam')&&$('#wPlayer')&&W.map===S.wmap&&yawD(camWorld.yaw,WPV.cam.yaw)<(TURNING?50:40)&&Math.abs(camWorld.pitch-WPV.cam.pitch)<(TURNING?40:16)){
-    try{wpvApply();clearTimeout(WPV.timer);WPV.timer=setTimeout(()=>{const w=$('#world');if(w&&w.classList.contains('orbiting')&&W.running){wpvEnd();WI();wpvMark()}},140);return}catch(e){}}
+  if(W.running&&wl&&sv&&wl.classList.contains('orbiting')&&WPV.cam&&$('#wcam')&&$('#wPlayer')&&W.map===S.wmap&&yawD(camWorld.yaw,WPV.cam.yaw)<(TURNING?50:95)&&Math.abs(camWorld.pitch-WPV.cam.pitch)<(TURNING?40:25)){
+    try{wpvApply();clearTimeout(WPV.timer);WPV.timer=setTimeout(()=>{const w=$('#world');if(w&&w.classList.contains('orbiting')&&W.running){wpvEnd();WI();wpvMark()}},260);return}catch(e){}}
   clearTimeout(WPV.timer);wpvEnd();const r=WI.apply(this,arguments);wpvMark();return r}}
 /* während der Vorschau steht alles still, damit Bild und Figuren zusammenpassen */
 {const C0=camMove;camMove=function(){if(WPV.prev)return;return C0.apply(this,arguments)}}
@@ -9675,6 +9680,10 @@ function wpvApply(){const wl=$('#world'),wc=$('#wcam');if(!wc||!W.vb)throw 0;
 function wpvGuard(){const sv=$('#wsvg');if(!sv||sv._styleGuard)return;const real=sv.style,fake={};sv._styleGuard=1;
   Object.defineProperty(sv,'style',{configurable:true,get(){return WPV.prev?fake:real}})}
 {const WI2=worldInit;worldInit=function(){wpvGuard();const wl=$('#world');if(wl&&!W.cw){W.cw=wl.clientWidth||0;W.ch=wl.clientHeight||0}return WI2.apply(this,arguments)}}
+/* v98: Eingangs-Szene – die laufende Figur in eigener Ebene, das Bild dahinter wird nicht ständig neu gezeichnet */
+{const PS=playScene;playScene=function(){const r=PS.apply(this,arguments);try{const cam=$('#scene .scene-cam'),sv=cam&&cam.querySelector('svg');const w=sv&&sv.lastElementChild;
+  if(w&&w.querySelector('.stepbob,.walker2,.wad2')){const o=document.createElementNS('http://www.w3.org/2000/svg','svg');o.setAttribute('viewBox',sv.getAttribute('viewBox'));o.setAttribute('aria-hidden','true');if(sv.getAttribute('class'))o.setAttribute('class',sv.getAttribute('class'));
+    o.style.cssText='position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none';o.appendChild(w);cam.appendChild(o);sv.style.willChange='transform';o.style.willChange='transform'}}catch(e){}return r}}
 /* ================= Navigation & Meldungen ================= */
 let SCY=0;addEventListener('scroll',()=>{SCY=window.scrollY||document.documentElement.scrollTop||0},{passive:true});
 function show(t){
