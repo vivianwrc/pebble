@@ -1,8 +1,9 @@
 {
-  "name": "Pebble",
-  "short_name": "Pebble",
+  "name": "Pebble Town",
+  "short_name": "Pebble Town",
   "description": "Gemütliches Bau- und Wohnspiel mit Pinguin.",
   "lang": "de",
+  "id": "./",
   "start_url": "./",
   "scope": "./",
   "display": "fullscreen",
