@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271638";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271640";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -5841,7 +5841,7 @@ function spotUp(id,s=S){
     const sc=ov*2+(touch?40:0)-Math.abs(x+w/2-PLAN_W/2)*.1;if(sc>bs){bs=sc;best=L}}
   return best;
 }
-function ensureStair(upId){
+function ensureStair(upId){return '';
   const u=roomRect(upId);
   const has=placed().some(o=>{const r=roomRect(o);return r.f===0&&stairsOf(o).some(st=>overlap(u,st))});if(has)return null;
   for(const o of placed()){const r=roomRect(o);if(r.f!==0)continue;const R=RD(o);
@@ -5867,13 +5867,13 @@ function buildUp(id,how){
   const st=ensureStair(id);
   const p=nearestFree(id,R.c/2,R.r/2);if(p)S.pos={room:id,...p};
   viewRoom=id;overview=false;sel=null;save();$('#pop').hidden=true;renderAll();
-  sfx('buy');toast(`${R.name} ist jetzt im 1. Stock!${st?` Eine Treppe steht unten im Raum ${st}.`:''}`);
+  sfx('buy');toast(`${R.name} ist jetzt im 1. Stock! Stell unten eine Treppe auf (Bauen → Treppen), damit du hochlaufen kannst.`);
 }
 function openBuildUp(){
   const owned=placed().filter(id=>S.layout[id].f===0),locked=ROOMS.filter(R=>!S.unlocked[R.id]);
   const card=(R,btn)=>`<div class="bu-row"><span class="bu-ic" style="background:${R.wall[0]}"></span><span class="bu-n"><b>${R.name}</b><small>${R.c} × ${R.r} Felder</small></span>${btn}</div>`;
   $('#pop').innerHTML=`<div class="card buildup" role="dialog" aria-modal="true" aria-label="1. Stock bauen"><button class="close" data-pop="close" aria-label="Schließen">${CLOSE}</button>
-    <h3>1. Stock bauen</h3><p class="mail">Such dir einen Raum aus. Er kommt automatisch über dein Erdgeschoss, und wenn nötig stellen wir dir eine Treppe gratis dazu. Hoch und runter kommst du dann mit dem Schalter oben links im Bild.</p>
+    <h3>1. Stock bauen</h3><p class="mail">Such dir einen Raum aus. Er kommt automatisch über dein Erdgeschoss, Eine Treppe stellst du danach selbst unter Bauen → Treppen auf. Hoch und runter kommst du dann mit dem Schalter oben links im Bild.</p>
     ${locked.length?`<h4>Neuen Raum oben bauen</h4>${locked.map(R=>card(R,`<button class="btn soft" data-bu="buy:${R.id}">${priceHTML('p',R.price)}</button>`)).join('')}`:''}
     ${owned.length>1?`<h4>Einen Raum nach oben verlegen</h4>${owned.map(id=>card(RD(id),`<button class="btn soft" data-bu="move:${id}">Nach oben</button>`)).join('')}`:''}
     <small class="fine">Später kannst du alles im Hausplan genau verschieben.</small></div>`;
@@ -6643,7 +6643,7 @@ function openBuildCat(tab){
         <button type="button" class="bc-it" data-bcact="grow"><b>Raum vergrößern</b><small>Feld für Feld in jede Richtung, ${GROWMAX}× pro Raum</small></button>
         <button type="button" class="bc-it" data-bcact="deco"><b>Wände &amp; Boden</b><small>Tapeten und Böden innen</small></button>
         <button type="button" class="bc-it" data-bcact="facade"><b>Fassade &amp; Dach</b><small>Farben von außen</small></button>
-        <button type="button" class="bc-it" data-bcact="up"><b>1. Stock bauen</b><small>Mit Gratis-Treppe</small></button>
+        <button type="button" class="bc-it" data-bcact="up"><b>1. Stock bauen</b><small>Treppe stellst du selbst</small></button>
         ${ROOMS.some(R=>!S.unlocked[R.id])?`<button type="button" class="bc-it" data-bcact="neu"><b>Neuer Raum</b><small>Freischalten</small></button>`:''}
         <button type="button" class="bc-it" data-bcact="plan"><b>Hausplan</b><small>Räume verschieben</small></button></div>`
       :`<p class="mail">Wähl ${kind==='win'?'ein Fenster':'eine Tür'} aus und tipp dann auf ein Wandfeld. ${kind==='door'?'Türen nach draußen gehen nur im Erdgeschoss.':'Fenster gehen nur an Außenwände.'}</p><div class="bc-grid">${Object.entries(cat).map(([k,d])=>`<button type="button" class="bc-it pic" data-bcpick="${kind}|${k}">${thumb(k,d)}<b>${d.n}</b>${priceHTML('s',d.p)}</button>`).join('')}
@@ -6720,7 +6720,7 @@ function bpItems(){
   if(cat==='tueren')return Object.entries(DOORS2).map(([k,d])=>card(`data-bptool="door|${k}"`,opThumb('door',k),d.n,priceHTML('s',d.p),BT?.kind==='door'&&BT.style===k)).join('')+card('data-bptool="del|"','<svg viewBox="0 0 24 24" fill="none" stroke="#e05a6e" stroke-width="2.2" stroke-linecap="round"><path d="M5 7h14M10 11v6M14 11v6M7 7l1 12h8l1-12M9 7V4h6v3"/></svg>','Entfernen','<small>Fenster oder Tür</small>',BT?.kind==='del');
   if(cat==='raum'){const ic=p=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
     return card('data-bptool="grow|"',ic('<path d="M4 9V4h5M20 15v5h-5M4 4l6 6M20 20l-6-6"/>'),'Vergrößern',`<small>${growPrice(growN(viewRoom))} pro Teil</small>`,BT?.kind==='grow')
-      +card('data-bpact="up"',ic('<path d="M4 20h4v-4h4v-4h4V8h4"/><path d="M14 4h6v6"/>'),'1. Stock','<small>mit Gratis-Treppe</small>')
+      +card('data-bpact="up"',ic('<path d="M4 20h4v-4h4v-4h4V8h4"/><path d="M14 4h6v6"/>'),'1. Stock','<small>Treppe stellst du selbst</small>')
       +(ROOMS.some(R=>!S.unlocked[R.id])?card('data-bpact="neu"',ic('<path d="M12 5v14M5 12h14"/>'),'Neuer Raum','<small>freischalten</small>'):'')
       +card('data-bpact="plan"',ic('<path d="M3 4h18v16H3z"/><path d="M3 12h8v8M11 4v5M15 12h6"/>'),'Hausplan','<small>Räume schieben</small>')}
   if(cat==='tapeten'||cat==='boeden'){const kind=cat==='tapeten'?'wall':'floor',list=kind==='wall'?WALLS:FLOORS,cur=S.deco?.[viewRoom]?.[kind];
@@ -7806,7 +7806,7 @@ bpItems=function(){
     const opt=(attr,ic,t,sub,act)=>`<button type="button" class="room-opt${act?' on':''}" ${attr}><span class="ro-ic">${ic}</span><span class="ro-t"><b>${t}</b><small>${sub}</small></span></button>`;
     return `<div class="room-card"><div class="rc-name"><b>${R.name}</b><small>${r.w} × ${r.h} Felder · ${r.f?'1. Stock':'Erdgeschoss'}</small></div><div class="rc-bar"><i style="width:${n/GROWMAX*100}%"></i></div><small class="rc-sub">${n}/${GROWMAX} Erweiterungen${n<GROWMAX?` · nächste Reihe ${priceHTML("s",growPrice(n))}`:' · ganz ausgebaut'}</small></div>
       <div class="room-opts">${opt('data-bptool="grow|"',ICR.grow,'Größer oder kleiner','Zieh die Pfeile im Bild nach außen oder innen',on)}
-      ${opt('data-bpact="up"',ICR.up,'1. Stock bauen','mit Gratis-Treppe')}
+      ${opt('data-bpact="up"',ICR.up,'1. Stock bauen','Treppe stellst du selbst auf')}
       ${ROOMS.some(x=>!S.unlocked[x.id])?opt('data-bpact="neu"',ICR.neu,'Neuer Raum','einen weiteren Raum freischalten'):''}
       ${opt('data-bpact="plan"',ICR.plan,'Räume verschieben','im Hausplan anordnen')}</div>`}
   return _bpItems42()};
