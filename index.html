@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271844";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271851";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2852,17 +2852,20 @@ const acc=()=>getAccs()[user]||{};
 /* ================= Webseite: Spielstand online (Supabase) ================= */
 var SBU=null,SBT=null,SYNCCONF=null;
 /* Ist der Server-Stand einfach neuer (dann übernehmen) oder gibt es auf diesem Gerät eigene, noch nicht abgeglichene Änderungen (dann fragen)? */
-function syncTake(local,remote){if(!local||!local.layout)return true;if(!remote||!remote.layout)return false;
-  const unsynced=!local.syncBase||(local.upd||0)>local.syncBase+1500;if(!unsynced)return true;
-  const same=JSON.stringify({...local,upd:0,syncBase:0,daily:0})===JSON.stringify({...remote,upd:0,syncBase:0,daily:0});if(same)return true;
-  SYNCCONF={remote};return false}
+var SYNCREADY=false;
+function syncDecide(local,remote){if(!remote||!remote.layout)return 'keep';if(!local||!local.layout)return 'take';
+  const strip=s=>JSON.stringify({...s,upd:0,syncBase:0,daily:0,dayc:0});if(strip(local)===strip(remote))return 'same';
+  const lb=local.syncBase||0,lc=!lb||(local.upd||0)>lb+1500,rc=!lb||(remote.upd||0)>lb+1500;
+  if(lc&&rc)return 'ask';if(rc)return 'take';return 'keep'}
+function syncTake(local,remote){const d=syncDecide(local,remote);if(d==='ask'){SYNCCONF={remote};return false}if(d==='same'&&local)local.syncBase=Math.max(local.upd||0,remote.upd||0);return d==='take'}
 async function sbCloudInit(){
   const sb=window.PEBBLE_SB;const n=document.getElementById('saveNote');if(n)n.textContent='Dein Spielstand wird online gespeichert. Auf einem neuen Gerät meldest du dich einfach mit deiner E-Mail und deinem Passwort an.';
   const {data}=await sb.auth.getSession();const u=data&&data.session&&data.session.user;if(!u)return true;SBU=u;
   const {data:row}=await sb.from('pebble_saves').select('name,data,updated_at').eq('user_id',u.id).maybeSingle();
   const accs=getAccs(),key=Object.keys(accs).find(k=>accs[k].mail===u.email);
   if(row&&row.data){if(!key){const k=String(row.name||u.email.split('@')[0]).toLowerCase();accs[k]={name:row.name||k,mail:u.email,salt:'',hash:'x',save:row.data};setAccs(accs);if(!getSes())setSes(k)}
-    else if((row.data.upd||0)>(accs[key].save?.upd||0)){if(syncTake(accs[key].save,row.data)){accs[key].save=row.data;setAccs(accs)}}}
+    else{if(syncTake(accs[key].save,row.data)){row.data.syncBase=row.data.upd;accs[key].save=row.data;setAccs(accs)}}}
+  SYNCREADY=true;
   return true;
 }
 var SBERR=null;
@@ -2873,7 +2876,7 @@ function sbSignUp(mail,pw,name,quiet){const sb=window.PEBBLE_SB;
     if(error){console.warn(error);return {error}}
     const exists=!!(data.user&&Array.isArray(data.user.identities)&&data.user.identities.length===0);
     if(exists)return {exists:true};
-    if(data.session){SBU=data.user;sbLoginRow(name,mail,pw);sbPush(true);return {session:true}}
+    if(data.session){SBU=data.user;SYNCREADY=true;sbLoginRow(name,mail,pw);sbPush(true);return {session:true}}
     return {confirm:true}}).catch(error=>({error:{message:String(error&&error.message||error)}}))}
 function sbShowUnconfirmed(mail){const err=$('#authErr');
   err.innerHTML=`Deine E-Mail-Adresse ist noch nicht bestätigt. Schau in dein Postfach (auch im Spam-Ordner) nach unserer Mail und tipp auf den Link darin. Danach kannst du dich hier anmelden. <button type="button" class="linkbtn" id="resendBtn">Bestätigungs-Mail nochmal schicken</button>`;
@@ -2887,11 +2890,11 @@ async function sbLogin(q,a,pw){const sb=window.PEBBLE_SB;let email=q.includes('@
   const accs=getAccs();let key=Object.keys(accs).find(k=>accs[k].mail===email);
   const salt=Math.random().toString(36).slice(2,10),h=await hash(salt+pw);
   if(!key){const nm=(row&&row.name)||SBU.user_metadata?.name||email.split('@')[0];key=nm.toLowerCase();accs[key]={name:nm,mail:email,salt,hash:h,save:(row&&row.data)||{...fresh(),upd:Date.now()}}}
-  else{accs[key].salt=salt;accs[key].hash=h;if(row&&row.data&&(row.data.upd||0)>(accs[key].save?.upd||0)&&syncTake(accs[key].save,row.data))accs[key].save=row.data}
+  else{accs[key].salt=salt;accs[key].hash=h;if(row&&row.data&&syncTake(accs[key].save,row.data)){row.data.syncBase=row.data.upd;accs[key].save=row.data}}SYNCREADY=true;
   setAccs(accs);sbLoginRow(accs[key].name,email,pw);setTimeout(()=>sbPush(true),row?3000:500);return key}
 async function loginHash(n,pw){return hash('pebble:'+String(n).toLowerCase()+':'+pw)}
 async function sbLoginRow(name,email,pw){if(!SBU)return;try{await window.PEBBLE_SB.from('pebble_logins').upsert({user_id:SBU.id,name_lower:String(name).toLowerCase(),email,login_hash:await loginHash(name,pw)})}catch(_){}}
-function sbPush(now){if(!SBU||!user||SYNCCONF)return;clearTimeout(SBT);SBT=setTimeout(()=>{const a=getAccs()[user];if(!a||!a.save)return;const pu=a.save.upd||0;
+function sbPush(now){if(!SBU||!user||SYNCCONF||!SYNCREADY)return;clearTimeout(SBT);SBT=setTimeout(()=>{const a=getAccs()[user];if(!a||!a.save)return;const pu=a.save.upd||0;
   window.PEBBLE_SB.from('pebble_saves').upsert({user_id:SBU.id,name:a.name,data:a.save,updated_at:new Date().toISOString()}).then(({error})=>{if(error){console.warn('Speichern online',error.message);return}if(S&&(S.upd||0)>=pu)S.syncBase=pu});
   const sv=a.save;window.PEBBLE_SB.from('pebble_profiles').upsert({user_id:SBU.id,name:a.name,code:typeof fCode==='function'?fCode():'',ch:sv.char||'pinguin',outfit:sv.outfit||{},level:levelInfo(sv.xp||0).l,about:(sv.profile&&sv.profile.about)||'',updated_at:new Date().toISOString()}).then(()=>{},()=>{})},now?0:2000)}
 /* ================= Speichern im Claude-Konto (geräteübergreifend) ================= */
@@ -9386,7 +9389,7 @@ let SYNCBUSY=false,SYNCLAST=0;
 async function sbPull(force){if(!window.PEBBLE_SB||!SBU||!user||!S||SYNCBUSY)return;if(!force&&(placing||document.hidden))return;SYNCBUSY=true;
   try{const {data:row}=await window.PEBBLE_SB.from('pebble_saves').select('data,updated_at').eq('user_id',SBU.id).maybeSingle();
     const r=row&&row.data;if(!r||!r.layout)return;
-    if((r.upd||0)>(S.upd||0)+800){if(!syncTake(S,r)){syncAsk();return}backupSave(acc().name||user,S,'vor der Übernahme vom anderen Gerät');
+    const dc=syncDecide(S,r);if(dc==='ask'){SYNCCONF={remote:r};syncAsk();return}if(dc==='same'){S.syncBase=Math.max(S.upd||0,r.upd||0);return}if(dc==='keep'){sbPush(true);return}{backupSave(acc().name||user,S,'vor der Übernahme vom anderen Gerät');
       const n=migrate(Object.assign(fresh(),r));S=n;S.syncBase=S.upd;const a=getAccs();if(a[user]){a[user].save=S;memAcc=a;try{localStorage.setItem(ACC,JSON.stringify(a))}catch(_){}}
       try{if(!S.unlocked[viewRoom]||!S.layout[viewRoom])viewRoom=S.pos&&S.pos.room||'schlafzimmer'}catch(_){}
       renderAll();if(tab==='welt'&&typeof worldInit==='function'&&W.running)worldInit();if(Date.now()-SYNCLAST>20000)toast('Spielstand vom anderen Gerät übernommen');SYNCLAST=Date.now()}
