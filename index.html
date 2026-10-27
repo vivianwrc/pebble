@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271930";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610272025";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -140,7 +140,7 @@ g.item.sel{filter:drop-shadow(0 0 3px #5a3b28) drop-shadow(0 0 1px #5a3b28)}
 /* Welt */
 .world{position:relative;height:calc(100dvh - 230px);min-height:340px;border-radius:28px;overflow:hidden;background:#dfeaf3;box-shadow:0 1px 0 var(--line),0 10px 26px rgba(90,59,40,.08);touch-action:none}
 .world svg{display:block}
-#wsvg{position:absolute;left:0;top:0;will-change:transform;transform-origin:0 0;contain:layout paint}
+#wcam{position:absolute;left:0;top:0;width:0;height:0;will-change:transform;transform-origin:0 0}#wsvg{position:absolute;left:0;top:0;transform-origin:0 0;contain:layout paint}
 .npc,#wPlayer{transition:none!important}
 .flake .bob{animation:bob 1.8s ease-in-out infinite}
 .wo{transition:opacity .2s}.wo.ghosted{opacity:.35}
@@ -1464,7 +1464,7 @@ body.landscape-phone .toast{top:calc(var(--toph) + 48px)!important;padding:7px 1
 body.landscape-phone .sside.left button{width:34px!important;height:34px!important}
 body.landscape-phone .sside.left{z-index:6!important}
 /* ===== v51: Welt-Ebenen ===== */
-#wdyn{position:absolute;left:0;top:0;will-change:transform;transform-origin:0 0;pointer-events:none;overflow:visible;contain:layout}
+#wdyn{position:absolute;left:0;top:0;transform-origin:0 0;pointer-events:none;overflow:visible;contain:layout}
 #wdyn [data-npc]{pointer-events:auto;cursor:pointer}
 #wdyn .wclone{pointer-events:none}
 /* Die Kulisse bleibt ruhig: keine Dauer-Animationen in der großen Welt-Ebene */
@@ -1599,6 +1599,8 @@ svg.room.rmfade{animation:rmfade .28s ease}@keyframes rmfade{from{opacity:.35}}@
 .sync-login{display:grid;gap:8px}.sync-login input{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font:700 14px Nunito,system-ui,sans-serif;background:#fff}.sl-msg{margin:0;font-size:12.5px;font-weight:700;color:#8a4b3a;line-height:1.35}.sl-msg:empty{display:none}
 #stage,#stage svg.room,#world{touch-action:none}
 .f2light{animation:f2light 7s ease-in-out infinite}@keyframes f2light{50%{transform:translate(14px,6px)}}.f2fishw{animation:f2wig .5s ease-in-out infinite alternate;transform-origin:4px 0}@keyframes f2wig{to{transform:skewY(5deg)}}
+/* Performance: Grasbüschel nicht animieren (zwang das ganze Haus jedes Bild neu zu zeichnen) */
+.gt{animation:none!important}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -3537,6 +3539,9 @@ function leaf(x,y,z,rp,c){const b=ball(x,y,z,rp,c),[sx,sy]=P(x,y,z);
   return part(String(b)+`<circle cx="${f1(sx+rp*.25)}" cy="${f1(sy-rp*.1)}" r="${f1(rp*.12)}" fill="#fff" opacity=".25"/><circle cx="${f1(sx-rp*.15)}" cy="${f1(sy+rp*.35)}" r="${f1(rp*.1)}" fill="${shade(c,-.2)}" opacity=".4"/><circle cx="${f1(sx+rp*.45)}" cy="${f1(sy+rp*.2)}" r="${f1(rp*.09)}" fill="${shade(c,-.18)}" opacity=".35"/>`,b.bx)}
 /* --- Pflanzen im gemalten Stil: Blattbüschel statt Kugeln --- */
 /* gewellter Blattrand (Bildschirm-Koordinaten) */
+/* Blütenblatt als Pfad (statt gedrehter Ellipse – spart Zeichen-Ebenen) */
+function petalD(cx,cy,rx,ry,deg){const a=deg*Math.PI/180,s=Math.sin(a),c=Math.cos(a),ex=cx+ry*s,ey=cy-ry*c,x1=ex+ry*s,y1=ey-ry*c,x2=cx,y2=cy;
+  return `M${f1(x1)} ${f1(y1)}A${rx} ${ry} ${deg} 1 0 ${f1(x2)} ${f1(y2)}A${rx} ${ry} ${deg} 1 0 ${f1(x1)} ${f1(y1)}Z`}
 function leafBlob(cx,cy,rx,ry,rand,n){
   n=n||Math.max(8,Math.round((rx+ry)*.34));
   const pts=[];for(let i=0;i<n;i++){const a=(i+rand()*.35)/n*Math.PI*2,k=.84+rand()*.16;pts.push([cx+Math.cos(a)*rx*k,cy+Math.sin(a)*ry*k,a])}
@@ -3604,7 +3609,7 @@ function bushO(x,y,s=1,seed=0,fl=true){
   g+=foliage(bx,by-RY*.78,RX,RY,rand,bushPal(seed),5);
   if(fl){const cols=['#ff9fbd','#ffffff','#ffd27a','#c9b6f2','#ff8fa3'],c=cols[seed%5];
     for(let i=0;i<6;i++){const a=rand()*Math.PI*2,d=Math.sqrt(rand())*.8,fx=bx+Math.cos(a)*RX*d,fy=by-RY*.8+Math.sin(a)*RY*d*.8;
-      g+=`<g transform="translate(${f1(fx)} ${f1(fy)})">${[0,72,144,216,288].map(r=>`<ellipse cx="0" cy="-1.9" rx="1.3" ry="1.9" fill="${c}" transform="rotate(${r})"/>`).join('')}<circle r="1" fill="#ffd45e"/></g>`}}
+      g+=`<path d="${[0,72,144,216,288].map(r=>petalD(fx,fy,1.3,1.9,r)).join('')}" fill="${c}"/><circle cx="${f1(fx)}" cy="${f1(fy)}" r="1" fill="#ffd45e"/>`}}
   return part(g,[x-.4*s,x+.4*s,y-.4*s,y+.4*s,0,(RY*1.9)/ZK]);
 }
 /* kleine Staude (Beete, Töpfe) */
@@ -4048,8 +4053,10 @@ function camFit(){
 function camMove(sx,sy){
   const vb=W.vb;if(!vb)return;W.camS=[sx,sy];const pn=W.pan||{x:0,y:0};if(W.moving&&(pn.x||pn.y)){pn.x*=.9;pn.y*=.9;if(Math.abs(pn.x)+Math.abs(pn.y)<2)pn.x=pn.y=0}sx+=pn.x;sy+=pn.y;if(!W.cw){const st=$('#world');W.cw=st.clientWidth||400;W.ch=st.clientHeight||400}const cw=W.cw,ch=W.ch,k=W.k;
   const tx=Math.round((cw/2-(sx-vb.x)/k)*2)/2,ty=Math.round((ch/2-(sy-30-vb.y)/k)*2)/2;
-  if(tx!==W.tx||ty!==W.ty){W.tx=tx;W.ty=ty;$('#wsvg').style.transform=`translate3d(${tx}px,${ty}px,0)`}
+  if(tx!==W.tx||ty!==W.ty){W.tx=tx;W.ty=ty;wcamEl().style.transform=`translate3d(${tx}px,${ty}px,0)`}
 }
+/* Kamera bewegt eine Hülle um die Welt – die Welt selbst wird dabei nicht neu gezeichnet */
+function wcamEl(){const s=$('#wsvg');let w=$('#wcam');if(!w){w=document.createElement('div');w.id='wcam';s.parentNode.insertBefore(w,s)}if(s.parentNode!==w){w.appendChild(s);const d=$('#wdyn');if(d)w.appendChild(d)}const d=$('#wdyn');if(d&&d.parentNode!==w)w.appendChild(d);if(s.style.transform)s.style.transform='';return w}
 function svgPoint(e){const vb=W.vb,r=$('#wsvg').getBoundingClientRect();return {x:vb.x+(e.clientX-r.left)*W.k,y:vb.y+(e.clientY-r.top)*W.k}}
 function worldInit(){
   useCam(camWorld);
@@ -5534,7 +5541,7 @@ function zoomVB(vb,cam){
   return `${f1(x+ax*w-ax*w2)} ${f1(y+ay*h-ay*h2)} ${f1(w2)} ${f1(h2)}`;
 }
 function applyZoomHome(){const s=$('#stage svg.room:not(.locked-room)');if(!s||!s.dataset.vb0)return;const b=s.dataset.vb0;s.setAttribute('viewBox',zoomVB(b,camHome));$('#stage').classList.toggle('zoomed',camHome.zoom>1.01||!!camHome.px||!!camHome.py)}
-function applyZoomWorld(){if(!W.running||!W.vb)return;const st=$('#world'),cw=st.clientWidth||400,base=Math.min(1.2,1050/cw),k=base/(camWorld.zoom||1),svg=$('#wsvg');
+function applyZoomWorld(){if(!W.running||!W.vb)return;const st=$('#world'),cw=W.cw||st.clientWidth||400,base=Math.min(1.2,1050/cw),k=base/(camWorld.zoom||1),svg=$('#wsvg');
   W.k=k;svg.style.width=f1(W.vb.w/k)+'px';svg.style.height=f1(W.vb.h/k)+'px';W.tx=null;try{placePlayer()}catch(e){}}
 function pinch(el,cam,redraw,applyZoom,skip){
   const pts=new Map();let g=null,raf=0;
@@ -7039,7 +7046,7 @@ worldInit=function(){
     /* nur was ungefähr im Bild ist, wird neu gezeichnet */
     const k0=W.k||1,cw=(wl.clientWidth||400)*k0,ch=(wl.clientHeight||400)*k0,pp=P(S.wpos.x,S.wpos.y),pn=W.pan||{x:0,y:0},cx=pp[0]+pn.x,cy=pp[1]+pn.y-30;
     const L=cx-cw/2-140,R=cx+cw/2+140,T=cy-ch/2-120,B=cy+ch/2+360;
-    o.innerHTML=m.list.map((q,i)=>{const [sx,sy]=P(q.x+q.w/2,q.y+q.h/2);return sx>L&&sx<R&&sy>T&&sy<B?`<g class="wo" data-k="o${i}">${resolve(q.fn())}</g>`:''}).join('');
+    o.innerHTML=m.list.map((q,i)=>{const [sx,sy]=P(q.x+q.w/2,q.y+q.h/2);return sx>L&&sx<R&&sy>T&&sy<B?`<g class="wo" data-k="o${i}">${flatOp(String(resolve(q.fn())))}</g>`:''}).join('');
     (m.objs||[]).forEach(q=>q.el=null);
     keep.forEach(e=>o.appendChild(e));W.flakes.forEach(addFlakeEl);(W.npcs||[]).forEach(n=>n.key='');
     const vb=worldBox(m),k=W.k||1;W.vb=vb;svg.setAttribute('viewBox',`${f1(vb.x)} ${f1(vb.y)} ${f1(vb.w)} ${f1(vb.h)}`);svg.style.width=f1(vb.w/k)+'px';svg.style.height=f1(vb.h/k)+'px';
@@ -9534,6 +9541,45 @@ document.addEventListener('submit',async e=>{if(e.target.id!=='syncLogin')return
       if(r.exists){msg.textContent='Mit dieser E-Mail gibt es schon ein Online-Konto, aber das Passwort stimmt nicht. Probier dein Passwort vom anderen Gerät.';return}
       msg.textContent='Das hat gerade nicht geklappt. Versuch es gleich noch mal.'};return}
   msg.textContent=sbRate(SBERR)?'Zu viele Versuche. Warte kurz und probier es dann noch mal.':'Das hat gerade nicht geklappt. Prüf deine Internetverbindung und versuch es noch mal.'});
+/* ================= v97: Performance – Laubkronen nur einmal berechnen (Form ist blickunabhängig) ================= */
+{const FOLC=new Map(),F0=foliage;foliage=function(cx,cy,RX,RY,rand,pal,nC=7){
+  tr(cx-RX*1.2,cy-RY*1.25);tr(cx+RX*1.2,cy+RY*1.2);
+  const t=rand(),key=f1(RX)+'|'+f1(RY)+'|'+pal.join()+'|'+nC+'|'+t.toFixed(7);let c=FOLC.get(key);
+  if(c){for(let i=0;i<c.n;i++)rand()}
+  else{let n=0;const rr=()=>{n++;return rand()},bb=BB;BB=null;let s;try{s=F0(0,0,RX,RY,rr,pal,nC)}finally{BB=bb}c={s,n};if(FOLC.size>4000)FOLC.clear();FOLC.set(key,c)}
+  const X=Math.round(cx*10)/10,Y=Math.round(cy*10)/10;
+  return c.s.replace(/d="([^"]*)"/g,(m,d)=>'d="'+d.replace(/(-?\d+(?:\.\d+)?) (-?\d+(?:\.\d+)?)/g,(q,a,b)=>f1(+a+X)+' '+f1(+b+Y))+'"').replace(/cx="(-?[\d.]+)" cy="(-?[\d.]+)"/g,(m,a,b)=>`cx="${f1(+a+X)}" cy="${f1(+b+Y)}"`)}}
+/* Deckkraft einzelner Formen als Füll-/Linien-Deckkraft (keine eigene Zeichen-Ebene je Form) */
+function flatOp(s){return s.replace(/<(path|ellipse|circle|polygon|rect)\b([^>]*?) opacity="([\d.]+)"([^>]*?)\/>/g,(m,t,a,o,b)=>{const at=a+b;if(/-opacity|class=|filter=|mask=|clip-path=/.test(at))return m;
+  if(/fill="none"/.test(at))return `<${t}${a} stroke-opacity="${o}"${b}/>`;if(!/stroke=/.test(at)&&/fill=/.test(at))return `<${t}${a} fill-opacity="${o}"${b}/>`;return m})}
+{const E0=ensureMap;ensureMap=function(id){const m=E0.apply(this,arguments);try{const mm=MAPS[id];if(mm&&mm._fk!==mm.camKey){mm._fk=mm.camKey;mm.groundHTML=flatOp(mm.groundHTML||'');(mm.objs||[]).forEach(o=>{o.html=flatOp(String(o.html))})}}catch(e){console.warn(e)}return m}}
+/* v97: Figuren-Reihenfolge ohne unnötiges Umhängen im DOM (Kopien wiederverwenden) */
+resort=function(){
+  const m=M(),p=W.sit?{x:W.sit.x+Math.cos(W.sit.a)*.25,y:W.sit.y+Math.sin(W.sit.a)*.25}:S.wpos;
+  const key=Math.floor(p.x*5)+','+Math.floor(p.y*5)+','+W.flakes.map(f=>f.id).join('.')+(W.npcs||[]).map(n=>{const q=n.sit?{x:n.sit.x+Math.cos(n.sit.a)*.25,y:n.sit.y+Math.sin(n.sit.a)*.25}:n;return '|'+Math.floor(q.x*4)+':'+Math.floor(q.y*4)}).join('');
+  if(key===W.sortKey)return;W.sortKey=key;
+  const d=wdynEl();if(!d)return;const g=d.querySelector('#wDynObjs');staticSort();
+  const ents=[],add=(x,y,el,kind)=>{if(el)ents.push({x,y,el,kind})};
+  add(p.x,p.y,$('#wPlayer'),'pl');
+  (W.npcs||[]).forEach(n=>{const q=n.sit?{x:n.sit.x+Math.cos(n.sit.a)*.25,y:n.sit.y+Math.sin(n.sit.a)*.25}:n;add(q.x,q.y,n.el,'n')});
+  W.flakes.forEach(f=>add(f.x,f.y,g.querySelector(`[data-k="f${f.id}"]`),'f'));
+  ents.sort((a,b)=>(a.x*SN+a.y*CS)-(b.x*SN+b.y*CS));
+  /* gewünschte Kopien der Dinge, die vor einer Figur stehen */
+  const need=[],seen=new Set();
+  ents.forEach(e=>{const [sx,sy]=P(e.x,e.y),eb=e.kind==='f'?[sx-16,sy-48,sx+16,sy+6]:[sx-36,sy-104,sx+36,sy+10],box={x:e.x-.2,y:e.y-.2,w:.4,h:.4};
+    m.objs.forEach(o=>{if(!o.el||!o.el.isConnected||seen.has(o.id))return;const b=objBox(o);if(!b||b[0]>eb[2]||b[2]<eb[0]||b[1]>eb[3]||b[3]<eb[1])return;if(!isFront(o,box))return;seen.add(o.id);need.push(o)})});
+  const have=new Map();g.querySelectorAll('.wclone').forEach(c=>{if(c.parentNode!==g||have.has(c.dataset.src))c.remove();else have.set(c.dataset.src,c)});
+  const clones=need.map(o=>{let c=have.get(o.id);if(c){have.delete(o.id);return c}c=o.el.cloneNode(true);c.classList.add('wclone');c.removeAttribute('data-k');c.dataset.src=o.id;return c});
+  have.forEach(c=>c.remove());
+  /* Spielfigur nie im DOM verschieben – nur die anderen davor/dahinter einordnen */
+  const plEl=$('#wPlayer'),pi=ents.findIndex(e=>e.el===plEl),inG=plEl&&plEl.parentNode===g&&pi>=0;
+  const place=(list,cur)=>{for(const el of list){if(el===cur){cur=cur.nextSibling;continue}if(el===plEl&&inG)continue;g.insertBefore(el,cur)}};
+  if(inG){place(ents.slice(0,pi).map(e=>e.el),g.firstChild);place([...ents.slice(pi+1).map(e=>e.el),...clones],plEl.nextSibling)}
+  else place([...ents.map(e=>e.el),...clones],g.firstChild);
+  W.order=key};
+/* v97: Beim Drehen der Welt keine Verdeckungs-Kopien berechnen (erst nach dem Loslassen) */
+{const R0=resort;resort=function(){const wl=$('#world');if(W.fastOrbit&&wl&&wl.classList.contains('orbiting')){W.sortKey='';const g=$('#wDynObjs');if(g&&!W.clGone){g.querySelectorAll('.wclone').forEach(c=>c.remove());W.clGone=1}return}W.clGone=0;return R0()}}
+{const H0=houseSVG;houseSVG=function(mode){return flatOp(String(H0(mode)))}}
 /* ================= Navigation & Meldungen ================= */
 function show(t){
   tab=t;
