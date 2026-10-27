@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271916";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271930";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2857,9 +2857,9 @@ var SBU=null,SBT=null,SYNCCONF=null;
 /* Ist der Server-Stand einfach neuer (dann übernehmen) oder gibt es auf diesem Gerät eigene, noch nicht abgeglichene Änderungen (dann fragen)? */
 var SYNCREADY=false;
 function syncDecide(local,remote){if(!remote||!remote.layout)return 'keep';if(!local||!local.layout)return 'take';
-  const strip=s=>JSON.stringify({...s,upd:0,syncBase:0,daily:0,dayc:0});if(strip(local)===strip(remote))return 'same';
+  const strip=s=>{try{return JSON.stringify([s.layout,(s.items||[]).map(i=>[i.id,i.room,i.x,i.y,i.rot|0,i.col|0,i.wz|0]),s.openings,s.deco,s.snow,s.pin,s.xp,s.outfit,s.clothes,s.decoOwned,s.unlocked,s.facade,s.roof,s.fence,s.mailbox,s.char])}catch(_){return Math.random()+''}};if(strip(local)===strip(remote))return 'same';
   const lb=local.syncBase||0,lc=!lb||(local.upd||0)>lb+1500,rc=!lb||(remote.upd||0)>lb+1500;
-  if(lc&&rc)return 'ask';if(rc)return 'take';return 'keep'}
+  if(lc&&rc){let asked=false;try{asked=localStorage.getItem('pebble_sync_asked')==='1'}catch(_){}if(!asked)return 'ask';return (remote.upd||0)>(local.upd||0)?'take':'keep'}if(rc)return 'take';return 'keep'}
 function syncTake(local,remote){const d=syncDecide(local,remote);if(d==='ask'){SYNCCONF={remote};return false}if(d==='same'&&local)local.syncBase=Math.max(local.upd||0,remote.upd||0);return d==='take'}
 async function sbCloudInit(){
   const sb=window.PEBBLE_SB;const n=document.getElementById('saveNote');if(n)n.textContent='Dein Spielstand wird online gespeichert. Auf einem neuen Gerät meldest du dich einfach mit deiner E-Mail und deinem Passwort an.';
@@ -7734,6 +7734,7 @@ drawGrowGhost=function(){_dgg40();document.querySelectorAll('#stage .growarrow')
 })();
 /* ================= v40: 3D-Intro – Pebble rutscht über das Eis ================= */
 let INTRO_DONE=false;
+function introFixLayout(){try{window.scrollTo(0,0);document.documentElement.scrollTop=0;document.body.scrollTop=0;document.querySelectorAll('.intro').forEach(e=>e.remove());dispatchEvent(new Event('resize'));setTimeout(()=>{window.scrollTo(0,0);dispatchEvent(new Event('resize'));if(typeof renderHome==='function'&&tab==='home'&&S)renderHome()},120)}catch(_){}}
 function loadThree(){return new Promise(res=>{if(window.THREE)return res(true);const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';s.onload=()=>res(!!window.THREE);s.onerror=()=>res(false);document.head.appendChild(s);setTimeout(()=>res(!!window.THREE),2500)})}
 async function playIntro(){
   if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
@@ -7772,7 +7773,7 @@ async function playIntro(){
   const spray=(x,z)=>{for(let k=0;k<2;k++){const m=new T.Mesh(new T.SphereGeometry(.07+Math.random()*.06,8,6),puffM.clone());m.material.transparent=true;m.position.set(x-.3+Math.random()*.2,.1,z+(Math.random()-.5)*.5);m.userData={v:[-.8-Math.random(),1+Math.random()*1.4,(Math.random()-.5)],t:0};sc.add(m);puffs.push(m)}};
   /* Ablauf */
   let t0=performance.now(),last=t0,done=false,raf=0;const ease=x=>1-Math.pow(1-x,3),lerp=(a,b,k)=>a+(b-a)*k;
-  const finish=()=>{if(done)return;done=true;ov.classList.add('out');setTimeout(()=>{cancelAnimationFrame(raf);R.dispose();ov.remove()},650)};
+  const finish=()=>{if(done)return;done=true;ov.classList.add('out');setTimeout(()=>{cancelAnimationFrame(raf);R.dispose();try{R.forceContextLoss()}catch(_){}ov.remove();introFixLayout()},500)};
   ov.querySelector('.intro-skip').onclick=finish;ov.addEventListener('pointerdown',e=>{if(!e.target.closest('.intro-skip'))finish()});
   const loop=now=>{const t=(now-t0)/1000,dt=Math.min(.05,(now-last)/1000);last=now;
     /* 0–1.7 s rutschen, 1.7–2.3 s aufstehen, danach winken und hüpfen */
@@ -8483,7 +8484,7 @@ playIntro=async function(){
   const puffs=[];const puffM=M('#ffffff',.9,{transparent:true});
   const spray=(x,z)=>{for(let k=0;k<2;k++){const m=new T.Mesh(new T.SphereGeometry(.06+Math.random()*.06,8,6),puffM.clone());m.position.set(x-.3+Math.random()*.2,.1,z+(Math.random()-.5)*.5);m.userData={v:[-.8-Math.random(),1+Math.random()*1.4,(Math.random()-.5)],t:0};sc.add(m);puffs.push(m)}};
   let t0=performance.now(),last=t0,done=false,raf=0,s1=false,s2=false,s3=false,s4=false;const ease=x=>1-Math.pow(1-x,3),lerp=(a,b,k)=>a+(b-a)*k;
-  const finish=()=>{if(done)return;done=true;ov.classList.add('out');setTimeout(()=>{cancelAnimationFrame(raf);R.dispose();ov.remove()},650)};
+  const finish=()=>{if(done)return;done=true;ov.classList.add('out');setTimeout(()=>{cancelAnimationFrame(raf);R.dispose();try{R.forceContextLoss()}catch(_){}ov.remove();introFixLayout()},500)};
   ov.querySelector('.intro-skip').onclick=finish;ov.addEventListener('pointerdown',e=>{if(!e.target.closest('.intro-skip'))finish()});
   let TT=0;const loop=now=>{const dt=Math.min(.05,(now-last)/1000);last=now;TT+=dt;const t=TT;
     const sm=x=>x<=0?0:x>=1?1:x*x*(3-2*x),eo=x=>1-Math.pow(1-Math.min(1,Math.max(0,x)),3);
@@ -8520,8 +8521,9 @@ playIntro=async function(){
   const ok=await loadThree();if(!ok){ov.classList.add('out');setTimeout(()=>ov.remove(),500);return}
   const T=window.THREE,W0=innerWidth,H0=innerHeight,col=h=>new T.Color(h).convertSRGBToLinear();
   const sstep=(a,b,x)=>{const t=Math.min(1,Math.max(0,(x-a)/(b-a)));return t*t*(3-2*t)},lerp=(a,b,k)=>a+(b-a)*k;
-  const R=new T.WebGLRenderer({antialias:true});R.setPixelRatio(Math.min(1.75,devicePixelRatio||1));R.setSize(W0,H0);
-  R.outputEncoding=T.sRGBEncoding;R.toneMapping=T.ACESFilmicToneMapping;R.toneMappingExposure=.92;R.shadowMap.enabled=true;R.shadowMap.type=T.PCFSoftShadowMap;
+  const LOW=document.body.classList.contains('landscape-phone')||matchMedia('(pointer:coarse)').matches;
+  const R=new T.WebGLRenderer({antialias:!LOW,powerPreference:'high-performance'});R.setPixelRatio(LOW?Math.min(1.25,devicePixelRatio||1):Math.min(1.75,devicePixelRatio||1));R.setSize(W0,H0);
+  R.outputEncoding=T.sRGBEncoding;R.toneMapping=T.ACESFilmicToneMapping;R.toneMappingExposure=.92;R.shadowMap.enabled=true;R.shadowMap.type=LOW?T.PCFShadowMap:T.PCFSoftShadowMap;
   ov.insertBefore(R.domElement,ov.firstChild);
   const sc=new T.Scene();
   {const cv=document.createElement('canvas');cv.width=4;cv.height=256;const x=cv.getContext('2d'),g=x.createLinearGradient(0,0,0,256);
@@ -8659,12 +8661,12 @@ playIntro=async function(){
     trailGeo=[gm,r1,r2]}
   /* Ablauf */
   let last=performance.now(),TT=0,done=false,raf=0,f1=false,f2=false,f3=false,f4=false,f5=false;
-  const finish=()=>{if(done)return;done=true;ov.classList.add('out');setTimeout(()=>{cancelAnimationFrame(raf);R.dispose();ov.remove()},650)};
+  const finish=()=>{if(done)return;done=true;ov.classList.add('out');setTimeout(()=>{cancelAnimationFrame(raf);R.dispose();try{R.forceContextLoss()}catch(_){}ov.remove();introFixLayout()},500)};
   ov.querySelector('.intro-skip').onclick=finish;ov.addEventListener('pointerdown',e=>{if(!e.target.closest('.intro-skip'))finish()});
   const camPos=new T.Vector3(-1.5,4.2,6),camLook=new T.Vector3(HX+1.2,3.5,HZ+1.4),tmp=new T.Vector3();cam.position.copy(camPos);
   const eo=x=>1-Math.pow(1-Math.min(1,Math.max(0,x)),3),eio=x=>{x=Math.min(1,Math.max(0,x));return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
   const SL=2.2,STAND=.9,SHK=.9;
-  const loop=now=>{const dt=Math.min(.05,(now-last)/1000);last=now;TT+=dt;const t=TT;let shakeCam=0;
+  const loop=now=>{const dt=Math.min(.12,(now-last)/1000)*1.25;last=now;TT+=dt;const t=TT;let shakeCam=0;
     if(t<SL){if(!f1){f1=true;ISFX.slide(SL)}const k=eio(t/SL),p=pAt(k),p2=pAt(Math.min(1,k+.02)),dir=tmp.copy(p2).sub(p),slope=Math.atan2(-dir.y,Math.hypot(dir.x,dir.z)||1e-6);
       peng.position.set(p.x,p.y+.3,p.z);peng.rotation.y=Math.atan2(dir.x,dir.z);pg.rotation.set(1.42+slope,0,Math.sin(t*14)*.04);pg.position.y=0;
       if(trailGeo)trailGeo.forEach(g=>g.setDrawRange(0,Math.floor(g.userData.n*Math.min(1,k+.005))*g.userData.per))
@@ -9418,7 +9420,7 @@ function syncAsk(){if(!SYNCCONF||!S)return;const r=SYNCCONF.remote;
   $('#pop').innerHTML=`<div class="card syncask" role="dialog" aria-modal="true" aria-label="Spielstand wählen"><h3>Welchen Spielstand möchtest du behalten?</h3><p class="mail">Auf diesem Gerät und online gibt es zwei verschiedene Stände. Der andere wird sicher als Sicherung aufgehoben.</p>
     <button class="btn sync-opt" type="button" data-syncpick="local"><b>Dieses Gerät</b><small>${syncSum(S)}</small></button>
     <button class="btn soft sync-opt" type="button" data-syncpick="remote"><b>Online gespeichert (anderes Gerät)</b><small>${syncSum(r)}</small></button></div>`;$('#pop').hidden=false}
-document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('[data-syncpick]');if(!b||!SYNCCONF)return;e.stopImmediatePropagation();const r=SYNCCONF.remote;SYNCCONF=null;
+document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('[data-syncpick]');if(!b||!SYNCCONF)return;e.stopImmediatePropagation();try{localStorage.setItem('pebble_sync_asked','1')}catch(_){}const r=SYNCCONF.remote;SYNCCONF=null;
   if(b.dataset.syncpick==='local'){backupSave('online',r,'online-Stand vor dem Überschreiben');S.upd=Date.now();save();setTimeout(()=>{if(window.PEBBLE_SB)sbPush(true)},250);$('#pop').hidden=true;toast('Dieser Spielstand gilt jetzt auf all deinen Geräten')}
   else{backupSave(acc().name||user,S,'Stand dieses Geräts vor der Übernahme');S=migrate(Object.assign(fresh(),r));S.syncBase=S.upd||Date.now();const a=getAccs();if(a[user]){a[user].save=S;memAcc=a;try{localStorage.setItem(ACC,JSON.stringify(a))}catch(_){}}
     try{if(!S.unlocked[viewRoom]||!S.layout[viewRoom])viewRoom=S.pos&&S.pos.room||'schlafzimmer'}catch(_){}renderAll();show('home');$('#pop').hidden=true;toast('Spielstand vom anderen Gerät übernommen')}},true);
