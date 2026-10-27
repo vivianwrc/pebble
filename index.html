@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271830";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271837";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1592,6 +1592,9 @@ body:not(.landscape-phone) #pop .card.plan .pd-acts{flex-direction:column}
 body:has(#pop:not([hidden])) #toast{top:auto!important;bottom:calc(18px + env(safe-area-inset-bottom,0px))!important}
 .racego.launch::after{background:repeating-linear-gradient(100deg,transparent 0 54px,rgba(255,255,255,.4) 54px 56px)!important;-webkit-mask:radial-gradient(circle at 50% 50%,transparent 32%,#000 75%);mask:radial-gradient(circle at 50% 50%,transparent 32%,#000 75%)}
 svg.room.rmfade{animation:rmfade .28s ease}@keyframes rmfade{from{opacity:.35}}@media (prefers-reduced-motion:reduce){svg.room.rmfade{animation:none}}
+.f2glint{animation:f2glint 2.6s ease-in-out infinite;opacity:0}@keyframes f2glint{30%,50%{opacity:.95}0%,80%,100%{opacity:0}}
+.set-sync .btn{width:100%}.bak{margin-top:6px}.bak summary{cursor:pointer;font-weight:800;font-size:13px}.bak-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 0;border-top:1px solid var(--line)}.bak-row span{display:grid;text-align:left}.bak-row small{color:var(--ink-soft);font-weight:700;font-size:11.5px}.bak-row .btn{padding:6px 12px}
+.syncask{text-align:left;justify-items:stretch;gap:10px}.syncask h3{margin:0}.sync-opt{display:grid!important;justify-items:start;gap:2px;text-align:left;padding:12px 14px!important}.sync-opt small{font-weight:700;opacity:.85;font-size:12px}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -2795,14 +2798,19 @@ function save(){if(!user||!S)return;S.upd=Date.now();clearTimeout(saveT);saveT=s
 const acc=()=>getAccs()[user]||{};
 
 /* ================= Webseite: Spielstand online (Supabase) ================= */
-var SBU=null,SBT=null;
+var SBU=null,SBT=null,SYNCCONF=null;
+/* Ist der Server-Stand einfach neuer (dann übernehmen) oder gibt es auf diesem Gerät eigene, noch nicht abgeglichene Änderungen (dann fragen)? */
+function syncTake(local,remote){if(!local||!local.layout)return true;if(!remote||!remote.layout)return false;
+  const unsynced=!local.syncBase||(local.upd||0)>local.syncBase+1500;if(!unsynced)return true;
+  const same=JSON.stringify({...local,upd:0,syncBase:0,daily:0})===JSON.stringify({...remote,upd:0,syncBase:0,daily:0});if(same)return true;
+  SYNCCONF={remote};return false}
 async function sbCloudInit(){
   const sb=window.PEBBLE_SB;const n=document.getElementById('saveNote');if(n)n.textContent='Dein Spielstand wird online gespeichert. Auf einem neuen Gerät meldest du dich einfach mit deiner E-Mail und deinem Passwort an.';
   const {data}=await sb.auth.getSession();const u=data&&data.session&&data.session.user;if(!u)return true;SBU=u;
   const {data:row}=await sb.from('pebble_saves').select('name,data,updated_at').eq('user_id',u.id).maybeSingle();
   const accs=getAccs(),key=Object.keys(accs).find(k=>accs[k].mail===u.email);
   if(row&&row.data){if(!key){const k=String(row.name||u.email.split('@')[0]).toLowerCase();accs[k]={name:row.name||k,mail:u.email,salt:'',hash:'x',save:row.data};setAccs(accs);if(!getSes())setSes(k)}
-    else if((row.data.upd||0)>(accs[key].save?.upd||0)){accs[key].save=row.data;setAccs(accs)}}
+    else if((row.data.upd||0)>(accs[key].save?.upd||0)){if(syncTake(accs[key].save,row.data)){accs[key].save=row.data;setAccs(accs)}}}
   return true;
 }
 var SBERR=null;
@@ -2827,12 +2835,12 @@ async function sbLogin(q,a,pw){const sb=window.PEBBLE_SB;let email=q.includes('@
   const accs=getAccs();let key=Object.keys(accs).find(k=>accs[k].mail===email);
   const salt=Math.random().toString(36).slice(2,10),h=await hash(salt+pw);
   if(!key){const nm=(row&&row.name)||SBU.user_metadata?.name||email.split('@')[0];key=nm.toLowerCase();accs[key]={name:nm,mail:email,salt,hash:h,save:(row&&row.data)||{...fresh(),upd:Date.now()}}}
-  else{accs[key].salt=salt;accs[key].hash=h;if(row&&row.data&&(row.data.upd||0)>(accs[key].save?.upd||0))accs[key].save=row.data}
+  else{accs[key].salt=salt;accs[key].hash=h;if(row&&row.data&&(row.data.upd||0)>(accs[key].save?.upd||0)&&syncTake(accs[key].save,row.data))accs[key].save=row.data}
   setAccs(accs);sbLoginRow(accs[key].name,email,pw);setTimeout(()=>sbPush(true),row?3000:500);return key}
 async function loginHash(n,pw){return hash('pebble:'+String(n).toLowerCase()+':'+pw)}
 async function sbLoginRow(name,email,pw){if(!SBU)return;try{await window.PEBBLE_SB.from('pebble_logins').upsert({user_id:SBU.id,name_lower:String(name).toLowerCase(),email,login_hash:await loginHash(name,pw)})}catch(_){}}
-function sbPush(now){if(!SBU||!user)return;clearTimeout(SBT);SBT=setTimeout(()=>{const a=getAccs()[user];if(!a||!a.save)return;
-  window.PEBBLE_SB.from('pebble_saves').upsert({user_id:SBU.id,name:a.name,data:a.save,updated_at:new Date().toISOString()}).then(({error})=>{if(error)console.warn('Speichern online',error.message)});
+function sbPush(now){if(!SBU||!user||SYNCCONF)return;clearTimeout(SBT);SBT=setTimeout(()=>{const a=getAccs()[user];if(!a||!a.save)return;const pu=a.save.upd||0;
+  window.PEBBLE_SB.from('pebble_saves').upsert({user_id:SBU.id,name:a.name,data:a.save,updated_at:new Date().toISOString()}).then(({error})=>{if(error){console.warn('Speichern online',error.message);return}if(S&&(S.upd||0)>=pu)S.syncBase=pu});
   const sv=a.save;window.PEBBLE_SB.from('pebble_profiles').upsert({user_id:SBU.id,name:a.name,code:typeof fCode==='function'?fCode():'',ch:sv.char||'pinguin',outfit:sv.outfit||{},level:levelInfo(sv.xp||0).l,about:(sv.profile&&sv.profile.about)||'',updated_at:new Date().toISOString()}).then(()=>{},()=>{})},now?0:2000)}
 /* ================= Speichern im Claude-Konto (geräteübergreifend) ================= */
 let cloudRef=null,cloudT=null;
@@ -3659,11 +3667,11 @@ function houseO(cx,cy,la,lb,h,ang,o){
     if(o.boxes)[-lb/2+.62,lb/2-.62].forEach(v=>{s+=q(v-.44,v+.44,18,24,'#a9744f','',.1)+[-.3,-.1,.1,.3].map((dv,k)=>{const p=F(v+dv,26,.12);return `<circle cx="${f1(p[0])}" cy="${f1(p[1])}" r="3.2" fill="${['#ff9fbd','#ffd27a','#fff','#c9b6f2'][k]}"/><circle cx="${f1(p[0]+2)}" cy="${f1(p[1]+2)}" r="2.6" fill="#6cae6c"/>`}).join('')});
     if(o.awning){const n=8,w=(lb-.2)/n;for(let k=0;k<n;k++){const v0=-lb/2+.1+k*w,v1=v0+w;s+=poly([F(v0,74),F(v1,74),F(v1,64,.42),F(v0,64,.42)],k%2?o.awning[1]:o.awning[0])}
       s+=poly([F(-lb/2+.1,64,.42),F(lb/2-.1,64,.42),F(lb/2-.1,60,.42),F(-lb/2+.1,60,.42)],shade(o.awning[0],-.1))}
-    const [lx,ly]=F(0,h-12);var lab=woodSign(lx,ly-1,Math.max(96,o.label.length*7.4+26),24,o.label,11.5);
+    var lab=wallSign((v,z)=>F(v,z,.03),0,h-12,Math.max(96,o.label.length*7.4+26),24,o.label,11.5);
   }  else{
     const B=(v,z)=>T(-la/2-.01,v,z),qb=(v0,v1,z0,z1,f,ex='')=>poly([B(v0,z0),B(v1,z0),B(v1,z1),B(v0,z1)],f,ex);
     [-lb/2+.75,0,lb/2-.75].forEach(v=>{s+=qb(v-.32,v+.32,26,58,'#ffffff',OL('#e3d9cc'))+qb(v-.26,v+.26,30,54,'#ffe7a8')+(o.win?o.win(B,v):'')+ln(B(v,30),B(v,54),'#fff',2)});
-    const [lx,ly]=B(0,h-10);var lab=woodSign(lx,ly-1,Math.max(104,o.label.length*7.4+26),24,o.label,11.5);
+    var lab=wallSign((v,z)=>T(-la/2-.04,v,z),0,h-10,Math.max(104,o.label.length*7.4+26),24,o.label,11.5);
   }
 
   const fS=poly([T(la/2+ov,-lb/2-ov,h),T(la/2+ov,lb/2+ov,h),T(0,lb/2+ov,h+rh),T(0,-lb/2-ov,h+rh)],gfill(shade(o.roof,front?.04:-.1),'v'),OL(o.roof));
@@ -3789,13 +3797,13 @@ const MAPS={
       /* Platz: vier Bänke in den Ecken, je eine Laterne daneben */
       [45,135,225,315].forEach((d,i)=>{
         const [bx,by]=onR(d,PLATZ_R-.7);addO({sr:[bx-.5,by-.5,1,1],fn:()=>benchO(bx,by,deg(d)+Math.PI),col:[{c:[bx,by,.42]}]});take(bx,by,.9);(m.seats=m.seats||[]).push({x:bx,y:by,a:deg(d)+Math.PI});
-        const [lx,ly]=onR(d+22,PLATZ_R-.35);addO({sr:[lx-.15,ly-.15,.3,.3],fn:()=>lampO(lx,ly),col:[{c:[lx,ly,.18]}]});take(lx,ly,.7);
+        const [lx,ly]=onR(d+34,PLATZ_R-.3);addO({sr:[lx-.15,ly-.15,.3,.3],fn:()=>lampO(lx,ly),col:[{c:[lx,ly,.18]}]});take(lx,ly,.7);
         const [fx,fy]=onR(d,PLATZ_R+1.25);addO({sr:[fx-.8,fy-.8,1.6,1.6],fn:()=>flowerBedO(fx,fy,.7,i+4),col:[{c:[fx,fy,.72]}]});take(fx,fy,1.3);
       });
       /* Wegweiser am Anfang jedes Weges und Pfeile auf dem Boden */
       const dest=[['Boutique','#c97b98'],['Möbelhaus','#5fae7c'],['Park','#7aa2e3'],['Café','#8b5e4b']];
       m.paths.forEach((pp,i)=>{const end=pp[pp.length-1],d=dest[[0,1,2,3].find(k=>{const dd=[[16,3.8],[28.2,16],[16,28],[3.8,16]][k];return Math.hypot(dd[0]-end[0],dd[1]-end[1])<3})];
-        const k=4,a=pp[k],b=pp[k+2],dx=b[0]-a[0],dy=b[1]-a[1],l=Math.hypot(dx,dy),sx=a[0]+dy/l*.95,sy=a[1]-dx/l*.95;
+        let k=4,a,b,dx,dy,l,sx,sy;for(;k<Math.min(pp.length-3,14);k++){a=pp[k];b=pp[k+2];dx=b[0]-a[0];dy=b[1]-a[1];l=Math.hypot(dx,dy);sx=a[0]+dy/l*.95;sy=a[1]-dx/l*.95;if(!m.taken.some(t=>Math.hypot(t[0]-sx,t[1]-sy)<(t[2]||1)*.8))break}
         addO({sr:[sx-.1,sy-.1,.2,.2],fn:()=>guideO(sx,sy,[{t:d[0],c:d[1],dx:end[0]-sx,dy:end[1]-sy}]),col:[{c:[sx,sy,.12]}]});take(sx,sy,.6);
         m.arrows=(m.arrows||[]);[.3,.62].forEach(t=>{const j=Math.round(pp.length*t),p0=pp[j-1],p1=pp[j+1];m.arrows.push([pp[j][0],pp[j][1],p1[0]-p0[0],p1[1]-p0[1]])});
       });
@@ -3811,7 +3819,7 @@ const MAPS={
       scatter(m,r,6,(x,y)=>okT(x,y)&&y>cy-2&&y<=cy+3&&rc(x,y)>10,2.2,900).forEach(([x,y])=>{const s=1+r()*.2,i=ti++;addO({sr:[x-.6*s,y-.6*s,1.2*s,1.2*s],fn:()=>treeO(x,y,s,i),col:[{c:[x,y,.3]}]});take(x,y,1.4)});
       scatter(m,r,3,(x,y)=>okT(x,y)&&y<cy-2&&rc(x,y)>11.5,3,900).forEach(([x,y])=>{const s=1.05+r()*.2,i=ti++;addO({sr:[x-.6*s,y-.6*s,1.2*s,1.2*s],fn:()=>treeO(x,y,s,i),col:[{c:[x,y,.3]}]});take(x,y,1.4)});
       scatter(m,r,36,(x,y)=>m.inside(x,y)&&rc(x,y)<13&&rc(x,y)>PLATZ_R+1.2&&pd(x,y)>1.15,1.05,2400).forEach(([x,y],i)=>{const s=.8+r()*.45;
-        addO({sr:[x-.45*s,y-.45*s,.9*s,.9*s],fn:()=>bushO(x,y,s,i,y<cy||r()<.35),col:[{c:[x,y,.38*s]}]});take(x,y,1)});
+        addO({k:'bush',sr:[x-.45*s,y-.45*s,.9*s,.9*s],fn:()=>bushO(x,y,s,i,y<cy||r()<.35),col:[{c:[x,y,.38*s]}]});take(x,y,1)});
       scatter(m,r,6,(x,y)=>okT(x,y),1.4).forEach(([x,y])=>{const s=.8+r()*.5;addO({sr:[x-.3,y-.3,.6,.6],fn:()=>rockO(x,y,s),col:[{c:[x,y,.25]}]});take(x,y,.7)});
     },
     ground(){
@@ -3957,7 +3965,7 @@ function ensureMap(id){
   if(!m.list){
     const list=[],cols=[];
     const add=(x,y,w,h,fn,o={})=>{if(o.solid!==false)cols.push({r:[x,y,x+w,y+h]});list.push({x,y,w,h,fn})};
-    const addO=o=>{if(o.fn)list.push({x:o.sr[0],y:o.sr[1],w:o.sr[2],h:o.sr[3],fn:o.fn});(o.col||[]).forEach(c=>cols.push(c))};
+    const addO=o=>{if(o.fn){if(o.k==='bush'){const cx2=o.sr[0]+o.sr[2]/2,cy2=o.sr[1]+o.sr[3]/2,r2=o.sr[2]/2;if(list.some(e=>{const ex=e.x+e.w/2,ey=e.y+e.h/2,er=Math.max(.35,Math.max(e.w,e.h)/2);return Math.hypot(ex-cx2,ey-cy2)<r2+er*.75+.15}))return}list.push({x:o.sr[0],y:o.sr[1],w:o.sr[2],h:o.sr[3],fn:o.fn})}(o.col||[]).forEach(c=>cols.push(c))};
     m.build(add,addO);m.cols=cols;m.list=list;buildNav(m);
   }
   const key=CUR.yaw.toFixed(1)+','+CUR.pitch.toFixed(1);
@@ -7857,6 +7865,9 @@ renderBuildPanel=function(){_rbp42();const pn=$('#buildpanel');if(!pn)return;pn.
 /* ================= v43: Einkaufsstraße in 3D, Holzschilder, Holzbänke, Dachmuster, größerer Zaun ================= */
 /* --- Holzschild (bildschirmgerade), hellbraun mit Brettern und Nägeln --- */
 const WS_BG='#d9b994',WS_BD='#8a6347',WS_INK='#4a3426';
+function wallSign(G,v,z,w,hh,txt,fs){const O=G(v,z);let U=G(v+1,z);let ux=U[0]-O[0],uy=U[1]-O[1];if(ux<0){U=G(v-1,z);ux=U[0]-O[0];uy=U[1]-O[1]}
+  const L=Math.hypot(ux,uy);if(L<KS*.28)return '';const bb=BB;BB=null;const inner=woodSign(0,0,w,hh,txt,fs);BB=bb;if(bb){tr(O[0]-w/2,O[1]-hh);tr(O[0]+w/2,O[1]+hh)}
+  return `<g transform="matrix(${(ux/KS).toFixed(3)} ${(uy/KS).toFixed(3)} 0 ${ZK.toFixed(3)} ${f1(O[0])} ${f1(O[1])})">${inner}</g>`}
 function woodSign(x,y,w,h,txt,fs=11){
   tr(x-w/2-2,y-h/2-2);tr(x+w/2+2,y+h/2+2);
   const x0=f1(x-w/2),y0=f1(y-h/2);
@@ -8198,7 +8209,8 @@ function wdynEl(){const s=$('#wsvg');if(!s)return null;let d=$('#wdyn');
 function wdynSync(){const s=$('#wsvg'),d=$('#wdyn');if(!s||!d)return;const vb=s.getAttribute('viewBox');if(vb&&d.getAttribute('viewBox')!==vb)d.setAttribute('viewBox',vb);
   if(d.style.width!==s.style.width)d.style.width=s.style.width;if(d.style.height!==s.style.height)d.style.height=s.style.height;if(d.style.transform!==s.style.transform)d.style.transform=s.style.transform}
 function wdynMove(){const d=wdynEl();if(!d)return;const g=d.querySelector('#wDynObjs'),s=$('#wsvg');
-  const pl=$('#wPlayer');if(pl&&pl.parentNode!==g)g.appendChild(pl);
+  const pl=s.querySelector('#wPlayer')||g.querySelector('#wPlayer');g.querySelectorAll('[id="wPlayer"]').forEach(x=>{if(x!==pl)x.remove()});if(pl&&pl.parentNode!==g)g.appendChild(pl);
+  const live=new Set((W.npcs||[]).map(n=>n.el).filter(Boolean));g.querySelectorAll('[data-npc],.npc').forEach(x=>{if(!live.has(x)&&!x.classList.contains('wclone'))x.remove()});
   (W.npcs||[]).forEach(n=>{if(n.el&&n.el.parentNode!==g)g.appendChild(n.el)});
   s.querySelectorAll('.flake,.floater').forEach(f=>g.appendChild(f));
   const ok=new Set(W.flakes.map(f=>'f'+f.id)),seen=new Set();g.querySelectorAll('.flake').forEach(el=>{const k=el.getAttribute('data-k');if(!ok.has(k)||seen.has(k))el.remove();else seen.add(k)});
@@ -9228,6 +9240,128 @@ DRAW.schreibtisch=c=>{const S_=x=>[].concat(x).map(String).join('');const legs=[
   const kb=S_([c.b(.66,.56,34,.6,.18,1.6,'#e4e7ee'),c.b(1.3,.54,34,.22,.26,.5,'#c9d6ea'),c.b(1.36,.6,34.5,.08,.12,1.6,'#e4e7ee')])+[0,1,2].map(k=>ln(c.p(.69,.6+k*.05,35.7),c.p(1.23,.6+k*.05,35.7),'#b5bccb',1)).join('')+ln(c.p(.82,.725,35.7),c.p(1.08,.725,35.7),'#b5bccb',1.6);
   const deco=S_([c.cyl(.32,.55,.055,34,8,'#f7a8c6'),c.b(1.62,.2,34,.18,.24,3,'#ffd27a'),c.b(1.63,.21,37,.16,.22,2.5,'#9fd3c7')]);
   const front=c.vis(0,1);return [...legs,part(top+(front?mon+deco+kb:kb+deco+mon),[.03,1.97,.05,.95,30,70])]};
+/* ================= v93: Wunschbrunnen und Angeln realistischer ================= */
+wishScene=function(){
+  const drops=[[-48,-4],[48,-4],[-32,-16],[32,-16],[-20,-22],[20,-22]];
+  const bokeh=[[20,40,26,'#a9cf8f'],[64,22,18,'#c7e2a8'],[250,30,24,'#9cc884'],[290,70,20,'#bcdca0'],[200,16,14,'#e7f1d2'],[110,30,16,'#d4e8b8'],[36,92,22,'#8fbf7a'],[270,104,18,'#9fca86'],[150,8,12,'#fff6d6'],[230,58,10,'#fff2c4'],[86,64,9,'#fff7dc']];
+  return `<svg viewBox="0 0 300 200" aria-hidden="true">
+  <defs>
+    <linearGradient id="wsSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9f3e6"/><stop offset=".55" stop-color="#d3e6c6"/><stop offset="1" stop-color="#b9d4a8"/></linearGradient>
+    <filter id="wsBlur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="wsSoft"><feGaussianBlur stdDeviation="1.2"/></filter>
+    <filter id="wsRipple" x="-5%" y="-20%" width="110%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".035 .12" numOctaves="2" seed="4" result="n"><animate attributeName="baseFrequency" values=".035 .12;.04 .13;.035 .12" dur="6s" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="5"/></filter>
+    <filter id="wsGrain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 .45  0 0 0 0 .4  0 0 0 0 .34  0 0 0 .22 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+    <radialGradient id="wsGlow"><stop offset="0" stop-color="#fff6c9" stop-opacity=".95"/><stop offset=".5" stop-color="#ffe08a" stop-opacity=".45"/><stop offset="1" stop-color="#ffe08a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="wsStone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ece4d8"/><stop offset=".4" stop-color="#d9cfc0"/><stop offset="1" stop-color="#a99d8c"/></linearGradient>
+    <linearGradient id="wsRim" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cfc4b4"/><stop offset=".35" stop-color="#f7f2ea"/><stop offset=".7" stop-color="#e6ddd0"/><stop offset="1" stop-color="#bfb3a2"/></linearGradient>
+    <radialGradient id="wsWater" cx=".5" cy=".35" r=".75"><stop offset="0" stop-color="#6fc0d6"/><stop offset=".6" stop-color="#2f8fae"/><stop offset="1" stop-color="#1d6a86"/></radialGradient>
+    <linearGradient id="wsSkyRef" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="wsMarble" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cdc3b5"/><stop offset=".4" stop-color="#fbf8f3"/><stop offset=".75" stop-color="#e2d9cc"/><stop offset="1" stop-color="#b8ac9b"/></linearGradient>
+    <linearGradient id="wsJet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset="1" stop-color="#cfefff" stop-opacity=".35"/></linearGradient>
+    <radialGradient id="wsGold" cx=".35" cy=".3"><stop offset="0" stop-color="#fff3b0"/><stop offset=".45" stop-color="#f2c046"/><stop offset="1" stop-color="#b9801c"/></radialGradient>
+    <clipPath id="wsPool"><ellipse cx="150" cy="146" rx="112" ry="22"/></clipPath>
+  </defs>
+  <rect width="300" height="200" fill="url(#wsSky)"/>
+  <g filter="url(#wsBlur)" opacity=".9">${bokeh.map(([x,y,r,c])=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/>`).join('')}</g>
+  <rect y="150" width="300" height="50" fill="#cdbfa9"/><rect y="150" width="300" height="50" fill="#b7a78f" filter="url(#wsGrain)"/>
+  <ellipse cx="150" cy="180" rx="140" ry="20" fill="#3a2e22" opacity=".18" filter="url(#wsBlur)"/>
+  <path d="M24 146v14a126 28 0 0 0 252 0v-14Z" fill="url(#wsStone)"/><path d="M24 146v14a126 28 0 0 0 252 0v-14Z" fill="#000" filter="url(#wsGrain)" opacity=".6"/>
+  ${[0,1,2,3,4,5,6,7,8].map(i=>{const a=Math.PI*(.06+i*.11),x=150-126*Math.cos(a);return `<path d="M${f1(x)} ${f1(146+28*Math.sin(a)*.05+6)}v${f1(10+Math.sin(a)*8)}" stroke="#9c907e" stroke-width=".8" opacity=".5"/>`}).join('')}
+  <ellipse cx="150" cy="146" rx="126" ry="28" fill="url(#wsRim)"/><ellipse cx="150" cy="144.6" rx="124" ry="26.6" fill="none" stroke="#fffaf2" stroke-width="1.4" opacity=".8"/>
+  <ellipse cx="150" cy="147" rx="113" ry="23" fill="#8f826f"/>
+  <g clip-path="url(#wsPool)">
+    <ellipse cx="150" cy="148" rx="112" ry="22" fill="url(#wsWater)"/>
+    <g filter="url(#wsSoft)" opacity=".85">${[[96,154],[118,160],[204,152],[186,160],[226,148],[140,162],[168,150],[80,148]].map(([x,y],i)=>`<ellipse cx="${x}" cy="${y}" rx="4.2" ry="1.9" fill="${i%3?'#e9b844':'#d7a23a'}"/>`).join('')}</g>
+    <g filter="url(#wsRipple)"><ellipse cx="150" cy="138" rx="110" ry="9" fill="url(#wsSkyRef)"/>
+      ${[[100,150,26],[190,142,32],[140,158,22],[214,156,18],[70,146,16],[240,148,14]].map(([x,y,w],i)=>`<path class="ws-shim" style="animation-delay:${i*.45}s" d="M${x-w/2} ${y}q${w/4} -2.4 ${w/2} 0t${w/2} 0" stroke="#fff" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".8"/>`).join('')}</g>
+    <ellipse cx="150" cy="166" rx="112" ry="8" fill="#0d3f55" opacity=".25"/>
+  </g>
+  <ellipse id="wsGlowE" cx="150" cy="140" rx="70" ry="40" fill="url(#wsGlow)" opacity="0"/>
+  <g id="wsRings"></g>
+  <ellipse cx="150" cy="146" rx="14" ry="4" fill="#0d3f55" opacity=".25"/>
+  <path d="M139 146V94h22v52" fill="url(#wsMarble)"/><path d="M139 120h22" stroke="#bcb09f" stroke-width="1" opacity=".6"/>
+  <path d="M108 88a42 10 0 0 0 84 0v7a42 12 0 0 1-84 0Z" fill="url(#wsMarble)"/><ellipse cx="150" cy="88" rx="42" ry="10" fill="#f4efe7"/><ellipse cx="150" cy="87.4" rx="35" ry="7.2" fill="url(#wsWater)"/><ellipse cx="146" cy="85.4" rx="22" ry="2.6" fill="#fff" opacity=".35"/>
+  <path d="M143.5 86V66h13v20" fill="url(#wsMarble)"/><ellipse cx="150" cy="66" rx="14" ry="4.2" fill="#f4efe7"/>
+  <g class="ws-jets" fill="none" stroke="url(#wsJet)" stroke-width="3" stroke-linecap="round">
+    <path d="M150 64q-30 -24 -48 48"/><path d="M150 64q30 -24 48 48"/><path d="M150 64q-14 -30 -26 30" opacity=".7"/><path d="M150 64q14 -30 26 30" opacity=".7"/></g>
+  <g fill="none" stroke="#fff" stroke-width="1" opacity=".55"><path d="M150 64q-30 -24 -48 48"/><path d="M150 64q30 -24 48 48"/></g>
+  <path class="ws-spout" d="M150 66v-12" stroke="#f0fbff" stroke-width="4" stroke-linecap="round"/>
+  ${drops.map(([dx,dy],i)=>`<circle class="ws-drip" style="animation-delay:${i*.22}s" cx="${150+dx}" cy="${120+dy}" r="1.7" fill="#fff" opacity=".9"/>`).join('')}
+  <g id="wsBits"></g>
+  <g id="wsCoin" opacity="0"><g id="wsCoinS"><circle r="10.5" fill="#9a6a14"/><circle r="10" fill="url(#wsGold)"/><circle r="6.6" fill="none" stroke="#fff3c4" stroke-width="1.2" opacity=".85"/><path d="M-5 -6a8 8 0 0 1 9 -2" stroke="#fff" stroke-width="1.6" fill="none" opacity=".8"/></g></g>
+  <g id="wsGift" opacity="0"></g>
+</svg>`};
+{const F0=openFishing;openFishing=function(){F0.apply(this,arguments);const sv=$('#f2svg');if(!sv)return;
+  const ns='http://www.w3.org/2000/svg';
+  sv.querySelector('defs').insertAdjacentHTML('beforeend',`<linearGradient id="f2w2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7cc2d8"/><stop offset=".45" stop-color="#3f93b2"/><stop offset="1" stop-color="#1f5f7d"/></linearGradient>
+    <linearGradient id="f2sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".45"/><stop offset=".5" stop-color="#ffffff" stop-opacity=".05"/><stop offset="1" stop-color="#ffffff" stop-opacity=".25"/></linearGradient>
+    <filter id="f2ripple" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".012 .05" numOctaves="3" seed="3" result="n"><animate attributeName="seed" values="3;4;5;6;3" dur="5s" repeatCount="indefinite"/></feTurbulence><feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -2.2 1.35" result="w"/><feComposite in="w" in2="SourceGraphic" operator="in"/></filter>
+    <filter id="f2caust" x="0" y="0" width="100%" height="100%"><feTurbulence type="turbulence" baseFrequency=".035" numOctaves="2" seed="9"><animate attributeName="baseFrequency" values=".035;.04;.035" dur="7s" repeatCount="indefinite"/></feTurbulence><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -6 1.7"/></filter>
+    <filter id="f2blur"><feGaussianBlur stdDeviation="2.4"/></filter><filter id="f2blur1"><feGaussianBlur stdDeviation=".8"/></filter>
+    <linearGradient id="f2wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c49a72"/><stop offset="1" stop-color="#8a6347"/></linearGradient>
+    <radialGradient id="f2pad" cx=".4" cy=".35"><stop offset="0" stop-color="#8fd39a"/><stop offset="1" stop-color="#3f8a52"/></radialGradient>`);
+  const bg=sv.querySelector('rect[fill="url(#f2w)"]');if(bg){bg.setAttribute('fill','url(#f2w2)');
+    bg.insertAdjacentHTML('afterend',`<rect width="360" height="240" fill="url(#f2sky)"/><rect width="360" height="240" filter="url(#f2caust)" opacity=".16"/><rect width="360" height="240" fill="#fff" filter="url(#f2ripple)" opacity=".28"/>
+      <g opacity=".35" filter="url(#f2blur)"><ellipse cx="300" cy="-10" rx="120" ry="40" fill="#fff"/></g>
+      ${[[250,40],[290,70],[200,58],[320,30],[230,90]].map(([x,y],i)=>`<circle class="f2glint" style="animation-delay:${i*.6}s" cx="${x}" cy="${y}" r="1.6" fill="#fff"/>`).join('')}`)}
+  /* Seerosen schöner, Schilf am Ufer */
+  sv.querySelectorAll('ellipse[fill="#6cbd88"]').forEach(e=>{const x=+e.getAttribute('cx'),y=+e.getAttribute('cy'),r=+e.getAttribute('rx');
+    e.insertAdjacentHTML('beforebegin',`<ellipse cx="${x+2}" cy="${y+3}" rx="${r}" ry="${r*.5}" fill="#0d3a50" opacity=".25" filter="url(#f2blur1)"/>`);e.setAttribute('fill','url(#f2pad)');
+    e.insertAdjacentHTML('afterend',[0,1,2,3,4].map(k=>`<path d="M${x} ${y}l${f1(Math.cos(k*1.2-.6)*r*.85)} ${f1(Math.sin(k*1.2-.6)*r*.45)}" stroke="#2f6e3f" stroke-width=".7" opacity=".6"/>`).join(''))});
+  const pier=sv.querySelector('path[fill="#b98a64"]');if(pier){pier.setAttribute('fill','url(#f2wood)');pier.insertAdjacentHTML('beforebegin','<path d="M0 200Q60 190 124 208L134 240H0Z" fill="#0d3a50" opacity=".3" filter="url(#f2blur)"/>');
+    pier.insertAdjacentHTML('afterend',[0,1,2,3].map(k=>`<path d="M0 ${206+k*9}Q60 ${196+k*9} 122 ${214+k*7}" stroke="#7a563d" stroke-width=".8" opacity=".5" fill="none"/>`).join(''))}
+  const reeds=[[340,150],[348,170],[332,180],[352,200],[338,214]].map(([x,y],i)=>`<path d="M${x} ${y+30}q${-4+i%3*3} -26 ${-2+i} -${36+i*4}" stroke="${i%2?'#5f8f4e':'#7aa860'}" stroke-width="2.2" fill="none"/><ellipse cx="${x-2+i}" cy="${y-6-i*4}" rx="2.4" ry="6" fill="#8a5a3c"/>`).join('');
+  sv.querySelector('#f2bob')?.insertAdjacentHTML('beforebegin',`<g>${reeds}</g>`);
+  sv.querySelectorAll('#f2shadows ellipse').forEach(e=>e.setAttribute('filter','url(#f2blur1)'));
+  sv.querySelectorAll('.f2wave').forEach(p=>p.setAttribute('opacity','.35'));
+}}
+
+/* ================= v94: Spielstand auf allen Geräten gleich halten + Sicherungen ================= */
+const BAKKEY='pebble_backups';
+function bakList(){try{return JSON.parse(localStorage.getItem(BAKKEY)||'[]')}catch(_){return []}}
+function bakSum(sv){try{return {rooms:Object.keys(sv.layout||{}).length,items:(sv.items||[]).filter(i=>i.room).length,snow:sv.snow|0,xp:sv.xp|0}}catch(_){return {}}}
+function backupSave(name,sv,why){if(!sv||!sv.layout)return;try{let L=bakList();const js=JSON.stringify(sv);if(L.some(b=>b.js===js))return;
+  L.unshift({t:Date.now(),name,why,sum:bakSum(sv),js});
+  /* die 6 neuesten behalten, dazu immer den mit den meisten aufgestellten Möbeln */
+  const best=L.reduce((a,b)=>(b.sum.items||0)>(a?.sum.items||0)?b:a,null);L=L.slice(0,6);if(best&&!L.includes(best))L.push(best);
+  while(L.length){try{localStorage.setItem(BAKKEY,JSON.stringify(L));break}catch(_){L.splice(Math.max(1,L.length-2),1);if(L.length===1){try{localStorage.setItem(BAKKEY,JSON.stringify(L))}catch(__){}break}}}}catch(_){}}
+/* Vor jedem Überschreiben durch den Server den eigenen Stand sichern */
+{const SA=setAccs;setAccs=function(a){try{const old=JSON.parse(localStorage.getItem(ACC)||'{}');Object.keys(a||{}).forEach(k=>{const o=old[k]&&old[k].save,n=a[k]&&a[k].save;if(o&&n&&o!==n&&(n.upd||0)>(o.upd||0)&&bakSum(o).items>bakSum(n).items+2)backupSave(old[k].name||k,o,'vor dem Laden vom Server')})}catch(_){}return SA(a)}}
+/* alle paar Minuten eine Sicherung, wenn sich etwas geändert hat */
+setInterval(()=>{if(user&&S&&!placing)backupSave(acc().name||user,S,'automatisch')},180000);
+/* Live-Abgleich: neuerer Spielstand vom anderen Gerät wird übernommen */
+let SYNCBUSY=false,SYNCLAST=0;
+async function sbPull(force){if(!window.PEBBLE_SB||!SBU||!user||!S||SYNCBUSY)return;if(!force&&(placing||document.hidden))return;SYNCBUSY=true;
+  try{const {data:row}=await window.PEBBLE_SB.from('pebble_saves').select('data,updated_at').eq('user_id',SBU.id).maybeSingle();
+    const r=row&&row.data;if(!r||!r.layout)return;
+    if((r.upd||0)>(S.upd||0)+800){if(!syncTake(S,r)){syncAsk();return}backupSave(acc().name||user,S,'vor der Übernahme vom anderen Gerät');
+      const n=migrate(Object.assign(fresh(),r));S=n;S.syncBase=S.upd;const a=getAccs();if(a[user]){a[user].save=S;memAcc=a;try{localStorage.setItem(ACC,JSON.stringify(a))}catch(_){}}
+      try{if(!S.unlocked[viewRoom]||!S.layout[viewRoom])viewRoom=S.pos&&S.pos.room||'schlafzimmer'}catch(_){}
+      renderAll();if(tab==='welt'&&typeof worldInit==='function'&&W.running)worldInit();if(Date.now()-SYNCLAST>20000)toast('Spielstand vom anderen Gerät übernommen');SYNCLAST=Date.now()}
+  }catch(e){console.warn('Abgleich',e)}finally{SYNCBUSY=false}}
+setInterval(()=>sbPull(false),12000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)setTimeout(()=>sbPull(true),300)});
+window.addEventListener('focus',()=>sbPull(true));
+function pushEverywhere(){if(!S)return;SYNCCONF=null;S.upd=Date.now();save();setTimeout(()=>{if(window.PEBBLE_SB)sbPush(true);else cloudPush(true)},300);toast('Dieser Spielstand wird jetzt auf all deinen Geräten verwendet')}
+function restoreBackup(i){const b=bakList()[i];if(!b)return;try{const sv=JSON.parse(b.js);backupSave(acc().name||user,S,'vor dem Wiederherstellen');S=migrate(Object.assign(fresh(),sv));S.upd=Date.now();const a=getAccs();if(a[user]){a[user].save=S;setAccs(a)}save();if(window.PEBBLE_SB)sbPush(true);renderAll();show('home');$('#pop').hidden=true;toast('Spielstand wiederhergestellt')}catch(_){toast('Das hat nicht geklappt')}}
+{const O0=openSettings;openSettings=function(){O0();const c=$('#pop .settingscard');if(!c)return;const mail=(acc().mail||'');const m=mail?mail.replace(/^(.{2}).*(@.*)$/,'$1…$2'):'';
+  const L=bakList(),fmt=t=>new Date(t).toLocaleString('de-DE',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+  c.querySelector('.set-move')?.insertAdjacentHTML('beforebegin',`<div class="set-move set-sync"><h4>Geräte abgleichen</h4><p>${window.PEBBLE_SB?(SBU?`Angemeldet als <b>${esc(acc().name||'')}</b>${m?` (${esc(m)})`:''}. Dein Spielstand gleicht sich automatisch zwischen deinen Geräten ab.`:'Du bist nicht online angemeldet. Melde dich mit E-Mail und Passwort an, damit sich dein Spielstand abgleicht.'):'Dein Spielstand wird in deinem Claude-Konto gespeichert.'}</p>
+    <button class="btn" type="button" data-sync="push">Diesen Spielstand auf alle Geräte übertragen</button>
+    ${L.length?`<details class="bak"><summary>Gesicherte Spielstände (${L.length})</summary>${L.map((b,i)=>`<div class="bak-row"><span><b>${fmt(b.t)}</b><small>${b.sum.rooms||0} Räume · ${b.sum.items||0} Möbel · ${b.sum.snow||0} Frosties</small></span><button class="btn soft" type="button" data-bak="${i}">Laden</button></div>`).join('')}</details>`:''}</div>`)}}
+document.addEventListener('click',e=>{const s=e.target.closest&&e.target.closest('[data-sync]');if(s){pushEverywhere();return}const b=e.target.closest&&e.target.closest('[data-bak]');if(b){if(b.dataset.arm!=='1'){b.dataset.arm='1';b.textContent='Sicher?';setTimeout(()=>{b.dataset.arm='';b.textContent='Laden'},3000);return}restoreBackup(+b.dataset.bak)}});
+
+/* Auswahl, wenn beide Geräte eigene Änderungen haben */
+function syncSum(sv){const s=bakSum(sv);return `${s.rooms} Räume · ${s.items} Möbel aufgestellt · ${s.snow} Frosties · ${new Date(sv.upd||0).toLocaleString('de-DE',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})}`}
+function syncAsk(){if(!SYNCCONF||!S)return;const r=SYNCCONF.remote;
+  $('#pop').innerHTML=`<div class="card syncask" role="dialog" aria-modal="true" aria-label="Spielstand wählen"><h3>Welchen Spielstand möchtest du behalten?</h3><p class="mail">Auf diesem Gerät und online gibt es zwei verschiedene Stände. Der andere wird sicher als Sicherung aufgehoben.</p>
+    <button class="btn sync-opt" type="button" data-syncpick="local"><b>Dieses Gerät</b><small>${syncSum(S)}</small></button>
+    <button class="btn soft sync-opt" type="button" data-syncpick="remote"><b>Online gespeichert (anderes Gerät)</b><small>${syncSum(r)}</small></button></div>`;$('#pop').hidden=false}
+document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('[data-syncpick]');if(!b||!SYNCCONF)return;e.stopImmediatePropagation();const r=SYNCCONF.remote;SYNCCONF=null;
+  if(b.dataset.syncpick==='local'){backupSave('online',r,'online-Stand vor dem Überschreiben');S.upd=Date.now();save();setTimeout(()=>{if(window.PEBBLE_SB)sbPush(true)},250);$('#pop').hidden=true;toast('Dieser Spielstand gilt jetzt auf all deinen Geräten')}
+  else{backupSave(acc().name||user,S,'Stand dieses Geräts vor der Übernahme');S=migrate(Object.assign(fresh(),r));S.syncBase=S.upd||Date.now();const a=getAccs();if(a[user]){a[user].save=S;memAcc=a;try{localStorage.setItem(ACC,JSON.stringify(a))}catch(_){}}
+    try{if(!S.unlocked[viewRoom]||!S.layout[viewRoom])viewRoom=S.pos&&S.pos.room||'schlafzimmer'}catch(_){}renderAll();show('home');$('#pop').hidden=true;toast('Spielstand vom anderen Gerät übernommen')}},true);
+{const E0=enterGame;enterGame=function(){const r=E0.apply(this,arguments);if(SYNCCONF)setTimeout(syncAsk,1600);return r}}
 /* ================= Navigation & Meldungen ================= */
 function show(t){
   tab=t;
