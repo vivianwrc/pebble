@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271608";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271613";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1540,6 +1540,8 @@ body:not(.landscape-phone) #pop>.idbig .id-house.open svg{max-height:none;height
 body:not(.landscape-phone) #pop>.idbig .cf-pick{position:absolute;z-index:5;top:62px;left:24px;width:min(380px,50%);margin:0!important}
 body:not(.landscape-phone) #pop>.idbig .cf-pick:not([hidden])+.id-top{margin-top:38px!important}
 @media (max-width:760px){body:not(.landscape-phone) #pop>.idbig{grid-template-columns:1fr!important;grid-template-rows:none!important;height:auto!important;max-height:90vh!important;overflow:auto!important}body:not(.landscape-phone) #pop>.idbig .id-top,body:not(.landscape-phone) #pop>.idbig .id-sec{grid-column:1!important;grid-row:auto!important}}
+
+.intro.prep{opacity:0!important;pointer-events:none}.intro{background:#e8ebef!important}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -8364,7 +8366,7 @@ ISFX.thump=function(){const c=ISFX.out();if(!c||!AUD.prefs.sfx)return;const t=c.
 playIntro=async function(){
   if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   const ov=document.createElement('div');ov.className='intro';ov.innerHTML='<div class="intro-title"><b>pebble</b><small>Willkommen zuhause</small></div><button type="button" class="intro-skip">Überspringen</button>';
-  document.body.appendChild(ov);
+  ov.classList.add('prep');document.body.appendChild(ov);
   const ok=await loadThree();if(!ok){ov.classList.add('out');setTimeout(()=>ov.remove(),500);return}
   const T=window.THREE,W0=innerWidth,H0=innerHeight,col=h=>new T.Color(h).convertSRGBToLinear();
   const sstep=(a,b,x)=>{const t=Math.min(1,Math.max(0,(x-a)/(b-a)));return t*t*(3-2*t)},lerp=(a,b,k)=>a+(b-a)*k;
@@ -8457,7 +8459,7 @@ playIntro=async function(){
   const upG=new T.ConeGeometry(.075,.22,36);upG.rotateX(Math.PI/2);upG.translate(0,0,.15);const up=new T.Mesh(upG,beakMat);up.scale.set(1,.58,1);up.position.set(0,-.01,.3);head.add(up);
   const loG=new T.ConeGeometry(.06,.17,32);loG.rotateX(Math.PI/2);loG.translate(0,0,.12);const lo=new T.Mesh(loG,beakMat);lo.scale.set(1,.45,1);lo.position.set(0,-.05,.29);head.add(lo);
   const flipMat=new T.MeshPhysicalMaterial({color:DARK,roughness:.62,clearcoat:.1,bumpMap:streakTex(2,2),bumpScale:.013}),flipG=new T.SphereGeometry(1,40,28);
-  const mkFlip=s=>{const piv=new T.Group();piv.position.set(s*.53,1.12,.02);const m=new T.Mesh(flipG,flipMat);m.scale.set(.085,.46,.21);m.position.set(s*.07,-.4,0);m.castShadow=true;piv.add(m);pg.add(piv);return piv};
+  const mkFlip=s=>{const piv=new T.Group();piv.position.set(s*.43,1.14,.02);const m=new T.Mesh(flipG,flipMat);m.scale.set(.085,.46,.21);m.position.set(s*.045,-.4,0);m.rotation.z=s*.06;m.castShadow=true;piv.add(m);pg.add(piv);return piv};
   const flipL=mkFlip(-1),flipR=mkFlip(1);
   const footMat=new T.MeshPhysicalMaterial({color:col(0xdf7f38),roughness:.55,clearcoat:.2});
   [1,-1].forEach(s=>{const f=new T.Mesh(new T.SphereGeometry(1,28,18),footMat);f.scale.set(.15,.055,.24);f.position.set(s*.21,.035,.3);f.rotation.y=s*.25;f.castShadow=true;pg.add(f)});
@@ -8467,6 +8469,10 @@ playIntro=async function(){
   for(let i=0;i<22;i++){const y=.25+Math.random()*1.25,a=(Math.random()-.5)*2.6,r=rAt(y)+.01;const m=new T.Mesh(new T.SphereGeometry(.035+Math.random()*.03,8,6),sdM);m.position.set(Math.sin(a)*r,y,Math.cos(a)*r);pg.add(m);snowDots.push(m)}
   /* Kuhle im Schnee */
   const LAND=new T.Vector3(0,0,.6);LAND.y=H(LAND.x,LAND.z);
+  /* Rutschspur im Schnee */
+  const trail={last:null},furM=new T.MeshStandardMaterial({color:col(0xc9d3df),roughness:.9,transparent:true,opacity:.75,depthWrite:false}),ridgeM=new T.MeshStandardMaterial({color:col(0xf6f7f9),roughness:.85,bumpMap:snowBump,bumpScale:.02}),furG=new T.CircleGeometry(.3,16),ridgeG=new T.SphereGeometry(.09,8,6);
+  const trailMark=(p,ry)=>{const m=new T.Mesh(furG,furM);m.rotation.x=-Math.PI/2;m.rotation.z=ry;m.scale.set(1,1.4,1);m.position.set(p.x,H(p.x,p.z)+.03,p.z);sc.add(m);
+    [-1,1].forEach(sd=>{const r=new T.Mesh(ridgeG,ridgeM);r.position.set(p.x+Math.cos(ry)*.36*sd,H(p.x,p.z)+.02,p.z-Math.sin(ry)*.36*sd);r.scale.set(2,.6,2);r.castShadow=true;sc.add(r)})};
   const crater=new T.Group();crater.position.copy(LAND);crater.scale.setScalar(.01);sc.add(crater);
   {const rimG=new T.TorusGeometry(.95,.22,12,40);const p=rimG.attributes.position;for(let i=0;i<p.count;i++){const x=p.getX(i),y=p.getY(i);const k=1+nz(x*2,y*2)*.25;p.setX(i,x*k);p.setY(i,y*k)}rimG.computeVertexNormals();
     const rim2=new T.Mesh(rimG,new T.MeshStandardMaterial({color:col(0xf4f6f9),roughness:.85,bumpMap:snowBump,bumpScale:.03}));rim2.rotation.x=-Math.PI/2;rim2.scale.set(1.15,.85,.45);rim2.castShadow=true;rim2.receiveShadow=true;crater.add(rim2);
@@ -8488,14 +8494,15 @@ playIntro=async function(){
   const eo=x=>1-Math.pow(1-Math.min(1,Math.max(0,x)),3),eio=x=>{x=Math.min(1,Math.max(0,x));return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
   const SL=2.2,STAND=.9,SHK=.9;
   const loop=now=>{const dt=Math.min(.05,(now-last)/1000);last=now;TT+=dt;const t=TT;let shakeCam=0;
-    if(t<SL){if(!f1){f1=true;ISFX.slide(SL)}const k=eio(t/SL),p=pAt(k),p2=pAt(Math.min(1,k+.02)),dir=tmp.copy(p2).sub(p);
-      peng.position.set(p.x,p.y+.44,p.z);peng.rotation.y=Math.atan2(dir.x,dir.z);pg.rotation.set(1.42,0,Math.sin(t*14)*.05);pg.position.y=0;
+    if(t<SL){if(!f1){f1=true;ISFX.slide(SL)}const k=eio(t/SL),p=pAt(k),p2=pAt(Math.min(1,k+.02)),dir=tmp.copy(p2).sub(p),slope=Math.atan2(-dir.y,Math.hypot(dir.x,dir.z)||1e-6);
+      peng.position.set(p.x,p.y+.3,p.z);peng.rotation.y=Math.atan2(dir.x,dir.z);pg.rotation.set(1.42+slope,0,Math.sin(t*14)*.04);pg.position.y=0;
+      if(!trail.last||trail.last.distanceTo(p)>.08){trailMark(p,peng.rotation.y);trail.last=p.clone()}
       flipL.rotation.z=-1.1;flipR.rotation.z=1.1;neck.rotation.x=-.5;
-      if(Math.random()<.9)burst(new T.Vector3(p.x,p.y+.05,p.z),2,1.1,1.6,.05);
+      if(Math.random()<.95)burst(new T.Vector3(p.x+dir.x*4,p.y+.15,p.z+dir.z*4),3,1.6,2.2,.06);
       tmp.set(p.x*.6+1.2,p.y*.5+2.6,p.z*.5+8.5);camPos.lerp(tmp,1-Math.pow(.02,dt));camLook.lerp(tmp.set(p.x,p.y+.6,p.z),1-Math.pow(.004,dt))}
     else if(t<SL+STAND){if(!f2){f2=true;ISFX.thump();burst(new T.Vector3(LAND.x,LAND.y+.15,LAND.z+.4),70,3.2,4.5,.08);burst(new T.Vector3(LAND.x,LAND.y+.1,LAND.z+.6),40,1.6,2.5,.12)}
       const k=(t-SL)/STAND;crater.scale.setScalar(Math.max(.01,eo(k*3)));shakeCam=(1-Math.min(1,k*2.5))*.06;
-      const kk=eio(k);peng.position.set(LAND.x,LAND.y+lerp(.44,0,kk)+Math.sin(kk*Math.PI)*.35,LAND.z);peng.rotation.y=lerp(peng.rotation.y,0,1-Math.pow(.001,dt));
+      const kk=eio(k);peng.position.set(LAND.x,LAND.y+lerp(.3,0,kk)+Math.sin(kk*Math.PI)*.35,LAND.z);peng.rotation.y=lerp(peng.rotation.y,0,1-Math.pow(.001,dt));
       pg.rotation.set(lerp(1.42,0,kk),0,0);neck.rotation.x=lerp(-.5,0,kk);flipL.rotation.z=lerp(-1.1,-.15,kk);flipR.rotation.z=lerp(1.1,.15,kk);
       const sq=kk>.8?Math.sin((kk-.8)/.2*Math.PI)*.07:0;pg.scale.set(1+sq,1-sq,1+sq)}
     else if(t<SL+STAND+SHK){if(!f3){f3=true;ISFX.shake()}const w=(t-SL-STAND)/SHK,env=Math.sin(w*Math.PI);
@@ -8512,6 +8519,8 @@ playIntro=async function(){
     const a=pgeo.attributes.position.array;for(let i=0;i<N;i++){a[i*3+1]-=dt*(.35+(i%5)*.09);a[i*3]+=Math.sin(t+i)*dt*.12;if(a[i*3+1]<0)a[i*3+1]=12}pgeo.attributes.position.needsUpdate=true;
     for(let i=chunks.length-1;i>=0;i--){const m=chunks[i],u=m.userData;u.t+=dt;u.v.y-=dt*9;m.position.addScaledVector(u.v,dt);const gh=H(m.position.x,m.position.z);if(m.position.y<gh){m.position.y=gh;u.v.multiplyScalar(.3)}m.material.opacity=Math.max(0,1-u.t/u.life);if(u.t>u.life){sc.remove(m);chunks.splice(i,1)}}
     R.render(sc,cam);if(t>SL+STAND+SHK+2.6)finish();if(!done||ov.isConnected)raf=requestAnimationFrame(loop)};
+  try{R.compile(sc,cam)}catch(_){}cam.position.copy(camPos);cam.lookAt(camLook);R.render(sc,cam);
+  await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));ov.classList.remove('prep');last=performance.now();
   raf=requestAnimationFrame(loop);
   addEventListener('resize',()=>{if(done)return;R.setSize(innerWidth,innerHeight);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()},{once:true});
 };
