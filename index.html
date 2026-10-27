@@ -1169,6 +1169,69 @@ body.immersive.bp-min .buildpanel{display:none!important}
 .fempty{background:var(--paper);border-radius:20px;padding:22px 18px;text-align:center;display:grid;gap:6px;box-shadow:0 1px 0 var(--line)}
 .fempty b{font-family:var(--f-display);font-weight:600;font-size:19px}.fempty p{margin:0;color:var(--ink-soft);font-weight:700;font-size:13.5px}
 .seg .seg-r{margin-left:auto;border:0;background:transparent;font-size:18px;color:var(--ink-soft);cursor:pointer;padding:0 10px}
+/* ===== v42: Baumenü Kastanie hellbraun ===== */
+:root{--bp-bg:#d9b994;--bp-card:#c9a27e;--bp-card-h:#bf9672;--bp-ink:#3b2a1e;--bp-soft:#5e4433;--bp-dark:#5b3a24}
+body .buildpanel,body.immersive .buildpanel{background:rgba(217,185,148,.94)!important;color:var(--bp-ink);border-color:rgba(255,240,222,.6)!important}
+.buildpanel .bp-head{flex-wrap:wrap;border-bottom:1px solid rgba(91,58,36,.18);align-items:center;padding:0 8px 6px}
+.buildpanel .bp-title{font-family:var(--f-display);font-weight:600;font-size:18px;padding:4px 6px;flex:1;color:var(--bp-ink)}
+.buildpanel .bp-done{border-radius:999px;padding:7px 16px;background:var(--bp-dark);order:0}
+.buildpanel .bp-tabs{order:2;flex:1 1 100%;display:grid!important;grid-template-columns:repeat(5,1fr);gap:3px;overflow:visible!important;margin-top:6px}
+.buildpanel .bp-tabs button{padding:6px 2px!important;border-radius:12px;border-bottom:0!important;color:var(--bp-soft)!important;font-size:11px!important;flex-direction:column!important;gap:2px!important}
+.buildpanel .bp-tabs button svg{width:20px!important;height:20px!important}
+.buildpanel .bp-tabs button[aria-selected="true"]{background:#f6e9da!important;color:var(--bp-ink)!important;box-shadow:0 2px 6px rgba(91,58,36,.15)}
+.buildpanel .bp-tabs button span{white-space:nowrap}
+.bp-grip{height:20px!important;gap:8px;color:var(--bp-soft);font:800 11px Nunito,system-ui,sans-serif}
+.bp-grip i{background:rgba(91,58,36,.35)!important}
+.bp-grip span{opacity:.8}
+.buildpanel .bp-card{background:var(--bp-card);color:var(--bp-ink)}
+.buildpanel .bp-card:hover{background:var(--bp-card-h)}
+.buildpanel .bp-card.on{border-color:var(--bp-dark);background:#b88d66;box-shadow:0 0 0 2px #f6e9da inset}
+.buildpanel .bp-card small,.buildpanel .bp-hint{color:var(--bp-soft)}
+.buildpanel .bp-items{grid-template-columns:repeat(auto-fill,minmax(92px,1fr))}
+.bp-card.tile{padding:8px 6px 7px;gap:4px;justify-content:space-between}
+.tile-pic{width:100%;height:92px;display:grid;place-items:center}
+.tile-pic svg{max-width:100%;max-height:92px;width:auto;height:92px}
+.bp-items:not(.bp-room) .tile-pic svg[preserveAspectRatio]{width:100%;height:92px;border-radius:10px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
+.tile-price{font-weight:900;font-size:13px}.tile-price .own{color:#2f6b43!important;font-weight:900}
+.buildpanel .mob-side{background:#cfae8a!important;border-right-color:rgba(91,58,36,.18)!important}
+.buildpanel .mob-side button{color:var(--bp-soft)}
+.buildpanel .mob-side button[aria-pressed="true"]{background:#f6e9da;color:var(--bp-ink)}
+.buildpanel .inv-main{background:var(--bp-card)}.buildpanel .inv-empty{background:rgba(255,248,238,.5)}
+.buildpanel .inv-h{color:var(--bp-ink)}
+/* Raum-Bereich */
+.bp-items.bp-room{display:flex!important;flex-direction:column;gap:10px;padding:12px}
+.room-card{background:#f6e9da;border-radius:16px;padding:12px 14px;display:grid;gap:6px}
+.rc-name{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.rc-name b{font-family:var(--f-display);font-weight:600;font-size:18px}.rc-name small{font-weight:800;color:var(--bp-soft)}
+.rc-bar{height:8px;border-radius:99px;background:rgba(91,58,36,.15);overflow:hidden}.rc-bar i{display:block;height:100%;background:#3fae6a;border-radius:99px}
+.rc-sub{font-weight:800;color:var(--bp-soft);font-size:12px}
+.room-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.room-opt{display:flex;flex-direction:column;align-items:flex-start;gap:8px;text-align:left;border:2px solid transparent;background:var(--bp-card);border-radius:16px;padding:10px;cursor:pointer;color:var(--bp-ink);font-family:inherit;transition:transform .12s,background .2s}
+.room-opt:hover{background:var(--bp-card-h)}.room-opt:active{transform:scale(.97)}
+.room-opt.on{border-color:var(--bp-dark);background:#b88d66}
+.ro-ic{width:46px;height:46px;border-radius:12px;background:#f6e9da;display:grid;place-items:center}.ro-ic svg{width:38px;height:38px}
+.ro-t{display:grid;gap:2px}.ro-t b{font-size:13.5px}.ro-t small{font-size:11.5px;font-weight:700;color:var(--bp-soft);line-height:1.25}
+
+.bp-title span{display:none}
+body.landscape-phone .buildpanel .bp-title{font-size:15px;padding:0 4px}
+body.landscape-phone .buildpanel .bp-title span{display:inline}
+body.landscape-phone .buildpanel .bp-head{padding:0 6px 4px}
+body.landscape-phone .buildpanel .bp-done{padding:5px 12px;font-size:12px}
+body.landscape-phone .buildpanel .bp-tabs{grid-template-columns:repeat(10,1fr);margin-top:4px;gap:2px}
+body.landscape-phone .buildpanel .bp-tabs button{padding:5px 0!important}
+body.landscape-phone .buildpanel .bp-tabs button span{display:none}
+body.landscape-phone .bp-grip{height:14px!important}
+body.landscape-phone .tile-pic{height:70px}body.landscape-phone .tile-pic svg{height:70px;max-height:70px}
+body.landscape-phone .bp-items:not(.bp-room) .tile-pic svg[preserveAspectRatio]{height:70px}
+body.landscape-phone .room-opts{grid-template-columns:1fr 1fr}
+body.landscape-phone .room-opt{flex-direction:row;align-items:center;padding:8px}
+body.landscape-phone .ro-ic{width:38px;height:38px;flex:none}body.landscape-phone .ro-ic svg{width:30px;height:30px}
+body.landscape-phone .ro-t small{display:none}
+
+.buildpanel .bp-card.tile{min-height:0!important;height:auto;justify-content:center;align-self:start}
+.rc-sub{display:flex;align-items:center;gap:4px;flex-wrap:wrap}.rc-sub .price{display:inline-flex;align-items:center;gap:2px}.rc-sub .price svg,.rc-sub .price img{width:15px;height:15px}
+body.landscape-phone .room-card{padding:8px 12px;gap:4px}body.landscape-phone .rc-name b{font-size:15px}
+
+.buildpanel .bp-items:not(.bp-room){align-content:start}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -7328,6 +7391,45 @@ openSettings=function(){_openSettings41();const c=$('#pop .settingscard');if(!c)
   c.querySelector('.acts.col')?.insertAdjacentHTML('beforebegin',`<div class="set-move"><h4>Spielstand übertragen</h4><p>${window.PEBBLE_SB?'Hast du schon in Claude gespielt? Dort unter Einstellungen „Spielstand speichern“ tippen und die Datei hier laden.':'Damit kannst du deinen Spielstand auf die Pebble-Webseite mitnehmen.'}</p>
     <div class="two"><button class="btn soft" type="button" data-sv="export">Spielstand speichern</button><button class="btn soft" type="button" data-sv="import">Spielstand laden</button></div></div>`)};
 document.addEventListener('click',e=>{const b=e.target.closest('[data-sv]');if(!b)return;b.dataset.sv==='export'?exportSave():importSave()});
+
+/* ================= v42: Baumenü in Hellbraun, große Bilder nur mit Preis, schönerer Raum-Bereich ================= */
+const TILEC={};
+function tileWin(kind,k){const key=kind+k;if(TILEC[key])return TILEC[key];
+  return TILEC[key]=withCam({yaw:0,pitch:10},()=>{const si=SIDE('y0',0,0,1,1);BB=[1e9,1e9,-1e9,-1e9];
+    const d=kind==='win'?WINS[k]:DOORS2[k];let body=kind==='win'?winDraw(si,.5,0,k,0,false):d&&d.open?'':doorDraw(si,.5,0,k,0,false);
+    if(!body){body=poly([si.pt(.2,0),si.pt(.8,0),si.pt(.8,84),si.pt(.2,84)],'rgba(255,250,242,.65)','stroke="#fff" stroke-width="5"')}
+    body=body.replace('fill="#d6ecfb" opacity=".14"','fill="#e4f3fd" opacity=".7"');const b=BB;BB=null;const pad=5;return `<svg viewBox="${f1(b[0]-pad)} ${f1(b[1]-pad)} ${f1(b[2]-b[0]+pad*2)} ${f1(b[3]-b[1]+pad*2)}" aria-hidden="true">${body}</svg>`})}
+function tileDeco(kind,k){const key='d'+kind+k+(k?'':viewRoom);if(TILEC[key])return TILEC[key];const R=ROOMS.find(r=>r.id===viewRoom)||ROOMS[0];
+  if(kind==='wall'){const ws=k?WALLS[k]:{pat:'stripes',a:R.wall[0],b:R.wall[2]};
+    return TILEC[key]=withCam({yaw:0,pitch:0},()=>{const si=SIDE('y0',0,0,1,1);BB=[1e9,1e9,-1e9,-1e9];const s=wallFace(si,0,1,0,0,100,ws);const b=BB;BB=null;return `<svg viewBox="${f1(b[0])} ${f1(b[1])} ${f1(b[2]-b[0])} ${f1(b[3]-b[1])}" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${s}</svg>`})}
+  const fs=k?FLOORS[k]:{pat:'checker',a:R.floor[0],b:R.floor[1],s:R.floor[2]};
+  return TILEC[key]=withCam({yaw:0,pitch:89},()=>{BB=[1e9,1e9,-1e9,-1e9];const s=shell({gx:0,gy:0,zb:0,c:2,r:2,ws:{pat:'plain',a:'#efe6da',b:'#efe6da'},fs,H:1,kind:()=>({k:'ext'}),cut:()=>false,decor:false});const b=BB;BB=null;const w=b[2]-b[0],h=b[3]-b[1],ix=w*.2,iy=h*.2;return `<svg viewBox="${f1(b[0]+ix)} ${f1(b[1]+iy)} ${f1(w-2*ix)} ${f1(h-2*iy)}" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${s}</svg>`})}
+const tile42=(attr,pic,price,on,name)=>`<button type="button" class="bp-card tile${on?' on':''}" ${attr} title="${esc(name)}" aria-label="${esc(name)}"><span class="tile-pic">${pic}</span><span class="tile-price">${price}</span></button>`;
+const ICR={grow:'<svg viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="13" y="13" width="22" height="22" rx="3" fill="#fff8ef" stroke="#5b3a24" stroke-width="2.5"/><path d="M24 4v6M20 7l4-4 4 4M24 44v-6M20 41l4 4 4-4M4 24h6M7 20l-3 4 3 4M44 24h-6M41 20l3 4-3 4" stroke="#3fae6a" stroke-width="3"/></svg>',
+  up:'<svg viewBox="0 0 48 48" fill="none" stroke="#5b3a24" stroke-width="2.5" stroke-linejoin="round"><path d="M8 40V24h32v16z" fill="#fff8ef"/><path d="M12 24V12h24v12" fill="#f3d9bd"/><path d="M6 13 24 4l18 9" stroke-linecap="round"/><path d="M20 40v-8h8v8"/></svg>',
+  neu:'<svg viewBox="0 0 48 48" fill="none" stroke="#5b3a24" stroke-width="2.5" stroke-linejoin="round"><rect x="6" y="14" width="20" height="24" rx="2" fill="#fff8ef"/><rect x="26" y="14" width="16" height="24" rx="2" fill="#f3d9bd" stroke-dasharray="4 3"/><path d="M34 22v8M30 26h8" stroke="#3fae6a" stroke-width="3" stroke-linecap="round"/></svg>',
+  plan:'<svg viewBox="0 0 48 48" fill="none" stroke="#5b3a24" stroke-width="2.5" stroke-linejoin="round"><rect x="5" y="8" width="38" height="32" rx="3" fill="#fff8ef"/><path d="M5 22h18v18M23 8v8M30 22h13"/><path d="M33 30l4 4 4-4M37 34V26" stroke="#3b82c4" stroke-linecap="round"/></svg>'};
+const _bpItems42=bpItems;
+bpItems=function(){
+  if(BP==='fenster'||BP==='tueren'){const kind=BP==='fenster'?'win':'door',list=kind==='win'?WINS:DOORS2;
+    return Object.entries(list).map(([k,d])=>tile42(`data-bptool="${kind}|${k}"`,tileWin(kind,k),priceHTML('s',d.p),BT&&BT.kind===kind&&BT.style===k&&!BT.moving,d.n)).join('')}
+  if(BP==='tapeten'||BP==='boeden'){const kind=BP==='tapeten'?'wall':'floor',list=kind==='wall'?WALLS:FLOORS,cur=S.deco?.[viewRoom]?.[kind];
+    return tile42(`data-bpdeco="${kind}|"`,tileDeco(kind,''),'<small>gratis</small>',!cur,'Standard')+Object.entries(list).map(([k,d])=>tile42(`data-bpdeco="${kind}|${k}"`,tileDeco(kind,k),ownsDeco(k)?'<small class="own">✓ gehört dir</small>':priceHTML(d.c,d.p),cur===k,d.n)).join('')}
+  if(BP==='raum'){const R=RD(viewRoom),n=growN(viewRoom),r=roomRect(viewRoom),on=BT?.kind==='grow';
+    const opt=(attr,ic,t,sub,act)=>`<button type="button" class="room-opt${act?' on':''}" ${attr}><span class="ro-ic">${ic}</span><span class="ro-t"><b>${t}</b><small>${sub}</small></span></button>`;
+    return `<div class="room-card"><div class="rc-name"><b>${R.name}</b><small>${r.w} × ${r.h} Felder · ${r.f?'1. Stock':'Erdgeschoss'}</small></div><div class="rc-bar"><i style="width:${n/GROWMAX*100}%"></i></div><small class="rc-sub">${n}/${GROWMAX} Erweiterungen${n<GROWMAX?` · nächste Reihe ${priceHTML("s",growPrice(n))}`:' · ganz ausgebaut'}</small></div>
+      <div class="room-opts">${opt('data-bptool="grow|"',ICR.grow,'Größer oder kleiner','Zieh die Pfeile im Bild nach außen oder innen',on)}
+      ${opt('data-bpact="up"',ICR.up,'1. Stock bauen','mit Gratis-Treppe')}
+      ${ROOMS.some(x=>!S.unlocked[x.id])?opt('data-bpact="neu"',ICR.neu,'Neuer Raum','einen weiteren Raum freischalten'):''}
+      ${opt('data-bpact="plan"',ICR.plan,'Räume verschieben','im Hausplan anordnen')}</div>`}
+  return _bpItems42()};
+const _bpHint42=bpHint;bpHint=function(){if(BP==='raum'&&BT?.kind!=='grow')return 'Tipp einen Raum im Bild an, um ihn auszuwählen.';return _bpHint42()};
+/* Kopf der Bauleiste: Titel + Fertig oben, alle Reiter sichtbar, kein Klapp-Pfeil mehr zwischen den Reitern */
+const _rbp42=renderBuildPanel;
+renderBuildPanel=function(){_rbp42();const pn=$('#buildpanel');if(!pn)return;pn.querySelector('.bp-minbtn')?.remove();
+  const head=pn.querySelector('.bp-head');if(head){const lab=(BCATS.find(c=>c[0]===BP)||[])[1]||'';let t=head.querySelector('.bp-title');if(!t){head.insertAdjacentHTML('afterbegin','<b class="bp-title"></b>');t=head.querySelector('.bp-title')}t.innerHTML='Bauen<span> · '+lab+'</span>'}
+  const g=pn.querySelector('.bp-grip');if(g&&!g.querySelector('span'))g.insertAdjacentHTML('beforeend','<span>Einklappen</span>');
+  pn.querySelector('.bp-items')?.classList.toggle('bp-room',BP==='raum')};
 
 /* ================= Navigation & Meldungen ================= */
 function show(t){
