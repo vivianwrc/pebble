@@ -1083,6 +1083,92 @@ body.landscape-phone .stage svg.room,.stage.building svg.room{touch-action:none}
 .growarrow{cursor:grab;touch-action:none}.growarrow:hover path{fill:#3b4d6b}
 .mob-all{margin-top:auto;flex:none;border:0;border-radius:12px;background:#ffe6ee;color:#c2456b;font:900 11.5px Nunito,system-ui,sans-serif;padding:9px 8px;cursor:pointer;line-height:1.15}
 .mob-all.warn{background:#e05a6e;color:#fff}.mob-all:disabled{opacity:.45;cursor:default}
+/* ===== v40: Offener Bildschirm, Glas-Leisten ===== */
+:root{--glass:rgba(255,255,255,.55);--glass-strong:rgba(255,255,255,.8);--glass-line:rgba(255,255,255,.75);--glass-blur:blur(18px) saturate(1.6);--toph:64px;--dockh:66px;--scene:#a9d79c}
+.glass{background:var(--glass)!important;-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border:1px solid var(--glass-line)!important;box-shadow:0 8px 24px rgba(34,48,74,.12)!important}
+/* Dock unten (alle Ansichten, auch quer) */
+.nav,body.landscape-phone .nav{position:fixed!important;top:auto!important;left:50%!important;right:auto!important;bottom:calc(10px + env(safe-area-inset-bottom,0px))!important;transform:translateX(-50%);width:min(520px,calc(100% - 24px))!important;padding:6px!important;border-radius:26px!important;border:1px solid var(--glass-line)!important;border-right:1px solid var(--glass-line)!important;background:var(--glass)!important;-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);box-shadow:0 10px 30px rgba(34,48,74,.16)!important;display:block!important;z-index:90}
+.nav-in,body.landscape-phone .nav-in{grid-template-columns:repeat(5,1fr)!important;grid-auto-rows:auto!important;gap:2px!important;width:auto!important}
+.tab,body.landscape-phone .tab{padding:6px 2px!important;font-size:11px!important;border-radius:18px;transition:background .2s,color .2s}
+.tab svg,body.landscape-phone .tab svg{width:22px!important;height:22px!important}
+.tab[aria-current="page"]{background:rgba(255,255,255,.75)!important;box-shadow:0 2px 8px rgba(34,48,74,.1)}
+body.landscape-phone .top,body.landscape-phone main{margin-left:0!important}
+main{padding-bottom:calc(var(--dockh) + 40px)!important}
+/* Zuhause und Welt über den ganzen Bildschirm */
+body.immersive{overflow:hidden}
+body.immersive main{max-width:none!important;padding:0!important}
+body.immersive section[data-view="home"]:not([hidden]),body.immersive section[data-view="welt"]:not([hidden]){display:block!important;position:fixed!important;left:0;right:0;top:var(--toph);bottom:0;margin:0!important;background:var(--scene);z-index:1}
+body.immersive section[data-view="welt"]:not([hidden]){background:linear-gradient(#cfe6f6,#e8f3fa 55%,#f5efe5)}
+body.immersive #stage{position:absolute!important;inset:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;min-height:0!important;display:block!important;transition:right .3s ease}
+body.immersive #stage svg.room{position:absolute;inset:0;width:100%!important;height:100%!important;max-height:none!important}
+body.immersive .world{position:absolute!important;inset:0!important;height:auto!important;min-height:0!important;border-radius:0!important;box-shadow:none!important}
+body.immersive section[data-view="welt"] .view-head{display:none!important}
+body.immersive .stage .idcard{display:none!important}
+/* Raumleiste oben als Glas */
+body.immersive #roomTabs{position:absolute!important;z-index:5;top:10px;left:50%;transform:translateX(-50%);max-width:calc(100% - 420px);margin:0!important;padding:5px;gap:4px;flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none;border-radius:999px;background:var(--glass);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border:1px solid var(--glass-line);box-shadow:0 8px 24px rgba(34,48,74,.12)}
+body.immersive #roomTabs .chip{background:transparent;box-shadow:none;padding:7px 13px;font-size:13px}
+body.immersive #roomTabs .chip[aria-pressed="true"],body.immersive #roomTabs .chip.on{background:var(--ink);color:#fff}
+@media (max-width:700px){body.immersive #roomTabs{max-width:calc(100% - 260px)}}
+/* Bedienelemente im Bild: Glas */
+body.immersive .stage .iosw,body.immersive .stage .sside,body.immersive .stage .rotctl,body.immersive .zoomctl,body.immersive .stage .floorsw,body.immersive .world .rotctl,body.immersive .whud,body.immersive .dpad button,body.immersive .wchat>button,body.immersive .emobar>button{background:var(--glass)!important;-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border:1px solid var(--glass-line)!important;box-shadow:0 6px 18px rgba(34,48,74,.1)!important}
+body.immersive .stage .rotctl,body.immersive .zoomctl{bottom:calc(10px + env(safe-area-inset-bottom,0px))!important}
+body.immersive .stage .emobar{bottom:calc(var(--dockh) + 20px)!important}
+body.immersive .world .emobar{bottom:calc(var(--dockh) + 20px)!important}
+body.immersive .wchat{bottom:calc(var(--dockh) + 20px)!important}
+body.immersive .dpad{bottom:calc(var(--dockh) + 20px)!important}
+@media (max-width:900px){body.immersive .stage .rotctl,body.immersive .zoomctl{bottom:calc(var(--dockh) + 20px)!important}}
+/* Werkzeuge (Bauen, Kleiderschrank, Foto) oben rechts als Glas */
+body.immersive .home-tools{position:absolute!important;z-index:6;top:10px;right:10px;margin:0!important;display:block!important;width:auto}
+body.immersive .hgrid3{display:flex!important;gap:4px;padding:4px;border-radius:999px;background:var(--glass);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border:1px solid var(--glass-line);box-shadow:0 8px 24px rgba(34,48,74,.12);width:auto}
+body.immersive .hgrid3[hidden]{display:none!important}
+body.immersive .hgrid3 button{background:transparent;padding:7px 10px;border-radius:999px;flex-direction:row;gap:6px;font-size:12.5px;box-shadow:none}
+body.immersive .hgrid3 button:hover{background:rgba(255,255,255,.6)}
+body.immersive .hgrid3 svg{width:20px;height:20px}
+@media (max-width:1000px){body.immersive .hgrid3 button span{display:none}body.immersive .hgrid3 button{padding:8px}}
+/* Bauleiste als Glas-Panel rechts */
+body.immersive .buildpanel{position:fixed;z-index:7;top:calc(var(--toph) + 10px);right:10px;bottom:calc(var(--dockh) + 22px);width:min(400px,44vw);display:flex;flex-direction:column;background:rgba(255,255,255,.82);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border:1px solid var(--glass-line);border-radius:22px;overflow:hidden;animation:bpin .25s ease}
+@keyframes bpin{from{transform:translateX(30px);opacity:0}}
+body.immersive .buildpanel .bp-items{flex:1;max-height:none!important;min-height:0}
+body.immersive .buildpanel .mob{height:100%!important}
+body.immersive .buildpanel .bp-items.has-mob{display:block;height:100%}
+body.immersive.bp-open #stage{right:calc(min(400px,44vw) + 10px)!important}
+body.immersive.bp-open.bp-min #stage{right:0!important}
+body.bp-min .home-tools{display:block!important}
+body.immersive .bp-pill{position:fixed!important;left:auto!important;right:14px;top:calc(var(--toph) + 12px);bottom:auto!important;transform:none!important;z-index:8}
+/* Aufstell-Leiste über dem Dock */
+body.immersive .sheet{bottom:calc(var(--dockh) + 22px)!important}
+body.immersive.landscape-phone .sheet{top:calc(var(--toph) + 10px);bottom:auto!important}
+/* Weiche Übergänge */
+section[data-view]:not([hidden]){animation:viewin .28s ease}
+@keyframes viewin{from{opacity:0;transform:translateY(6px)}}
+body.immersive section[data-view]:not([hidden]){animation:viewfade .3s ease}
+@keyframes viewfade{from{opacity:0}}
+.btn,.chip,.tab,.bp-card,.mob-card{transition:transform .12s ease,background .2s,box-shadow .2s}
+.btn:active,.chip:active,.bp-card:active{transform:scale(.96)}
+@media (prefers-reduced-motion:reduce){section[data-view]:not([hidden]),.buildpanel{animation:none!important}}
+/* Freunde: dunkelbraun */
+.fhero{background:linear-gradient(135deg,#3a2a20,#5b4232 60%,#8a6648)!important;box-shadow:0 12px 28px rgba(58,42,32,.28)!important}
+/* Spielerkarte: Rahmen nicht mehr abgeschnitten */
+.idbig .cf-deco{padding:22px!important;background-size:22px 22px!important;background-repeat:round!important}
+.idbig.card-blumen,.idbig.card-herzen,.idbig.card-sterne,.idbig.card-wolken,.idbig.card-punkte{padding:30px!important}
+body.landscape-phone #pop .idbig{max-height:none!important;overflow:visible!important}
+body.landscape-phone .pop{padding-top:12px!important}
+/* 3D-Intro */
+.intro{position:fixed;inset:0;z-index:500;background:#9fcdef;transition:opacity .6s ease}
+.intro canvas{position:absolute;inset:0;width:100%!important;height:100%!important;display:block}
+.intro.out{opacity:0;pointer-events:none}
+.intro-title{position:absolute;left:0;right:0;top:4%;display:grid;justify-items:center;gap:4px;opacity:0;transform:translateY(-10px) scale(.92);transition:opacity .6s ease,transform .7s cubic-bezier(.2,1.4,.4,1);pointer-events:none}
+.intro.title .intro-title{opacity:1;transform:none}
+.intro-title b{font-family:var(--f-display);font-weight:600;font-size:clamp(34px,7vw,64px);color:#22304a;letter-spacing:.02em;text-shadow:0 4px 0 #fff,0 10px 30px rgba(34,48,74,.18)}
+.intro-title small{font:800 15px Nunito,system-ui,sans-serif;color:#46607c;background:rgba(255,255,255,.6);padding:4px 14px;border-radius:99px}
+.intro-skip{position:absolute;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));border:0;border-radius:99px;padding:8px 14px;background:rgba(255,255,255,.65);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font:800 13px Nunito,system-ui,sans-serif;color:#22304a;cursor:pointer}
+.set-move{margin-top:14px;padding:12px;border-radius:16px;background:var(--bg);display:grid;gap:8px}
+.set-move h4{margin:0;font:900 14px Nunito,system-ui,sans-serif}.set-move p{margin:0;font-size:12.5px;font-weight:700;color:var(--ink-soft)}
+.set-move .two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+body.immersive.bp-min .buildpanel{display:none!important}
+.fempty{background:var(--paper);border-radius:20px;padding:22px 18px;text-align:center;display:grid;gap:6px;box-shadow:0 1px 0 var(--line)}
+.fempty b{font-family:var(--f-display);font-weight:600;font-size:19px}.fempty p{margin:0;color:var(--ink-soft);font-weight:700;font-size:13.5px}
+.seg .seg-r{margin-left:auto;border:0;background:transparent;font-size:18px;color:var(--ink-soft);cursor:pointer;padding:0 10px}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -2260,17 +2346,21 @@ async function sbCloudInit(){
 }
 function sbSignUp(mail,pw,name){const sb=window.PEBBLE_SB;
   sb.auth.signUp({email:mail,password:pw,options:{data:{name},emailRedirectTo:location.origin+location.pathname}}).then(({data,error})=>{
-    if(error){console.warn(error);return}if(data.session){SBU=data.user;sbPush(true)}else setTimeout(()=>toast('Bestätige noch deine E-Mail, dann wird dein Spielstand online gespeichert.'),2500)}).catch(()=>{})}
-async function sbLogin(q,a,pw){const sb=window.PEBBLE_SB,email=q.includes('@')?q:a&&a.mail;if(!email)return null;
+    if(error){console.warn(error);return}if(data.session){SBU=data.user;sbLoginRow(name,mail,pw);sbPush(true)}else setTimeout(()=>toast('Bestätige noch deine E-Mail, dann wird dein Spielstand online gespeichert.'),2500)}).catch(()=>{})}
+async function sbLogin(q,a,pw){const sb=window.PEBBLE_SB;let email=q.includes('@')?q:a&&a.mail;
+  if(!email){try{const {data}=await sb.rpc('pebble_login_email',{n:q.toLowerCase(),h:await loginHash(q,pw)});if(data)email=data}catch(_){}}if(!email)return null;
   const {data,error}=await sb.auth.signInWithPassword({email,password:pw});if(error||!data.user)return null;SBU=data.user;
   const {data:row}=await sb.from('pebble_saves').select('name,data').eq('user_id',SBU.id).maybeSingle();
   const accs=getAccs();let key=Object.keys(accs).find(k=>accs[k].mail===email);
   const salt=Math.random().toString(36).slice(2,10),h=await hash(salt+pw);
   if(!key){const nm=(row&&row.name)||SBU.user_metadata?.name||email.split('@')[0];key=nm.toLowerCase();accs[key]={name:nm,mail:email,salt,hash:h,save:(row&&row.data)||{...fresh(),upd:Date.now()}}}
   else{accs[key].salt=salt;accs[key].hash=h;if(row&&row.data&&(row.data.upd||0)>(accs[key].save?.upd||0))accs[key].save=row.data}
-  setAccs(accs);if(!row)setTimeout(()=>sbPush(true),500);return key}
+  setAccs(accs);sbLoginRow(accs[key].name,email,pw);setTimeout(()=>sbPush(true),row?3000:500);return key}
+async function loginHash(n,pw){return hash('pebble:'+String(n).toLowerCase()+':'+pw)}
+async function sbLoginRow(name,email,pw){if(!SBU)return;try{await window.PEBBLE_SB.from('pebble_logins').upsert({user_id:SBU.id,name_lower:String(name).toLowerCase(),email,login_hash:await loginHash(name,pw)})}catch(_){}}
 function sbPush(now){if(!SBU||!user)return;clearTimeout(SBT);SBT=setTimeout(()=>{const a=getAccs()[user];if(!a||!a.save)return;
-  window.PEBBLE_SB.from('pebble_saves').upsert({user_id:SBU.id,name:a.name,data:a.save,updated_at:new Date().toISOString()}).then(({error})=>{if(error)console.warn('Speichern online',error.message)})},now?0:2000)}
+  window.PEBBLE_SB.from('pebble_saves').upsert({user_id:SBU.id,name:a.name,data:a.save,updated_at:new Date().toISOString()}).then(({error})=>{if(error)console.warn('Speichern online',error.message)});
+  const sv=a.save;window.PEBBLE_SB.from('pebble_profiles').upsert({user_id:SBU.id,name:a.name,code:typeof fCode==='function'?fCode():'',ch:sv.char||'pinguin',outfit:sv.outfit||{},level:levelInfo(sv.xp||0).l,about:(sv.profile&&sv.profile.about)||'',updated_at:new Date().toISOString()}).then(()=>{},()=>{})},now?0:2000)}
 /* ================= Speichern im Claude-Konto (geräteübergreifend) ================= */
 let cloudRef=null,cloudT=null;
 const cloudReady=(async()=>{
@@ -3906,9 +3996,9 @@ const PLAYERS=[
   {id:'leo',n:'Leo',ch:'frosch',o:{oberteil:'t_regen',hose:'h_cargo',kopf:'cap'},lv:4,on:1,about:'Frosties-Sammler.'},
   {id:'ben',n:'Ben',ch:'hase',o:{oberteil:'t_hoodie',hose:'h_shorts',hals:'schal'},lv:2,on:0,about:'Hallo!'},
 ];
-const PL=id=>PLAYERS.find(p=>p.id===id);
+const PL=id=>(window.REALP&&window.REALP[id])||(id==='mia'?PLAYERS.find(p=>p.id===id):null)||(S&&S.social&&S.social.names&&S.social.names[id]?{id,...S.social.names[id],on:0,about:''}:null);
 const REPLIES=['Haha, ja!','Klingt super!','Treffen wir uns im Café?','Zeig mir mal dein Haus!','Ich sammle gerade Frosties am Brunnen.','Oh wie süß!','Bis gleich im Park!'];
-function freshSocial(){return {friends:['mia'],sent:[],incoming:['lina','emil'],chats:{mia:[{f:1,t:'Hi! Willkommen in Pebble. Komm mal im Café vorbei!'}]},unread:{mia:1}}}
+function freshSocial(){return {friends:[],sent:[],incoming:[],chats:{},unread:{},names:{},v2:1}}
 let fTab='entdecken',fQuery='',chatWith=null;
 function fCode(){const n=(acc().name||'pebble');let h=7;for(const c of n)h=(h*31+c.charCodeAt(0))%9000;return 'PB-'+String(1000+h)}
 const SPCOL={pinguin:'#f8d6e1',katze:'#e4dcf7',hase:'#f3eef0',fuchs:'#fde0c8',baer:'#efdccb',frosch:'#d8efd5'};
@@ -6501,7 +6591,7 @@ function openSettings(){
 }
 (()=>{const b=document.querySelector('.top .brand');if(!b)return;b.setAttribute('role','button');b.tabIndex=0;b.title='Einstellungen';b.classList.add('brandbtn');
   b.insertAdjacentHTML('beforeend','<svg class="gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>');
-  b.addEventListener('click',openSettings);b.addEventListener('keydown',e=>{if(e.key==='Enter')openSettings()})})();
+  b.addEventListener('click',()=>openSettings());b.addEventListener('keydown',e=>{if(e.key==='Enter')openSettings()})})();
 
 /* --- Handy: bitte quer halten --- */
 (()=>{document.body.insertAdjacentHTML('beforeend',`<div class="rotatehint" id="rotateHint"><div class="rh-card"><div class="rh-phone"><span></span></div><h3>Dreh dein Handy</h3><p>Pebble spielst du im Querformat. Dreh dein Handy einfach zur Seite.</p></div></div>`);
@@ -7051,6 +7141,194 @@ growArrows=function(){if(!S.layout[viewRoom])return '';const n=growN(viewRoom);i
   return s.replace(/>\d+<\/text><\/g>/g,'>max</text></g>')};
 const _bpHint38=bpHint;bpHint=function(){if(BT?.kind==='grow')return 'Tipp einen Raum an. Zieh einen Pfeil nach außen zum Vergrößern oder nach innen zum Verkleinern. Zurückziehen bricht ab.';return _bpHint38()};
 
+/* ================= v40: Offener Bildschirm, Glas-Leisten, neue Pfeile, Sims-Steuerung ================= */
+(()=>{const root=document.documentElement,upd=()=>{const t=document.querySelector('.top'),n=document.querySelector('.nav');if(t)root.style.setProperty('--toph',t.offsetHeight+'px');if(n)root.style.setProperty('--dockh',n.offsetHeight+'px')};
+  try{const ro=new ResizeObserver(upd);document.querySelector('.top')&&ro.observe(document.querySelector('.top'));document.querySelector('.nav')&&ro.observe(document.querySelector('.nav'))}catch(_){}addEventListener('resize',upd);upd();
+  const S0=show;show=function(t){document.body.classList.toggle('immersive',t==='home'||t==='welt');upd();return S0(t)};
+  const B0=stageBackdrop;stageBackdrop=function(){B0();try{root.style.setProperty('--scene',seasonLand().grass)}catch(_){}};
+  const R0=renderBuildPanel;renderBuildPanel=function(){R0();document.body.classList.toggle('bp-open',!!BP);if(!BP)document.body.classList.remove('bp-min')};
+  const H0=renderHome;renderHome=function(){H0();document.body.classList.toggle('bp-open',!!BP)};
+})();
+/* Pfeile: grüner Strichpfeil nach außen, beim Verkleinern rot nach innen */
+growArrows=function(){
+  if(!(growOpen||BT?.kind==='grow')||!S.layout[viewRoom])return '';const r=roomRect(viewRoom),zb=r.f*FH,n=growN(viewRoom);
+  const mid={x0:[r.x-.55,r.y+r.h/2,-1,0],x1:[r.x+r.w+.55,r.y+r.h/2,1,0],y0:[r.x+r.w/2,r.y-.55,0,-1],y1:[r.x+r.w/2,r.y+r.h+.55,0,1]};
+  return Object.entries(mid).map(([d,[x,y,nx,ny]])=>{const [sx,sy]=P(x,y,zb+2),[ex,ey]=P(x+nx,y+ny,zb+2),a=Math.atan2(ey-sy,ex-sx)*180/Math.PI;
+    return `<g class="growarrow" data-growdir="${d}" data-a="${f1(a)}" transform="translate(${f1(sx)} ${f1(sy)})"><circle r="26" fill="transparent"/><g class="ga" transform="rotate(${f1(a)})"><path d="M-16 0H14M4 -10 16 0 4 10" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path class="ga-l" d="M-16 0H14M4 -10 16 0 4 10" fill="none" stroke="#3fae6a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>${n<GROWMAX?`<text y="30" text-anchor="middle" font-size="11" font-weight="900" fill="#22304a" stroke="#fff" stroke-width="3" paint-order="stroke">${growPrice(n)}</text>`:''}</g>`}).join('')+'<g id="growghost" pointer-events="none"></g>';
+};
+const _dgg40=drawGrowGhost;
+drawGrowGhost=function(){_dgg40();document.querySelectorAll('#stage .growarrow').forEach(el=>{const on=GD&&el.dataset.growdir===GD.dir,shrink=on&&GD.k<0,g=el.querySelector('.ga'),l=el.querySelector('.ga-l');
+  if(g)g.setAttribute('transform',`rotate(${(+el.dataset.a)+(shrink?180:0)})`);if(l)l.setAttribute('stroke',shrink?'#e05a6e':'#3fae6a');el.style.opacity=GD&&!on?.35:''})};
+/* Sims-Steuerung am PC: linke Maustaste schiebt, rechte Maustaste dreht, Mausrad zoomt, WASD/Pfeile schieben, Q/E drehen */
+(()=>{const st=$('#stage');let d=null;
+  st.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0||placing||GD||e.target.closest('button,[data-growdir],[data-wallpick],[data-opsel],[data-optrash],.lock-card'))return;
+    const sv=$('#stage svg.room:not(.locked-room)');if(!sv||!sv.dataset.vb0)return;const vb=sv.viewBox.baseVal,r=sv.getBoundingClientRect();
+    d={x:e.clientX,y:e.clientY,px:camHome.px||0,py:camHome.py||0,k:Math.max(vb.width/(r.width||1),vb.height/(r.height||1)),w:+sv.dataset.vb0.split(/[ ,]+/)[2],h:+sv.dataset.vb0.split(/[ ,]+/)[3],on:false}},true);
+  addEventListener('pointermove',e=>{if(!d)return;const dx=e.clientX-d.x,dy=e.clientY-d.y;if(!d.on){if(Math.hypot(dx,dy)<6)return;d.on=true;st.style.cursor='grabbing'}
+    camHome.px=clamp(d.px-dx*d.k,-d.w*.5,d.w*.5);camHome.py=clamp(d.py-dy*d.k,-d.h*.5,d.h*.5);applyZoomHome();orbitEnd=Date.now()},true);
+  addEventListener('pointerup',()=>{if(d&&d.on){orbitEnd=Date.now();st.style.cursor=''}d=null},true);
+  /* rechte Maustaste: drehen und kippen */
+  let o=null;st.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||(e.button!==2&&e.button!==1))return;e.preventDefault();o={x:e.clientX,y:e.clientY,yaw:camHome.yaw,pitch:camHome.pitch,on:false}},true);
+  addEventListener('pointermove',e=>{if(!o)return;const dx=e.clientX-o.x,dy=e.clientY-o.y;if(!o.on){if(Math.hypot(dx,dy)<4)return;o.on=true;st.classList.add('orbiting')}
+    camHome.yaw=((o.yaw-dx*.42)%360+360)%360;camHome.pitch=clamp(o.pitch+dy*.22,16,62);cancelAnimationFrame(o.raf);o.raf=requestAnimationFrame(()=>redrawHome());orbitEnd=Date.now()},true);
+  addEventListener('pointerup',e=>{if(o){if(o.on){st.classList.remove('orbiting');orbitEnd=Date.now();redrawHome()}o=null}},true);
+  addEventListener('keydown',e=>{if(tab!=='home'||e.target.closest('input,textarea,select')||!$('#pop').hidden)return;const k=e.key.toLowerCase(),sv=$('#stage svg.room:not(.locked-room)');if(!sv||!sv.dataset.vb0)return;
+    const vb=sv.viewBox.baseVal,step=vb.width*.08,[,,w,h]=sv.dataset.vb0.split(/[ ,]+/).map(Number);let hit=true;
+    if(k==='w'||k==='arrowup')camHome.py=clamp((camHome.py||0)-step,-h*.5,h*.5);else if(k==='s'||k==='arrowdown')camHome.py=clamp((camHome.py||0)+step,-h*.5,h*.5);
+    else if(k==='a'||k==='arrowleft')camHome.px=clamp((camHome.px||0)-step,-w*.5,w*.5);else if(k==='d'||k==='arrowright')camHome.px=clamp((camHome.px||0)+step,-w*.5,w*.5);
+    else if(k==='+'||k==='=')zoomHome(1.2);else if(k==='-')zoomHome(1/1.2);else hit=false;
+    if(hit){e.preventDefault();e.stopImmediatePropagation();applyZoomHome()}},true);
+})();
+/* ================= v40: 3D-Intro – Pebble rutscht über das Eis ================= */
+let INTRO_DONE=false;
+function loadThree(){return new Promise(res=>{if(window.THREE)return res(true);const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';s.onload=()=>res(!!window.THREE);s.onerror=()=>res(false);document.head.appendChild(s);setTimeout(()=>res(!!window.THREE),2500)})}
+async function playIntro(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const ov=document.createElement('div');ov.className='intro';ov.innerHTML='<div class="intro-title"><b>pebble</b><small>Willkommen zuhause</small></div><button type="button" class="intro-skip">Überspringen</button>';
+  document.body.appendChild(ov);
+  const ok=await loadThree();if(!ok){ov.classList.add('out');setTimeout(()=>ov.remove(),500);return}
+  const T=window.THREE,W0=innerWidth,H0=innerHeight;
+  const R=new T.WebGLRenderer({antialias:true});R.setPixelRatio(Math.min(2,devicePixelRatio||1));R.setSize(W0,H0);R.shadowMap.enabled=true;R.shadowMap.type=T.PCFSoftShadowMap;
+  ov.insertBefore(R.domElement,ov.firstChild);
+  const sc=new T.Scene();sc.background=new T.Color('#9fcdef');sc.fog=new T.Fog('#bcdcf2',14,36);
+  const cam=new T.PerspectiveCamera(W0>H0?38:52,W0/H0,.1,100);cam.position.set(0,2.4,8.2);
+  sc.add(new T.HemisphereLight('#ffffff','#9fbfd8',.62));const sun=new T.DirectionalLight('#fff4e6',.9);sun.position.set(4,8,5);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.left=-10;sun.shadow.camera.right=10;sun.shadow.camera.top=10;sun.shadow.camera.bottom=-10;sc.add(sun);
+  const M=(c,r=.55)=>new T.MeshStandardMaterial({color:c,roughness:r,metalness:0});
+  const ground=new T.Mesh(new T.PlaneGeometry(80,80),M('#e8f2f9',.35));ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;sc.add(ground);
+  const ice=new T.Mesh(new T.CircleGeometry(5.5,48),M('#d6ecfa',.12));ice.rotation.x=-Math.PI/2;ice.position.set(0,.01,.4);ice.scale.set(2.1,1,.55);ice.receiveShadow=true;sc.add(ice);
+  const ball=(r,c,x,y,z,sx=1,sy=1,sz=1,par)=>{const m=new T.Mesh(new T.SphereGeometry(r,28,20),M(c));m.position.set(x,y,z);m.scale.set(sx,sy,sz);m.castShadow=true;(par||sc).add(m);return m};
+  /* Hintergrund: Berge, Tannen, Schneehügel */
+  [[-9,-14,5,'#e9f2f9'],[-2,-18,7,'#f2f7fb'],[7,-15,5.5,'#e4eef6'],[14,-13,4,'#eef5fa']].forEach(([x,z,h,c])=>{const m=new T.Mesh(new T.ConeGeometry(h*.9,h,7),M(c,.8));m.position.set(x,h/2,z);sc.add(m)});
+  [[-6.5,-4.5,1.1],[-5,-6,1.4],[5.8,-5,1.25],[7.2,-3.5,.9],[-8,-2.5,1],[3.8,-7,1.5]].forEach(([x,z,s])=>{const g=new T.Group();g.position.set(x,0,z);g.scale.setScalar(s);
+    const tr=new T.Mesh(new T.CylinderGeometry(.08,.1,.4,8),M('#8a5a3c'));tr.position.y=.2;g.add(tr);[[.0,.9,.75],[.55,.7,.58],[1,.5,.4]].forEach(([y,h,r])=>{const c=new T.Mesh(new T.ConeGeometry(r,h,9),M('#3f7d5c',.7));c.position.y=.45+y;c.castShadow=true;g.add(c);const sn=new T.Mesh(new T.ConeGeometry(r*.55,h*.35,9),M('#ffffff',.6));sn.position.y=.45+y+h*.33;g.add(sn)});sc.add(g)});
+  [[-3.5,-3,1.6],[4,-2.6,1.3],[0,-5,2]].forEach(([x,z,s])=>ball(s,'#ffffff',x,-s*.62,z,1.6,1,1.2));
+  /* Pebble der Pinguin */
+  const pos=new T.Group(),tilt=new T.Group();pos.add(tilt);sc.add(pos);
+  const navy='#27384f';ball(.62,navy,0,.78,0,1,1.18,.92,tilt);ball(.5,'#ffffff',0,.68,.2,.98,1.05,.78,tilt);
+  ball(.075,'#14161c',-.2,1.2,.48,1,1.15,1,tilt);ball(.075,'#14161c',.2,1.2,.48,1,1.15,1,tilt);ball(.025,'#ffffff',-.18,1.24,.55,1,1,1,tilt);ball(.025,'#ffffff',.22,1.24,.55,1,1,1,tilt);
+  ball(.08,'#ffb3c7',-.33,1.04,.42,1,.6,.5,tilt);ball(.08,'#ffb3c7',.33,1.04,.42,1,.6,.5,tilt);
+  const beak=new T.Mesh(new T.ConeGeometry(.09,.22,12),M('#f4a03c'));beak.rotation.x=Math.PI/2;beak.position.set(0,1.06,.62);tilt.add(beak);
+  ball(.13,'#ff8fb1',-.13,1.55,.05,1,.75,.75,tilt);ball(.13,'#ff8fb1',.13,1.55,.05,1,.75,.75,tilt);ball(.06,'#ff6f9a',0,1.55,.08,1,1,1,tilt);
+  const fl=new T.Group(),fr=new T.Group();fl.position.set(-.55,.95,0);fr.position.set(.55,.95,0);tilt.add(fl,fr);
+  ball(.13,navy,-.08,-.25,0,.55,1.9,.8,fl);ball(.13,navy,.08,-.25,0,.55,1.9,.8,fr);fl.rotation.z=-.25;fr.rotation.z=.25;
+  ball(.14,'#f4a03c',-.2,.05,.25,1.1,.4,1.5,tilt);ball(.14,'#f4a03c',.2,.05,.25,1.1,.4,1.5,tilt);
+  /* Schneeflocken und Schneestaub */
+  const N=360,pg=new T.BufferGeometry(),pp=new Float32Array(N*3);for(let i=0;i<N;i++){pp[i*3]=(Math.random()-.5)*26;pp[i*3+1]=Math.random()*9;pp[i*3+2]=(Math.random()-.5)*16}
+  pg.setAttribute('position',new T.BufferAttribute(pp,3));const snow=new T.Points(pg,new T.PointsMaterial({color:'#ffffff',size:.07,transparent:true,opacity:.9}));sc.add(snow);
+  const puffs=[];const puffM=M('#ffffff',.9);
+  const spray=(x,z)=>{for(let k=0;k<2;k++){const m=new T.Mesh(new T.SphereGeometry(.07+Math.random()*.06,8,6),puffM.clone());m.material.transparent=true;m.position.set(x-.3+Math.random()*.2,.1,z+(Math.random()-.5)*.5);m.userData={v:[-.8-Math.random(),1+Math.random()*1.4,(Math.random()-.5)],t:0};sc.add(m);puffs.push(m)}};
+  /* Ablauf */
+  let t0=performance.now(),last=t0,done=false,raf=0;const ease=x=>1-Math.pow(1-x,3),lerp=(a,b,k)=>a+(b-a)*k;
+  const finish=()=>{if(done)return;done=true;ov.classList.add('out');setTimeout(()=>{cancelAnimationFrame(raf);R.dispose();ov.remove()},650)};
+  ov.querySelector('.intro-skip').onclick=finish;ov.addEventListener('pointerdown',e=>{if(!e.target.closest('.intro-skip'))finish()});
+  const loop=now=>{const t=(now-t0)/1000,dt=Math.min(.05,(now-last)/1000);last=now;
+    /* 0–1.7 s rutschen, 1.7–2.3 s aufstehen, danach winken und hüpfen */
+    if(t<1.7){const k=ease(t/1.7);pos.position.set(lerp(-11,0,k),0,.4);pos.rotation.y=Math.PI/2;tilt.rotation.x=Math.PI/2*.92;tilt.position.y=.55;fl.rotation.z=-1.2;fr.rotation.z=1.2;if(Math.random()<.9)spray(pos.position.x,pos.position.z)}
+    else if(t<2.3){const k=ease((t-1.7)/.6);pos.position.set(0,Math.sin(k*Math.PI)*.45,.4);pos.rotation.y=lerp(Math.PI/2,0,k);tilt.rotation.x=lerp(Math.PI/2*.92,0,k);tilt.position.y=lerp(.55,0,k);fl.rotation.z=lerp(-1.2,-.25,k);fr.rotation.z=lerp(1.2,.25,k)}
+    else{const w=t-2.3;pos.position.y=Math.max(0,Math.sin(w*7))*.12*(w<1.2?1:0);fr.rotation.z=.25+(w<1.6?Math.abs(Math.sin(w*9))*1.5:0);tilt.rotation.z=Math.sin(w*4)*.05;if(w>.15)ov.classList.add('title')}
+    cam.position.x=lerp(cam.position.x,pos.position.x*.35,.08);cam.lookAt(pos.position.x*.5,1.55,0);
+    const a=pg.attributes.position.array;for(let i=0;i<N;i++){a[i*3+1]-=dt*(.5+(i%5)*.12);a[i*3]+=Math.sin(t+i)*dt*.15;if(a[i*3+1]<0)a[i*3+1]=9}pg.attributes.position.needsUpdate=true;
+    for(let i=puffs.length-1;i>=0;i--){const m=puffs[i],u=m.userData;u.t+=dt;u.v[1]-=dt*3.5;m.position.x+=u.v[0]*dt;m.position.y=Math.max(.05,m.position.y+u.v[1]*dt);m.position.z+=u.v[2]*dt;m.material.opacity=Math.max(0,1-u.t/.8);if(u.t>.8){sc.remove(m);puffs.splice(i,1)}}
+    R.render(sc,cam);if(t>4.4)finish();if(!done||ov.isConnected)raf=requestAnimationFrame(loop)};
+  raf=requestAnimationFrame(loop);
+  addEventListener('resize',()=>{if(done)return;R.setSize(innerWidth,innerHeight);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()},{once:true});
+}
+const _enterGame40=enterGame;enterGame=function(){_enterGame40();if(!INTRO_DONE){INTRO_DONE=true;playIntro()}};
+
+/* ================= v41: Echte Freunde statt Beispielspieler ================= */
+var REALP={};
+const FAKEIDS=new Set(PLAYERS.map(p=>p.id));
+const _migrate41=migrate;
+migrate=function(s){s=_migrate41(s);const so=s.social;if(so&&!so.v2){['friends','sent','incoming'].forEach(k=>so[k]=(so[k]||[]).filter(id=>!FAKEIDS.has(id)));so.chats={};so.unread={};so.names=so.names||{};so.gb={};so.v2=1;
+  ['bf1','bf2','love'].forEach(k=>{if(FAKEIDS.has(s.profile?.[k]))s.profile[k]=''})}return s};
+let FR={loaded:false,loading:false,players:[],rows:[],err:''};
+const sbOn=()=>!!(window.PEBBLE_SB&&SBU);
+function frLevel(){return levelInfo(S.xp).l}
+async function frLoad(force){
+  if(!sbOn()||FR.loading||(FR.loaded&&!force))return;FR.loading=true;
+  try{const sb=window.PEBBLE_SB;
+    const [{data:pl,error:e1},{data:rows,error:e2}]=await Promise.all([sb.from('pebble_profiles').select('user_id,name,code,ch,outfit,level,about,updated_at').order('updated_at',{ascending:false}).limit(200),sb.from('pebble_friends').select('a,b,status')]);
+    if(e1||e2)throw e1||e2;
+    FR.players=(pl||[]).filter(p=>p.user_id!==SBU.id).map(p=>({id:p.user_id,n:p.name,code:p.code,ch:p.ch||'pinguin',o:p.outfit||{},lv:p.level||1,about:p.about||'',on:Date.now()-new Date(p.updated_at).getTime()<10*60e3?1:0}));
+    REALP={};FR.players.forEach(p=>REALP[p.id]=p);FR.rows=rows||[];
+    const so=S.social,me=SBU.id;so.friends=FR.rows.filter(r=>r.status==='accepted').map(r=>r.a===me?r.b:r.a);so.sent=FR.rows.filter(r=>r.status==='pending'&&r.a===me).map(r=>r.b);so.incoming=FR.rows.filter(r=>r.status==='pending'&&r.b===me).map(r=>r.a);
+    so.names=so.names||{};so.friends.forEach(id=>{const p=REALP[id];if(p)so.names[id]={n:p.n,ch:p.ch,o:p.o,lv:p.lv}});save();FR.err='';FR.loaded=true}
+  catch(e){FR.err='Gerade keine Verbindung. Versuch es gleich noch mal.'}
+  FR.loading=false;if(tab==='freunde')renderFriends();renderFriendBadge();
+}
+async function frAct(a,id){const sb=window.PEBBLE_SB,me=SBU.id;let r;
+  if(a==='add')r=await sb.from('pebble_friends').insert({a:me,b:id,status:'pending'});
+  if(a==='accept')r=await sb.from('pebble_friends').update({status:'accepted'}).eq('a',id).eq('b',me);
+  if(a==='decline'||a==='remove'||a==='cancel'){await sb.from('pebble_friends').delete().eq('a',id).eq('b',me);r=await sb.from('pebble_friends').delete().eq('a',me).eq('b',id)}
+  if(r&&r.error){toast('Das hat gerade nicht geklappt.');return}
+  if(a==='remove'){const pf=S.profile;['bf1','bf2','love'].forEach(k=>{if(pf[k]===id)pf[k]=''})}
+  toast({add:'Anfrage gesendet',accept:'Ihr seid jetzt Freunde',decline:'Anfrage abgelehnt',remove:'Freund:in entfernt',cancel:'Anfrage zurückgezogen'}[a]);FR.loaded=false;await frLoad(true);
+}
+const relOf41=id=>{const so=S.social;return so.friends.includes(id)?'friend':so.sent.includes(id)?'sent':so.incoming.includes(id)?'incoming':'none'};
+function frBtn(p){const r=relOf41(p.id);
+  if(r==='friend')return `<button class="btn soft sm" data-fr2="visit" data-id="${p.id}">Besuchen</button>`;
+  if(r==='sent')return `<button class="btn soft sm" data-fr2="cancel" data-id="${p.id}">Angefragt ✓</button>`;
+  if(r==='incoming')return `<span class="two"><button class="btn sm" data-fr2="accept" data-id="${p.id}">Annehmen</button><button class="btn soft sm" data-fr2="decline" data-id="${p.id}" aria-label="Ablehnen">${CLOSE}</button></span>`;
+  return `<button class="btn sm" data-fr2="add" data-id="${p.id}">+ Anfrage</button>`}
+const frRow=(p,sub)=>`<div class="prow"><button class="pmain" data-fr2="card" data-id="${p.id}">${plAva(p)}<span class="pt"><b>${esc(p.n)} <span class="lvp">Lv ${p.lv}</span> ${badgeOf(p.id)}</b><small>${sub||(p.on?'<span class="dot"></span>online':'offline')}</small></span></button>${frBtn(p)}</div>`;
+renderFriends=function(){
+  const el=$('#friendsView');if(!el||!S)return;renderFriendBadge();const so=S.social,me={ch:S.char,o:S.outfit,on:1},code=fCode();
+  const hero=`<div class="fhero"><div class="fh-me">${plAva(me,'big')}<div class="fh-id"><small>Dein Freundescode</small><b>${code}</b></div><button type="button" class="btn soft sm" data-fr="code">Kopieren</button></div>
+    ${sbOn()?`<div class="fh-stats"><button type="button" data-fr2="tab" data-k="freunde"><b>${so.friends.length}</b><small>Freunde</small></button><button type="button" data-fr2="tab" data-k="anfragen"><b>${so.incoming.length}</b><small>Anfragen</small></button><button type="button" data-fr2="tab" data-k="entdecken"><b>${FR.players.length}</b><small>Spieler</small></button></div>`:''}</div>`;
+  if(!window.PEBBLE_SB){el.innerHTML=hero+`<div class="fempty"><b>Noch niemand hier</b><p>Freunde findest du auf der Pebble-Webseite. Dort spielen alle zusammen, und hier erscheinen dann die anderen Spieler.</p></div>`;return}
+  if(!SBU){el.innerHTML=hero+`<div class="fempty"><b>Fast geschafft</b><p>Bestätige deine E-Mail und melde dich einmal neu an. Dann siehst du hier alle anderen Spieler und kannst Freunde finden.</p></div>`;return}
+  if(!FR.loaded){el.innerHTML=hero+`<div class="fempty"><b>${FR.err||'Spieler werden geladen …'}</b></div>`;frLoad();return}
+  const t=['entdecken','freunde','anfragen'].includes(fTab)?fTab:'entdecken',q=fQuery.trim().toLowerCase();let list='';
+  if(t==='entdecken'){const ps=FR.players.filter(p=>!q||p.n.toLowerCase().includes(q)||(p.code||'').toLowerCase()===q).sort((a,b)=>b.on-a.on);
+    list=ps.map(p=>frRow(p)).join('')||(FR.players.length?`<p class="empty">Niemand mit diesem Namen oder Code gefunden.</p>`:`<div class="fempty"><b>Du bist die erste Person hier</b><p>Sobald andere auf der Webseite spielen, tauchen sie hier auf. Teil einfach deinen Freundescode!</p></div>`)}
+  if(t==='freunde')list=so.friends.map(PL).filter(Boolean).map(p=>frRow(p)).join('')||`<div class="fempty"><b>Noch keine Freunde</b><p>Schick unter „Alle Spieler“ eine Anfrage oder gib einen Freundescode ein.</p></div>`;
+  if(t==='anfragen')list=(so.incoming.length?`<h4 class="fsub">An dich</h4>`+so.incoming.map(PL).filter(Boolean).map(p=>frRow(p,'möchte mit dir befreundet sein')).join(''):'')+(so.sent.length?`<h4 class="fsub">Von dir gesendet</h4>`+so.sent.map(PL).filter(Boolean).map(p=>frRow(p,'wartet auf Antwort')).join(''):'')||`<p class="empty">Gerade keine offenen Anfragen.</p>`;
+  const tabs=[['entdecken','Alle Spieler'],['freunde',`Freunde <small>${so.friends.length}</small>`],['anfragen',`Anfragen${so.incoming.length?` <small>${so.incoming.length}</small>`:''}`]];
+  el.innerHTML=hero+`<div class="seg" role="tablist">${tabs.map(([k,l])=>`<button role="tab" data-fr2="tab" data-k="${k}" aria-pressed="${k===t}">${l}</button>`).join('')}<button type="button" class="seg-r" data-fr2="reload" aria-label="Neu laden">↻</button></div>
+    ${t==='entdecken'?`<input class="fsearch" id="fSearch" type="search" placeholder="Name oder Freundescode (PB-…) …" value="${esc(fQuery)}" aria-label="Spieler suchen">`:''}<div class="plist">${list}</div>`;
+};
+renderFriendBadge=function(){const b=$('#friendBadge');if(!b||!S)return;const n=(S.social.incoming||[]).length;b.hidden=!n;b.textContent=n};
+function openPlayer41(id){const p=PL(id);if(!p)return;const r=relOf41(id),pf=S.profile,isB=pf.bf1===id||pf.bf2===id,isL=pf.love===id;let acts='';
+  if(r==='friend')acts=`<button class="btn" data-fr2="visit" data-id="${id}">Haus besuchen</button><div class="two"><button class="btn soft tgl" data-fr="best" data-id="${id}" aria-pressed="${isB}">${STAR}Beste:r Freund:in</button><button class="btn soft tgl love" data-fr="love" data-id="${id}" aria-pressed="${isL}">${HEART}Liebling</button></div><button class="btn soft" data-fr2="remove" data-id="${id}">Freund:in entfernen</button>`;
+  else if(r==='sent')acts=`<button class="btn soft" data-fr2="cancel" data-id="${id}">Anfrage zurückziehen</button>`;
+  else if(r==='incoming')acts=`<div class="two"><button class="btn" data-fr2="accept" data-id="${id}">Annehmen</button><button class="btn soft" data-fr2="decline" data-id="${id}">Ablehnen</button></div>`;
+  else acts=`<button class="btn" data-fr2="add" data-id="${id}">Freundschaftsanfrage senden</button>`;
+  $('#pop').innerHTML=`<div class="idbig pcard" role="dialog" aria-modal="true" aria-label="Spielerkarte von ${esc(p.n)}"><button class="close" data-pop="close" aria-label="Schließen">${CLOSE}</button>
+    <div class="id-top"><div class="id-ava">${svg100(avatarArt(p.ch,p.o))}<span>${(CHARS.find(c=>c[0]===p.ch)||[,''])[1]}</span></div>
+      <div class="id-info"><small class="kicker">pebble · Spielerkarte</small><h3>${esc(p.n)}</h3><div class="lvlrow"><span class="lv">Level ${p.lv}</span><small>${p.on?'● online':'offline'}</small></div>${p.about?`<p class="about">${esc(p.about)}</p>`:''}<p class="mail">${badgeOf(id)}</p></div></div>
+    <div class="acts">${acts}</div></div>`;$('#pop').hidden=false}
+async function visitReal(id){const p=PL(id);if(!p)return;toast('Haus wird geladen …');
+  const {data,error}=await window.PEBBLE_SB.from('pebble_saves').select('data').eq('user_id',id).maybeSingle();
+  if(error||!data||!data.data){toast('Das Haus kann gerade nicht geladen werden.');return}
+  const fs=migrate(Object.assign(fresh(),data.data)),old=S;let html='';
+  S=fs;try{html=withCam(DEFCAM,()=>{const m={overview:true};return `<svg class="room" viewBox="${houseFrame(m)}">${houseSVG(m)}</svg>`})}finally{S=old}
+  $('#pop').innerHTML=`<div class="card visit" role="dialog" aria-modal="true" aria-label="Zuhause von ${esc(p.n)}"><button class="close" data-pop="close" aria-label="Schließen">${CLOSE}</button>
+    <div class="vi-head">${plAva(p)}<div><h3>Bei ${esc(p.n)} zu Hause</h3><small>Level ${p.lv}</small></div></div><div class="vi-house">${html}</div></div>`;$('#pop').hidden=false;stat('visits')}
+document.addEventListener('click',e=>{const el=e.target.closest('[data-fr2]');if(!el)return;e.stopImmediatePropagation();const a=el.dataset.fr2,id=el.dataset.id;
+  if(a==='tab'){fTab=el.dataset.k;if(el.closest('#pop'))$('#pop').hidden=true;renderFriends();return}
+  if(a==='reload'){FR.loaded=false;renderFriends();return}
+  if(a==='card'){openPlayer41(id);return}
+  if(a==='visit'){visitReal(id);return}
+  frAct(a,id).then(()=>{if(!$('#pop').hidden&&$('#pop .pcard'))openPlayer41(id)})},true);
+/* Alte Beispiel-Aktionen (Chat, Besuch bei Beispielspielern) abfangen */
+document.addEventListener('click',e=>{const el=e.target.closest('[data-fr]');if(!el)return;const a=el.dataset.fr;if(['chat','visit','add','accept','decline','remove','card','tab'].includes(a)&&!el.closest('#pop .pick')){
+  if(a==='tab'){e.stopImmediatePropagation();fTab=el.dataset.k;renderFriends();return}
+  if(a==='card'||a==='visit'){e.stopImmediatePropagation();a==='card'?openPlayer41(el.dataset.id):visitReal(el.dataset.id)}}},true);
+const _show41=show;show=function(t){_show41(t);if(t==='freunde'&&sbOn()){FR.loaded=false;renderFriends()}};
+/* --- Spielstand übertragen (Claude-Version ⇄ Webseite) --- */
+async function exportSave(){const data=JSON.stringify({pebble:1,name:acc().name,save:S,t:Date.now()});const b=new Blob([data],{type:'application/json'}),name='pebble-spielstand-'+(acc().name||'pebble')+'.json';
+  try{const dl=window.claude?.use?await claude.use('downloads'):null;if(dl){await dl.save({filename:name,data:b});toast('Spielstand gespeichert');return}}catch(e){if(e&&e.code==='declined')return}
+  const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);toast('Spielstand gespeichert')}
+function importSave(){const inp=document.createElement('input');inp.type='file';inp.accept='.json,application/json';
+  inp.onchange=async()=>{const f=inp.files[0];if(!f)return;try{const j=JSON.parse(await f.text());if(!j||!j.save||!j.save.layout)throw 0;
+    const n=migrate(Object.assign(fresh(),j.save));S=n;S.upd=Date.now();const a=getAccs();if(a[user]){a[user].save=S;setAccs(a)}save();renderAll();show('home');$('#pop').hidden=true;toast('Spielstand übernommen!');if(window.PEBBLE_SB)sbPush(true)}
+    catch(e){toast('Diese Datei ist kein Pebble-Spielstand.')}};inp.click()}
+const _openSettings41=openSettings;
+openSettings=function(){_openSettings41();const c=$('#pop .settingscard');if(!c)return;
+  c.querySelector('.acts.col')?.insertAdjacentHTML('beforebegin',`<div class="set-move"><h4>Spielstand übertragen</h4><p>${window.PEBBLE_SB?'Hast du schon in Claude gespielt? Dort unter Einstellungen „Spielstand speichern“ tippen und die Datei hier laden.':'Damit kannst du deinen Spielstand auf die Pebble-Webseite mitnehmen.'}</p>
+    <div class="two"><button class="btn soft" type="button" data-sv="export">Spielstand speichern</button><button class="btn soft" type="button" data-sv="import">Spielstand laden</button></div></div>`)};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-sv]');if(!b)return;b.dataset.sv==='export'?exportSave():importSave()});
+
 /* ================= Navigation & Meldungen ================= */
 function show(t){
   tab=t;
@@ -7110,7 +7388,7 @@ function turn(cam,dir,redraw){
 }
 const redrawHome=()=>{if(tab==='home'&&!$('#game').hidden)renderHome()};
 const redrawWorld=()=>{if(W.running){worldInit()}};
-orbit($('#stage'),camHome,redrawHome,e=>!!e.target.closest('button,.lock-card'));
+orbit($('#stage'),camHome,redrawHome,e=>!!e.target.closest('button,.lock-card')||e.pointerType==='mouse');
 orbit($('#world'),camWorld,redrawWorld,e=>!!e.target.closest('button,.dpad'));
 pinch($('#stage'),camHome,redrawHome,applyZoomHome,e=>!!e.target.closest('.lock-card'));
 pinch($('#world'),camWorld,redrawWorld,applyZoomWorld,e=>!!e.target.closest('.dpad,.emobar,.wchat,.rotctl'));
@@ -7247,7 +7525,22 @@ function setMode(reg){
 }
 $('#segLogin').onclick=()=>setMode(false);
 $('#segReg').onclick=()=>setMode(true);
-$('#forgotBtn').onclick=()=>toast('Passwort per E-Mail zurücksetzen kommt mit der echten App');
+$('#forgotBtn').onclick=async()=>{
+  if(!window.PEBBLE_SB){toast('Passwort zurücksetzen gibt es auf der Pebble-Webseite.');return}
+  const v=$('#fName').value.trim().toLowerCase(),A=getAccs(),k=A[v]?v:null,mail=v.includes('@')?v:(k&&A[k].mail);
+  if(!mail){$('#authErr').textContent='Gib oben deine E-Mail ein, dann schicken wir dir einen Link.';return}
+  const {error}=await window.PEBBLE_SB.auth.resetPasswordForEmail(mail,{redirectTo:location.origin+location.pathname});
+  if(error){$('#authErr').textContent='Das hat gerade nicht geklappt. Versuch es gleich noch mal.';return}
+  toast('Wir haben dir einen Link zum Zurücksetzen geschickt. Schau auch im Spam nach.');
+};
+if(window.PEBBLE_SB)window.PEBBLE_SB.auth.onAuthStateChange((ev,ses)=>{if(ev!=='PASSWORD_RECOVERY'||!ses)return;SBU=ses.user;
+  $('#pop').innerHTML=`<div class="card" role="dialog" aria-modal="true" aria-label="Neues Passwort"><h3>Neues Passwort</h3><p class="mail">Wähl ein neues Passwort für ${esc(ses.user.email)}.</p>
+    <form id="newPwForm" class="settings"><input id="newPw" type="password" minlength="6" placeholder="Mindestens 6 Zeichen" autocomplete="new-password" style="width:100%;box-sizing:border-box;padding:12px;border-radius:14px;border:1px solid var(--line);font:inherit"><p class="err" id="newPwErr"></p><button class="btn" type="submit">Speichern</button></form></div>`;
+  $('#pop').hidden=false;
+  $('#newPwForm').onsubmit=async e=>{e.preventDefault();const pw=$('#newPw').value;if(pw.length<6){$('#newPwErr').textContent='Mindestens 6 Zeichen.';return}
+    const {error}=await window.PEBBLE_SB.auth.updateUser({password:pw});if(error){$('#newPwErr').textContent='Das hat nicht geklappt. Fordere einen neuen Link an.';return}
+    const key=await sbLogin(ses.user.email,null,pw).catch(()=>null);$('#pop').hidden=true;
+    if(key){user=key;setSes(key);S=migrate(Object.assign(fresh(),getAccs()[key].save));S.char?enterGame():openPick('new');toast('Dein neues Passwort ist gespeichert')}else toast('Passwort gespeichert. Melde dich jetzt mit deiner E-Mail an.')}});
 $('#authForm').addEventListener('submit',async e=>{
   e.preventDefault();
   const err=$('#authErr'),name=$('#fName').value.trim(),pw=$('#fPw').value,accs=getAccs();
