@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610272137";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610272155";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -7216,7 +7216,7 @@ function roofGeom(f,sx,sy){
   const front=(cx,cy)=>{for(const r of above){const dx=cx>=r.x+r.w?cx-(r.x+r.w):cx<=r.x?r.x-cx:0,dy=cy>=r.y+r.h?cy-(r.y+r.h):cy<=r.y?r.y-cy:0;
     const fx=sx>0?cx>=r.x+r.w:cx<=r.x,fy=sy>0?cy>=r.y+r.h:cy<=r.y;
     if(dx>0&&dy===0){if(fx)return 1}else if(dy>0&&dx===0){if(fy)return 1}else if(dx>=dy?fx:fy)return 1}return 0};
-  const ek=(p,q)=>{const a=p[0]+','+p[1],b=q[0]+','+q[1];return a<b?a+'|'+b:b+'|'+a};
+  const pk=p=>p.k||(p.k=p[0]+','+p[1]),ek=(p,q)=>{const a=pk(p),b=pk(q);return a<b?a+'|'+b:b+'|'+a};
   const info=tris.map(t=>{const g=plane(t),cx=(t[0][0]+t[1][0]+t[2][0])/3,cy=(t[0][1]+t[1][1]+t[2][1])/3;return {t,g,key:g[0]+':'+g[1]+':'+(above.length?front(cx,cy):0),cx,cy}});
   const byEdge=new Map();info.forEach((o,i)=>{const t=o.t;for(let j=0;j<3;j++){const k=ek(t[j],t[(j+1)%3]);let a=byEdge.get(k);if(!a)byEdge.set(k,a=[]);a.push(i)}});
   const grp=new Int32Array(info.length).fill(-1);let G=0;
@@ -7229,11 +7229,11 @@ function roofGeom(f,sx,sy){
     if(out.length>1){const a=out[0],l=out[out.length-1];if(l[1][0]===a[0][0]&&l[1][1]===a[0][1]&&col3(l[0],l[1],a[1])){a[0]=l[0];out.pop()}}return out};
   facets.forEach((F2,gi)=>{F2.cx/=F2.n;F2.cy/=F2.n;
     const cnt=new Map();F2.tris.forEach(t=>{for(let j=0;j<3;j++){const p=t[j],q=t[(j+1)%3],k=ek(p,q),e=cnt.get(k);if(e)e.n++;else cnt.set(k,{n:1,p,q})}});
-    const adj=new Map(),add=(a,b)=>{const k=a[0]+','+a[1];let l=adj.get(k);if(!l)adj.set(k,l=[]);l.push(b)};
+    const adj=new Map(),add=(a,b)=>{const k=pk(a);let l=adj.get(k);if(!l)adj.set(k,l=[]);l.push(b)};
     const bes=[];cnt.forEach(e=>{if(e.n===1){bes.push(e);add(e.p,e.q);add(e.q,e.p)}});
     const used=new Set(),loops=[];
     bes.forEach(e=>{if(used.has(ek(e.p,e.q)))return;const L=[e.p];used.add(ek(e.p,e.q));let prev=e.p,cur=e.q,guard=0;
-      while(guard++<5000){const ck=cur[0]+','+cur[1];if(ck===e.p[0]+','+e.p[1])break;L.push(cur);const nb=(adj.get(ck)||[]).filter(n=>!used.has(ek(cur,n)));if(!nb.length)break;
+      while(guard++<5000){const ck=pk(cur);if(ck===pk(e.p))break;L.push(cur);const nb=(adj.get(ck)||[]).filter(n=>!used.has(ek(cur,n)));if(!nb.length)break;
         let nx=nb[0];if(nb.length>1){const a0=Math.atan2(prev[1]-cur[1],prev[0]-cur[0]);let best=1e9;nb.forEach(n=>{let a=Math.atan2(n[1]-cur[1],n[0]-cur[0])-a0;while(a<=0)a+=2*Math.PI;if(a<best){best=a;nx=n}})}
         used.add(ek(cur,nx));prev=cur;cur=nx}
       if(L.length>2)loops.push(L)});
@@ -9403,7 +9403,7 @@ function backupSave(name,sv,why){if(!sv||!sv.layout)return;try{let L=bakList();c
 {const SA=setAccs;setAccs=function(a){try{const old=JSON.parse(localStorage.getItem(ACC)||'{}');Object.keys(a||{}).forEach(k=>{const o=old[k]&&old[k].save,n=a[k]&&a[k].save;if(o&&n&&o!==n&&(n.upd||0)>(o.upd||0)&&bakSum(o).items>bakSum(n).items+2)backupSave(old[k].name||k,o,'vor dem Laden vom Server')})}catch(_){}return SA(a)}}
 /* alle paar Minuten eine Sicherung, wenn sich etwas geändert hat */
 /* Hintergrundarbeit nur, wenn gerade nichts bewegt wird (kein Ruckeln beim Laufen/Drehen) */
-const busyNow=()=>{try{return !!(placing||W.moving||(W.path&&W.path.length)||document.querySelector('#stage.orbiting,#stage.pinching,#world.orbiting'))}catch(_){return false}};
+const busyNow=()=>{try{return !!(placing||W.moving||(W.path&&W.path.length)||document.querySelector('#stage.orbiting,#stage.pinching,#world.orbiting,#stage .pl.walking,#scene:not([hidden])'))}catch(_){return false}};
 const whenIdle=f=>{let n=0;const go=()=>{if(busyNow()&&n++<40){setTimeout(go,1500);return}(window.requestIdleCallback||setTimeout)(()=>f(),{timeout:2000})};go()};
 setInterval(()=>whenIdle(()=>{if(user&&S&&!placing)backupSave(acc().name||user,S,'automatisch')}),180000);
 /* Live-Abgleich: neuerer Spielstand vom anderen Gerät wird übernommen */
@@ -9621,9 +9621,10 @@ const inCull=(x,y,mx,up)=>{if(typeof HPV!=='undefined'&&HPV.mid&&mx>80)return fa
 const PREPQ=[];
 let LASTIN=0;['pointerdown','keydown','wheel','touchstart'].forEach(t=>addEventListener(t,()=>{LASTIN=performance.now()},{capture:true,passive:true}));
 function worldPrep(){if(PREPQ.length||!user||!S)return;PREPQ.push(()=>{if(!W.running){const id=MAPS[S.wmap]?S.wmap:'platz';withCam(camWorld,()=>ensureMap(id))}});
-  [0,1].forEach(f=>[[1,1],[1,-1],[-1,1],[-1,-1]].forEach(([a,b])=>PREPQ.push(()=>roofGeom(f,a,b))));prepRun()}
+  const q0=withCam(camHome,()=>[SN>=0?1:-1,CS>=0?1:-1]),qs=[[1,1],[1,-1],[-1,1],[-1,-1]].sort((x,y)=>((y[0]===q0[0])+(y[1]===q0[1]))-((x[0]===q0[0])+(x[1]===q0[1])));
+  PREPQ.splice(qs.length&&S.homeView!=='out'?0:0,0);[0,1].forEach(f=>qs.forEach(([a,b])=>PREPQ.push(()=>roofGeom(f,a,b))));if(S.homeView==='out'){const mj=PREPQ.shift();PREPQ.splice(2,0,mj)}prepRun()}
 function prepRun(){if(!PREPQ.length)return;const ric=window.requestIdleCallback||(f=>setTimeout(()=>f({timeRemaining:()=>50}),200));
-  ric(dl=>{if(busyNow()||document.hidden||document.querySelector('.intro')||tab!=='home'||W.busy||performance.now()-LASTIN<2500||!$('#pop').hidden||(dl.timeRemaining&&dl.timeRemaining()<8)){setTimeout(prepRun,400);return}const job=PREPQ.shift();try{job()}catch(e){}setTimeout(prepRun,120)},{timeout:4000})}
+  ric(dl=>{if(busyNow()||document.hidden||document.querySelector('.intro')||tab!=='home'||W.busy||performance.now()-LASTIN<1500||!$('#pop').hidden||(dl.timeRemaining&&dl.timeRemaining()<8)){setTimeout(prepRun,400);return}const job=PREPQ.shift();try{job()}catch(e){}setTimeout(prepRun,120)},{timeout:4000})}
 setTimeout(function wp(){worldPrep();setTimeout(wp,3000)},1200);
 /* ================= v98: Drehen ohne Wartezeit – Vorschau über die Grafikkarte, echtes Bild in Abständen ================= */
 const camSnap=c=>({yaw:c.yaw,pitch:c.pitch,zoom:c.zoom||1,px:c.px||0,py:c.py||0,ax:c.ax??.5,ay:c.ay??.5});
@@ -9632,11 +9633,12 @@ const mMul=(m,n)=>[m[0]*n[0]+m[2]*n[1],m[1]*n[0]+m[3]*n[1],m[0]*n[2]+m[2]*n[3],m
 const mInv=m=>{const det=m[0]*m[3]-m[1]*m[2],a=m[3]/det,b=-m[1]/det,c=-m[2]/det,d=m[0]/det;return [a,b,c,d,-(a*m[4]+c*m[5]),-(b*m[4]+d*m[5])]};
 const vbMap=(vb,w,h)=>{const [x,y,W,H]=String(vb).split(/[ ,]+/).map(Number),s=Math.min(w/W,h/H);return [s,0,0,s,(w-W*s)/2-x*s,(h-H*s)/2-y*s]};
 const yawD=(a,b)=>Math.abs(((a-b)%360+540)%360-180);
-const HPV={base:null,prev:false,timer:0};
+const HPV={base:null,prev:false,timer:0,job:0,sync:0};
 let TURNING=false;{const T0=turn;turn=function(cam,dir,redraw){TURNING=true;clearTimeout(turn._t);turn._t=setTimeout(()=>{TURNING=false},450);return T0.apply(this,arguments)}}
 function hpvMid(RP){HPV.mid=true;SCN.key='';try{return RP()}finally{HPV.mid=false;SCN.key=''}}
 function hpvBase(){const sv=$('#stage svg.room:not(.locked-room)');HPV.prev=false;if(!sv){HPV.base=null;return}
   if(sv.style.transform)sv.style.transform='';const cam=camSnap(camHome);HPV.base={sv,cam,A:gAff(cam),vb:sv.getAttribute('viewBox')};
+  {const B=HPV.base;requestAnimationFrame(()=>setTimeout(()=>{if(HPV.base!==B||B.w||HPV.prev||!sv.isConnected)return;const r=sv.getBoundingClientRect();if(r.width&&r.height){B.w=r.width;B.h=r.height;B.L=vbMap(B.vb,B.w,B.h)}},0))}
   if(!sv._vbGuard){sv._vbGuard=1;sv.setAttribute=function(n,v){if(n==='viewBox'&&HPV.prev&&HPV.base&&HPV.base.sv===this)return;return Element.prototype.setAttribute.call(this,n,v)}}
   sv.style.willChange='transform';sv.style.transformOrigin='0 0'}
 function hpvApply(){const B=HPV.base,c=camSnap(camHome);
@@ -9648,11 +9650,25 @@ function hpvApply(){const B=HPV.base,c=camSnap(camHome);
 {const RP=renderHome;renderHome=function(){
   const st=$('#stage'),sv=st&&st.querySelector('svg.room:not(.locked-room)'),lite=liteNow();
   if(sv&&lite&&tab==='home'&&!placing&&S.unlocked[viewRoom]&&!$('#game').hidden){
-    const B=HPV.base;
+    HPV.job++;const B=HPV.base;
     if(B&&B.sv===sv&&sv.isConnected&&yawD(camHome.yaw,B.cam.yaw)<(TURNING?50:95)&&Math.abs(camHome.pitch-B.cam.pitch)<(TURNING?40:25)){
       try{hpvApply();clearTimeout(HPV.timer);HPV.timer=setTimeout(()=>{if(liteNow()&&tab==='home'){HPV.prev=false;hpvMid(RP);hpvBase()}},260);return}catch(e){}}
     HPV.prev=false;const r=hpvMid(RP);hpvBase();return r}
-  clearTimeout(HPV.timer);HPV.prev=false;const r=RP.apply(this,arguments);try{hpvBase()}catch(e){HPV.base=null}return r}}
+  clearTimeout(HPV.timer);HPV.job++;
+  /* nach dem Loslassen: Vorschau stehen lassen und das echte Bild in kleinen Stücken aufbauen */
+  if(HPV.prev&&sv&&HPV.base&&HPV.base.sv===sv&&tab==='home'&&!placing&&S.unlocked[viewRoom]&&!$('#game').hidden&&!HPV.sync){try{hpvAsync(sv);return}catch(e){}}
+  HPV.prev=false;const r=RP.apply(this,arguments);try{hpvBase()}catch(e){HPV.base=null}return r}}
+function hpvChunks(s,max){const out=[];let depth=0,start=0,last=0;const re=/<(\/?)([a-zA-Z][\w:-]*)[^>]*?(\/?)>/g;let m;
+  while((m=re.exec(s))){if(m[1])depth--;else if(!m[3])depth++;if(depth===0){last=re.lastIndex;if(last-start>max){out.push(s.slice(start,last));start=last}}}
+  if(start<s.length)out.push(s.slice(start));return out}
+function hpvAsync(sv){const job=HPV.job;useCam(camHome);const mode={focus:viewRoom,overview},hf=houseFrame(mode),vb=zoomVB(hf,camHome);
+  const parts=hpvChunks(houseSVG(mode)+'<g id="ghost" pointer-events="none"></g>',45000),tmp=document.createElementNS('http://www.w3.org/2000/svg','svg');let i=0;
+  const step=()=>{if(job!==HPV.job||!sv.isConnected)return;const t0=performance.now();
+    while(i<parts.length&&performance.now()-t0<8)tmp.insertAdjacentHTML('beforeend',parts[i++]);
+    if(i<parts.length){setTimeout(step,0);return}
+    HPV.prev=false;sv.replaceChildren(...tmp.childNodes);sv.dataset.vb0=hf;sv.setAttribute('viewBox',vb);hpvBase();
+    $('#stage').classList.toggle('zoomed',camHome.zoom>1.01||!!camHome.px||!!camHome.py)};
+  setTimeout(step,0)}
 /* v98: Welt drehen/zoomen – Vorschau über die Grafikkarte, echtes Bild in Abständen */
 const WPV={cam:null,A:null,k:null,vb:null,prev:false,timer:0};
 function wpvMark(){try{WPV.cam=camSnap(camWorld);WPV.A=gAff(WPV.cam);WPV.k=null}catch(e){WPV.cam=null}}
@@ -9684,6 +9700,22 @@ function wpvGuard(){const sv=$('#wsvg');if(!sv||sv._styleGuard)return;const real
 {const PS=playScene;playScene=function(){const r=PS.apply(this,arguments);try{const cam=$('#scene .scene-cam'),sv=cam&&cam.querySelector('svg');const w=sv&&sv.lastElementChild;
   if(w&&w.querySelector('.stepbob,.walker2,.wad2')){const o=document.createElementNS('http://www.w3.org/2000/svg','svg');o.setAttribute('viewBox',sv.getAttribute('viewBox'));o.setAttribute('aria-hidden','true');if(sv.getAttribute('class'))o.setAttribute('class',sv.getAttribute('class'));
     o.style.cssText='position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none';o.appendChild(w);cam.appendChild(o);sv.style.willChange='transform';o.style.willChange='transform'}}catch(e){}return r}}
+/* v99: Welt nach dem Drehen – Vorschau bleibt stehen, das neue Bild wird in Stücken vorbereitet und dann getauscht */
+WPV.job=0;WPV.pre=null;
+function wpvInner(){const sv=$('#wsvg');if(!sv||sv._ihGuard)return;sv._ihGuard=1;const D=Object.getOwnPropertyDescriptor(Element.prototype,'innerHTML');
+  Object.defineProperty(sv,'innerHTML',{configurable:true,get(){return D.get.call(this)},set(v){const p=WPV.pre;if(p&&v===p.str){WPV.pre=null;this.replaceChildren(...p.tmp.childNodes);return}WPV.pre=null;D.set.call(this,v)}})}
+{const WI3=worldInit;worldInit=function(){
+  const wl=$('#world');
+  if(WPV.prev&&W.running&&wl&&!wl.classList.contains('orbiting')&&$('#wsvg')&&MAPS[S.wmap]&&W.map===S.wmap){
+    try{const job=++WPV.job,args=arguments;wpvInner();useCam(camWorld);const id=W.map,m=ensureMap(id);
+      const str=`<g id="wGround">${m.groundHTML}${m.tuftHTML||''}</g><g id="wObjs">${m.objs.map(o=>`<g class="wo" data-k="${o.id}">${o.html}</g>`).join('')}</g>`;
+      const parts=hpvChunks(str,45000),tmp=document.createElementNS('http://www.w3.org/2000/svg','svg');let i=0;
+      const step=()=>{if(job!==WPV.job)return;const w2=$('#world');if(!w2||w2.classList.contains('orbiting')||!W.running)return;const t0=performance.now();
+        while(i<parts.length&&performance.now()-t0<8)tmp.insertAdjacentHTML('beforeend',parts[i++]);
+        if(i<parts.length){setTimeout(step,0);return}
+        WPV.pre={str,tmp};try{WI3.apply(this,args)}finally{WPV.pre=null}};
+      setTimeout(step,0);return}catch(e){console.warn(e)}}
+  WPV.job++;return WI3.apply(this,arguments)}}
 /* ================= Navigation & Meldungen ================= */
 let SCY=0;addEventListener('scroll',()=>{SCY=window.scrollY||document.documentElement.scrollTop||0},{passive:true});
 function show(t){
