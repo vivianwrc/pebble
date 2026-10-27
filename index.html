@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610272029";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610272046";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9550,12 +9550,18 @@ document.addEventListener('submit',async e=>{if(e.target.id!=='syncLogin')return
   const t=rand(),key=f1(RX)+'|'+f1(RY)+'|'+pal.join()+'|'+nC+'|'+t.toFixed(7);let c=FOLC.get(key);
   if(c){for(let i=0;i<c.n;i++)rand()}
   else{let n=0;const rr=()=>{n++;return rand()},bb=BB;BB=null;let s;try{s=F0(0,0,RX,RY,rr,pal,nC)}finally{BB=bb}c={s,n};if(FOLC.size>4000)FOLC.clear();FOLC.set(key,c)}
-  const X=Math.round(cx*10)/10,Y=Math.round(cy*10)/10;
-  return c.s.replace(/d="([^"]*)"/g,(m,d)=>'d="'+d.replace(/(-?\d+(?:\.\d+)?) (-?\d+(?:\.\d+)?)/g,(q,a,b)=>f1(+a+X)+' '+f1(+b+Y))+'"').replace(/cx="(-?[\d.]+)" cy="(-?[\d.]+)"/g,(m,a,b)=>`cx="${f1(+a+X)}" cy="${f1(+b+Y)}"`)}}
+  if(!c.t){/* Vorlage: Text-Stücke und Koordinatenpaare getrennt, damit das Verschieben nur noch Zusammensetzen ist */
+    const txt=[],num=[];let last=0;const s=c.s,re=/d="([^"]*)"|cx="(-?[\d.]+)" cy="(-?[\d.]+)"/g;let m;
+    while((m=re.exec(s))){if(m[1]!=null){const st=m.index+3;const re2=/(-?\d+(?:\.\d+)?) (-?\d+(?:\.\d+)?)/g;let q;while((q=re2.exec(m[1]))){txt.push(s.slice(last,st+q.index));num.push(+q[1],+q[2]);last=st+q.index+q[0].length;txt.push(' ')}}
+      else{txt.push(s.slice(last,m.index)+'cx="');num.push(+m[2],+m[3]);txt.push('" cy="');last=m.index+m[0].length-1}}
+    c.t={txt,num,tail:s.slice(last)}}
+  const X=Math.round(cx*10)/10,Y=Math.round(cy*10)/10,{txt,num,tail}=c.t;let o='';
+  for(let i=0;i<num.length;i+=2)o+=txt[i]+f1(num[i]+X)+txt[i+1]+f1(num[i+1]+Y);
+  return o+tail}}
 /* Deckkraft einzelner Formen als Füll-/Linien-Deckkraft (keine eigene Zeichen-Ebene je Form) */
 function flatOp(s){return s.replace(/<(path|ellipse|circle|polygon|rect)\b([^>]*?) opacity="([\d.]+)"([^>]*?)\/>/g,(m,t,a,o,b)=>{const at=a+b;if(/-opacity|class=|filter=|mask=|clip-path=/.test(at))return m;
   if(/fill="none"/.test(at))return `<${t}${a} stroke-opacity="${o}"${b}/>`;if(!/stroke=/.test(at)&&/fill=/.test(at))return `<${t}${a} fill-opacity="${o}"${b}/>`;return m})}
-{const E0=ensureMap;ensureMap=function(id){const m=E0.apply(this,arguments);try{const mm=MAPS[id];if(mm&&mm._fk!==mm.camKey){mm._fk=mm.camKey;mm.groundHTML=flatOp(mm.groundHTML||'');(mm.objs||[]).forEach(o=>{o.html=flatOp(String(o.html))})}}catch(e){console.warn(e)}return m}}
+{const E0=ensureMap;ensureMap=function(id){const m=E0.apply(this,arguments);try{const mm=MAPS[id];if(mm&&mm.inside&&!mm.inside._memo){const I0=mm.inside,c=new Map(),f=function(x,y){const k=x+','+y;let v=c.get(k);if(v===undefined){v=I0.call(mm,x,y);if(c.size<30000)c.set(k,v)}return v};f._memo=1;mm.inside=f}if(mm&&mm._fk!==mm.camKey){mm._fk=mm.camKey;mm.groundHTML=flatOp(mm.groundHTML||'');(mm.objs||[]).forEach(o=>{o.html=flatOp(String(o.html))})}}catch(e){console.warn(e)}return m}}
 /* v97: Figuren-Reihenfolge ohne unnötiges Umhängen im DOM (Kopien wiederverwenden) */
 resort=function(){
   const m=M(),p=W.sit?{x:W.sit.x+Math.cos(W.sit.a)*.25,y:W.sit.y+Math.sin(W.sit.a)*.25}:S.wpos;
@@ -9583,6 +9589,32 @@ resort=function(){
 /* v97: Beim Drehen der Welt keine Verdeckungs-Kopien berechnen (erst nach dem Loslassen) */
 {const R0=resort;resort=function(){const wl=$('#world');if(W.fastOrbit&&wl&&wl.classList.contains('orbiting')){W.sortKey='';const g=$('#wDynObjs');if(g&&!W.clGone){g.querySelectorAll('.wclone').forEach(c=>c.remove());W.clGone=1}return}W.clGone=0;return R0()}}
 {const H0=houseSVG;houseSVG=function(mode){return flatOp(String(H0(mode)))}}
+/* v97: Beim Drehen im Haus nur Kulisse zeichnen, die im Bildausschnitt liegt */
+let CULLVB=null,CULLK='';
+const inCull=(x,y,mx,up)=>{const v=CULLVB;if(!v)return true;const [sx,sy]=P(x,y);return sx>v[0]-mx&&sx<v[0]+v[2]+mx&&sy>v[1]-40&&sy<v[1]+v[3]+up};
+{const nil=(x,y)=>part('',[x,x,y,y,0,0]);
+ const T0=treeO;treeO=function(x,y,...a){return inCull(x,y,120,320)?T0(x,y,...a):nil(x,y)};
+ const P0=pineO;pineO=function(x,y,...a){return inCull(x,y,90,360)?P0(x,y,...a):nil(x,y)};
+ const B0=bushO;bushO=function(x,y,...a){return inCull(x,y,60,120)?B0(x,y,...a):nil(x,y)};
+ const N0=neighborHouse;neighborHouse=function(x,y,w,h,...a){return (inCull(x,y,260,420)||inCull(x+w,y+h,260,420)||inCull(x+w,y,260,420)||inCull(x,y+h,260,420))?N0(x,y,w,h,...a):[]};
+ const F0=fence43;fence43=function(ax,ay,bx,by,FC){return (inCull(ax,ay,80,90)||inCull(bx,by,80,90))?F0(ax,ay,bx,by,FC):nil(ax,ay)};}
+{const H1=houseSVG;houseSVG=function(mode){
+  if(mode&&!mode.mini&&liteNow()){try{const vb=zoomVB(houseFrame(mode),camHome);CULLVB=String(vb).split(/[ ,]+/).map(Number);if(CULLK!==vb){CULLK=vb;SCN.key=''}}catch(_){CULLVB=null}}
+  try{return H1(mode)}finally{if(CULLVB){CULLVB=null}}}}
+{const R1=renderHome;renderHome=function(){if(CULLK&&!liteNow()){CULLK='';SCN.key=''}return R1.apply(this,arguments)}}
+/* v97: Schneller Weg beim Drehen/Zoomen im Haus – nur das Bild neu, Bedienelemente bleiben stehen */
+{const RF=renderHome;renderHome=function(){
+  try{const st=$('#stage'),sv=st&&st.querySelector('svg.room:not(.locked-room)');
+    if(sv&&tab==='home'&&liteNow()&&S.unlocked[viewRoom]&&!$('#game').hidden){
+      useCam(camHome);const mode={focus:viewRoom,overview},hf=houseFrame(mode);
+      sv.innerHTML=houseSVG(mode)+'<g id="ghost" pointer-events="none"></g>';sv.dataset.vb0=hf;sv.setAttribute('viewBox',zoomVB(hf,camHome));
+      if(placing)drawGhost();return}}catch(e){console.warn(e)}
+  return RF.apply(this,arguments)}}
+/* v97: Abstand zu Wegen merken (die Welt-Deko fragt bei jedem Drehen dieselben Punkte ab) */
+{const D0=distToPolys,MEMO=new WeakMap();distToPolys=function(lines,x,y){if(!lines||typeof lines!=='object')return D0(lines,x,y);let m=MEMO.get(lines);if(!m){m=new Map();MEMO.set(lines,m)}const k=x+','+y;let v=m.get(k);if(v===undefined){v=D0(lines,x,y);if(m.size<20000)m.set(k,v)}return v}}
+/* v97: Die Welt im Leerlauf vorbereiten, damit der Wechsel dorthin schneller geht */
+function worldPrep(){try{if(user&&S&&!busyNow())[0,1,2].forEach(f=>[[1,1],[1,-1],[-1,1],[-1,-1]].forEach(([a,b])=>roofGeom(f,a,b)))}catch(e){}try{if(!user||!S||W.running||busyNow())return;const id=MAPS[S.wmap]?S.wmap:'platz';withCam(camWorld,()=>ensureMap(id))}catch(e){}}
+setTimeout(function wp(){(window.requestIdleCallback||setTimeout)(()=>worldPrep(),{timeout:3000});setTimeout(wp,20000)},4000);
 /* ================= Navigation & Meldungen ================= */
 function show(t){
   tab=t;
