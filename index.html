@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271906";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271916";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1598,6 +1598,7 @@ svg.room.rmfade{animation:rmfade .28s ease}@keyframes rmfade{from{opacity:.35}}@
 .mob-grid .mob-sec{grid-column:1/-1;margin:8px 2px 0;font:900 12.5px Nunito,system-ui,sans-serif;color:#3b2a1e;text-transform:none}.mob-grid .mob-sec:first-child{margin-top:0}
 .sync-login{display:grid;gap:8px}.sync-login input{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font:700 14px Nunito,system-ui,sans-serif;background:#fff}.sl-msg{margin:0;font-size:12.5px;font-weight:700;color:#8a4b3a;line-height:1.35}.sl-msg:empty{display:none}
 #stage,#stage svg.room,#world{touch-action:none}
+.f2light{animation:f2light 7s ease-in-out infinite}@keyframes f2light{50%{transform:translate(14px,6px)}}.f2fishw{animation:f2wig .5s ease-in-out infinite alternate;transform-origin:4px 0}@keyframes f2wig{to{transform:skewY(5deg)}}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -4150,7 +4151,7 @@ function tick(t){
     const spd=buffOn('zimt')?5:3.4,step=Math.min(spd*dt,manual?spd*dt:len),mx=dx/len*step,my=dy/len*step;
     if(free(S.wpos.x+mx,S.wpos.y))S.wpos.x+=mx;
     if(free(S.wpos.x,S.wpos.y+my))S.wpos.y+=my;
-    const u=mx*CS-my*SN;if(Math.abs(u)>.0005)W.dir=u<0?1:0;
+    const u=mx*CS-my*SN,nd=u<0?1:0;if(Math.abs(u)>step*.35&&nd!==W.dir&&(!W.dirT||t-W.dirT>220)){W.dir=nd;W.dirT=t}
   }
   const mag=buffOn('torte'),rad=mag?4.2:.6;
   W.flakes.slice().forEach(f=>{const d=Math.hypot(f.x-S.wpos.x,f.y-S.wpos.y);if(d<.6)collectFlake(f);else if(d<rad){const sp=Math.min(d,(2+(rad-d)*2.2)*dt);f.x+=(S.wpos.x-f.x)/d*sp;f.y+=(S.wpos.y-f.y)/d*sp;f.pull=1;const [fx,fy]=P(f.x,f.y),el=$(`[data-k="f${f.id}"]`);if(el){el.setAttribute('transform',`translate(${f1(fx)} ${f1(fy)})`);el.classList.add('pulled')};W.sortKey=''}});
@@ -5619,10 +5620,10 @@ W.pan={x:0,y:0};
 (()=>{const el=$('#stage');let d=null;
   el.addEventListener('pointerdown',e=>{if(e.pointerType!=='touch'||placing||e.target.closest('button,.lock-card'))return;const sv=$('#stage svg.room:not(.locked-room)');if(!sv)return;
     const vb=sv.viewBox.baseVal,r=sv.getBoundingClientRect();d={id:e.pointerId,x:e.clientX,y:e.clientY,px:camHome.px||0,py:camHome.py||0,k:Math.max(vb.width/(r.width||1),vb.height/(r.height||1)),w:+sv.dataset.vb0.split(/[ ,]+/)[2],h:+sv.dataset.vb0.split(/[ ,]+/)[3],on:false,no:false,free:true}});
-  el.addEventListener('pointermove',e=>{if(!d||e.pointerId!==d.id||d.no)return;if(el.classList.contains('pinching')){d=null;return}
+  el.addEventListener('pointermove',e=>{if(!d||e.pointerId!==d.id||d.no)return;if(el.classList.contains('pinching')){if(d.on){camHome.px=d.nx??camHome.px;camHome.py=d.ny??camHome.py;const sv=$('#stage svg.room:not(.locked-room)');if(sv)sv.style.transform='';applyZoomHome()}d=null;return}
     const dx=e.clientX-d.x,dy=e.clientY-d.y;if(!d.on){if(Math.hypot(dx,dy)<10)return;if(!d.free&&Math.abs(dy)>Math.abs(dx)){d.no=true;return}d.on=true}
-    camHome.px=clamp(d.px-dx*d.k,-d.w*.45,d.w*.45);if(d.free)camHome.py=clamp(d.py-dy*d.k,-d.h*.45,d.h*.45);applyZoomHome();orbitEnd=Date.now()});
-  const up=e=>{if(d&&e.pointerId===d.id){if(d.on)orbitEnd=Date.now();d=null}};el.addEventListener('pointerup',up);el.addEventListener('pointercancel',up);
+    const nx=clamp(d.px-dx*d.k,-d.w*.45,d.w*.45),ny=clamp(d.py-dy*d.k,-d.h*.45,d.h*.45);d.nx=nx;d.ny=ny;const sv=$('#stage svg.room:not(.locked-room)');if(sv){sv.style.willChange='transform';sv.style.transform=`translate(${f1((d.px-nx)/d.k)}px,${f1((d.py-ny)/d.k)}px)`}orbitEnd=Date.now()});
+  const up=e=>{if(d&&e.pointerId===d.id){if(d.on){orbitEnd=Date.now();camHome.px=d.nx??camHome.px;camHome.py=d.ny??camHome.py;const sv=$('#stage svg.room:not(.locked-room)');if(sv){sv.style.transform='';sv.style.willChange=''}applyZoomHome()}d=null}};el.addEventListener('pointerup',up);el.addEventListener('pointercancel',up);
 })();
 
 /* ================= v18: Möbelhaus – Bett-Themes und mehr ================= */
@@ -8292,7 +8293,10 @@ resort=function(){
   W.flakes.forEach(f=>add(f.x,f.y,g.querySelector(`[data-k="f${f.id}"]`),'f'));
   ents.sort((a,b)=>(a.x*SN+a.y*CS)-(b.x*SN+b.y*CS));
   g.querySelectorAll('.wclone').forEach(c=>c.remove());
-  ents.forEach(e=>{g.appendChild(e.el);
+  /* Spielfigur nie im DOM verschieben (sonst startet die Hüpf-Animation neu) – die anderen davor/dahinter einsortieren */
+  const plEl=$('#wPlayer'),pi=ents.findIndex(e=>e.el===plEl);
+  if(plEl&&plEl.parentNode===g&&pi>=0){ents.forEach((e,i)=>{if(e.el===plEl)return;if(i<pi)g.insertBefore(e.el,plEl);else g.appendChild(e.el)})}
+  ents.forEach(e=>{if(!(plEl&&plEl.parentNode===g&&pi>=0))g.appendChild(e.el);
     const [sx,sy]=P(e.x,e.y),eb=e.kind==='f'?[sx-16,sy-48,sx+16,sy+6]:[sx-36,sy-104,sx+36,sy+10],box={x:e.x-.2,y:e.y-.2,w:.4,h:.4};
     m.objs.forEach(o=>{if(!o.el||!o.el.isConnected)return;const b=objBox(o);if(!b||b[0]>eb[2]||b[2]<eb[0]||b[1]>eb[3]||b[3]<eb[1])return;if(!isFront(o,box))return;
       const c=o.el.cloneNode(true);c.classList.add('wclone');c.removeAttribute('data-k');c.dataset.src=o.id;g.appendChild(c)})});
@@ -9312,7 +9316,7 @@ wishScene=function(){
     <linearGradient id="wsSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9f3e6"/><stop offset=".55" stop-color="#d3e6c6"/><stop offset="1" stop-color="#b9d4a8"/></linearGradient>
     <filter id="wsBlur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"/></filter>
     <filter id="wsSoft"><feGaussianBlur stdDeviation="1.2"/></filter>
-    <filter id="wsRipple" x="-5%" y="-20%" width="110%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".035 .12" numOctaves="2" seed="4" result="n"><animate attributeName="baseFrequency" values=".035 .12;.04 .13;.035 .12" dur="6s" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="5"/></filter>
+    <filter id="wsRipple" x="-5%" y="-20%" width="110%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".035 .12" numOctaves="2" seed="4" result="n"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="5"/></filter>
     <filter id="wsGrain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 .45  0 0 0 0 .4  0 0 0 0 .34  0 0 0 .22 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
     <radialGradient id="wsGlow"><stop offset="0" stop-color="#fff6c9" stop-opacity=".95"/><stop offset=".5" stop-color="#ffe08a" stop-opacity=".45"/><stop offset="1" stop-color="#ffe08a" stop-opacity="0"/></radialGradient>
     <linearGradient id="wsStone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ece4d8"/><stop offset=".4" stop-color="#d9cfc0"/><stop offset="1" stop-color="#a99d8c"/></linearGradient>
@@ -9355,30 +9359,24 @@ wishScene=function(){
   <g id="wsGift" opacity="0"></g>
 </svg>`};
 {const F0=openFishing;openFishing=function(){F0.apply(this,arguments);const sv=$('#f2svg');if(!sv)return;
-  const ns='http://www.w3.org/2000/svg';
-  sv.querySelector('defs').insertAdjacentHTML('beforeend',`<linearGradient id="f2w2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7cc2d8"/><stop offset=".45" stop-color="#3f93b2"/><stop offset="1" stop-color="#1f5f7d"/></linearGradient>
-    <linearGradient id="f2sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".45"/><stop offset=".5" stop-color="#ffffff" stop-opacity=".05"/><stop offset="1" stop-color="#ffffff" stop-opacity=".25"/></linearGradient>
-    <filter id="f2ripple" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".012 .05" numOctaves="3" seed="3" result="n"><animate attributeName="seed" values="3;4;5;6;3" dur="5s" repeatCount="indefinite"/></feTurbulence><feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -2.2 1.35" result="w"/><feComposite in="w" in2="SourceGraphic" operator="in"/></filter>
-    <filter id="f2caust" x="0" y="0" width="100%" height="100%"><feTurbulence type="turbulence" baseFrequency=".035" numOctaves="2" seed="9"><animate attributeName="baseFrequency" values=".035;.04;.035" dur="7s" repeatCount="indefinite"/></feTurbulence><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -6 1.7"/></filter>
-    <filter id="f2blur"><feGaussianBlur stdDeviation="2.4"/></filter><filter id="f2blur1"><feGaussianBlur stdDeviation=".8"/></filter>
+  sv.querySelector('defs').insertAdjacentHTML('beforeend',`<linearGradient id="f2w2" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#8fd0e2"/><stop offset=".5" stop-color="#4fa3c2"/><stop offset="1" stop-color="#2a7396"/></linearGradient>
+    <radialGradient id="f2fish" cx=".45" cy=".5" r=".55"><stop offset="0" stop-color="#173d55" stop-opacity=".55"/><stop offset=".7" stop-color="#173d55" stop-opacity=".35"/><stop offset="1" stop-color="#173d55" stop-opacity="0"/></radialGradient>
     <linearGradient id="f2wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c49a72"/><stop offset="1" stop-color="#8a6347"/></linearGradient>
-    <radialGradient id="f2pad" cx=".4" cy=".35"><stop offset="0" stop-color="#8fd39a"/><stop offset="1" stop-color="#3f8a52"/></radialGradient>`);
+    <radialGradient id="f2pad" cx=".4" cy=".35"><stop offset="0" stop-color="#8fd39a"/><stop offset="1" stop-color="#3f8a52"/></radialGradient>
+    <radialGradient id="f2spot"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>`);
   const bg=sv.querySelector('rect[fill="url(#f2w)"]');if(bg){bg.setAttribute('fill','url(#f2w2)');
-    bg.insertAdjacentHTML('afterend',`<rect width="360" height="240" fill="url(#f2sky)"/><rect width="360" height="240" filter="url(#f2caust)" opacity=".16"/><rect width="360" height="240" fill="#fff" filter="url(#f2ripple)" opacity=".28"/>
-      <g opacity=".35" filter="url(#f2blur)"><ellipse cx="300" cy="-10" rx="120" ry="40" fill="#fff"/></g>
-      ${[[250,40],[290,70],[200,58],[320,30],[230,90]].map(([x,y],i)=>`<circle class="f2glint" style="animation-delay:${i*.6}s" cx="${x}" cy="${y}" r="1.6" fill="#fff"/>`).join('')}`)}
-  /* Seerosen schöner, Schilf am Ufer */
+    bg.insertAdjacentHTML('afterend',`${[[60,60,70],[220,40,90],[300,150,70],[140,150,80]].map(([x,y,r],i)=>`<ellipse class="f2light" style="animation-delay:-${i*1.7}s" cx="${x}" cy="${y}" rx="${r}" ry="${r*.45}" fill="url(#f2spot)"/>`).join('')}
+      ${[[250,40],[290,70],[200,58],[320,30],[110,90]].map(([x,y],i)=>`<circle class="f2glint" style="animation-delay:${i*.6}s" cx="${x}" cy="${y}" r="1.5" fill="#fff"/>`).join('')}`)}
+  /* Fische als weiche Silhouetten (Kopf vorne, Schwanzflosse hinten) */
+  sv.querySelectorAll('.f2s').forEach(g=>{g.innerHTML=`<g class="f2fishw"><path d="M-20,0 C-18,-7 -6,-9 4,-6 C9,-4 12,-2 14,0 C12,2 9,4 4,6 C-6,9 -18,7 -20,0Z" fill="url(#f2fish)"/><path d="M12,0 L24,-7 Q21,0 24,7Z" fill="#173d55" opacity=".28"/><path d="M-4,-7 Q0,-11 5,-6Z" fill="#173d55" opacity=".2"/></g>`});
   sv.querySelectorAll('ellipse[fill="#6cbd88"]').forEach(e=>{const x=+e.getAttribute('cx'),y=+e.getAttribute('cy'),r=+e.getAttribute('rx');
-    e.insertAdjacentHTML('beforebegin',`<ellipse cx="${x+2}" cy="${y+3}" rx="${r}" ry="${r*.5}" fill="#0d3a50" opacity=".25" filter="url(#f2blur1)"/>`);e.setAttribute('fill','url(#f2pad)');
-    e.insertAdjacentHTML('afterend',[0,1,2,3,4].map(k=>`<path d="M${x} ${y}l${f1(Math.cos(k*1.2-.6)*r*.85)} ${f1(Math.sin(k*1.2-.6)*r*.45)}" stroke="#2f6e3f" stroke-width=".7" opacity=".6"/>`).join(''))});
-  const pier=sv.querySelector('path[fill="#b98a64"]');if(pier){pier.setAttribute('fill','url(#f2wood)');pier.insertAdjacentHTML('beforebegin','<path d="M0 200Q60 190 124 208L134 240H0Z" fill="#0d3a50" opacity=".3" filter="url(#f2blur)"/>');
+    e.insertAdjacentHTML('beforebegin',`<ellipse cx="${x+2}" cy="${y+3}" rx="${r}" ry="${r*.5}" fill="#0d3a50" opacity=".18"/>`);e.setAttribute('fill','url(#f2pad)')});
+  const pier=sv.querySelector('path[fill="#b98a64"]');if(pier){pier.setAttribute('fill','url(#f2wood)');pier.insertAdjacentHTML('beforebegin','<path d="M0,202Q60,192 124,210L134,240H0Z" fill="#0d3a50" opacity=".22"/>');
     pier.insertAdjacentHTML('afterend',[0,1,2,3].map(k=>`<path d="M0 ${206+k*9}Q60 ${196+k*9} 122 ${214+k*7}" stroke="#7a563d" stroke-width=".8" opacity=".5" fill="none"/>`).join(''))}
   const reeds=[[340,150],[348,170],[332,180],[352,200],[338,214]].map(([x,y],i)=>`<path d="M${x} ${y+30}q${-4+i%3*3} -26 ${-2+i} -${36+i*4}" stroke="${i%2?'#5f8f4e':'#7aa860'}" stroke-width="2.2" fill="none"/><ellipse cx="${x-2+i}" cy="${y-6-i*4}" rx="2.4" ry="6" fill="#8a5a3c"/>`).join('');
   sv.querySelector('#f2bob')?.insertAdjacentHTML('beforebegin',`<g>${reeds}</g>`);
-  sv.querySelectorAll('#f2shadows ellipse').forEach(e=>e.setAttribute('filter','url(#f2blur1)'));
-  sv.querySelectorAll('.f2wave').forEach(p=>p.setAttribute('opacity','.35'));
+  sv.querySelectorAll('.f2wave').forEach(p=>p.setAttribute('opacity','.3'));
 }}
-
 /* ================= v94: Spielstand auf allen Geräten gleich halten + Sicherungen ================= */
 const BAKKEY='pebble_backups';
 function bakList(){try{return JSON.parse(localStorage.getItem(BAKKEY)||'[]')}catch(_){return []}}
