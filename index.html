@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610270106";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610270133";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1159,9 +1159,9 @@ body.landscape-phone .pop{padding-top:12px!important}
 .intro.out{opacity:0;pointer-events:none}
 .intro-title{position:absolute;left:0;right:0;top:4%;display:grid;justify-items:center;gap:4px;opacity:0;transform:translateY(-10px) scale(.92);transition:opacity .6s ease,transform .7s cubic-bezier(.2,1.4,.4,1);pointer-events:none}
 .intro.title .intro-title{opacity:1;transform:none}
-.intro-title b{font-family:var(--f-display);font-weight:600;font-size:clamp(34px,7vw,64px);color:#22304a;letter-spacing:.02em;text-shadow:0 4px 0 #fff,0 10px 30px rgba(34,48,74,.18)}
+.intro-title b{font-family:var(--f-display);font-weight:600;font-size:clamp(34px,7vw,64px);color:#3b2a1e;letter-spacing:.02em;text-shadow:0 4px 0 #fff,0 10px 30px rgba(34,48,74,.18)}
 .intro-title small{font:800 15px Nunito,system-ui,sans-serif;color:#46607c;background:rgba(255,255,255,.6);padding:4px 14px;border-radius:99px}
-.intro-skip{position:absolute;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));border:0;border-radius:99px;padding:8px 14px;background:rgba(255,255,255,.65);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font:800 13px Nunito,system-ui,sans-serif;color:#22304a;cursor:pointer}
+.intro-skip{position:absolute;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));border:0;border-radius:99px;padding:8px 14px;background:rgba(255,255,255,.65);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font:800 13px Nunito,system-ui,sans-serif;color:#3b2a1e;cursor:pointer}
 .set-move{margin-top:14px;padding:12px;border-radius:16px;background:var(--bg);display:grid;gap:8px}
 .set-move h4{margin:0;font:900 14px Nunito,system-ui,sans-serif}.set-move p{margin:0;font-size:12.5px;font-weight:700;color:var(--ink-soft)}
 .set-move .two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
@@ -1241,6 +1241,90 @@ body.landscape-phone .room-card{padding:8px 12px;gap:4px}body.landscape-phone .r
 .buildpanel .bp-open-tiles .tile-pic{height:130px}.buildpanel .bp-open-tiles .tile-pic svg{height:130px;max-height:130px;filter:drop-shadow(0 2px 3px rgba(59,42,30,.35))}
 body.landscape-phone .buildpanel .bp-open-tiles .tile-pic,body.landscape-phone .buildpanel .bp-open-tiles .tile-pic svg{height:100px;max-height:100px}
 .buildpanel .bp-items:not(.bp-room):not(.has-mob){grid-auto-rows:max-content!important;grid-template-rows:none!important}
+/* ===== v43 ===== */
+/* Einkaufsstraße: offen über den ganzen Bildschirm */
+body.immersive.street-on section[data-view="shop"]:not([hidden]){display:block!important;position:fixed!important;left:0;right:0;top:var(--toph);bottom:0;margin:0!important;background:var(--scene);z-index:1}
+body.street-on #shopCity{position:absolute;inset:0}
+#shopCity .street{position:absolute;inset:0;overflow:hidden}
+#shopCity .street-svg{width:100%;height:100%;display:block}
+body:not(.street-on) #shopCity .street{position:relative;height:60vh;border-radius:22px}
+.st-shop{cursor:pointer;transition:filter .25s ease}
+.st-shop:hover,.st-shop:focus{filter:brightness(1.05) drop-shadow(0 0 12px rgba(255,255,255,.9))}
+.st-shop .st-tag{transition:transform .25s ease;transform-box:fill-box;transform-origin:center}
+.st-shop:hover .st-tag{transform:translateY(-4px)}
+.st-ui{position:absolute;inset:0;pointer-events:none}
+.st-title{position:absolute;top:12px;left:12px;display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;font:900 15px Nunito,system-ui,sans-serif;color:#3b2a1e;pointer-events:auto}
+.st-title svg{width:20px;height:20px}
+.st-pick{position:absolute;top:12px;right:12px;display:flex;gap:4px;padding:4px;border-radius:999px;pointer-events:auto}
+.st-pick button{display:flex;align-items:center;gap:6px;border:0;background:transparent;border-radius:999px;padding:8px 14px;font:900 13px Nunito,system-ui,sans-serif;color:#3b2a1e;cursor:pointer}
+.st-pick button:hover{background:rgba(255,255,255,.6)}
+.st-pick svg{width:18px;height:18px}
+body.landscape-phone .st-title{font-size:13px;padding:7px 12px}body.landscape-phone .st-pick button{padding:6px 10px;font-size:12px}
+/* Baumenü: Inhalt als eigenes Scrollfeld mit Abstand */
+.buildpanel .bp-items:not(.has-mob){margin:8px 8px 4px;border-radius:16px;background:rgba(91,58,36,.10);box-shadow:inset 0 2px 6px rgba(59,42,30,.12);padding:8px 8px 18px!important;overflow-y:auto!important;overscroll-behavior:contain}
+.buildpanel .mob-grid{margin:8px 8px 8px 4px;border-radius:16px;background:rgba(91,58,36,.10);box-shadow:inset 0 2px 6px rgba(59,42,30,.12);padding-bottom:18px!important}
+.buildpanel .bp-items.bp-room{background:transparent;box-shadow:none}
+/* Dach: Farbe und Muster */
+.bp-sec{grid-column:1/-1;margin:4px 4px 0;font:900 13px Nunito,system-ui,sans-serif;color:#3b2a1e}
+.bp-card.tile.sw{padding:6px;gap:4px}
+.buildpanel .tile-pic.sw{height:46px!important}
+.tile-pic.sw svg{width:100%!important;height:46px!important;max-height:46px!important;border-radius:8px}
+.bp-roofsw{display:block;width:100%;height:46px;border-radius:8px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
+.tile-n{font-size:11.5px;color:#3b2a1e;line-height:1.15}
+.shopset{grid-column:1/-1}
+
+.buildpanel .bp-items:has(.bp-sec){grid-template-columns:repeat(auto-fill,minmax(80px,1fr))}
+body.landscape-phone .st-title{display:none}
+body.landscape-phone .buildpanel .tile-pic.sw,body.landscape-phone .tile-pic.sw svg,body.landscape-phone .bp-roofsw{height:34px!important;max-height:34px!important}
+/* ===== v43b: Dunkelbraune Schrift, Handy-Version kompakter, Abstand zur iPhone-Kamera ===== */
+:root{--ink:#3b2a1e!important;--ink-soft:#6b5242!important}
+/* Handy (Querformat): kleinere Bedienelemente, mehr Platz fürs Haus */
+body.landscape-phone{--sl:max(8px,calc(env(safe-area-inset-left,0px) + 4px));--sr:max(8px,calc(env(safe-area-inset-right,0px) + 4px))}
+body.landscape-phone .top{padding-block:2px!important;padding-left:var(--sl)!important;padding-right:var(--sr)!important}
+body.landscape-phone .top .appicon{--s:28px}
+body.landscape-phone .top h1{font-size:15px!important}
+body.landscape-phone .nav{width:min(380px,calc(100% - 24px))!important;padding:3px!important;border-radius:20px!important;bottom:calc(6px + env(safe-area-inset-bottom,0px))!important}
+body.landscape-phone .tab{padding:3px 2px!important;font-size:9.5px!important;gap:0!important;border-radius:14px!important}
+body.landscape-phone .tab svg{width:17px!important;height:17px!important}
+body.landscape-phone .iosw{left:var(--sl)!important;top:6px!important;padding:2px!important}
+body.landscape-phone .iosw button{padding:4px 8px!important;font-size:10.5px!important;gap:3px!important}
+body.landscape-phone .iosw button svg{width:13px!important;height:13px!important}
+body.landscape-phone .sside{padding:3px!important;gap:2px!important;border-radius:16px!important}
+body.landscape-phone .sside.left{left:var(--sl)!important}body.landscape-phone .sside.right{right:var(--sr)!important}body.landscape-phone .racebtn{left:calc(var(--sl) + 48px)!important;top:8px!important;padding:5px 10px!important;font-size:11px!important}
+body.landscape-phone .sside button{width:28px!important;height:28px!important}
+body.landscape-phone .sside button svg{width:16px!important;height:16px!important}
+body.landscape-phone .sside *{font-size:10px}
+body.landscape-phone .rotctl,body.landscape-phone .zoomctl{padding:2px!important;gap:2px!important}
+body.landscape-phone .stage .rotctl{left:var(--sl)!important;bottom:8px!important}
+body.landscape-phone .zoomctl{right:var(--sr)!important;bottom:8px!important}
+body.landscape-phone .rotctl button,body.landscape-phone .zoomctl button{width:28px!important;height:28px!important}
+body.landscape-phone .rotctl svg,body.landscape-phone .zoomctl svg{width:16px!important;height:16px!important}
+body.landscape-phone.immersive #roomTabs{top:6px!important;padding:3px!important;max-width:calc(100% - 330px)!important}
+body.landscape-phone.immersive #roomTabs .chip{padding:4px 9px!important;font-size:11px!important}
+body.landscape-phone.immersive .home-tools{top:6px!important;right:var(--sr)!important}
+body.landscape-phone.immersive .hgrid3{padding:2px!important}
+body.landscape-phone.immersive .hgrid3 button{padding:5px!important}
+body.landscape-phone.immersive .hgrid3 svg{width:16px!important;height:16px!important}
+body.landscape-phone.immersive .buildpanel{right:var(--sr)!important;top:calc(var(--toph) + 6px)!important;bottom:calc(var(--dockh) + 12px)!important;width:min(330px,42vw)!important;border-radius:18px!important}
+body.landscape-phone.immersive.bp-open #stage{right:calc(min(330px,42vw) + var(--sr))!important}
+body.landscape-phone .buildpanel .bp-title{font-size:13px!important}
+body.landscape-phone .buildpanel .bp-done{padding:4px 10px!important;font-size:11px!important}
+body.landscape-phone .buildpanel .bp-tabs button svg{width:16px!important;height:16px!important}
+body.landscape-phone .buildpanel .bp-tabs button{padding:3px 0!important}
+body.landscape-phone .bp-grip{height:10px!important;font-size:9px!important}
+body.landscape-phone .stage .emobar{left:var(--sl)}
+/* Welt am Handy */
+body.landscape-phone .whud{left:var(--sl)!important;font-size:11px!important;padding:5px 10px!important}
+body.landscape-phone .world .rotctl{right:var(--sr)!important;top:6px!important}
+body.landscape-phone .dpad{right:var(--sr)!important;transform:scale(.8);transform-origin:bottom right}
+body.landscape-phone .wchat{left:var(--sl)!important}
+body.landscape-phone .st-pick{right:var(--sr)!important;top:6px}
+
+body.landscape-phone .top .wallet,body.landscape-phone .top .seasonbtn{transform:scale(.8);transform-origin:right center}
+body.landscape-phone .top .seasonbtn{margin-right:-18px}
+body.landscape-phone .top .brandbtn{transform:scale(.85);transform-origin:left center}
+
+body.landscape-phone .emobar>button{width:34px!important;height:34px!important}body.landscape-phone .emobar>button svg{width:18px!important;height:18px!important}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -2962,7 +3046,7 @@ function renderPlan(){
   rs.filter(r=>r.f!==planFloor).forEach(r=>g+=`<rect x="${r.x*T+2}" y="${r.y*T+2}" width="${r.w*T-4}" height="${r.h*T-4}" rx="6" fill="none" stroke="#b9a993" stroke-width="2" stroke-dasharray="5 4"/>`);
   rs.filter(r=>r.f===planFloor).forEach(r=>{const st=wallStyle(r.id),on=r.id===planSel;
     g+=`<g data-plan-room="${r.id}" style="cursor:pointer"><rect x="${r.x*T+2}" y="${r.y*T+2}" width="${r.w*T-4}" height="${r.h*T-4}" rx="7" fill="${st.a}" stroke="${on?'#253b52':shade(st.a,-.2)}" stroke-width="${on?4:2}"/>
-      <text x="${(r.x+r.w/2)*T}" y="${(r.y+r.h/2)*T+5}" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-weight="900" font-size="13" fill="#253b52">${RD(r.id).name}</text></g>`;
+      <text x="${(r.x+r.w/2)*T}" y="${(r.y+r.h/2)*T+5}" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-weight="900" font-size="13" fill="#3b2a1e">${RD(r.id).name}</text></g>`;
     stairsOf(r.id).forEach(s=>g+=`<rect x="${s.x*T+5}" y="${s.y*T+5}" width="${s.w*T-10}" height="${s.h*T-10}" rx="3" fill="#fff" stroke="#8c6d4f" stroke-width="2" pointer-events="none"/><path d="M${s.x*T+8} ${(s.y+s.h)*T-9}L${(s.x+s.w)*T-8} ${s.y*T+9}" stroke="#8c6d4f" stroke-width="2" pointer-events="none"/>`)});
   doorList().filter(d=>d.f===planFloor).forEach(d=>{const [ax,ay]=d.a,[bx,by]=d.b;
     g+=ax!==bx?`<rect x="${bx*T-4}" y="${ay*T+4}" width="8" height="${T-8}" rx="2" fill="#fffdf9" stroke="#8c6d4f" stroke-width="1.5" pointer-events="none"/>`:`<rect x="${ax*T+4}" y="${by*T-4}" width="${T-8}" height="8" rx="2" fill="#fffdf9" stroke="#8c6d4f" stroke-width="1.5" pointer-events="none"/>`});
@@ -3223,7 +3307,7 @@ function guideO(x,y,boards){
   boards.forEach((b,i)=>{const [ex,ey]=P(x+b.dx,y+b.dy),right=ex>=sx,yy=sy-56+i*15,w=Math.max(70,b.t.length*6.4+30),x0=right?sx-6:sx+6-w,x1=x0+w;
     const pts=right?`${x0},${yy-6} ${x1-8},${yy-6} ${x1},${yy} ${x1-8},${yy+6} ${x0},${yy+6}`:`${x0+8},${yy-6} ${x1},${yy-6} ${x1},${yy+6} ${x0+8},${yy+6} ${x0},${yy}`;
     tr(x0-2,yy-8);tr(x1+2,yy+8);
-    s+=`<polygon points="${pts}" fill="${b.c}" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/><text x="${f1((x0+x1)/2+(right?-3:3))}" y="${f1(yy+3.3)}" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-weight="900" font-size="9" fill="#fff">${b.t}</text>`});
+    s+=`<polygon points="${pts}" fill="#d9b994" stroke="#8a6347" stroke-width="1.5" stroke-linejoin="round"/><text x="${f1((x0+x1)/2+(right?-3:3))}" y="${f1(yy+3.3)}" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-weight="900" font-size="9" fill="#4a3426">${b.t}</text>`});
   tr(sx-6,sy-70);
   return part(s,[x-.1,x+.1,y-.1,y+.1,0,70]);
 }
@@ -3252,11 +3336,11 @@ function houseO(cx,cy,la,lb,h,ang,o){
     if(o.boxes)[-lb/2+.62,lb/2-.62].forEach(v=>{s+=q(v-.44,v+.44,18,24,'#a9744f','',.1)+[-.3,-.1,.1,.3].map((dv,k)=>{const p=F(v+dv,26,.12);return `<circle cx="${f1(p[0])}" cy="${f1(p[1])}" r="3.2" fill="${['#ff9fbd','#ffd27a','#fff','#c9b6f2'][k]}"/><circle cx="${f1(p[0]+2)}" cy="${f1(p[1]+2)}" r="2.6" fill="#6cae6c"/>`}).join('')});
     if(o.awning){const n=8,w=(lb-.2)/n;for(let k=0;k<n;k++){const v0=-lb/2+.1+k*w,v1=v0+w;s+=poly([F(v0,74),F(v1,74),F(v1,64,.42),F(v0,64,.42)],k%2?o.awning[1]:o.awning[0])}
       s+=poly([F(-lb/2+.1,64,.42),F(lb/2-.1,64,.42),F(lb/2-.1,60,.42),F(-lb/2+.1,60,.42)],shade(o.awning[0],-.1))}
-    const [lx,ly]=F(0,h-12);var lab=`<rect x="${f1(lx-48)}" y="${f1(ly-12)}" width="96" height="22" rx="9" fill="${o.labelBg||'#253b52'}" stroke="#fff" stroke-width="2"/><text x="${f1(lx)}" y="${f1(ly+3.5)}" text-anchor="middle" ${FONT} font-size="11" fill="#fff">${o.label}</text>`;
+    const [lx,ly]=F(0,h-12);var lab=woodSign(lx,ly-1,Math.max(96,o.label.length*7.4+26),24,o.label,11.5);
   }  else{
     const B=(v,z)=>T(-la/2-.01,v,z),qb=(v0,v1,z0,z1,f,ex='')=>poly([B(v0,z0),B(v1,z0),B(v1,z1),B(v0,z1)],f,ex);
     [-lb/2+.75,0,lb/2-.75].forEach(v=>{s+=qb(v-.32,v+.32,26,58,'#ffffff',OL('#e3d9cc'))+qb(v-.26,v+.26,30,54,'#ffe7a8')+(o.win?o.win(B,v):'')+ln(B(v,30),B(v,54),'#fff',2)});
-    const [lx,ly]=B(0,h-10);var lab=`<rect x="${f1(lx-52)}" y="${f1(ly-12)}" width="104" height="22" rx="9" fill="${o.labelBg||'#253b52'}" stroke="#fff" stroke-width="2"/><text x="${f1(lx)}" y="${f1(ly+3.5)}" text-anchor="middle" ${FONT} font-size="11" fill="#fff">${o.label}</text>`;
+    const [lx,ly]=B(0,h-10);var lab=woodSign(lx,ly-1,Math.max(104,o.label.length*7.4+26),24,o.label,11.5);
   }
 
   const fS=poly([T(la/2+ov,-lb/2-ov,h),T(la/2+ov,lb/2+ov,h),T(0,lb/2+ov,h+rh),T(0,-lb/2-ov,h+rh)],gfill(shade(o.roof,front?.04:-.1),'v'),OL(o.roof));
@@ -3308,7 +3392,7 @@ function gateO(cx,cy){
   const a=[];[-1.15,1.15].forEach(dx=>{a.push(part(softShadow(cx+dx,cy,.3,.3)+String(cyl(cx+dx,cy,.22,0,64,'#e3ddd4'))+String(ball(cx+dx,cy,72,8,'#e3ddd4')),[cx+dx-.22,cx+dx+.22,cy-.22,cy+.22,0,80]))});
   const p0=P(cx-1.15,cy,62),p1=P(cx+1.15,cy,62),pm=P(cx,cy,92);
   a.push(part(`<path d="M${f1(p0[0])} ${f1(p0[1])}Q${f1(pm[0])} ${f1(pm[1]-16)} ${f1(p1[0])} ${f1(p1[1])}" stroke="#7cc58c" stroke-width="9" fill="none" stroke-linecap="round"/><path d="M${f1(p0[0])} ${f1(p0[1])}Q${f1(pm[0])} ${f1(pm[1]-16)} ${f1(p1[0])} ${f1(p1[1])}" stroke="#ff9fbd" stroke-width="3" fill="none" stroke-dasharray="2 9" stroke-linecap="round"/>
-    <rect x="${f1(pm[0]-46)}" y="${f1(pm[1]-8)}" width="92" height="20" rx="9" fill="#7aa2e3" stroke="#fff" stroke-width="2"/><text x="${f1(pm[0])}" y="${f1(pm[1]+6)}" text-anchor="middle" ${FONT} font-size="10.5" fill="#fff">Pinguin-Park</text>`,[cx-1.2,cx+1.2,cy-.05,cy+.05,60,100]));
+    ${woodSign(pm[0],pm[1]+2,96,22,'Pinguin-Park',10.5)}`,[cx-1.2,cx+1.2,cy-.05,cy+.05,60,100]));
   return a;
 }
 /* --- Café-Bausteine --- */
@@ -3587,7 +3671,7 @@ function worldInit(){
   svg.innerHTML=`<g id="wGround">${m.groundHTML}${lite?'':(m.tuftHTML||'')}</g><g id="wObjs">${m.objs.map(o=>`<g class="wo" data-k="${o.id}">${o.html}</g>`).join('')}</g>`;
   m.objs.forEach(o=>o.el=svg.querySelector(`[data-k="${o.id}"]`));
   const pl=document.createElementNS('http://www.w3.org/2000/svg','g');pl.id='wPlayer';pl.setAttribute('class','pl sp-'+(S.char||'pinguin'));pl.setAttribute('pointer-events','none');
-  pl.innerHTML=charG()+`<text x="0" y="-80" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-weight="900" font-size="13" fill="#22304a" stroke="#fff" stroke-width="4" paint-order="stroke">${esc(acc().name||'')}</text>`;
+  pl.innerHTML=charG()+`<text x="0" y="-80" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-weight="900" font-size="13" fill="#3b2a1e" stroke="#fff" stroke-width="4" paint-order="stroke">${esc(acc().name||'')}</text>`;
   pl.querySelector('.wad').insertAdjacentHTML('beforeend',heldHTML());pl.insertAdjacentHTML('afterbegin','<ellipse class="magaura" rx="46" ry="18" fill="none" stroke="#ff8fab" stroke-width="3" stroke-dasharray="6 8"/>');
   svg.querySelector('#wObjs').appendChild(pl);
   W.flakes.forEach(addFlakeEl);npcInit();
@@ -3738,8 +3822,8 @@ function boutiqueFront(walker=''){
   let awn='';for(let i=0;i<10;i++)awn+=`<path d="M${100+i*20} 116h20v12q-10 12-20 0Z" fill="${i%2?'#ffffff':'#ff9fbd'}"/>`;
   return `<svg viewBox="0 0 400 270" aria-hidden="true">${cityBG('b')}
   <rect x="96" y="64" width="208" height="142" rx="8" fill="#f8d3df"/><rect x="90" y="58" width="220" height="12" rx="6" fill="#ffffff"/>
-  <rect x="122" y="76" width="156" height="32" rx="10" fill="#22304a"/>
-  <text x="200" y="98" text-anchor="middle" font-family="Fredoka,Arial Rounded MT Bold,sans-serif" font-weight="600" font-size="17" fill="#fff">Federkleid</text>
+  <rect x="122" y="76" width="156" height="32" rx="8" fill="#d9b994" stroke="#8a6347" stroke-width="2.5"/>
+  <text x="200" y="98" text-anchor="middle" font-family="Fredoka,Arial Rounded MT Bold,sans-serif" font-weight="600" font-size="17" fill="#4a3426">Federkleid</text>
   ${awn}
   <rect x="108" y="140" width="66" height="62" rx="6" fill="#e9f4fb" stroke="#fff" stroke-width="4"/><rect x="226" y="140" width="66" height="62" rx="6" fill="#e9f4fb" stroke="#fff" stroke-width="4"/>
   <path d="M141 156l-12 36h24Z" fill="#ff9fbd"/><circle cx="141" cy="152" r="5" fill="#f3e3c8"/><path d="M132 147h18" stroke="#7aa2e3" stroke-width="3" stroke-linecap="round"/>
@@ -3754,7 +3838,7 @@ function moebelFront(walker=''){
   return `<svg viewBox="0 0 400 270" aria-hidden="true">${cityBG('m')}
   <path d="M168 58a32 30 0 0 1 64 0Z" fill="#ffffff" stroke="#cfdce8" stroke-width="2"/><path d="M186 58a14 16 0 0 1 28 0" fill="#dbe8f2"/><path d="M174 46h52M184 36h32M200 28v18" stroke="#dbe5ee" stroke-width="2"/>
   <rect x="70" y="58" width="260" height="148" rx="8" fill="#cfe5dc"/><rect x="70" y="58" width="260" height="30" rx="8" fill="#d9b58f"/>${slats}
-  <rect x="146" y="94" width="108" height="34" rx="10" fill="#22304a"/><text x="200" y="118" text-anchor="middle" font-family="Fredoka,Arial Rounded MT Bold,sans-serif" font-weight="600" font-size="19" fill="#fff">Iglu</text>
+  <rect x="146" y="94" width="108" height="34" rx="8" fill="#d9b994" stroke="#8a6347" stroke-width="2.5"/><text x="200" y="118" text-anchor="middle" font-family="Fredoka,Arial Rounded MT Bold,sans-serif" font-weight="600" font-size="19" fill="#4a3426">Iglu</text>
   <rect x="84" y="136" width="86" height="64" rx="6" fill="#eef7fb" stroke="#fff" stroke-width="4"/><rect x="230" y="136" width="86" height="64" rx="6" fill="#eef7fb" stroke="#fff" stroke-width="4"/>
   <rect x="94" y="164" width="64" height="12" rx="6" fill="#d6c8f5"/><rect x="94" y="172" width="64" height="18" rx="6" fill="#c4b0ee"/>
   <rect x="268" y="150" width="3" height="40" fill="#d8c8d2"/><path d="M256 150h28l-5-12h-18Z" fill="#fff1b8"/><rect x="246" y="186" width="20" height="10" rx="3" fill="#f3b48f"/><circle cx="256" cy="180" r="8" fill="#8fd19e"/>
@@ -4584,7 +4668,7 @@ function openFishing(){
       <g id="f2ripples"></g>
       <path id="f2line" d="" stroke="#fff" stroke-width="1.2" fill="none" opacity=".9"/>
       <g id="f2bob" opacity="0"><ellipse cy="5" rx="9" ry="3" fill="#000" opacity=".12"/><path d="M-5 0a5 5 0 0 1 10 0Z" fill="#ff5d7a"/><path d="M-5 0a5 5 0 0 0 10 0Z" fill="#fff"/><path d="M0 -5v-6" stroke="#22304a" stroke-width="1.4"/></g>
-      <g id="f2bang" opacity="0"><circle r="12" fill="#ffd45e"/><text y="5" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="17" fill="#22304a">!</text></g>
+      <g id="f2bang" opacity="0"><circle r="12" fill="#ffd45e"/><text y="5" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="17" fill="#3b2a1e">!</text></g>
       <path d="M0 196Q60 186 120 204L130 240H0Z" fill="#b98a64"/><path d="M0 196Q60 186 120 204" stroke="#8a6347" stroke-width="3" fill="none"/>${[20,50,80,108].map(x=>`<path d="M${x} ${192+(x>90?6:0)}v48" stroke="#8a6347" stroke-width="1.4" opacity=".6"/>`).join('')}
       <g transform="translate(26 146) scale(.62)">${avatarArt(S.char,S.outfit)}</g>
       <path id="f2rod" d="M66 196L118 132" stroke="#7a563d" stroke-width="3" stroke-linecap="round"/><circle cx="70" cy="190" r="3.4" fill="#4a5a75"/>
@@ -4966,7 +5050,7 @@ function startRace(){
       <rect x="18" y="20" width="12" height="100" rx="5" fill="#ff8fab"/><rect x="290" y="20" width="12" height="100" rx="5" fill="#7aa2e3"/>
       <circle cx="24" cy="16" r="11" fill="#ffd45e"/><circle cx="296" cy="16" r="11" fill="#bfe8a6"/>
       <g transform="translate(30 22)"><rect width="260" height="34" rx="6" fill="#22304a"/><g transform="translate(4 4)"><clipPath id="rgClip"><rect width="252" height="26" rx="4"/></clipPath><g clip-path="url(#rgClip)">${RCHK(22,12,13)}</g></g>
-        <rect x="78" y="2" width="104" height="30" rx="15" fill="#fff"/><text x="130" y="24" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="700" font-size="20" fill="#22304a">START</text></g>
+        <rect x="78" y="2" width="104" height="30" rx="15" fill="#fff"/><text x="130" y="24" text-anchor="middle" font-family="Fredoka,Nunito,sans-serif" font-weight="700" font-size="20" fill="#3b2a1e">START</text></g>
     </svg>
     <div class="rg-card"><small>Frosty-Rennen</small>
       <div class="rg-lights"><i></i><i></i><i></i></div>
@@ -5985,7 +6069,7 @@ function extShellParts(){
         let w=wallFace(si,i,j,zb,0,WH,fs)+ln(si.pt(i,zb+WH),si.pt(j,zb+WH),'#ffffff',2);
         w=maskHoles(w,slots.map(tc=>winQuad(si,tc,zb,.002)));s+=w+slots.map(tc=>winFrame(si,tc,zb,.01,false)).join('');
         if(dr&&dr.i>=i&&dr.i<j)s+=doorPanel(si,dr.i+.5,zb,.012);
-        if(S.doorPick&&f===0)for(let t=i;t<j;t++)PICKS+=`<g class="doorpick" data-doorpick="${r.id}|${side}|${t}">${poly([si.pt(t+.22,zb,.03),si.pt(t+.78,zb,.03),si.pt(t+.78,zb+80,.03),si.pt(t+.22,zb+80,.03)],'rgba(255,255,255,.55)','stroke="#22304a" stroke-width="2" stroke-dasharray="5 4"')}<text x="${f1(si.pt(t+.5,zb+40,.03)[0])}" y="${f1(si.pt(t+.5,zb+40,.03)[1]+6)}" text-anchor="middle" font-size="18" font-weight="900" fill="#22304a">+</text></g>`;
+        if(S.doorPick&&f===0)for(let t=i;t<j;t++)PICKS+=`<g class="doorpick" data-doorpick="${r.id}|${side}|${t}">${poly([si.pt(t+.22,zb,.03),si.pt(t+.78,zb,.03),si.pt(t+.78,zb+80,.03),si.pt(t+.22,zb+80,.03)],'rgba(255,255,255,.55)','stroke="#22304a" stroke-width="2" stroke-dasharray="5 4"')}<text x="${f1(si.pt(t+.5,zb+40,.03)[0])}" y="${f1(si.pt(t+.5,zb+40,.03)[1]+6)}" text-anchor="middle" font-size="18" font-weight="900" fill="#3b2a1e">+</text></g>`;
         i=j}}
     parts.push(part(s,[r.x,r.x+r.w,r.y,r.y+r.h,zb-10,zb+WH]))});
   return parts;
@@ -6230,7 +6314,7 @@ function growDir(id,dir){
 function growArrows(){
   if(!growOpen||!S.layout[viewRoom])return '';const r=roomRect(viewRoom),zb=r.f*FH,n=growN(viewRoom);if(n>=GROWMAX)return '';
   const cost=growPrice(n),mid={x0:[r.x-.75,r.y+r.h/2],x1:[r.x+r.w+.75,r.y+r.h/2],y0:[r.x+r.w/2,r.y-.75],y1:[r.x+r.w/2,r.y+r.h+.75]};
-  return Object.entries(mid).map(([d,[x,y]])=>{const [sx,sy]=P(x,y,zb+2);return `<g class="growarrow" data-growdir="${d}" transform="translate(${f1(sx)} ${f1(sy)})"><circle r="17" fill="#22304a"/><path d="M-6 0h12M0 -6v12" stroke="#fff" stroke-width="3" stroke-linecap="round"/><rect x="-17" y="20" width="34" height="16" rx="8" fill="#fff"/><text y="32" text-anchor="middle" font-size="11" font-weight="900" fill="#22304a">${cost}</text></g>`}).join('');
+  return Object.entries(mid).map(([d,[x,y]])=>{const [sx,sy]=P(x,y,zb+2);return `<g class="growarrow" data-growdir="${d}" transform="translate(${f1(sx)} ${f1(sy)})"><circle r="17" fill="#22304a"/><path d="M-6 0h12M0 -6v12" stroke="#fff" stroke-width="3" stroke-linecap="round"/><rect x="-17" y="20" width="34" height="16" rx="8" fill="#fff"/><text y="32" text-anchor="middle" font-size="11" font-weight="900" fill="#3b2a1e">${cost}</text></g>`}).join('');
 }
 
 /* --- Bau-Werkzeug: Fenster/Türen setzen und entfernen --- */
@@ -6503,7 +6587,7 @@ scenery=function(){
     for(let i=0;i<260;i++){const x=cx+(rnd()-.5)*34,y=cy+(rnd()-.5)*34;if(inHouse(x,y,.6)||onRoad(y))continue;tf.add(x,y,gc[i%3])}
     ground+=tf.out();}
     /* Zaun */
-    const FC=fenceCol(),fence=(ax,ay,bx,by)=>{const n=Math.round(Math.hypot(bx-ax,by-ay)*2);let s='';for(let i=0;i<=n;i++){const t=i/n,x=ax+(bx-ax)*t,y=ay+(by-ay)*t;s+=ln(P(x,y,0),P(x,y,16),FC,2.6)}s+=ln(P(ax,ay,12),P(bx,by,12),FC,2)+ln(P(ax,ay,6),P(bx,by,6),FC,2);return part(s,[Math.min(ax,bx),Math.max(ax,bx)+.01,Math.min(ay,by),Math.max(ay,by)+.01,0,16])};
+    const FC=fenceCol(),fence=(ax,ay,bx,by)=>fence43(ax,ay,bx,by,FC);
     if(FC)objs.push(fence(g.x0,g.y0,g.x1,g.y0),fence(g.x0,g.y0,g.x0,g.y1),fence(g.x1,g.y0,g.x1,g.y1));
     objs.push(...neighborHouse(g.x0-8,cy-3,4,5,'#ffe1ea','#e98fae',1),...neighborHouse(g.x1+4,cy-4,5,4,'#dbe8f6','#7d94b8',2));
     /* Bäume: Laub und Tannen wie auf dem Stadtplatz */
@@ -6776,7 +6860,7 @@ function roofFloorParts(f,col){
     const c=F2.flat?shade(col,.08):shade(col,(nx*-.55+ny*.84)*.3-.02),cl=shade(c,-.16);
     const d=F2.fill.map(L=>'M'+L.map(p=>{const q=P(p[0],p[1],p[2]);tr(q[0],q[1]);return f1(q[0])+' '+f1(q[1])}).join('L')+'Z').join('');
     let s=`<path d="${d}" fill="${c}" fill-rule="evenodd" stroke="${c}" stroke-width=".8" stroke-linejoin="round"/>`;
-    if(F2.cont.length)s+=`<path d="${F2.cont.map(([a,b])=>{const p=P(...a),q=P(...b);return `M${f1(p[0])} ${f1(p[1])}L${f1(q[0])} ${f1(q[1])}`}).join('')}" stroke="${cl}" stroke-width="1" fill="none"/>`;
+    s+=roofPat(F2,d,c);if(F2.cont.length&&roofPatK()!=='holz'&&roofPatK()!=='schuppen'&&roofPatK()!=='rauten')s+=`<path d="${F2.cont.map(([a,b])=>{const p=P(...a),q=P(...b);return `M${f1(p[0])} ${f1(p[1])}L${f1(q[0])} ${f1(q[1])}`}).join('')}" stroke="${cl}" stroke-width="1" fill="none"/>`;
     if(win)s+=`<path d="${d}" fill="#ffffff" opacity="${F2.flat?.75:.55}"/>`;
     F2.eaves.forEach(([p,q,n])=>{if(faceVis(n[0],n[1]))s+=poly([P(p[0],p[1],zE),P(q[0],q[1],zE),P(q[0],q[1],zE-6),P(p[0],p[1],zE-6)],fasc);s+=ln(P(...p),P(...q),eaveCol,1.8)});
     F2.ridges.forEach(([p,q])=>{s+=ln(P(...p),P(...q),lineCol,1.6)});
@@ -7153,7 +7237,7 @@ growArrows=function(){
   if(!(growOpen||BT?.kind==='grow')||!S.layout[viewRoom])return '';const r=roomRect(viewRoom),zb=r.f*FH,n=growN(viewRoom);if(n>=GROWMAX)return '';
   const mid={x0:[r.x-.7,r.y+r.h/2,-1,0],x1:[r.x+r.w+.7,r.y+r.h/2,1,0],y0:[r.x+r.w/2,r.y-.7,0,-1],y1:[r.x+r.w/2,r.y+r.h+.7,0,1]};
   return Object.entries(mid).map(([d,[x,y,nx,ny]])=>{const [sx,sy]=P(x,y,zb+2),[ex,ey]=P(x+nx,y+ny,zb+2),a=Math.atan2(ey-sy,ex-sx)*180/Math.PI;
-    return `<g class="growarrow" data-growdir="${d}" transform="translate(${f1(sx)} ${f1(sy)})"><g transform="rotate(${f1(a)})"><path d="M-14 -9h12v-9l20 18-20 18v-9h-12z" fill="#22304a" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/></g><rect x="-17" y="20" width="34" height="16" rx="8" fill="#fff"/><text y="32" text-anchor="middle" font-size="11" font-weight="900" fill="#22304a">${growPrice(n)}</text></g>`}).join('')+'<g id="growghost" pointer-events="none"></g>';
+    return `<g class="growarrow" data-growdir="${d}" transform="translate(${f1(sx)} ${f1(sy)})"><g transform="rotate(${f1(a)})"><path d="M-14 -9h12v-9l20 18-20 18v-9h-12z" fill="#22304a" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/></g><rect x="-17" y="20" width="34" height="16" rx="8" fill="#fff"/><text y="32" text-anchor="middle" font-size="11" font-weight="900" fill="#3b2a1e">${growPrice(n)}</text></g>`}).join('')+'<g id="growghost" pointer-events="none"></g>';
 };
 let GD=null,GDCLICK=0;
 document.addEventListener('pointerdown',e=>{const a=e.target.closest&&e.target.closest('#stage [data-growdir]');if(!a||placing)return;e.stopPropagation();
@@ -7192,7 +7276,7 @@ const shrinkBack=(id,k)=>{const n=growN(id),m=Math.min(k,n);let c=0;for(let i=1;
 function shrinkGhost(){return withCam(camHome,()=>{const r=roomRect(GD.id),k=-GD.k,zb=r.f*FH+1.5,st=shrinkStrip(r,GD.dir,k),q={x:r.x+st.x,y:r.y+st.y,w:st.w,h:st.h};
   const pts=[P(q.x,q.y,zb),P(q.x+q.w,q.y,zb),P(q.x+q.w,q.y+q.h,zb),P(q.x,q.y+q.h,zb)];let s=poly(pts,'rgba(255,160,60,.35)','stroke="#e8892f" stroke-width="2.5" stroke-dasharray="6 4"');
   const n=inRoom(GD.id).filter(it=>!CAT[it.id].stair&&overlap(st,rectOf(it))).length,back=shrinkBack(GD.id,k),c=P(q.x+q.w/2,q.y+q.h/2,zb+30),txt=`−${k} ${k===1?'Reihe':'Reihen'}${back?' · +'+back:''}`,w=txt.length*7+20;
-  return s+`<g transform="translate(${f1(c[0])} ${f1(c[1])})"><rect x="${-w/2}" y="-14" width="${w}" height="26" rx="13" fill="#e8892f"/><text y="4" text-anchor="middle" font-size="13" font-weight="900" fill="#fff">${txt}</text>${n?`<text y="30" text-anchor="middle" font-size="11" font-weight="800" fill="#22304a" stroke="#fff" stroke-width="3" paint-order="stroke">${n} ${n===1?'Möbel kommt':'Möbel kommen'} ins Inventar</text>`:''}</g>`})}
+  return s+`<g transform="translate(${f1(c[0])} ${f1(c[1])})"><rect x="${-w/2}" y="-14" width="${w}" height="26" rx="13" fill="#e8892f"/><text y="4" text-anchor="middle" font-size="13" font-weight="900" fill="#fff">${txt}</text>${n?`<text y="30" text-anchor="middle" font-size="11" font-weight="800" fill="#3b2a1e" stroke="#fff" stroke-width="3" paint-order="stroke">${n} ${n===1?'Möbel kommt':'Möbel kommen'} ins Inventar</text>`:''}</g>`})}
 function doShrink(id,dir,k){const err=shrinkOK(id,dir,k);if(err){toast(err);return}
   const r=roomRect(id),st=shrinkStrip(r,dir,k),back=shrinkBack(id,k),n=growN(id);let stored=0;
   if(homeSit)homeSit=null;sel=null;
@@ -7226,7 +7310,7 @@ growArrows=function(){
   if(!(growOpen||BT?.kind==='grow')||!S.layout[viewRoom])return '';const r=roomRect(viewRoom),zb=r.f*FH,n=growN(viewRoom);
   const mid={x0:[r.x-.55,r.y+r.h/2,-1,0],x1:[r.x+r.w+.55,r.y+r.h/2,1,0],y0:[r.x+r.w/2,r.y-.55,0,-1],y1:[r.x+r.w/2,r.y+r.h+.55,0,1]};
   return Object.entries(mid).map(([d,[x,y,nx,ny]])=>{const [sx,sy]=P(x,y,zb+2),[ex,ey]=P(x+nx,y+ny,zb+2),a=Math.atan2(ey-sy,ex-sx)*180/Math.PI;
-    return `<g class="growarrow" data-growdir="${d}" data-a="${f1(a)}" transform="translate(${f1(sx)} ${f1(sy)})"><circle r="26" fill="transparent"/><g class="ga" transform="rotate(${f1(a)})"><path d="M-16 0H14M4 -10 16 0 4 10" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path class="ga-l" d="M-16 0H14M4 -10 16 0 4 10" fill="none" stroke="#3fae6a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>${n<GROWMAX?`<text y="30" text-anchor="middle" font-size="11" font-weight="900" fill="#22304a" stroke="#fff" stroke-width="3" paint-order="stroke">${growPrice(n)}</text>`:''}</g>`}).join('')+'<g id="growghost" pointer-events="none"></g>';
+    return `<g class="growarrow" data-growdir="${d}" data-a="${f1(a)}" transform="translate(${f1(sx)} ${f1(sy)})"><circle r="26" fill="transparent"/><g class="ga" transform="rotate(${f1(a)})"><path d="M-16 0H14M4 -10 16 0 4 10" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path class="ga-l" d="M-16 0H14M4 -10 16 0 4 10" fill="none" stroke="#3fae6a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>${n<GROWMAX?`<text y="30" text-anchor="middle" font-size="11" font-weight="900" fill="#3b2a1e" stroke="#fff" stroke-width="3" paint-order="stroke">${growPrice(n)}</text>`:''}</g>`}).join('')+'<g id="growghost" pointer-events="none"></g>';
 };
 const _dgg40=drawGrowGhost;
 drawGrowGhost=function(){_dgg40();document.querySelectorAll('#stage .growarrow').forEach(el=>{const on=GD&&el.dataset.growdir===GD.dir,shrink=on&&GD.k<0,g=el.querySelector('.ga'),l=el.querySelector('.ga-l');
@@ -7407,7 +7491,7 @@ function tileWin(kind,k){const key=kind+k;if(TILEC[key])return TILEC[key];
   return TILEC[key]=withCam({yaw:0,pitch:10},()=>{const si=SIDE('y0',0,0,1,1);BB=[1e9,1e9,-1e9,-1e9];
     const d=kind==='win'?WINS[k]:DOORS2[k];let body=kind==='win'?winDraw(si,.5,0,k,0,false):d&&d.open?'':doorDraw(si,.5,0,k,0,false);
     if(!body){body=poly([si.pt(.2,0),si.pt(.8,0),si.pt(.8,84),si.pt(.2,84)],'rgba(255,250,242,.65)','stroke="#fff" stroke-width="5"')}
-    body=body.replace('fill="#d6ecfb" opacity=".14"','fill="#e4f3fd" opacity=".7"');const b=BB;BB=null;const pad=2;return `<svg viewBox="${f1(b[0]-pad)} ${f1(b[1]-pad)} ${f1(b[2]-b[0]+pad*2)} ${f1(b[3]-b[1]+pad*2)}" aria-hidden="true">${body}</svg>`})}
+    body=body.replace('fill="#d6ecfb" opacity=".14"','fill="#e4f3fd" opacity=".7"');const b=BB;BB=null;const pad=7;return `<svg viewBox="${f1(b[0]-pad)} ${f1(b[1]-pad)} ${f1(b[2]-b[0]+pad*2)} ${f1(b[3]-b[1]+pad*2)}" aria-hidden="true">${body}</svg>`})}
 function tileDeco(kind,k){const key='d'+kind+k+(k?'':viewRoom);if(TILEC[key])return TILEC[key];const R=ROOMS.find(r=>r.id===viewRoom)||ROOMS[0];
   if(kind==='wall'){const ws=k?WALLS[k]:{pat:'stripes',a:R.wall[0],b:R.wall[2]};
     return TILEC[key]=withCam({yaw:0,pitch:0},()=>{const si=SIDE('y0',0,0,1,1);BB=[1e9,1e9,-1e9,-1e9];const s=wallFace(si,0,1,0,0,100,ws);const b=BB;BB=null;return `<svg viewBox="${f1(b[0])} ${f1(b[1])} ${f1(b[2]-b[0])} ${f1(b[3]-b[1])}" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${s}</svg>`})}
@@ -7439,6 +7523,198 @@ renderBuildPanel=function(){_rbp42();const pn=$('#buildpanel');if(!pn)return;pn.
   const head=pn.querySelector('.bp-head');if(head){const lab=(BCATS.find(c=>c[0]===BP)||[])[1]||'';let t=head.querySelector('.bp-title');if(!t){head.insertAdjacentHTML('afterbegin','<b class="bp-title"></b>');t=head.querySelector('.bp-title')}t.innerHTML='Bauen<span> · '+lab+'</span>'}
   const g=pn.querySelector('.bp-grip');if(g&&!g.querySelector('span'))g.insertAdjacentHTML('beforeend','<span>Einklappen</span>');
   const it=pn.querySelector('.bp-items');it?.classList.toggle('bp-room',BP==='raum');it?.classList.toggle('bp-open-tiles',BP==='fenster'||BP==='tueren')};
+
+/* ================= v43: Einkaufsstraße in 3D, Holzschilder, Holzbänke, Dachmuster, größerer Zaun ================= */
+/* --- Holzschild (bildschirmgerade), hellbraun mit Brettern und Nägeln --- */
+const WS_BG='#d9b994',WS_BD='#8a6347',WS_INK='#4a3426';
+function woodSign(x,y,w,h,txt,fs=11){
+  tr(x-w/2-2,y-h/2-2);tr(x+w/2+2,y+h/2+2);
+  const x0=f1(x-w/2),y0=f1(y-h/2);
+  return `<g><rect x="${x0}" y="${f1(y-h/2+2)}" width="${f1(w)}" height="${f1(h)}" rx="5" fill="rgba(59,42,30,.25)"/><rect x="${x0}" y="${y0}" width="${f1(w)}" height="${f1(h)}" rx="5" fill="${WS_BG}" stroke="${WS_BD}" stroke-width="2"/>`+
+    `<path d="M${f1(x-w/2+3)} ${f1(y)}H${f1(x+w/2-3)}" stroke="#c9a27e" stroke-width="1"/>`+
+    `<circle cx="${f1(x-w/2+5)}" cy="${f1(y-h/2+5)}" r="1.3" fill="${WS_BD}"/><circle cx="${f1(x+w/2-5)}" cy="${f1(y-h/2+5)}" r="1.3" fill="${WS_BD}"/><circle cx="${f1(x-w/2+5)}" cy="${f1(y+h/2-5)}" r="1.3" fill="${WS_BD}"/><circle cx="${f1(x+w/2-5)}" cy="${f1(y+h/2-5)}" r="1.3" fill="${WS_BD}"/>`+
+    `<text x="${f1(x)}" y="${f1(y+fs*.36)}" text-anchor="middle" ${FONT} font-size="${fs}" fill="${WS_INK}">${txt}</text></g>`}
+signO=function(x,y,label,col,ang=0){const [sx,sy]=P(x,y);
+  return part(softShadow(x,y,.2,.2)+String(cyl(x,y,.05,0,44,WOODD))+woodSign(sx,sy-59,86,22,label,10.5),[x-.1,x+.1,y-.1,y+.1,0,70])};
+/* --- Bänke aus Holz: Latten mit Fugen, Holzbeine --- */
+benchO=function(x,y,ang){
+  const c=Math.cos(ang),s=Math.sin(ang),at=(u,v)=>[x+c*u-s*v,y+s*u+c*v],a=[softShadow(x,y,.5,.5)];
+  [-.38,.38].forEach(v=>{const p=at(0,v);a.push(obox(p[0],p[1],0,.34,.07,12,ang,'#7a5a40'))});
+  [-.11,.03,.17].forEach((u,i)=>{const p=at(u,0);a.push(obox(p[0],p[1],12,.11,1,2.6,ang,i%2?'#c39a72':'#cfa67c'))});
+  [[-.2,17],[-.2,26]].forEach(([u,z],i)=>{const p=at(u,0);a.push(obox(p[0],p[1],z,.05,1,6.5,ang,i?'#c39a72':'#b98c64'))});
+  [-.38,.38].forEach(v=>{const p=at(-.2,v);a.push(obox(p[0],p[1],12,.05,.06,22,ang,'#7a5a40'))});
+  return a};
+/* --- Zaun: größer, Latten mit Spitze --- */
+function fence43(ax,ay,bx,by,FC){
+  const L=Math.hypot(bx-ax,by-ay),n=Math.max(1,Math.round(L*3));let s='';const dk=shade(FC,-.18);
+  s+=ln(P(ax,ay,10),P(bx,by,10),dk,3.2)+ln(P(ax,ay,24),P(bx,by,24),dk,3.2);
+  for(let i=0;i<=n;i++){const t=i/n,x=ax+(bx-ax)*t,y=ay+(by-ay)*t,b=P(x,y,0),tp=P(x,y,32);
+    s+=`<path d="M${f1(b[0]-2.2)} ${f1(b[1])}V${f1(tp[1]+3)}L${f1(tp[0])} ${f1(tp[1]-1.5)}L${f1(b[0]+2.2)} ${f1(tp[1]+3)}V${f1(b[1])}Z" fill="${FC}" stroke="${dk}" stroke-width=".7" stroke-linejoin="round"/>`;tr(b[0]-3,tp[1]-3)}
+  s+=ln(P(ax,ay,10.6),P(bx,by,10.6),FC,2.2)+ln(P(ax,ay,24.6),P(bx,by,24.6),FC,2.2);
+  return part(s,[Math.min(ax,bx),Math.max(ax,bx)+.01,Math.min(ay,by),Math.max(ay,by)+.01,0,34])}
+
+/* --- Dach: Farbe + Muster --- */
+Object.assign(ROOFS,{holzbraun:{n:'Holzbraun',c:'#a9744f'},sand:{n:'Sand',c:'#d8c3a5'},anthrazit:{n:'Anthrazit',c:'#4f5562'}});
+const ROOFPAT={ziegel:{n:'Ziegel'},kacheln:{n:'Kacheln'},holz:{n:'Holzpaneele'},schuppen:{n:'Schuppen'},streifen:{n:'Streifen'},rauten:{n:'Rauten'}};
+const roofPatK=()=>ROOFPAT[S&&S.roofPat]?S.roofPat:'ziegel';
+let RPID=0;
+function roofPat(F2,d,c){
+  const k=roofPatK();if(F2.flat||!F2.fill.length||!F2.fill[0].length)return '';
+  const [gx,gy]=F2.g,gl=Math.hypot(gx,gy);if(gl<.5)return '';
+  const gd=[gx/gl,gy/gl],ud=[-gy/gl,gx/gl],p0=F2.fill[0][0],c0=p0[2]-gx*p0[0]-gy*p0[1];
+  let a0=1e9,a1=-1e9,b0=1e9,b1=-1e9;F2.fill.forEach(L=>L.forEach(p=>{const a=p[0]*ud[0]+p[1]*ud[1],b=p[0]*gd[0]+p[1]*gd[1];a0=Math.min(a0,a);a1=Math.max(a1,a);b0=Math.min(b0,b);b1=Math.max(b1,b)}));
+  const W=(a,b)=>{const x=a*ud[0]+b*gd[0],y=a*ud[1]+b*gd[1];return P(x,y,c0+gx*x+gy*y)};
+  const L=(a,b,a2,b2)=>{const p=W(a,b),q=W(a2,b2);return `M${f1(p[0])} ${f1(p[1])}L${f1(q[0])} ${f1(q[1])}`};
+  const bz=z=>(z-c0)/gl,cl=shade(c,-.17),hl=shade(c,.12);let o='',o2='',fl='';
+  const rows=(step)=>{const r=[];const k0=Math.floor((c0+gl*b0)/step)-1,k1=Math.ceil((c0+gl*b1)/step)+1;for(let i=k0;i<=k1;i++)r.push([i,bz(i*step),bz((i+1)*step)]);return r};
+  if(k==='ziegel'){rows(9).forEach(([i,b,bb])=>{for(let a=Math.floor(a0/.3)*.3+(i%2?.15:0);a<a1;a+=.3)o+=L(a,b,a,bb)})}
+  else if(k==='kacheln'){rows(6).forEach(([i,b,bb])=>{o+=L(a0-1,b,a1+1,b);for(let a=Math.floor(a0/.2)*.2+(i%2?.1:0);a<a1;a+=.2)o+=L(a,b,a,bb)})}
+  else if(k==='holz'){let j=0;for(let a=Math.floor(a0/.2)*.2;a<a1;a+=.2,j++){o+=L(a,b0-1,a,b1+1);if(j%2){const p=W(a,b0-1),q=W(a+.2,b0-1),r=W(a+.2,b1+1),t=W(a,b1+1);fl+=`M${f1(p[0])} ${f1(p[1])}L${f1(q[0])} ${f1(q[1])}L${f1(r[0])} ${f1(r[1])}L${f1(t[0])} ${f1(t[1])}Z`}
+      for(let b=b0+((j*37)%10)/10*.8;b<b1;b+=.9)o+=L(a,b,a+.2,b)}}
+  else if(k==='schuppen'){rows(7).forEach(([i,b,bb])=>{for(let a=Math.floor(a0/.24)*.24+(i%2?.12:0);a<a1+.24;a+=.24){let p='';for(let t=0;t<=8;t++){const an=Math.PI*t/8,aa=a-.12*Math.cos(an),b2=bb-(bb-b)*Math.sin(an)*1.1;const q=W(aa,b2);p+=(t?'L':'M')+f1(q[0])+' '+f1(q[1])}o+=p}})}
+  else if(k==='streifen'){rows(12).forEach(([i,b,bb])=>{if(i%2){const p=W(a0-1,b),q=W(a1+1,b),r=W(a1+1,bb),t=W(a0-1,bb);fl+=`M${f1(p[0])} ${f1(p[1])}L${f1(q[0])} ${f1(q[1])}L${f1(r[0])} ${f1(r[1])}L${f1(t[0])} ${f1(t[1])}Z`}o+=L(a0-1,b,a1+1,b)})}
+  else if(k==='rauten'){const sp=.32,h=(b1-b0)+(a1-a0)+2;for(let a=a0-h;a<a1+h;a+=sp){o+=L(a,b0-1,a+(b1-b0+2),b1+1);o2+=L(a,b1+1,a+(b1-b0+2),b0-1)}}
+  const id='rp'+(++RPID);
+  return `<clipPath id="${id}"><path d="${d}"/></clipPath><g clip-path="url(#${id})">${fl?`<path d="${fl}" fill="${k==='holz'?shade(c,-.06):hl}" opacity="${k==='holz'?.7:.55}"/>`:''}<path d="${o}${o2}" stroke="${cl}" stroke-width="${k==='holz'?1.1:.9}" fill="none"/></g>`}
+function roofPatThumb(k,col){const d=shade(col,-.2),h=shade(col,.12);let s=`<rect width="60" height="40" rx="6" fill="${col}"/>`;
+  if(k==='ziegel'){for(let y=8;y<40;y+=8){s+=`<path d="M0 ${y}H60" stroke="${d}"/>`;for(let x=(y/8)%2?5:0;x<60;x+=10)s+=`<path d="M${x} ${y-8}V${y}" stroke="${d}"/>`}}
+  if(k==='kacheln'){for(let y=5;y<40;y+=5){s+=`<path d="M0 ${y}H60" stroke="${d}"/>`;for(let x=(y/5)%2?3.5:0;x<60;x+=7)s+=`<path d="M${x} ${y-5}V${y}" stroke="${d}"/>`}}
+  if(k==='holz'){for(let x=0;x<60;x+=8)s+=(x/8)%2?`<rect x="${x}" width="8" height="40" fill="${shade(col,-.06)}"/>`:'';for(let x=0;x<60;x+=8)s+=`<path d="M${x} 0V40" stroke="${d}"/><path d="M${x} ${(x*7)%30+5}h8" stroke="${d}"/>`}
+  if(k==='schuppen'){for(let y=0;y<44;y+=7)for(let x=(y/7)%2?5:0;x<64;x+=10)s+=`<path d="M${x-5} ${y}a5 6 0 0 0 10 0" stroke="${d}" fill="none"/>`}
+  if(k==='streifen'){for(let y=0;y<40;y+=10)s+=`<rect y="${y+5}" width="60" height="5" fill="${h}"/>`}
+  if(k==='rauten'){for(let x=-40;x<60;x+=9)s+=`<path d="M${x} 0l40 40M${x+40} 0l-40 40" stroke="${d}"/>`}
+  return `<svg viewBox="0 0 60 40"><defs><clipPath id="rpt${k}"><rect width="60" height="40" rx="6"/></clipPath></defs><g clip-path="url(#rpt${k})">${s}</g></svg>`}
+
+/* --- Pingi-Sachen immer ans Ende --- */
+const pLast=(a,b)=>((a[1]?.c==='p')-(b[1]?.c==='p'));
+{const _ss=shopSort;shopSort=function(a,b){return pLast(a,b)||_ss(a,b)}}
+setHead=function(id,d,i,arr){if(shopCat==='woche'||shopCat==='saison')return '';const kk=e=>e.c==='p'?'_p':(e.set||'_');const prev=i?arr[i-1][1]:null,k=kk(d);if(prev&&kk(prev)===k)return '';
+  if(!arr.some(e=>e[1].set||e[1].c==='p'))return '';return `<h3 class="shopset">${k==='_p'?'Besonderes für Pingis':d.set?BEDSETS[d.set]:'Weitere Möbel'}</h3>`};
+
+/* --- Baumenü: Dach mit Farbe + Muster, Pingi-Sachen ans Ende --- */
+const _bpItems43=bpItems;
+bpItems=function(){
+  if(BP==='dach'){const col=roofCol(),pk=roofPatK(),cc=(attr,pic,n,on)=>`<button type="button" class="bp-card tile sw${on?' on':''}" ${attr}><span class="tile-pic sw">${pic}</span><b class="tile-n">${n}</b></button>`;
+    return `<h4 class="bp-sec">Farbe</h4>`+Object.entries(ROOFS).map(([k,d])=>cc(`data-bprf="${k}"`,`<span class="bp-roofsw" style="background:${d.c}"></span>`,d.n,(S.roof||'rot')===k)).join('')+
+      `<h4 class="bp-sec">Muster</h4>`+Object.entries(ROOFPAT).map(([k,d])=>cc(`data-bprp="${k}"`,roofPatThumb(k,col),d.n,pk===k)).join('')}
+  if(BP==='fenster'||BP==='tueren'||BP==='tapeten'||BP==='boeden'){
+    const keep=[WINS,DOORS2,WALLS,FLOORS].map(o=>({o,e:Object.entries(o)}));
+    keep.forEach(({o,e})=>{e.sort(pLast);for(const k of Object.keys(o))delete o[k];e.forEach(([k,v])=>o[k]=v)});
+  }
+  return _bpItems43()};
+document.addEventListener('click',e=>{const t=e.target.closest('[data-bprp]');if(!t)return;S.roofPat=t.dataset.bprp;S.homeView='out';save();renderHome();renderBuildPanel();sfx('pop')});
+
+/* ================= Einkaufsstraße in 3D ================= */
+const W2=(u,v)=>[(u+v)*Math.SQRT1_2,(v-u)*Math.SQRT1_2];
+function shop3D(cx,cy,la,lb,h,ang,o){
+  const ca=Math.cos(ang),sa=Math.sin(ang),at=(u,v)=>[cx+ca*u-sa*v,cy+sa*u+ca*v],T=(u,v,z)=>P(...at(u,v),z);
+  let s=softShadow(cx,cy,Math.max(la,lb)*.62,Math.max(la,lb)*.5)+String(obox(cx,cy,0,la,lb,h,ang,o.wall));
+  s+=String(obox(cx,cy,0,la+.05,lb+.05,7,ang,o.base));
+  const F=(v,z,d=0)=>T(la/2+.03+d,v,z),Q=(v0,v1,z0,z1,f,ex='',d=0)=>poly([F(v0,z0,d),F(v1,z0,d),F(v1,z1,d),F(v0,z1,d)],f,ex);
+  /* sichtbare Seitenwand: Fenster */
+  [1,-1].forEach(sg=>{if(!faceVis(-sa*sg,ca*sg))return;const Sd=(u,z)=>T(u,sg*(lb/2+.03),z),Qs=(u0,u1,z0,z1,f,ex='')=>poly([Sd(u0,z0),Sd(u1,z0),Sd(u1,z1),Sd(u0,z1)],f,ex);
+    const fl=o.floors||1;for(let k=0;k<fl;k++){const zb=k?h*.55:16,zt=k?h-14:46;[-la/4,la/4].forEach(u=>{s+=Qs(u-.28,u+.28,zb,zt,o.frame)+Qs(u-.23,u+.23,zb+3,zt-3,gfill('#bcd3e2','v'))+Qs(u-.23,u+.23,zb+3,zt-3,'#fff4dc','opacity=".35"')+poly([Sd(u-.18,zb+3),Sd(u-.06,zb+3),Sd(u+.12,zt-3),Sd(u,zt-3)],'#fff','opacity=".28"')})}
+    s+=ln(Sd(la/2-.12,6),Sd(la/2-.12,h),shade(o.wall,-.25),2.2)});
+  if(faceVis(ca,sa)){
+    const W0=lb/2-.22,dw=.46,gl=gfill('#b9d2e2','v');
+    /* Schaufenster links und rechts der Tür */
+    [[-W0,-dw-.14],[dw+.14,W0]].forEach(([v0,v1],wi)=>{
+      s+=Q(v0-.07,v1+.07,8,56,o.frame)+Q(v0,v1,11,53,gl)+Q(v0,v1,11,53,'#fff3d8','opacity=".55"');
+      s+=o.disp(F,(v0+v1)/2,v1-v0,wi);
+      s+=poly([F(v0+.08,11),F(v0+.32,11),F(v0+.62,53),F(v0+.38,53)],'#fff','opacity=".22"')+poly([F(v1-.4,11),F(v1-.3,11),F(v1-.05,53),F(v1-.15,53)],'#fff','opacity=".18"');
+      s+=Q(v0-.1,v1+.1,6,9,shade(o.frame,.15));
+    });
+    /* Tür: Glas-Doppeltür mit Oberlicht */
+    s+=Q(-dw,dw,7,64,o.frame)+Q(-dw+.06,-.03,8,56,gl)+Q(.03,dw-.06,8,56,gl)+Q(-dw+.06,dw-.06,8,56,'#ffe9b8','opacity=".5"')+Q(-dw+.06,dw-.06,58,62,gl);
+    s+=Q(-.12,-.08,26,38,'#e9d9b8')+Q(.08,.12,26,38,'#e9d9b8');
+    s+=poly([F(-dw-.1,7,.0),F(dw+.1,7,.0),F(dw+.1,7,.35),F(-dw-.1,7,.35)],shade(o.base,.1))+poly([F(-dw-.1,7,.35),F(dw+.1,7,.35),F(dw+.1,0,.35),F(-dw-.1,0,.35)],shade(o.base,-.1));
+    /* Markisen über den Schaufenstern */
+    if(o.awn)[[-W0-.08,-dw-.06],[dw+.06,W0+.08]].forEach(([v0,v1])=>{const n=Math.max(4,Math.round((v1-v0)/.18)),w=(v1-v0)/n;
+      for(let k2=0;k2<n;k2++){const a=v0+k2*w,b=a+w;s+=poly([F(a,70),F(b,70),F(b,59,.5),F(a,59,.5)],k2%2?o.awn[1]:o.awn[0])+`<path d="M${f1(F(a,59,.5)[0])} ${f1(F(a,59,.5)[1])}Q${f1(F((a+b)/2,53,.5)[0])} ${f1(F((a+b)/2,53,.5)[1])} ${f1(F(b,59,.5)[0])} ${f1(F(b,59,.5)[1])}Z" fill="${k2%2?o.awn[1]:o.awn[0]}"/>`}
+      s+=ln(F(v0,70),F(v1,70),shade(o.awn[0],-.2),1.6)});
+    /* Wandlampen */
+    [-dw-.14,dw+.14].forEach(v=>{const p=F(v,66,.06);s+=`<circle cx="${f1(p[0])}" cy="${f1(p[1])}" r="9" fill="url(#gGlow)" class="lglow"/><rect x="${f1(p[0]-2.5)}" y="${f1(p[1]-4)}" width="5" height="8" rx="2" fill="#fff2c2" stroke="#3b2a1e" stroke-width="1"/>`});
+    /* Obergeschoss-Fenster */
+    if((o.floors||1)>1){const n=4;for(let k2=0;k2<n;k2++){const v=-W0+.35+k2*(2*W0-.7)/(n-1);s+=Q(v-.3,v+.3,h*.6,h-16,o.frame)+Q(v-.25,v+.25,h*.6+3,h-19,gl)+Q(v-.25,v+.25,h*.6+3,h-19,'#fff3d8','opacity=".4"')+ln(F(v,h*.6+3),F(v,h-19),o.frame,2)+Q(v-.34,v+.34,h*.6-4,h*.6,shade(o.base,.2))}}
+    /* Schild aus Holz, an der Fassade */
+    const sz=o.signZ||(h-14),sw=o.signW||1.5,sh=o.signH||9;
+    s+=poly([F(-sw,sz-sh-2,.05),F(sw,sz-sh-2,.05),F(sw,sz+sh-2,.05),F(-sw,sz+sh-2,.05)],'rgba(59,42,30,.25)');
+    s+=poly([F(-sw,sz-sh,.07),F(sw,sz-sh,.07),F(sw,sz+sh,.07),F(-sw,sz+sh,.07)],WS_BG,`stroke="${WS_BD}" stroke-width="2" stroke-linejoin="round"`);
+    s+=ln(F(-sw+.05,sz,.07),F(sw-.05,sz,.07),'#c9a27e',1);
+    [[-sw+.08,sz+sh-3],[sw-.08,sz+sh-3],[-sw+.08,sz-sh+3],[sw-.08,sz-sh+3]].forEach(([v,z])=>{const p=F(v,z,.07);s+=`<circle cx="${f1(p[0])}" cy="${f1(p[1])}" r="1.4" fill="${WS_BD}"/>`});
+    const p0=F(0,sz-4,.07),p1=F(-1,sz-4,.07),ex=p1[0]-p0[0],ey=p1[1]-p0[1],L=Math.hypot(ex,ey);
+    s+=`<text transform="matrix(${(ex/L).toFixed(3)} ${(ey/L).toFixed(3)} 0 1 ${f1(p0[0])} ${f1(p0[1])})" text-anchor="middle" ${FONT} font-size="${o.signFs||13}" fill="${WS_INK}">${o.label}</text>`;
+  }
+  /* Flachdach mit Gesims */
+  s+=String(obox(cx,cy,h,la+.16,lb+.16,6,ang,o.trim))+String(obox(cx,cy,h+6,la+.02,lb+.02,1,ang,shade(o.trim,-.12)));
+  if(o.roofBox){const p=at(-la*.15,lb*.2);s+=String(obox(p[0],p[1],h+7,.6,.8,10,ang,'#c8c2b8'))}
+  const cs=[at(-la/2-.1,-lb/2-.1),at(la/2+.6,-lb/2-.1),at(la/2+.6,lb/2+.1),at(-la/2-.1,lb/2+.1)],xs=cs.map(p=>p[0]),ys=cs.map(p=>p[1]);
+  return part(s,[Math.min(...xs),Math.max(...xs),Math.min(...ys),Math.max(...ys),0,h+20]);
+}
+/* Schaufenster-Inhalte (auf der Fassadenebene gezeichnet) */
+function dispBoutique(F,vm,w,wi){let s='';const cols=wi?['#9fd3c7','#f4b6c8']:['#ff9fbd','#c9b6f2'];
+  [-w*.24,w*.24].forEach((dv,i)=>{const v=vm+dv,c=cols[i];
+    s+=poly([F(v-.03,11),F(v+.03,11),F(v+.03,20),F(v-.03,20)],'#8a7f74');
+    s+=poly([F(v-.09,40),F(v+.09,40),F(v+.2,20),F(v-.2,20)],c,`stroke="${shade(c,-.18)}" stroke-width=".8"`);
+    s+=poly([F(v-.09,40),F(v+.09,40),F(v+.07,44),F(v-.07,44)],shade(c,-.1));
+    const hd=F(v,47);s+=`<circle cx="${f1(hd[0])}" cy="${f1(hd[1])}" r="3.4" fill="#efe6dc" stroke="#d8cbbb" stroke-width=".7"/>`});
+  if(!wi){const p=F(vm,15);s+=`<rect x="${f1(p[0]-6)}" y="${f1(p[1]-5)}" width="12" height="7" rx="2" fill="#ffd27a"/><path d="M${f1(p[0]-3)} ${f1(p[1]-5)}q3 -5 6 0" stroke="#c99a74" stroke-width="1.2" fill="none"/>`}
+  else{const p=F(vm,13);s+=`<path d="M${f1(p[0]-7)} ${f1(p[1])}q0 -6 5 -6h4l2 6Z" fill="#c97b98"/>`}
+  return s}
+function dispMoebel(F,vm,w,wi){let s='';
+  if(!wi){const c='#b8a4d9';s+=poly([F(vm-w*.38,12),F(vm+w*.38,12),F(vm+w*.38,22),F(vm-w*.38,22)],c)+poly([F(vm-w*.38,22),F(vm+w*.38,22),F(vm+w*.36,32),F(vm-w*.36,32)],shade(c,-.08))+poly([F(vm-w*.42,12),F(vm-w*.34,12),F(vm-w*.34,27),F(vm-w*.42,27)],shade(c,-.15))+poly([F(vm+w*.34,12),F(vm+w*.42,12),F(vm+w*.42,27),F(vm+w*.34,27)],shade(c,-.15));
+    s+=poly([F(vm-.12,22),F(vm+.05,22),F(vm+.05,28),F(vm-.12,28)],'#ffd27a');
+    const a=F(vm+w*.1,40),b=F(vm+w*.3,40);s+=poly([F(vm+w*.06,46),F(vm+w*.34,46),F(vm+w*.34,38),F(vm+w*.06,38)],'#fff','stroke="#c99a74" stroke-width="1.2"')+poly([F(vm+w*.1,44),F(vm+w*.3,44),F(vm+w*.3,40),F(vm+w*.1,40)],'#9fd3c7')}
+  else{s+=poly([F(vm-w*.3,11),F(vm+w*.3,11),F(vm+w*.3,24),F(vm-w*.3,24)],'#c99a74')+poly([F(vm-w*.32,24),F(vm+w*.32,24),F(vm+w*.32,26),F(vm-w*.32,26)],'#a9744f');
+    const lb=F(vm+w*.32,11),lt=F(vm+w*.32,44);s+=`<path d="M${f1(lb[0])} ${f1(lb[1])}V${f1(lt[1])}" stroke="#3b2a1e" stroke-width="1.6"/>`+poly([F(vm+w*.22,44),F(vm+w*.42,44),F(vm+w*.38,50),F(vm+w*.26,50)],'#fff1b8');
+    const pt=F(vm-w*.12,26);s+=`<circle cx="${f1(pt[0])}" cy="${f1(pt[1]-6)}" r="6" fill="#7cc58c"/><rect x="${f1(pt[0]-3)}" y="${f1(pt[1]-3)}" width="6" height="4" fill="#e9d9b8"/>`}
+  return s}
+let STREETC='';
+function streetSVG(){
+  const key=season()+'|'+(S.char||'');if(STREETC&&STREETC.k===key)return STREETC.s;
+  return withCam({yaw:45,pitch:30},()=>{
+    const L=seasonLand(),it=[],add=(u,v,html)=>{const [x,y]=W2(u,v);it.push({k:x*SN+y*CS,h:html})},R=arr=>resolve(arr);
+    /* Boden */
+    const gp=[W2(-18,-14),W2(18,-14),W2(18,12),W2(-18,12)];let g=wpoly(gp,0,L.grass);
+    const rnd=seeded(43);
+    for(let i=0;i<22;i++){const u=-14+rnd()*28,v=-9+rnd()*17,r=1+rnd()*2.4;g+=wpoly(blobPts(...W2(u,v),r,i*1.7,26),.02,i%2?L.grass2:shade(L.grass,.06),'opacity=".75"')}
+    /* Weg: leicht geschlängelt von links nach rechts */
+    const pv=u=>1.3+2.45*Math.sin(u*.36-.18),pts=[];for(let u=-16;u<=16;u+=.5)pts.push(W2(u,pv(u)));
+    g+=pathG(pts,1.15);
+    /* kleine Vorplätze vor den Läden */
+    const BQ=[-4.4,-3.25],MQ=[3.9,.65];
+    g+=wpoly(blobPts(...W2(BQ[0]+.9,BQ[1]+1.6),1.35,2,30),.25,'#e4d8c6')+wpoly(blobPts(...W2(MQ[0]+1,MQ[1]+2),1.6,5,30),.25,'#e4d8c6');
+    /* Grasbüschel */
+    const tf=tuftField(),gc=L.snow?['#dfe8ee','#d3dde4','#e9eff3']:['#8fc27a','#7fb46c','#a3cf8a'];
+    for(let i=0;i<240;i++){const u=-15+rnd()*30,v=-9+rnd()*18;if(Math.abs(v-pv(u))<1.2)continue;if(Math.hypot(u-BQ[0],v-BQ[1])<2.6||Math.hypot(u-MQ[0],v-MQ[1])<3.2)continue;tf.add(...W2(u,v),gc[i%3])}
+    g+=tf.out();
+    /* Läden */
+    const [bx,by]=W2(...BQ),[mx,my]=W2(...MQ);
+    const bo=shop3D(bx,by,2,3.6,96,Math.PI/4+.36,{wall:'#f6ece2',base:'#d8cbbb',trim:'#ffffff',frame:'#3b2a1e',awn:['#e98fae','#fff6f0'],disp:dispBoutique,label:'Boutique Federkleid',signW:1.62,signZ:82,signH:8,signFs:11,floors:1});
+    const mo=shop3D(mx,my,2.6,5.2,104,Math.PI/4-.34,{wall:'#e8d6c2',base:'#a9744f',trim:'#f3ebe1',frame:'#4a3426',awn:['#7fb88f','#f5efe6'],disp:dispMoebel,label:'Möbelhaus Iglu',signW:1.25,signZ:82,signH:9,signFs:13,floors:2,roofBox:1});
+    const tag=(x,y,h,t)=>{const p=P(x,y,h);return `<g class="st-tag"><rect x="${f1(p[0]-62)}" y="${f1(p[1]-16)}" width="124" height="28" rx="14" fill="rgba(255,255,255,.62)" stroke="rgba(255,255,255,.9)"/><text x="${f1(p[0])}" y="${f1(p[1]+3)}" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-weight="900" font-size="12.5" fill="#3b2a1e">${t}</text></g>`};
+    /* Deko rund um die Läden */
+    const fr=(x,y,la,a,v)=>[x+Math.cos(a)*(la/2+.35)-Math.sin(a)*v,y+Math.sin(a)*(la/2+.35)+Math.cos(a)*v];const bdeco=[...planterO(...fr(bx,by,2,Math.PI/4+.36,1.62),2),...planterO(...fr(bx,by,2,Math.PI/4+.36,-1.62),3)];
+    const mdeco=[...planterO(...fr(mx,my,2.6,Math.PI/4-.34,2.3),4),...planterO(...fr(mx,my,2.6,Math.PI/4-.34,-2.3),5)];
+    add(BQ[0],BQ[1],`<g class="st-shop" data-enter="boutique" role="button" aria-label="Boutique Federkleid betreten">${R([bo])}${tag(bx,by,140,'Boutique Federkleid')}</g>`);
+    add(MQ[0],MQ[1],`<g class="st-shop" data-enter="moebel" role="button" aria-label="Möbelhaus Iglu betreten">${R([mo])}${tag(mx,my,150,'Möbelhaus Iglu')}</g>`);
+    add(BQ[0]+1.4,BQ[1]+.6,R(bdeco));add(MQ[0]+1.4,MQ[1]+1.5,R(mdeco));
+    /* Bäume, Laternen, Bänke, Blumenbeete */
+    [[-9,-5.2,'t',1.25],[-12,-1.5,'p',1.1],[-1.2,-5.8,'t',1.1],[.6,-4.4,'p',.95],[9.6,-3.4,'t',1.2],[12.5,-1,'p',1.05],[-10.5,6.5,'t',1.2],[-6,7.4,'p',1],[-2.6,8.2,'t',1.15],[11,6.4,'t',1.1],[-14,3,'t',1.1],[14.5,4,'p',1]].forEach(([u,v,k,s2],i)=>{const [x,y]=W2(u,v);add(u,v,R(k==='p'?pineO(x,y,s2,i+21):treeO(x,y,s2*1.15,i+30)))});
+    [[-7.5,pv(-7.5)-1.25],[-.6,pv(-.6)+1.25],[10.6,pv(10.6)+1.3],[1.2,pv(1.2)-1.3]].forEach(([u,v])=>{const [x,y]=W2(u,v);add(u,v,R(lampO(x,y)))});
+    [[-2.4,pv(-2.4)+1.45,Math.PI*1.25],[8.6,pv(8.6)+1.4,Math.PI*1.25],[-11,pv(-11)-1.4,Math.PI*.25]].forEach(([u,v,a])=>{const [x,y]=W2(u,v);add(u,v,R(benchO(x,y,a)))});
+    [[-6.8,3.9,.75,3],[5.2,6.2,.8,6],[-12.6,-4.4,.7,8],[11.8,-5,.7,9],[-8.6,-6.2,.6,4]].forEach(([u,v,r,sd])=>{const [x,y]=W2(u,v);add(u,v,R(flowerBedO(x,y,r,sd)))});
+    [[-6.5,-3,1.1],[-2.3,-3.8,.9],[1.2,-1.5,1],[8.4,1.5,1],[12,1.8,1.1],[-13,1,1],[-3.4,5.8,1.1],[7.8,6.2,1],[3.6,-2.6,.9]].forEach(([u,v,s2],i)=>{const [x,y]=W2(u,v);add(u,v,R(bushO(x,y,s2,i+50,true)))});
+    it.sort((a,b)=>a.k-b.k);
+    const vb=[-9.6*KS,-7.2*KS*KP-120,19.2*KS,7.2*KS*KP+120+6.6*KS*KP];
+    const s=`<svg class="street-svg" viewBox="${vb.map(f1).join(' ')}" preserveAspectRatio="xMidYMid slice" aria-label="Einkaufsstraße"><defs>${$('#pbDefs')?'':''}</defs><rect x="${f1(vb[0]-400)}" y="${f1(vb[1]-400)}" width="${f1(vb[2]+800)}" height="${f1(vb[3]+800)}" fill="${L.grass}"/>${g}${it.map(o=>o.h).join('')}</svg>`;
+    STREETC={k:key,s};return s})}
+function streetUI(){return `<div class="street" id="street">${streetSVG()}</div>
+  <div class="st-ui"><div class="st-title glass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l1.5-5h13L20 10"/><path d="M4 10h16v2a2.7 2.7 0 0 1-5.3 0 2.7 2.7 0 0 1-5.4 0A2.7 2.7 0 0 1 4 12z"/><path d="M5 14v6h14v-6"/></svg>Einkaufsstraße</div>
+  <div class="st-pick glass"><button type="button" data-enter="boutique"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M9 3h6l5 4-3 3-2-1v12H9V9l-2 1-3-3z"/></svg>Boutique</button><button type="button" data-enter="moebel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M4 18v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6M2 18h20M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/></svg>Möbelhaus</button></div></div>`}
+function streetImm(){const on=tab==='shop'&&shopView==='stadt';document.body.classList.toggle('street-on',on);if(on)document.body.classList.add('immersive');else if(tab==='shop')document.body.classList.remove('immersive')}
+{const _rs=renderShop;renderShop=function(){if(shopView!=='stadt')_rs();else{$('#shopCity').hidden=false;$('#shopMoebel').hidden=true;$('#shopBoutique').hidden=true}if(shopView==='stadt'){const c=$('#shopCity');const k=season()+'|'+(S.char||'');if(c.dataset.k!==k){c.innerHTML=streetUI();c.dataset.k=k}}streetImm()}}
+{const _sh=show;show=function(t){const r=_sh(t);streetImm();return r}}
 
 /* ================= Navigation & Meldungen ================= */
 function show(t){
