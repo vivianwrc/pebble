@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271837";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271844";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1595,6 +1595,7 @@ svg.room.rmfade{animation:rmfade .28s ease}@keyframes rmfade{from{opacity:.35}}@
 .f2glint{animation:f2glint 2.6s ease-in-out infinite;opacity:0}@keyframes f2glint{30%,50%{opacity:.95}0%,80%,100%{opacity:0}}
 .set-sync .btn{width:100%}.bak{margin-top:6px}.bak summary{cursor:pointer;font-weight:800;font-size:13px}.bak-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 0;border-top:1px solid var(--line)}.bak-row span{display:grid;text-align:left}.bak-row small{color:var(--ink-soft);font-weight:700;font-size:11.5px}.bak-row .btn{padding:6px 12px}
 .syncask{text-align:left;justify-items:stretch;gap:10px}.syncask h3{margin:0}.sync-opt{display:grid!important;justify-items:start;gap:2px;text-align:left;padding:12px 14px!important}.sync-opt small{font-weight:700;opacity:.85;font-size:12px}
+.mob-grid .mob-sec{grid-column:1/-1;margin:8px 2px 0;font:900 12.5px Nunito,system-ui,sans-serif;color:#3b2a1e;text-transform:none}.mob-grid .mob-sec:first-child{margin-top:0}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="pbDefs">
@@ -1870,11 +1871,17 @@ function knete(sp, o, opt){
   // pants on legs
   if(o.bottom){
     const b=o.bottom;
-    let ph = b.t==='shorts' ? legH*.42 : (b.t==='skirt'? 0 : legH-6);
+    let ph = b.t==='shorts' ? legH*.42 : (b.t==='skirt'? 0 : b.t==='capri'? legH*.7 : legH-6);
+    if(b.t==='wide'){legsX.forEach((lx,i)=>{const d=i?1:-1,t=legTop,bt=legB+2,x0=lx-KN.legW/2-2,x1=lx+KN.legW/2+2;
+      out+=sh('path',`d="M${x0},${t} L${x1},${t} L${x1+(d>0?7:2)},${bt} L${x0-(d<0?7:2)},${bt}Z"`,b.c);
+      out+=`<line x1="${lx+d*2}" y1="${t+12}" x2="${lx+d*5}" y2="${bt-4}" stroke="#000" stroke-opacity=".12" stroke-width="1.4"/><rect x="${x0-(d<0?7:2)}" y="${bt-4}" width="${KN.legW+4+9}" height="3" fill="#000" opacity=".1"/>`});ph=0}
+    if(b.t==='leggings'){legsX.forEach(lx=>{out+=sh('rect',`x="${lx-KN.legW/2-.5}" y="${legTop}" width="${KN.legW+1}" height="${legH-2}" rx="${KN.legW/2}"`,b.c)+`<path d="M${lx-KN.legW/2+3},${legTop+8} V${legB-6}" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>`});ph=0}
     if(ph>0) legsX.forEach(lx=>{
       out += sh('rect',`x="${lx-KN.legW/2-2}" y="${legTop}" width="${KN.legW+4}" height="${ph}" rx="${b.t==='shorts'?6:KN.legW/2-2}"`,b.c);
       if(b.t!=='shorts') out += `<rect x="${lx-KN.legW/2-2}" y="${legTop+ph-6}" width="${KN.legW+4}" height="5" rx="2.5" fill="#000" opacity=".12"/>`;
-      if(b.t==='jeans'||b.t==='overalls') out += `<line x1="${lx}" y1="${legTop+10}" x2="${lx}" y2="${legTop+ph-10}" stroke="#fff" stroke-opacity=".25" stroke-width="1.2" stroke-dasharray="2 2"/>`;
+      if(b.t==='jeans'||b.t==='overalls'||b.t==='capri') out += `<line x1="${lx}" y1="${legTop+10}" x2="${lx}" y2="${legTop+ph-10}" stroke="#fff" stroke-opacity=".25" stroke-width="1.2" stroke-dasharray="2 2"/>`;
+      if(b.rips) out += `<path d="M${lx-7},${legTop+ph*.55} q7,-3 14,0" stroke="#f4f1ec" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M${lx-5},${legTop+ph*.55+4} h10" stroke="#f4f1ec" stroke-width="1.4" opacity=".8"/>`;
+      if(b.cuff) out += `<rect x="${lx-KN.legW/2-3}" y="${legTop+ph-7}" width="${KN.legW+6}" height="6" rx="3" fill="${shade(b.c,.18)}"/>`;
     });
   }
 
@@ -1911,7 +1918,16 @@ function knete(sp, o, opt){
       }
     }
     if(!s) return;
-    if(s.t==='rainboot' || s.t==='boot'){
+    if(s.t==='kneeboot'||s.t==='combat'||s.t==='chelsea'){
+      const bh = s.t==='kneeboot'? legH*.86 : s.t==='combat'? legH*.46 : legH*.32, dk=shade(s.c,-.28), x0=lx-KN.legW/2-2.5, bw=KN.legW+5;
+      out += sh('rect',`x="${x0}" y="${fy-bh}" width="${bw}" height="${bh}" rx="7"`,s.c);
+      out += sh('path',`d="M${fx-KN.fw-2},${fy+2} Q${fx-KN.fw-3},${fy-KN.fh-2} ${fx},${fy-KN.fh-3} Q${fx+KN.fw+4},${fy-KN.fh-1} ${fx+KN.fw+3},${fy+2}Z"`,s.c);
+      out += `<path d="M${fx-KN.fw-3},${fy+2} Q${fx},${fy+KN.fh+3} ${fx+KN.fw+3},${fy+2} L${fx+KN.fw+3},${fy+6} Q${fx},${fy+KN.fh+8} ${fx-KN.fw-3},${fy+6}Z" fill="${s.sole||'#2b211c'}"/>`;
+      out += `<path d="M${x0+3},${fy-bh+6} V${fy-4}" stroke="#fff" stroke-opacity=".25" stroke-width="2.4" stroke-linecap="round"/><path d="M${x0+bw-4},${fy-bh+8} V${fy-6}" stroke="#000" stroke-opacity=".12" stroke-width="2"/>`;
+      if(s.t==='kneeboot'){out += `<rect x="${x0-1}" y="${fy-bh}" width="${bw+2}" height="8" rx="4" fill="${shade(s.c,.12)}"/><path d="M${x0+2},${fy-bh+12} V${fy-8}" stroke="${dk}" stroke-width="1" stroke-dasharray="2.5 2.5" opacity=".8"/><path d="M${fx+KN.fw-6},${fy+4} l3,6 h6 l-2,-7Z" fill="${s.sole||'#2b211c'}"/>`}
+      if(s.t==='combat'){for(let k=0;k<4;k++){const y=fy-bh+8+k*(bh-14)/4;out+=`<path d="M${lx-5},${y} L${lx+5},${y+5} M${lx+5},${y} L${lx-5},${y+5}" stroke="${s.lace||'#f4ece0'}" stroke-width="1.6" stroke-linecap="round"/><circle cx="${lx-6}" cy="${y}" r="1" fill="#c9b27a"/><circle cx="${lx+6}" cy="${y}" r="1" fill="#c9b27a"/>`}out+=`<rect x="${x0-1}" y="${fy-bh}" width="${bw+2}" height="5" rx="2.5" fill="${dk}"/>`}
+      if(s.t==='chelsea'){out += `<path d="M${lx-4},${fy-bh+2} Q${lx},${fy-bh*.4} ${lx+4},${fy-bh+2}Z" fill="${dk}" opacity=".85"/><rect x="${lx-2}" y="${fy-bh-4}" width="4" height="7" rx="2" fill="${dk}"/>`}
+    } else if(s.t==='rainboot' || s.t==='boot'){
       const bh = s.t==='rainboot'? legH*.5 : legH*.36;
       out += sh('rect',`x="${lx-KN.legW/2-2.5}" y="${fy-bh}" width="${KN.legW+5}" height="${bh}" rx="6"`,s.c);
       out += sh('ellipse',`cx="${fx}" cy="${fy}" rx="${KN.fw+2}" ry="${KN.fh+2}"`,s.c);
@@ -1944,10 +1960,11 @@ function knete(sp, o, opt){
   if(o.bottom){
     const b=o.bottom;
     if(b.t==='skirt'){
-      const yw=KN.yB-18, yh=KN.yB+24, w1=W-2, w2=W+10;
-      out += `<g ${clip}><rect x="0" y="${yw}" width="200" height="40" fill="${b.c}"/></g>`;
+      const yw=KN.yB-18, yh=b.len==='long'?legB-6:b.len==='mini'?KN.yB+12:KN.yB+24, w1=W-2, w2=W+(b.len==='long'?14:10);
+      if(b.plaid){defs+=`<pattern id="${id}pl" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="${b.c}"/><rect width="5" height="14" fill="${b.plaid}" opacity=".5"/><rect width="14" height="5" fill="${b.plaid}" opacity=".5"/><path d="M0 11h14M11 0v14" stroke="#fff" stroke-opacity=".35" stroke-width="1"/></pattern>`}const bc=b.plaid?`url(#${id}pl)`:b.c;
+      out += `<g ${clip}><rect x="0" y="${yw}" width="200" height="40" fill="${bc}"/></g>`;
       const sk = `M${cx-w1},${yw+8} L${cx+w1},${yw+8} L${cx+w2},${yh} Q${cx},${yh+8} ${cx-w2},${yh} Z`;
-      out += sh('path',`d="${sk}"`,b.c);
+      out += sh('path',`d="${sk}"`,bc);
       for(let k=-2;k<=2;k++) out += `<line x1="${cx+k*w1/2.6}" y1="${yw+10}" x2="${cx+k*w2/2.4}" y2="${yh+2}" stroke="#000" stroke-opacity=".1" stroke-width="1.5"/>`;
     } else {
       out += `<g ${clip}><rect x="0" y="${KN.yB-20}" width="200" height="40" fill="${b.c}"/><rect x="0" y="${KN.yB-20}" width="200" height="40" fill="${SH}"/></g>`;
@@ -1963,7 +1980,21 @@ function knete(sp, o, opt){
     if(T.dots){ defs += `<pattern id="${id}dt" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="${T.c}"/><circle cx="3.5" cy="3.5" r="2.4" fill="${T.dots}"/><circle cx="10.5" cy="10.5" r="2.4" fill="${T.dots}"/></pattern>`; pat = `url(#${id}dt)`; }
     if(T.check){ defs += `<pattern id="${id}ck" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="${T.c}"/><rect width="5" height="12" fill="${T.check}" opacity=".55"/><rect width="12" height="5" fill="${T.check}" opacity=".55"/></pattern>`; pat = `url(#${id}ck)`; }
     const fillC = pat || T.c;
-    if(T.t==='rain'){
+    let prt='';if(T.print){const pr=T.print,px=cx,py=KN.yT+36,pc=T.pc||'#ff6f9a';
+      if(pr==='heart')prt=`<path d="M${px},${py+10} C${px-16},${py} ${px-10},${py-12} ${px},${py-4} C${px+10},${py-12} ${px+16},${py} ${px},${py+10}Z" fill="${pc}"/>`;
+      if(pr==='star'){let d='';for(let k=0;k<10;k++){const a=k*Math.PI/5,r=k%2?5.5:12;d+=(k?'L':'M')+(px+Math.sin(a)*r).toFixed(1)+','+(py-Math.cos(a)*r).toFixed(1)}prt=`<path d="${d}Z" fill="${pc}"/>`}
+      if(pr==='sun')prt=`<circle cx="${px}" cy="${py}" r="8" fill="${pc}"/>`+[0,1,2,3,4,5,6,7].map(k=>{const a=k*Math.PI/4;return `<path d="M${(px+Math.cos(a)*11).toFixed(1)},${(py+Math.sin(a)*11).toFixed(1)} L${(px+Math.cos(a)*15).toFixed(1)},${(py+Math.sin(a)*15).toFixed(1)}" stroke="${pc}" stroke-width="2.4" stroke-linecap="round"/>`}).join('');
+      if(pr==='glitter')prt=[[-14,-8],[10,-12],[-4,6],[16,8],[-18,14],[4,-2],[0,18],[-10,24],[14,22],[-22,0],[22,-4]].map(([dx,dy],k)=>`<path d="M${px+dx},${py+dy-3.5} l1.2,2.3 2.3,1.2 -2.3,1.2 -1.2,2.3 -1.2,-2.3 -2.3,-1.2 2.3,-1.2Z" fill="${k%2?'#ffffff':pc}"/>`).join('');
+      if(pr==='cherry')prt=`<path d="M${px-6},${py+4} Q${px-2},${py-10} ${px+4},${py-12} M${px+6},${py+4} Q${px+5},${py-6} ${px+4},${py-12}" stroke="#5f8f4e" stroke-width="1.6" fill="none"/><circle cx="${px-6}" cy="${py+6}" r="5" fill="${pc}"/><circle cx="${px+6}" cy="${py+6}" r="5" fill="${pc}"/><path d="M${px+4},${py-12} q6,-3 9,2 q-6,2 -9,-2Z" fill="#7aa860"/>`}
+    if(T.t==='dress'){bottomY=KN.yB-14}
+    if(T.t==='winter'){
+      const cw=W+6,bY=KN.yB+12;
+      const coat=`M${cx},${KN.yT-6} C${cx+KN.wT*1.2},${KN.yT-6} ${cx+cw},${KN.yT+h*.3} ${cx+cw},${KN.yT+h*.62} L${cx+cw+2},${bY-6} Q${cx+cw},${bY+4} ${cx+cw-10},${bY+4} L${cx-cw+10},${bY+4} Q${cx-cw},${bY+4} ${cx-cw-2},${bY-6} L${cx-cw},${KN.yT+h*.62} C${cx-cw},${KN.yT+h*.3} ${cx-KN.wT*1.2},${KN.yT-6} ${cx},${KN.yT-6}Z`;
+      defs+=`<clipPath id="${id}coat"><path d="${coat}"/></clipPath>`;
+      out += sh('path',`d="${coat}"`,T.c);
+      out += `<g clip-path="url(#${id}coat)">${[0,1,2,3,4].map(k=>{const y=KN.yT+10+k*(bY-KN.yT)/5;return `<path d="M0,${y} Q100,${y+7} 200,${y}" stroke="${shade(T.c,-.22)}" stroke-width="2" fill="none"/><path d="M0,${y+3} Q100,${y+10} 200,${y+3}" stroke="#fff" stroke-opacity=".35" stroke-width="1.6" fill="none"/>`}).join('')}</g>`;
+      out += `<path d="M${cx},${KN.yT+6} V${bY+3}" stroke="${shade(T.c,-.3)}" stroke-width="2"/><rect x="${cx-1.5}" y="${KN.yT+10}" width="3" height="7" rx="1" fill="#d8d0c4"/>`;
+    } else if(T.t==='rain'){
       const cw=W+3;
       const coat = `M${cx},${KN.yT-4} C${cx+KN.wT*1.15},${KN.yT-4} ${cx+cw},${KN.yT+h*.3} ${cx+cw},${KN.yT+h*.62} L${cx+cw+3},${bottomY-6} Q${cx+cw+3},${bottomY+2} ${cx+cw-8},${bottomY+3} Q${cx},${bottomY+8} ${cx-cw+8},${bottomY+3} Q${cx-cw-3},${bottomY+2} ${cx-cw-3},${bottomY-6} L${cx-cw},${KN.yT+h*.62} C${cx-cw},${KN.yT+h*.3} ${cx-KN.wT*1.15},${KN.yT-4} ${cx},${KN.yT-4}Z`;
       out += sh('path',`d="${coat}"`,T.c);
@@ -1971,8 +2002,23 @@ function knete(sp, o, opt){
       [0,1,2].forEach(k=>out+=`<circle cx="${cx+5}" cy="${KN.yT+22+k*16}" r="2.6" fill="#fff6d6" stroke="#c9a12f" stroke-width="1"/>`);
       out += `<rect x="${cx-cw+6}" y="${bottomY-26}" width="15" height="10" rx="3" fill="#000" opacity=".1"/><rect x="${cx+cw-21}" y="${bottomY-26}" width="15" height="10" rx="3" fill="#000" opacity=".1"/>`;
     } else {
-      out += `<g ${clip}><rect x="0" y="0" width="200" height="${bottomY}" fill="${fillC}"/><rect x="0" y="0" width="200" height="${bottomY}" fill="${SH}"/>
-        <rect x="0" y="${bottomY-6}" width="200" height="6" fill="#000" opacity="${T.t==='tee'||T.t==='shirt'?.06:.14}"/></g>`;
+      const topY=(T.t==='tank')?KN.yT+12:0;
+      out += `<g ${clip}><rect x="0" y="${topY}" width="200" height="${bottomY-topY}" fill="${fillC}"/><rect x="0" y="${topY}" width="200" height="${bottomY-topY}" fill="${SH}"/>
+        <rect x="0" y="${bottomY-6}" width="200" height="6" fill="#000" opacity="${T.t==='tee'||T.t==='shirt'||T.t==='tank'||T.t==='blouse'?.06:.14}"/></g>`;
+      if(T.t==='tank'){out += `<path d="M${cx-24},${KN.yT+14} Q${cx},${KN.yT+30} ${cx+24},${KN.yT+14}" fill="${P.body}" ${clip}/>`;[-1,1].forEach(s=>out+=`<path d="M${cx+s*24},${KN.yT+15} L${cx+s*20},${KN.yT-3}" stroke="${T.c}" stroke-width="5" stroke-linecap="round"/>`)}
+      if(T.t==='vest'){out += `<path d="M${cx-15},${KN.yT-2} L${cx},${KN.yT+30} L${cx+15},${KN.yT-2}Z" fill="${T.c2||'#f4ece2'}" ${clip}/>`;
+        if(T.argyle)out+=`<g ${clip} opacity=".55">${[-1,0,1].map(k=>[0,1].map(r=>{const x=cx+k*20,y=KN.yT+38+r*22;return `<path d="M${x},${y-10} L${x+10},${y} L${x},${y+10} L${x-10},${y}Z" fill="${T.argyle}"/>`}).join('')).join('')}</g>`;
+        out+=`<path d="M${cx},${KN.yT+30} V${bottomY-8}" stroke="${shade(T.c,-.25)}" stroke-width="1.4"/>`+[0,1,2].map(k=>`<circle cx="${cx+3}" cy="${KN.yT+38+k*11}" r="1.8" fill="${shade(T.c,.35)}"/>`).join('')+[0,1,2,3].map(k=>`<path d="M${cx-30+k*20},${bottomY-6} v-6" stroke="${shade(T.c,-.2)}" stroke-width="1.2" ${clip}/>`).join('')}
+      if(T.t==='jacket'||T.t==='cardigan'){const ic=T.inner||'#f7f3ec';out += `<path d="M${cx-11},${KN.yT-2} L${cx-6},${bottomY} L${cx+6},${bottomY} L${cx+11},${KN.yT-2}Z" fill="${ic}" ${clip}/>`;
+        if(T.t==='jacket'){[-1,1].forEach(s=>out+=`<path d="M${cx+s*11},${KN.yT-2} L${cx+s*20},${KN.yT+8} L${cx+s*9},${KN.yT+30}Z" fill="${shade(T.c,-.12)}"/><rect x="${cx+s*16-7}" y="${KN.yT+30}" width="14" height="11" rx="2" fill="none" stroke="${shade(T.c,.3)}" stroke-width="1.2" stroke-dasharray="2 1.6"/>`);
+          out+=`<path d="M${cx-7},${KN.yT+30} V${bottomY-2} M${cx+7},${KN.yT+30} V${bottomY-2}" stroke="${T.stitch||shade(T.c,.35)}" stroke-width="1.2" stroke-dasharray="2.4 2"/>`}
+        else{out+=[0,1,2,3].map(k=>`<circle cx="${cx-8}" cy="${KN.yT+16+k*11}" r="2" fill="${shade(T.c,-.3)}"/>`).join('')+`<g ${clip}><rect x="0" y="${bottomY-10}" width="200" height="6" fill="${shade(T.c,-.15)}"/>${Array.from({length:22},(_,k)=>`<path d="M${k*9+2},${bottomY-10} v6" stroke="${shade(T.c,.2)}" stroke-width="1.2"/>`).join('')}</g>`}}
+      if(T.t==='blouse'){out += `<path d="M${cx-18},${KN.yT} Q${cx-12},${KN.yT+10} ${cx-6},${KN.yT+4} Q${cx},${KN.yT+12} ${cx+6},${KN.yT+4} Q${cx+12},${KN.yT+10} ${cx+18},${KN.yT}" fill="${T.c2||'#fff'}" stroke="${shade(T.c2||'#ffffff',-.12)}" stroke-width="1"/>`+[0,1,2,3].map(k=>`<circle cx="${cx}" cy="${KN.yT+18+k*10}" r="1.7" fill="${shade(T.c,-.25)}"/>`).join('')+[-1,1].map(s=>`<path d="M${cx+s*12},${KN.yT+16} Q${cx+s*14},${KN.yT+40} ${cx+s*12},${bottomY-8}" stroke="${shade(T.c,-.1)}" stroke-width="1.2" fill="none"/>`).join('')}
+      if(T.t==='dress'){const yw=KN.yB-18,yh=legB-(T.len==='short'?20:2),w1=W-2,w2=W+16;const sk=`M${cx-w1},${yw} L${cx+w1},${yw} L${cx+w2},${yh} Q${cx},${yh+10} ${cx-w2},${yh} Z`;
+        out += sh('path',`d="${sk}"`,fillC);for(let k=-3;k<=3;k++)out+=`<path d="M${cx+k*w1/3.4},${yw+4} Q${cx+k*w2/3.2},${(yw+yh)/2} ${cx+k*w2/3},${yh+3}" stroke="#000" stroke-opacity=".09" stroke-width="1.6" fill="none"/>`;
+        out += `<rect x="${cx-W+2}" y="${yw-6}" width="${2*W-4}" height="6" rx="3" fill="${T.c2||shade(T.c,-.15)}"/>`;if(T.bow)out+=`<g transform="translate(${cx+W-14} ${yw-3})"><path d="M0,0 L-8,-5 V5Z M0,0 L8,-5 V5Z" fill="${T.c2||shade(T.c,-.2)}"/></g>`;
+        if(T.collar)out+=`<path d="M${cx-16},${KN.yT} Q${cx-8},${KN.yT+12} ${cx},${KN.yT+4} Q${cx+8},${KN.yT+12} ${cx+16},${KN.yT}" fill="#fff"/>`}
+      if(prt)out+=prt;
       out += `<path d="${torso}" fill="${SH}" ${clip} opacity=".5"/>`;
       if(T.t==='sweater') for(let k=-2;k<=2;k++) out += `<line x1="${cx+k*9}" y1="${KN.yT+30}" x2="${cx+k*9}" y2="${bottomY-8}" stroke="${T.c2}" stroke-width="2.5" ${clip}/>`;
       if(T.t==='hoodie') out += `<rect x="${cx-KN.wT*.6}" y="${bottomY-28}" width="${KN.wT*1.2}" height="17" rx="7" fill="#000" opacity=".14"/>`;
@@ -1996,6 +2042,8 @@ function knete(sp, o, opt){
   }
   if(T && T.t==='shirt') out += `<path d="M${cx-14},${KN.yT+2} L${cx},${KN.yT+14} L${cx+14},${KN.yT+2} L${cx+10},${KN.yT+16} L${cx},${KN.yT+14} L${cx-10},${KN.yT+16}Z" fill="#f4ece2"/>`;
   if(T && T.t==='rain') out += sh('ellipse',`cx="${cx}" cy="${KN.yT+2}" rx="${KN.wT+5}" ry="10"`,T.c);
+  if(T && T.t==='winter'){out += sh('ellipse',`cx="${cx}" cy="${KN.yT+1}" rx="${KN.wT+9}" ry="11"`,T.fur||'#f4ece0');for(let k=-5;k<=5;k++)out+=`<path d="M${cx+k*7},${KN.yT-6} q2,5 0,12" stroke="#fff" stroke-opacity=".55" stroke-width="1.4" fill="none"/>`}
+  if(T && (T.t==='jacket')) out += [-1,1].map(s=>sh('path',`d="M${cx+s*4},${KN.yT-4} L${cx+s*(KN.wT+4)},${KN.yT+2} L${cx+s*16},${KN.yT+14}Z"`,shade(T.c,-.05))).join('');
 
   // --- arms / flippers ---
   [-1,1].forEach(s=>{
@@ -2019,7 +2067,8 @@ function knete(sp, o, opt){
     if(sp==='fuchs') g += `<g clip-path="url(#${id}arm${s})">${sh('rect',`x="${-w}" y="${L*.55}" width="${w*2}" height="${L}"`,P.dark)}</g>`;
     if(sp==='katze' && !T) [0,1].forEach(k=> g += `<path d="M${-w/2},${8+k*9} q${w*.35},2 ${w*.5},5" stroke="${P.dark}" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7" clip-path="url(#${id}arm${s})"/>`);
     if(T){
-      const frac = (T.t==='tee')? .45 : .78;
+      const frac = (T.t==='tank'||T.t==='vest'||(T.t==='dress'&&!T.sleeves))? 0 : (T.t==='tee'||T.t==='dress')? .45 : T.t==='blouse'? .55 : (T.t==='jacket'||T.t==='winter'||T.t==='cardigan')? .9 : .78;
+      if(frac===0){}else{
       const sc = T.stripes? `url(#${id}st)` : (T.check? `url(#${id}ck)` : (T.dots? `url(#${id}dt)` : T.c));
       const sl = L*frac;
       if(isPeng){
@@ -2027,8 +2076,11 @@ function knete(sp, o, opt){
       } else {
         g += sh('rect',`x="${-w/2-1.5}" y="${-w/2-1}" width="${w+3}" height="${sl}" rx="${w/2}"`,sc);
         g += `<rect x="${-w/2-1.5}" y="${-w/2-1+sl-5}" width="${w+3}" height="5" rx="2.5" fill="#000" opacity=".12"/>`;
+        if(T.t==='winter')[1,2,3].forEach(k=>g+=`<path d="M${-w/2-1},${-w/2+k*sl/4} h${w+2}" stroke="${shade(T.c,-.22)}" stroke-width="1.6"/>`);
+        if(T.t==='blouse')g+=`<ellipse cx="0" cy="${-w/2+sl*.25}" rx="${w/2+4}" ry="${sl*.3}" fill="${T.c}" opacity=".95"/><ellipse cx="0" cy="${-w/2+sl*.25}" rx="${w/2+4}" ry="${sl*.3}" fill="${SH}"/>`;
+        if(T.t==='winter'||T.t==='cardigan')g+=`<rect x="${-w/2-2}" y="${-w/2-1+sl-6}" width="${w+4}" height="6" rx="3" fill="${T.t==='winter'?'#f2ead9':shade(T.c,-.15)}"/>`;
       }
-    }
+    }}
     // hands
     const hy2 = L - w*.55;
     if(sp==='frosch'){
@@ -2213,7 +2265,7 @@ const CLOTHES={
   t_hoodie:{n:'Kuschel-Hoodie',slot:'oberteil',c:'s',p:50,look:{t:'hoodie',c:'#34506b'}},
   t_hemd:{n:'Karohemd',slot:'oberteil',c:'s',p:45,look:{t:'shirt',c:'#c8664c',check:'#a64b36'}},
   t_regen:{n:'Regenjacke',slot:'oberteil',c:'s',p:55,look:{t:'rain',c:'#f5cd4c'}},
-  t_glitzer:{n:'Glitzerpulli',slot:'oberteil',c:'p',p:20,lim:1,look:{t:'sweater',c:'#ffe08a',c2:'#ffc94a'}},
+  t_glitzer:{n:'Glitzerpulli',slot:'oberteil',c:'p',p:20,lim:1,look:{t:'sweater',c:'#f3d9f0',c2:'#e6c3e2',print:'glitter',pc:'#ffd45e'}},
   /* Hosen & Röcke */
   h_jeans:{n:'Jeans',slot:'hose',c:'s',p:40,look:{t:'jeans',c:'#7493b5'}},
   h_latz:{n:'Latzhose',slot:'hose',c:'s',p:50,look:{t:'overalls',c:'#5f7fa3'}},
@@ -2245,9 +2297,9 @@ function kneteArt(ch,o={},colors,bow){
   ch=ch||'pinguin';const g=kgeo(ch),L=k=>o[k]&&CLOTHES[o[k]]?.look;
   const opt={colors,bow:bow??!o.kopf};
   if(o.kopf&&WEAR[o.kopf])opt.kopf=id=>`<g transform="translate(100 ${g.top}) scale(${g.hs})">${WEAR[o.kopf](ksh(id),id,g)}</g>`;
-  if(o.gesicht&&WEAR[o.gesicht])opt.gesicht=id=>`<g transform="translate(100 ${g.ey})">${WEAR[o.gesicht](ksh(id),id,g)}</g>`;
+  if((o.gesicht&&WEAR[o.gesicht])||(o.makeup&&WEAR[o.makeup]))opt.gesicht=id=>`<g transform="translate(100 ${g.ey})">${o.makeup&&WEAR[o.makeup]?WEAR[o.makeup](ksh(id),id,g):''}${o.gesicht&&WEAR[o.gesicht]?WEAR[o.gesicht](ksh(id),id,g):''}</g>`;
   if(o.hals&&WEAR[o.hals])opt.hals=id=>`<g transform="translate(100 ${g.ny})">${WEAR[o.hals](ksh(id),id,{...g,nw:(typeof NECKW!=='undefined'&&NECKW[ch])||40})}</g>`;
-  return knete(ch,{top:L('oberteil'),bottom:L('hose'),shoes:L('schuhe')},opt);
+  const tp=L('oberteil');return knete(ch,{top:tp,bottom:tp&&tp.t==='dress'?null:L('hose'),shoes:L('schuhe')},opt);
 }
 /* 100er-Raster wie bisher: Füße unten bei y≈100 */
 function avatarArt(ch,o={}){return `<g transform="translate(10 4) scale(.4)">${kneteArt(ch,o)}</g>`}
@@ -2591,7 +2643,7 @@ Object.assign(WEAR,{
   gloeckchen:(sh)=>`${sh('path','d="M-40,-7 Q0,5 40,-7 L40,1 Q0,13 -40,1Z"','#e2669a')}<g transform="translate(0 14)">${sh('circle','r="7.5"','#ffd45e')}<path d="M-6,1 H6" stroke="#c9962b" stroke-width="1.6"/><circle cy="4" r="1.6" fill="#8a6a2a"/></g>`,
 });
 Object.assign(CLOTHES,{
-  t_gelb:{n:'Sonnen-Shirt',slot:'oberteil',c:'s',p:30,look:{t:'tee',c:'#ffd27a'}},
+  t_gelb:{n:'Sonnen-Shirt',slot:'oberteil',c:'s',p:30,look:{t:'tee',c:'#ffd27a',print:'sun',pc:'#ff9f43'}},
   t_matrose:{n:'Matrosenshirt',slot:'oberteil',c:'s',p:35,look:{t:'tee',c:'#ffffff',stripes:'#34506b'}},
   t_punkte:{n:'Tupfenshirt',slot:'oberteil',c:'s',p:35,look:{t:'tee',c:'#ffe1ea',dots:'#ff6f9a'}},
   t_minzhoodie:{n:'Minz-Hoodie',slot:'oberteil',c:'s',p:50,look:{t:'hoodie',c:'#9fd3c7'}},
@@ -7267,7 +7319,7 @@ bpItems=function(){
   if(BP==='moebel'){if(!MOB)MOB=stored().some(i=>CAT[i.id])?'inv':(ROOMS.some(R=>R.id===viewRoom)?viewRoom:'schlafzimmer');
     const n=stored().filter(i=>CAT[i.id]).length;
     return `<div class="mob"><nav class="mob-side" aria-label="Räume">${MOBCATS().map(([k,l])=>`<button type="button" data-mobcat="${k}" aria-pressed="${MOB===k}"><span>${l}</span>${k==='inv'&&n?`<i>${n}</i>`:''}</button>`).join('')}</nav>
-      <div class="mob-grid">${MOB==='inv'?invGrid():(MOB==='woche'?`<p class="mob-note">Wechselt jede Woche, ${weekLeft()}.</p>`:MOB==='saison'?`<p class="mob-note">Nur im ${SEASONS[season()]} zu haben.</p>`:'')+shopList(MOB).map(mobCard).join('')}</div></div>`}
+      <div class="mob-grid">${MOB==='inv'?invGrid():(MOB==='woche'?`<p class="mob-note">Wechselt jede Woche, ${weekLeft()}.</p>`:MOB==='saison'?`<p class="mob-note">Nur im ${SEASONS[season()]} zu haben.</p>`:'')+(typeof mobGrouped==='function'?mobGrouped(MOB):shopList(MOB).map(mobCard).join(''))}</div></div>`}
   if(BP==='treppen')return shopList('treppen').map(mobCard).join('')+`<button type="button" class="bp-card" data-bpact="up"><span class="bp-pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><path d="M3 21h18M5 21V11h14v10M8 11V5h8v6"/></svg></span><b>1. Stock bauen</b><small>mit Gratis-Treppe</small></button>`;
   return _bpItems30();
 };
@@ -9362,6 +9414,100 @@ document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest
   else{backupSave(acc().name||user,S,'Stand dieses Geräts vor der Übernahme');S=migrate(Object.assign(fresh(),r));S.syncBase=S.upd||Date.now();const a=getAccs();if(a[user]){a[user].save=S;memAcc=a;try{localStorage.setItem(ACC,JSON.stringify(a))}catch(_){}}
     try{if(!S.unlocked[viewRoom]||!S.layout[viewRoom])viewRoom=S.pos&&S.pos.room||'schlafzimmer'}catch(_){}renderAll();show('home');$('#pop').hidden=true;toast('Spielstand vom anderen Gerät übernommen')}},true);
 {const E0=enterGame;enterGame=function(){const r=E0.apply(this,arguments);if(SYNCCONF)setTimeout(syncAsk,1600);return r}}
+/* ================= v95: Möbel sinnvoll gruppiert (Shop und Baumenü) ================= */
+Object.assign(CAT.sternbett,{set:'stern'});Object.assign(CAT.himmelbett,{set:'himmel'});if(CAT.himmeldoppel)CAT.himmeldoppel.set='himmel';
+const GRP=[
+  ['bett',/bett|doppel|wiege/,'Betten'],['sofa',/sofa|sessel|couch|sitzsack|kissen|hocker|liege/,'Sofas, Sessel & Sitzen'],['tisch',/tisch|theke|insel|sideboard|bar$/,'Tische & Ablagen'],
+  ['stuhl',/stuhl/,'Stühle'],['schrank',/schrank|kommode|regal|truhe|spind/,'Schränke & Regale'],['lampe',/lampe|leuchte|kerze|laterne|kamin/,'Licht & Wärme'],
+  ['kueche',/herd|kuehl|spuel|ofen|kaffee|zeile|mikro|toaster/,'Küchengeräte'],['bad',/wanne|dusche|toilette|wasch|klo|bade/,'Bad'],['tv',/tv|fernseh|computer|laptop|globus|aquarium/,'Technik & Hobby'],
+  ['teppich',/teppich|matte/,'Teppiche']];
+const DEKOGRP=[['vorhang',id=>/vorhang|^vh_/.test(id),'Vorhänge'],['teppich',id=>/teppich|matte/.test(id),'Teppiche'],['pflanze',id=>PLANTS.includes(id)||/pflanze|palme|kaktus|blume|kraeuter|pampas|baum|monstera|feige/.test(id),'Pflanzen'],
+  ['spiegel',id=>/spiegel/.test(id),'Spiegel'],['wand',id=>CAT[id]&&CAT[id].wall,'Für die Wand'],['klein',id=>CAT[id]&&CAT[id].top,'Kleine Deko zum Hinstellen'],['rest',()=>true,'Weitere Deko']];
+function catGrp(id,d,cat){if(d.set&&cat!=='woche'&&cat!=='saison'&&cat!=='deko')return [-10+SETORDER.indexOf(d.set),'set_'+d.set,BEDSETS[d.set]];if(d.c==='p')return [99,'_p','Besonderes für Pingis'];
+  if(cat==='deko'){const i=DEKOGRP.findIndex(g=>g[1](id));return [i,DEKOGRP[i][0],DEKOGRP[i][2]]}
+  if(d.set&&cat!=='woche'&&cat!=='saison')return [-10+SETORDER.indexOf(d.set),'set_'+d.set,BEDSETS[d.set]];
+  const i=GRP.findIndex(g=>g[1].test(id));return i<0?[50,'rest','Weiteres']:[i,GRP[i][0],GRP[i][2]]}
+const CURCAT=()=>typeof BP!=='undefined'&&BP==='moebel'&&typeof MOB!=='undefined'&&$('#buildpanel .mob')?MOB:shopCat;
+shopSort=function(a,b){const c=CURCAT(),ga=catGrp(a[0],a[1],c),gb=catGrp(b[0],b[1],c);return ga[0]-gb[0]||(a[1].p||0)-(b[1].p||0)||a[1].n.localeCompare(b[1].n,'de')};
+setHead=function(id,d,i,arr){if(shopCat==='woche'||shopCat==='saison')return '';const g=catGrp(id,d,shopCat),prev=i?catGrp(arr[i-1][0],arr[i-1][1],shopCat):null;if(prev&&prev[1]===g[1])return '';return `<h3 class="shopset">${g[2]}</h3>`};
+function mobGrouped(cat){const L=Object.entries(CAT).filter(([id,d])=>cat==='woche'?WEEK.furn.includes(id):cat==='saison'?d.season===season():inCat(id,d,cat)).sort((a,b)=>{const ga=catGrp(a[0],a[1],cat),gb=catGrp(b[0],b[1],cat);return ga[0]-gb[0]||(a[1].p||0)-(b[1].p||0)});
+  let last=null;return L.map(e=>{const g=catGrp(e[0],e[1],cat);let hd='';if(cat!=='woche'&&cat!=='saison'&&g[1]!==last)hd=`<h4 class="bp-sec mob-sec">${g[2]}</h4>`;last=g[1];return hd+mobCard(e)}).join('')}
+/* ================= v96: Boutique – viele neue Kleidungsstücke, Make-up, Brillen mit Bügeln ================= */
+SLOTS.push(['makeup','Make-up']);SHOPSLOTS.push(['makeup','Make-up']);CROP.makeup='26 18 48 34';
+Object.assign(CLOTHES,{
+  /* Shirts & Tops */
+  t_herzshirt:{n:'Herz-T-Shirt',slot:'oberteil',c:'s',p:30,look:{t:'tee',c:'#ffffff',print:'heart',pc:'#ff6f9a'}},
+  t_wolke:{n:'Himmel-T-Shirt',slot:'oberteil',c:'s',p:30,look:{t:'tee',c:'#7fc4ea',print:'heart',pc:'#ffffff'}},
+  t_kirsch:{n:'Kirsch-Shirt',slot:'oberteil',c:'s',p:32,look:{t:'tee',c:'#fff4e2',print:'cherry',pc:'#e4344f'}},
+  t_tank_weiss:{n:'Weißes Tanktop',slot:'oberteil',c:'s',p:25,look:{t:'tank',c:'#fbf8f3'}},
+  t_tank_rosa:{n:'Rippen-Tanktop Rosa',slot:'oberteil',c:'s',p:25,look:{t:'tank',c:'#f4a6c1',stripes:'#ec97b5'}},
+  t_tank_schwarz:{n:'Schwarzes Tanktop',slot:'oberteil',c:'s',p:25,look:{t:'tank',c:'#2e2c33'}},
+  t_bluse_weiss:{n:'Rüschenbluse',slot:'oberteil',c:'s',p:45,look:{t:'blouse',c:'#fdfbf7',c2:'#ffffff'}},
+  t_bluse_blau:{n:'Hellblaue Bluse',slot:'oberteil',c:'s',p:45,look:{t:'blouse',c:'#bcd6ef',c2:'#ffffff'}},
+  t_weste:{n:'Strickweste Argyle',slot:'oberteil',c:'s',p:45,look:{t:'vest',c:'#a87a52',c2:'#f7f3ec',argyle:'#e6c79a'}},
+  t_weste_gruen:{n:'Salbei-Weste',slot:'oberteil',c:'s',p:40,look:{t:'vest',c:'#93ad8f',c2:'#fffaf2'}},
+  t_cardigan:{n:'Cardigan Creme',slot:'oberteil',c:'s',p:50,look:{t:'cardigan',c:'#efe0c6',inner:'#f8c9d6'}},
+  t_cardigan_lila:{n:'Flieder-Cardigan',slot:'oberteil',c:'s',p:50,look:{t:'cardigan',c:'#c9b6ee',inner:'#ffffff'}},
+  t_jeansjacke:{n:'Jeansjacke',slot:'oberteil',c:'s',p:60,look:{t:'jacket',c:'#6f8fb4',inner:'#ffffff',stitch:'#e6b75c'}},
+  t_lederjacke:{n:'Lederjacke',slot:'oberteil',c:'s',p:70,look:{t:'jacket',c:'#3a3134',inner:'#e8e2da',stitch:'#5a4e52'}},
+  t_winterjacke:{n:'Daunen-Winterjacke',slot:'oberteil',c:'s',p:75,look:{t:'winter',c:'#c96b5a',fur:'#f4ece0'}},
+  t_winter_creme:{n:'Puffer-Jacke Creme',slot:'oberteil',c:'s',p:75,look:{t:'winter',c:'#efe6d4',fur:'#cdb592'}},
+  t_glitzertop:{n:'Glitzer-Top',slot:'oberteil',c:'p',p:20,lim:1,look:{t:'tank',c:'#c9b6ee',print:'glitter',pc:'#fff3b0'}},
+  t_sternshirt:{n:'Sternen-Shirt',slot:'oberteil',c:'s',p:32,look:{t:'tee',c:'#34506b',print:'star',pc:'#ffd45e'}},
+  /* Kleider */
+  k_sommer:{n:'Sommerkleid Blümchen',slot:'oberteil',c:'s',p:60,look:{t:'dress',c:'#fff1c9',dots:'#f4a6c1',c2:'#f4a6c1',len:'short'}},
+  k_rot:{n:'Rotes Kleid',slot:'oberteil',c:'s',p:65,look:{t:'dress',c:'#d9475a',c2:'#b33445',bow:1}},
+  k_blau:{n:'Matrosenkleid',slot:'oberteil',c:'s',p:65,look:{t:'dress',c:'#34506b',c2:'#ffffff',collar:1,sleeves:1,len:'short'}},
+  k_rosa:{n:'Rosa Tüllkleid',slot:'oberteil',c:'p',p:25,lim:1,look:{t:'dress',c:'#ffc6d9',c2:'#ff8fb1',bow:1}},
+  /* Hosen & Röcke */
+  h_ripped:{n:'Ripped Jeans',slot:'hose',c:'s',p:45,look:{t:'jeans',c:'#7ea0c8',rips:1}},
+  h_schlag:{n:'Schlaghose',slot:'hose',c:'s',p:45,look:{t:'wide',c:'#c9a27e'}},
+  h_wide_weiss:{n:'Weite Leinenhose',slot:'hose',c:'s',p:45,look:{t:'wide',c:'#f1ebe0'}},
+  h_leggings:{n:'Schwarze Leggings',slot:'hose',c:'s',p:30,look:{t:'leggings',c:'#2e2c33'}},
+  h_capri:{n:'Caprihose',slot:'hose',c:'s',p:35,look:{t:'capri',c:'#a9c4a6',cuff:1}},
+  h_mini:{n:'Jeans-Minirock',slot:'hose',c:'s',p:35,look:{t:'skirt',c:'#7ea0c8',len:'mini'}},
+  h_karo:{n:'Karierter Rock',slot:'hose',c:'s',p:42,look:{t:'skirt',c:'#b33445',plaid:'#2e2c33'}},
+  h_maxi:{n:'Langer Maxirock',slot:'hose',c:'s',p:48,look:{t:'skirt',c:'#d9c3a8',len:'long'}},
+  /* Schuhe */
+  s_overknee:{n:'Hohe Lederstiefel',slot:'schuhe',c:'s',p:65,look:{t:'kneeboot',c:'#5a3a2a',sole:'#2b1d16'}},
+  s_overknee_s:{n:'Schwarze Overknees',slot:'schuhe',c:'s',p:65,look:{t:'kneeboot',c:'#2e2c33',sole:'#151417'}},
+  s_combat:{n:'Schnürboots',slot:'schuhe',c:'s',p:55,look:{t:'combat',c:'#3a3134',lace:'#f4ece0',sole:'#1c1a1d'}},
+  s_combat_braun:{n:'Wanderboots',slot:'schuhe',c:'s',p:55,look:{t:'combat',c:'#9a6b46',lace:'#d9433f',sole:'#3a2a20'}},
+  s_chelsea:{n:'Chelsea Boots',slot:'schuhe',c:'s',p:50,look:{t:'chelsea',c:'#c08a5e',sole:'#3a2a20'}},
+  /* Kopf */
+  baskenmuetze:{n:'Baskenmütze',slot:'kopf',c:'s',p:35},fischerhut:{n:'Fischerhut',slot:'kopf',c:'s',p:35},cowboyhut:{n:'Cowboyhut',slot:'kopf',c:'s',p:45},
+  katzenohren:{n:'Katzenohren-Reif',slot:'kopf',c:'s',p:30},beanie:{n:'Beanie Senf',slot:'kopf',c:'s',p:30},
+  /* Gesicht */
+  rundbrille_gold:{n:'Goldene Rundbrille',slot:'gesicht',c:'s',p:40},katzenbrille:{n:'Cat-Eye-Brille',slot:'gesicht',c:'s',p:40},pilotenbrille:{n:'Pilotenbrille',slot:'gesicht',c:'s',p:45},
+  /* Make-up */
+  blush:{n:'Rouge',slot:'makeup',c:'s',p:20},wimpern:{n:'Wimpern',slot:'makeup',c:'s',p:25},blush_wimpern:{n:'Rouge & Wimpern',slot:'makeup',c:'s',p:35},sommersprossen:{n:'Sommersprossen',slot:'makeup',c:'s',p:20},glitzer_mu:{n:'Glitzer-Make-up',slot:'makeup',c:'p',p:10,lim:1},
+  /* Hals */
+  goldkette:{n:'Goldkettchen',slot:'hals',c:'s',p:30},choker:{n:'Samt-Choker',slot:'hals',c:'s',p:25},krawatte:{n:'Krawatte',slot:'hals',c:'s',p:30},perlen_lang:{n:'Lange Perlenkette',slot:'hals',c:'s',p:35},herzkette:{n:'Herzanhänger',slot:'hals',c:'s',p:30},
+});
+/* Bügel für alle Brillen (bis hinter die Ohren) */
+const TEMPLE=(g,col,w=3)=>[-1,1].map(s=>`<path d="M${s*(g.ex+15)},-2 Q${s*(g.ex+24)},-5 ${s*(g.ex+34)},-3" stroke="${col}" stroke-width="${w}" fill="none" stroke-linecap="round"/>`).join('');
+const TEMPLECOL={brille:'#3a3148',sonnenbrille:'#2b2738',herzbrille:'#ff5d8f',retrobrille:'#e2669a',sternbrille:'#f0b429'};
+Object.keys(TEMPLECOL).forEach(k=>{const W0=WEAR[k];if(W0)WEAR[k]=(sh,id,g)=>`<g transform="scale(1.1)">${TEMPLE(g,TEMPLECOL[k])}${W0(sh,id,g)}</g>`});
+Object.assign(WEAR,{
+  rundbrille_gold:(sh,id,g)=>`<g transform="scale(1.12)">${TEMPLE(g,'#c9962b',2.4)}${[-1,1].map(s=>`<circle cx="${s*g.ex}" cy="0" r="14" fill="#fff" fill-opacity=".18" stroke="#d7a63a" stroke-width="2.4"/><circle cx="${s*g.ex}" cy="0" r="14" fill="none" stroke="#fff3c4" stroke-width=".8" opacity=".8"/><path d="M${s*g.ex-8},-6 a10 10 0 0 1 8,-4" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8"/>`).join('')}<path d="M${-g.ex+14},-2 Q0,-8 ${g.ex-14},-2" stroke="#d7a63a" stroke-width="2.4" fill="none"/></g>`,
+  katzenbrille:(sh,id,g)=>`<g transform="scale(1.1)">${TEMPLE(g,'#2e2c33')}${[-1,1].map(s=>sh('path',`d="M${s*g.ex-s*15},-2 Q${s*g.ex-s*15},10 ${s*g.ex},10 Q${s*g.ex+s*15},10 ${s*g.ex+s*17},-12 Q${s*g.ex},-12 ${s*g.ex-s*15},-2Z"`,'#2e2c33')+`<path d="M${s*g.ex-s*11},0 Q${s*g.ex-s*10},7 ${s*g.ex},7 Q${s*g.ex+s*11},7 ${s*g.ex+s*12},-8 Q${s*g.ex},-8 ${s*g.ex-s*11},0Z" fill="#ffe1ea" fill-opacity=".35"/>`).join('')}<path d="M${-g.ex+14},-3 H${g.ex-14}" stroke="#2e2c33" stroke-width="3"/></g>`,
+  pilotenbrille:(sh,id,g)=>`<g transform="scale(1.12)">${TEMPLE(g,'#b9b2a6',2)}${[-1,1].map(s=>`<path d="M${s*(g.ex-14)},-7 Q${s*g.ex},-11 ${s*(g.ex+14)},-6 Q${s*(g.ex+15)},10 ${s*g.ex},13 Q${s*(g.ex-15)},10 ${s*(g.ex-14)},-7Z" fill="#3d5a73" fill-opacity=".85" stroke="#cfc7b9" stroke-width="2"/><path d="M${s*(g.ex-8)},-4 l${s*8},-2" stroke="#fff" stroke-width="2" opacity=".6" stroke-linecap="round"/>`).join('')}<path d="M${-g.ex+14},-6 Q0,-11 ${g.ex-14},-6 M${-g.ex+12},-2 H${g.ex-12}" stroke="#cfc7b9" stroke-width="1.8" fill="none"/></g>`,
+  blush:(sh,id,g)=>[-1,1].map(s=>`<ellipse cx="${s*(g.ex+6)}" cy="17" rx="11" ry="6" fill="#ff7fa8" opacity=".45"/><ellipse cx="${s*(g.ex+4)}" cy="16" rx="5" ry="2.6" fill="#fff" opacity=".25"/>`).join(''),
+  wimpern:(sh,id,g)=>[-1,1].map(s=>[0,1,2].map(k=>`<path d="M${s*(g.ex+3+k*3.5)},${-7+k*1.4} q${s*4},-4 ${s*7},-3" stroke="#1c1110" stroke-width="2" fill="none" stroke-linecap="round"/>`).join('')).join(''),
+  blush_wimpern:(sh,id,g)=>WEAR.blush(sh,id,g)+WEAR.wimpern(sh,id,g),
+  sommersprossen:(sh,id,g)=>[-1,1].map(s=>[[0,13],[6,11],[3,17],[10,15],[-4,16]].map(([dx,dy])=>`<circle cx="${s*(g.ex+dx)}" cy="${dy}" r="1.3" fill="#a8704a" opacity=".7"/>`).join('')).join(''),
+  glitzer_mu:(sh,id,g)=>WEAR.blush(sh,id,g)+WEAR.wimpern(sh,id,g)+[-1,1].map(s=>[[10,6],[16,10],[13,2]].map(([dx,dy])=>`<path d="M${s*(g.ex+dx)},${dy-2.5} l.9,1.6 1.6,.9 -1.6,.9 -.9,1.6 -.9,-1.6 -1.6,-.9 1.6,-.9Z" fill="#fff6c9"/>`).join('')).join(''),
+  baskenmuetze:(sh)=>`${sh('ellipse','cx="-6" cy="0" rx="58" ry="20"','#b33445')}${sh('path','d="M-50,10 Q-6,26 46,12 L46,22 Q-6,32 -50,20Z"','#8f2836')}${sh('rect','x="-8" y="-24" width="6" height="8" rx="3"','#8f2836')}<path d="M-46,-4 Q-20,-14 6,-12" stroke="#fff" stroke-width="3" fill="none" opacity=".25" stroke-linecap="round"/>`,
+  fischerhut:(sh)=>`${sh('path','d="M-70,24 Q0,4 70,24 Q60,36 0,32 Q-60,36 -70,24Z"','#e9dcc3')}${sh('path','d="M-42,22 C-44,-20 44,-20 42,22Z"','#efe4cf')}<path d="M-42,14 Q0,22 42,14" stroke="#c9b48e" stroke-width="2" fill="none"/>${[-30,-10,10,30].map(x=>`<path d="M${x},-12 V20" stroke="#d7c6a6" stroke-width="1.2" stroke-dasharray="2 2"/>`).join('')}`,
+  cowboyhut:(sh)=>`${sh('path','d="M-82,18 Q-70,4 -50,16 Q0,30 50,16 Q70,4 82,18 Q70,34 0,34 Q-70,34 -82,18Z"','#a8744b')}${sh('path','d="M-40,18 C-44,-14 -26,-30 -10,-20 Q0,-12 10,-20 C26,-30 44,-14 40,18Z"','#b9845a')}<path d="M-40,8 Q0,18 40,8 L40,16 Q0,26 -40,16Z" fill="#5a3a2a"/><path d="M-30,-16 Q-20,-24 -12,-18" stroke="#fff" stroke-width="2.4" fill="none" opacity=".3"/>`,
+  katzenohren:(sh)=>sh('path','d="M-50,26 Q-52,-18 0,-20 Q52,-18 50,26 L43,26 Q45,-9 0,-11 Q-45,-9 -43,26Z"','#2e2c33')+[-1,1].map(s=>sh('path',`d="M${s*20},-16 L${s*36},-48 L${s*44},-8Z"`,'#2e2c33')+`<path d="M${s*26},-16 L${s*36},-38 L${s*40},-12Z" fill="#f4a6c1"/>`).join(''),
+  beanie:(sh)=>`${sh('path','d="M-52,26 C-52,-30 52,-30 52,26Z"','#e3b85c')}${[-36,-24,-12,0,12,24,36].map(x=>`<path d="M${x},-14 V18" stroke="#c99a3a" stroke-width="2.4" opacity=".6"/>`).join('')}${sh('rect','x="-55" y="10" width="110" height="20" rx="9"','#d6a64a')}${[-44,-33,-22,-11,0,11,22,33,44].map(x=>`<path d="M${x},12 V28" stroke="#b98a30" stroke-width="2" opacity=".55"/>`).join('')}`,
+  goldkette:(sh,id,g)=>{const w=(g.nw||40)*.8;return `<path d="M${-w},-6 Q0,16 ${w},-6" stroke="#d7a63a" stroke-width="1.8" fill="none"/><path d="M${-w},-6 Q0,16 ${w},-6" stroke="#fff3c4" stroke-width=".6" fill="none" stroke-dasharray="1.5 1.5"/><circle cx="0" cy="6.5" r="2.6" fill="#ffd45e" stroke="#c9962b" stroke-width=".8"/>`},
+  choker:(sh,id,g)=>{const w=(g.nw||40)*.92;return sh('path',`d="${collar(w,-8,4,5)}"`,'#2e2c33')+`<circle cx="0" cy="3" r="3" fill="#e8e2da" stroke="#b9b2a6" stroke-width=".8"/>`},
+  krawatte:(sh,id,g)=>{const w=(g.nw||40)*.92;return `<path d="${collar(w,-6,6,9)}" fill="#fbf8f3"/>`+sh('path','d="M-6,4 L6,4 L4,10 L8,40 L0,48 L-8,40 L-4,10Z"','#34506b')+sh('path','d="M-6,2 L6,2 L4,10 L-4,10Z"','#2b4359')+[0,1,2].map(k=>`<path d="M-6,${18+k*9} L6,${14+k*9}" stroke="#ffd45e" stroke-width="1.6" opacity=".8"/>`).join('')},
+  perlen_lang:(sh,id,g)=>{const w=(g.nw||40)*.84;let s='';for(let i=-9;i<=9;i++){const t=i/9,x=t*w,y=-6+(1-t*t)*30;s+=sh('circle',`cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.8"`,'#fbf8f4')}return s},
+  herzkette:(sh,id,g)=>{const w=(g.nw||40)*.84;return `<path d="M${-w},-6 Q0,16 ${w},-6" stroke="#cfc7b9" stroke-width="1.2" fill="none"/>`+sh('path','d="M0,17 C-9,11 -8,2 0,6 C8,2 9,11 0,17Z"','#e2669a')+`<circle cx="-3" cy="8" r="1.2" fill="#fff" opacity=".8"/>`},
+});
 /* ================= Navigation & Meldungen ================= */
 function show(t){
   tab=t;
