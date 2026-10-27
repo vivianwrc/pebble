@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271818";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#f5efe6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Pebble"><meta name="description" content="Pebble – gemütliches Bau- und Wohnspiel mit Pinguin."><script>window.PEBBLE_VER="202610271824";(function(){function chk(boot){fetch("version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(v){v=v.trim();if(!v||v<=window.PEBBLE_VER)return;if(boot&&!/[?&]v=/.test(location.search)){location.replace(location.pathname+"?v="+v);return}if(document.getElementById("pbUpd"))return;var b=document.createElement("button");b.id="pbUpd";b.textContent="Neue Version da – tippen zum Laden";b.style.cssText="position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:9999;border:0;border-radius:99px;padding:10px 18px;background:#5b3a24;color:#fff;font:800 14px Nunito,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer";b.onclick=function(){location.replace(location.pathname+"?v="+v)};document.body.appendChild(b)}).catch(function(){})}chk(true);setInterval(function(){chk(false)},300000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)})})();</script><script src="vendor/supabase.js"></script><script src="config.js"></script><script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script></head><body>
 <title>Pebble</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2930,11 +2930,11 @@ const WZMIN=-48,WZMAX=30;
 const isChair=id=>/stuhl|hocker/.test(id)&&id!=='liegestuhl',isTable=id=>/tisch|bar$|insel/.test(id)&&!/nachttisch|couchtisch/.test(id);
 function tuckOK(it,o,q){const cc=isChair(it.id)&&isChair(o.id);if(!(cc||isChair(it.id)&&isTable(o.id)||isChair(o.id)&&isTable(it.id)))return false;const r=rectOf(o),ix=Math.min(q.x+q.w,r.x+r.w)-Math.max(q.x,r.x),iy=Math.min(q.y+q.h,r.y+r.h)-Math.max(q.y,r.y);if(cc&&(it.ang!=null||o.ang!=null))return Math.hypot(q.x+q.w/2-r.x-r.w/2,q.y+q.h/2-r.y-r.h/2)>=.58;return cc?Math.max(ix,iy)<=.45:Math.min(ix,iy)<=.5+1e-6}
 function fits(R,it,x,y){
-  const [w,h]=dims(it),d=CAT[it.id];if(x<0||y<0||x+w>R.c+.001||y+h>R.r+.001)return false;
+  const [w,h]=dims(it),d=CAT[it.id],ins0=(typeof INSET!=='undefined'&&INSET[it.id])||0;if(x<-ins0-.001||y<-ins0-.001||x+w>R.c+ins0+.001||y+h>R.r+ins0+.001)return false;
   const q={x,y,w,h},others=inRoom(R.id).filter(o=>o.uid!==it.uid);
   if(d.wall){const rr=(it.rot|0)&3;if(!((rr===0&&y===0)||(rr===1&&x===0)||(rr===2&&Math.abs(y+h-R.r)<.01)||(rr===3&&Math.abs(x+w-R.c)<.01)))return false;return !others.some(o=>CAT[o.id].wall&&overlap(q,rectOf(o)))}
   if(holesIn(R.id).some(hl=>overlap(q,hl)))return false;
-  const lay=layerOf(it.id),hit=others.filter(o=>layerOf(o.id)===lay&&overlap(q,rectOf(o))&&!tuckOK(it,o,q));
+  const lay=layerOf(it.id),hit=others.filter(o=>layerOf(o.id)===lay&&overlap(q,rectOf(o))&&!tuckOK(it,o,q)&&(d.top||CAT[o.id].top||typeof colHit!=='function'||colHit(it,x,y,o)));
   if(d.top&&hit.length){const cx=x+w/2,cy=y+h/2,base=hit.filter(o=>SURF[o.id]);if(base.length!==1||hit.some(o=>CAT[o.id].top))return false;const b=rectOf(base[0]);return x>=b.x-.001&&y>=b.y-.001&&x+w<=b.x+b.w+.001&&y+h<=b.y+b.h+.001}
   if(hit.some(o=>CAT[o.id].top&&surfZ(o)>0))return hit.every(o=>CAT[o.id].top&&surfZ(o)>0)&&false;
   return !hit.length;
@@ -3260,7 +3260,7 @@ function snapPos(R,it,fx,fy){const st=GSTEP[S.grid]||.25,sn=v=>Math.round(Math.r
   if(CAT[it.id].wall){const ds=[fy,fx,R.r-fy,R.c-fx];let k=0;for(let i=1;i<4;i++)if(ds[i]<ds[k])k=i;it.rot=k;const [w,h]=dims(it);
     return k&1?[k===1?0:R.c-w,Math.max(0,Math.min(sn(fy-h/2),R.r-h))]:[Math.max(0,Math.min(sn(fx-w/2),R.c-w)),k===0?0:R.r-h]}
   const [w,h]=dims(it);
-  return [Math.max(0,Math.min(sn(fx-w/2),R.c-w)),Math.max(0,Math.min(sn(fy-h/2),R.r-h))]}
+  const ins=(typeof INSET!=='undefined'&&INSET[it.id])||0;return [Math.max(-ins,Math.min(sn(fx-w/2),R.c-w+ins)),Math.max(-ins,Math.min(sn(fy-h/2),R.r-h+ins))]}
 function placeOK(){if(!placing)return false;const R=RD(viewRoom),it=S.items.find(i=>i.uid===placing.uid),[x,y]=snapPos(R,it,placing.cx,placing.cy);return fits(R,it,x,y)}
 function confirmPlace(){
   const R=RD(viewRoom),it=S.items.find(i=>i.uid===placing.uid),[w,h]=dims(it),[x,y]=snapPos(R,it,placing.cx,placing.cy);
@@ -3277,7 +3277,7 @@ function drawGhost(){
   useCam(camHome);
   const R=RD(viewRoom),r=roomRect(viewRoom),it=S.items.find(i=>i.uid===placing.uid),[w,h]=dims(it);let zb=r.f*FH;
   const [x,y]=snapPos(R,it,placing.cx,placing.cy),ok=fits(R,it,x,y),X=r.x+x,Y=r.y+y;zb=zb+(CAT[it.id].top?topZ(R,it,x,y):0);
-  g.innerHTML=poly([P(X,Y,zb),P(X+w,Y,zb),P(X+w,Y+h,zb),P(X,Y+h,zb)],ok?'rgba(120,200,150,.35)':'rgba(230,90,110,.35)',`stroke="${ok?'#5cb87e':'#e05a6e'}" stroke-width="2"`)+`<g class="gitem" opacity=".8">${resolve(drawItem(it.id,ctx(X,Y,it.rot,zb+(CAT[it.id].wall?(it.wz|0):0),DDI(it))))}</g>`;
+  g.innerHTML=(typeof colRects==='function'&&!CAT[it.id].top&&!CAT[it.id].wall?colRects(it,X,Y):[{x:X,y:Y,w,h}]).map(q=>poly([P(q.x,q.y,zb),P(q.x+q.w,q.y,zb),P(q.x+q.w,q.y+q.h,zb),P(q.x,q.y+q.h,zb)],ok?'rgba(120,200,150,.35)':'rgba(230,90,110,.35)',`stroke="${ok?'#5cb87e':'#e05a6e'}" stroke-width="2"`)).join('')+`<g class="gitem" opacity=".8">${resolve(drawItem(it.id,ctx(X,Y,it.rot,zb+(CAT[it.id].wall?(it.wz|0):0),DDI(it))))}</g>`;
   const bb=g.querySelector('.gitem').getBBox(),vb=svg.viewBox.baseVal,k=vb.width/(svg.clientWidth||vb.width),rr=17*k*1.2,cx=bb.x+bb.width/2,ty=Math.min(bb.y,P(X+w/2,Y+h/2,zb)[1]-40*k)-rr-6*k;
   const sc=rr*1.15/24,btn=(dx,act,fill,d,dis)=>`<g data-pact="${act}" pointer-events="all" style="cursor:pointer"${dis?' opacity=".5"':''}><circle cx="${f1(cx+dx)}" cy="${f1(ty+2*k)}" r="${f1(rr)}" fill="rgba(0,0,0,.15)"/><circle cx="${f1(cx+dx)}" cy="${f1(ty)}" r="${f1(rr)}" fill="${fill}" stroke="#fff" stroke-width="${f1(2.5*k)}"/><path transform="translate(${f1(cx+dx-12*sc)} ${f1(ty-12*sc)}) scale(${sc.toFixed(3)})" d="${d}" stroke="#fff" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>`;
   const canRot=!CAT[it.id].wall,B=[['no','#a39486','M7 7l10 10M17 7 7 17']];if(canRot)B.push(['rot','#8a6347','M19 8a8 8 0 1 0 1.5 6M19 3v5h-5']);B.push(['inv','#d95c6c','M4.5 10h15v9h-15zM3 6h18v4H3zM10 13.5h4']);if(!canRot)B.push(['wdn','#8a6347','M12 5v14M6 13l6 6 6-6',(it.wz|0)<=WZMIN],['wup','#8a6347','M12 19V5M6 11l6-6 6 6',(it.wz|0)>=WZMAX]);if(placing.backup){const d=CAT[it.id];if(SEATZ[it.id])B.push(['sit','#7a9cc6','M6 11V6h12v5M4 11h16v4H4zM6 15v4M18 15v4']);if(d.stair)B.push(['up','#7a9cc6','M5 19h4v-4h4v-4h4V7h3']);if(d.ward)B.push(['ward','#c98aa4','M9 4l3 3 3-3 5 3-2 4h-2v9H8v-9H6L4 7z']);if(d.photo)B.push(['pickphoto','#c98aa4','M4 7h4l2-2h4l2 2h4v12H4zM12 10a3 3 0 1 0 .01 0'])}B.push(['ok',ok?'#4fae74':'#9aa7a0','M5 12.5 10 17.5 19 7',!ok]);
@@ -8976,7 +8976,7 @@ document.addEventListener('click',e=>{const f=e.target.closest('[data-bpmail]');
 /* ================= v76: Stühle rasten am Tisch ein ================= */
 const TUCK=.42,ROUNDT=new Set(['bistrotisch']);
 function chairSlots(R,it){const out=[];inRoom(R.id).forEach(t=>{if(t.uid===it.uid||!isTable(t.id)||CAT[t.id].top)return;const q=rectOf(t);
-  const side=(L,fn)=>{const n=Math.max(1,Math.round(L));for(let k=0;k<n;k++)out.push(fn(L*(k+.5)/n-.5))};
+  const side=(L,fn)=>{const n=Math.max(1,Math.round(L));for(let k=0;k<n;k++)out.push(fn(L*(k+.5)/n-.5));if(n%2===0)out.push(fn(L/2-.5))};
   if(ROUNDT.has(t.id)){const cx=q.x+q.w/2,cy=q.y+q.h/2,R=.5+.28*Math.max(q.w,q.h);for(let k=0;k<8;k++){const th=k*45-90,a=th*Math.PI/180,phi=((th+90)%360+360)%360,card=phi%90===0;out.push({x:cx+Math.cos(a)*R-.5,y:cy+Math.sin(a)*R-.5,rot:[0,3,2,1][phi/90|0],ang:card?undefined:phi})}return}
   side(q.w,o=>({x:q.x+o,y:q.y-1+TUCK,rot:0}));side(q.w,o=>({x:q.x+o,y:q.y+q.h-TUCK,rot:2}));
   side(q.h,o=>({x:q.x-1+TUCK,y:q.y+o,rot:1}));side(q.h,o=>({x:q.x+q.w-TUCK,y:q.y+o,rot:3}))});return out}
@@ -9146,7 +9146,8 @@ function topZ(R,it,x,y){const [w,h]=dims(it),cx=x+w/2,cy=y+h/2;let z=0;inRoom(R.
 {const S0=snapPos;snapPos=function(R,it,fx,fy){const r=S0(R,it,fx,fy);if(!CAT[it.id].top||!R||!R.id)return r;const [w,h]=dims(it);let best=null,bd=1e9;
   inRoom(R.id).forEach(o=>{if(o.uid===it.uid||!SURF[o.id])return;const z=SURF[o.id]+(CAT[o.id].wall?(o.wz|0):0),t=z*ZK/(KS*KP),sx=fx+t*SN,sy=fy+t*CS,q=rectOf(o);
     const dx=Math.max(q.x-sx,0,sx-q.x-q.w),dy=Math.max(q.y-sy,0,sy-q.y-q.h),d=Math.hypot(dx,dy);if(d>.35||d>=bd)return;
-    const st=.25,sn=v=>Math.round(v/st)*st,nx=Math.max(q.x,Math.min(q.x+q.w-w,sn(sx-w/2))),ny=Math.max(q.y,Math.min(q.y+q.h-h,sn(sy-h/2)));
+    const st=.25,sn=v=>Math.round(v/st)*st,oi=INSET[o.id]||0,vx=q.x+oi,vy=q.y+oi,vw=q.w-2*oi,vh=q.h-2*oi;let nx,ny;
+    if(vw<w*1.6)nx=vx+(vw-w)/2;else nx=Math.max(vx,Math.min(vx+vw-w,sn(sx-w/2)));if(vh<h*1.6)ny=vy+(vh-h)/2;else ny=Math.max(vy,Math.min(vy+vh-h,sn(sy-h/2)));
     if(w>q.w+.001||h>q.h+.001)return;if(!fits(R,it,nx,ny))return;bd=d;best=[Math.round(nx*100)/100,Math.round(ny*100)/100]});
   return best||r}}
 /* ================= v84: Sofas und Schminksessel wirklich umfärbbar ================= */
@@ -9204,6 +9205,29 @@ HUG.forEach(id=>{let mn=9;const probe={b:(lx,ly)=>{mn=Math.min(mn,ly);return ''}
   try{const o=PARTC;PARTC=null;DRAW[id](probe);PARTC=o}catch(_){}const off=mn<9?mn-.03:0;if(off<.05)return;const D0=DRAW[id];DRAW[id]=c=>D0(shiftCtx(c,off))});
 {const S0=snapPos;snapPos=function(R,it,fx,fy){const r=S0(R,it,fx,fy);if(!HUG.includes(it.id)||!R||!placing||placing.uid!==it.uid)return r;const [x,y]=r,[w,h]=dims(it),k=x+','+y;if(placing._hug===k)return r;placing._hug=k;
   const opts=[];if(y<=.01)opts.push(0);if(x<=.01)opts.push(1);if(Math.abs(y+h-R.r)<.01)opts.push(2);if(Math.abs(x+w-R.c)<.01)opts.push(3);if(opts.length&&!opts.includes((it.rot|0)&3))it.rot=opts[0];return r}}
+/* ================= v90: Genauere Stellflächen – kleine Sachen und Ecksofas brauchen weniger Platz ================= */
+const INSET={stehlampe:.28,beistell_rund:.16,beistell_saeule:.22,beistell_holz:.14,pflanze:.2,badpflanze:.2,zimmerpalme:.18,monstera:.14,geigenfeige:.2,olivenbaum:.2,pampas:.26,bananenpflanze:.14,
+  teddy:.2,hocker:.2,himmelhocker:.2,kissen:.15,sitzsack:.1,lampe:.2,globus:.2,aquarium:.12,couchtisch:.08,couchtisch2:.08,bistrotisch:.08,tisch:.08,puppenhaus:.18,schminksessel:.12,sessel:.06,nachttisch:.1,nachttisch2:.1};
+const SHAPE={ecksofa_l:[[0,0,3,1],[0,1,1,2]],ecksofa_r:[[0,0,3,1],[2,1,3,2]],liegesofa:[[0,0,3,1],[2,1,3,2]],liegesofa_r:[[0,0,3,1],[0,1,1,2]]};
+function colRects(it,x,y){const d=CAT[it.id],W=d.w,H=d.h,k=(it.rot|0)&3;let L=SHAPE[it.id]||[[0,0,W,H]];const ins=INSET[it.id]||0;
+  if(ins&&!SHAPE[it.id])L=[[ins,ins,W-ins,H-ins]];
+  return L.map(([a,b,c2,e])=>{let r;if(k===0)r=[a,b,c2,e];else if(k===1)r=[b,W-c2,e,W-a];else if(k===2)r=[W-c2,H-e,W-a,H-b];else r=[H-e,a,H-b,c2];return {x:x+r[0],y:y+r[1],w:r[2]-r[0],h:r[3]-r[1]}})}
+function colHit(it,x,y,o){const A=colRects(it,x,y),B=colRects(o,o.x,o.y);return A.some(a=>B.some(b=>overlap(a,b)))}
+/* ================= v91: Büromöbel in Farben ================= */
+const mk=(base,opts)=>({base,opts:opts.map(o=>[o[0],o[1]]),map:Object.fromEntries(opts.filter(o=>o[1]).map(o=>[o[1],o[2]]))});
+RECOL.schreibtisch=mk('#e8c39e',[['Holz',null],['Weiß','#f4f1ec',{'#e8c39e':'#f4f1ec','#c99a74':'#d9d3ca'}],['Nussbaum','#8a6446',{'#e8c39e':'#8a6446','#c99a74':'#6e4f37'}],['Salbei','#cfe0c8',{'#e8c39e':'#cfe0c8','#c99a74':'#a9c4a6'}]]);
+RECOL.laptoptisch=mk('#f3e4cc',[['Creme',null],['Holz','#e8c39e',{'#f3e4cc':'#e8c39e','#ffffff':'#c99a74'}],['Rosa','#f8d7e2',{'#f3e4cc':'#f8d7e2'}],['Salbei','#d6e6cf',{'#f3e4cc':'#d6e6cf'}]]);
+RECOL.buerostuhl=mk('#9fd3c7',[['Mint',null],['Rosa','#f4a6c1',{'#9fd3c7':'#f4a6c1','#bfe8da':'#fbd0de'}],['Grau','#8b93a3',{'#9fd3c7':'#8b93a3','#bfe8da':'#c9ccd8'}],['Blau','#9fb6cf',{'#9fd3c7':'#9fb6cf','#bfe8da':'#cbd9ea'}],['Senf','#e3b85c',{'#9fd3c7':'#e3b85c','#bfe8da':'#f3d58c'}]]);
+RECOL.aktenschrank=mk('#cfd8e6',[['Hellblau',null],['Rosa','#f3c9d6',{'#cfd8e6':'#f3c9d6','#dfe6f0':'#fbe2ea'}],['Salbei','#c3d6bb',{'#cfd8e6':'#c3d6bb','#dfe6f0':'#dfeadb'}],['Weiß','#eeebe6',{'#cfd8e6':'#eeebe6','#dfe6f0':'#faf8f4'}]]);
+/* ================= v92: Schöner Computer-Schreibtisch ================= */
+DRAW.schreibtisch=c=>{const S_=x=>[].concat(x).map(String).join('');const legs=[c.b(.06,.08,0,.1,.84,30,WOODD),c.b(1.84,.08,0,.1,.84,30,WOODD),c.b(.16,.12,10,1.68,.06,18,shade(WOODD,.08))];
+  const top=S_(c.b(.03,.05,30,1.94,.9,4,WOOD));
+  let mon=S_([c.b(.84,.2,34,.32,.16,1.2,'#3a3d45'),c.b(.97,.25,35.2,.06,.05,10,'#3a3d45'),c.b(.58,.24,42,.84,.06,28,'#2a2c33')]);
+  if(c.vis(0,1)){const q=[c.p(.62,.301,44.5),c.p(1.38,.301,44.5),c.p(1.38,.301,67.5),c.p(.62,.301,67.5)];mon+=poly(q,'#4f74ad')+poly([c.p(.62,.302,44.5),c.p(1.38,.302,44.5),c.p(1.38,.302,52),c.p(.62,.302,58)],'#6f93c8','opacity=".7"')
+    +poly([c.p(.68,.303,60),c.p(.8,.303,60),c.p(.8,.303,64.5),c.p(.68,.303,64.5)],'#ffffff','opacity=".85"')+poly([c.p(.84,.303,60),c.p(1.06,.303,60),c.p(1.06,.303,64.5),c.p(.84,.303,64.5)],'#f7a8c6','opacity=".9"')+ln(c.p(.62,.303,46),c.p(1.38,.303,46),'#2f3440',1.4)}
+  const kb=S_([c.b(.66,.56,34,.6,.18,1.6,'#e4e7ee'),c.b(1.3,.54,34,.22,.26,.5,'#c9d6ea'),c.b(1.36,.6,34.5,.08,.12,1.6,'#e4e7ee')])+[0,1,2].map(k=>ln(c.p(.69,.6+k*.05,35.7),c.p(1.23,.6+k*.05,35.7),'#b5bccb',1)).join('')+ln(c.p(.82,.725,35.7),c.p(1.08,.725,35.7),'#b5bccb',1.6);
+  const deco=S_([c.cyl(.32,.55,.055,34,8,'#f7a8c6'),c.b(1.62,.2,34,.18,.24,3,'#ffd27a'),c.b(1.63,.21,37,.16,.22,2.5,'#9fd3c7')]);
+  const front=c.vis(0,1);return [...legs,part(top+(front?mon+deco+kb:kb+deco+mon),[.03,1.97,.05,.95,30,70])]};
 /* ================= Navigation & Meldungen ================= */
 function show(t){
   tab=t;
