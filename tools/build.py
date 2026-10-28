@@ -12,6 +12,9 @@ head=('<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="f
  '<script src="vendor/supabase.js"></script><script src="config.js"></script>'
  '<script>try{var C=window.PEBBLE_CONFIG||{};if(window.supabase&&C.supabaseUrl&&C.supabaseKey)window.PEBBLE_SB=window.supabase.createClient(C.supabaseUrl,C.supabaseKey,{auth:{persistSession:true,detectSessionInUrl:true,storageKey:"pebble-auth"}})}catch(e){}</script>')
 i=s.index('</head>');s=s[:i]+head+s[i:]
+# immer über https öffnen (sonst funktionieren Verschlüsselung, Chat und Anmeldung nicht)
+_r='<script>if(location.protocol==="http:"&&!/^(localhost|127\\.0\\.0\\.1)$/.test(location.hostname))location.replace("https://"+location.host+location.pathname+location.search+location.hash)</script>'
+j=s.index('<head>')+len('<head>');s=s[:j]+_r+s[j:]
 s=s.replace('<title>Pebble</title>','<title>Pebble</title>',1)
 open(out,'w',encoding='utf8').write(s)
 import os
