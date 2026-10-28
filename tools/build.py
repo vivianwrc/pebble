@@ -15,6 +15,12 @@ i=s.index('</head>');s=s[:i]+head+s[i:]
 # immer über https öffnen (sonst funktionieren Verschlüsselung, Chat und Anmeldung nicht)
 _r='<script>if(location.protocol==="http:"&&!/^(localhost|127\\.0\\.0\\.1)$/.test(location.hostname))location.replace("https://"+location.host+location.pathname+location.search+location.hash)</script>'
 j=s.index('<head>')+len('<head>');s=s[:j]+_r+s[j:]
+# DSGVO: keine Verbindungen zu Google Fonts oder CDNs – alles kommt von pebbletown.de
+import re as _re
+s=_re.sub(r'<link rel="preconnect" href="https://fonts\.(googleapis|gstatic)\.com"[^>]*>\n?','',s)
+s=_re.sub(r'<link rel="stylesheet" href="https://fonts\.googleapis\.com/[^"]*">','<link rel="stylesheet" href="fonts/fonts.css">',s)
+s=s.replace('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js','vendor/three.min.js')
+assert 'googleapis' not in s and 'cdnjs' not in s, 'externe Quelle übrig'
 s=s.replace('<title>Pebble</title>','<title>Pebble</title>',1)
 open(out,'w',encoding='utf8').write(s)
 import os
